@@ -6,12 +6,12 @@ import requests
 import datetime
 import base64
 import hashlib
-import html
 from pathlib import Path
 import tempfile
 import uuid
 from PIL import Image
 from ultralytics import YOLO
+from streamlit_js_eval import get_geolocation
 from treatments_db import get_treatment_data, THEME_COLORS
 from disease_map import DISEASE_DISPLAY_MAP
 from diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
@@ -20,7 +20,6 @@ from diagnosis_utils import reminder_days_from_frequency, select_consensus_predi
 APP_DIR = Path(__file__).resolve().parent
 DATABASE_PATH = APP_DIR / "agrisage_history.db"
 MODEL_PATH = APP_DIR / "best.pt"
-DEFAULT_LOCATION = {"lat": 31.5960, "lon": 77.3520, "city": "Himachal Pradesh"}
 INDIA_TIMEZONE = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 
@@ -224,19 +223,32 @@ st.caption("Botanical Plant Pathology Engine")
 if "history_session_id" not in st.session_state:
     st.session_state.history_session_id = uuid.uuid4().hex
 
-with st.expander("📍 Farm Location", expanded=False):
-    city = st.text_input("Farm name or nearest town", DEFAULT_LOCATION["city"])
-    latitude = st.number_input("Latitude", min_value=-90.0, max_value=90.0, value=DEFAULT_LOCATION["lat"], format="%.4f")
-    longitude = st.number_input("Longitude", min_value=-180.0, max_value=180.0, value=DEFAULT_LOCATION["lon"], format="%.4f")
+# This browser component asks the visitor for permission and returns their device's
+# GPS/network coordinates. Streamlit itself only runs on the server, so it cannot
+# obtain a visitor's location without a browser component.
+browser_location = get_geolocation()
+loc_info = None
+if isinstance(browser_location, dict) and "coords" in browser_location:
+    coordinates = browser_location["coords"]
+    try:
+        loc_info = {
+            "lat": float(coordinates["latitude"]),
+            "lon": float(coordinates["longitude"]),
+        }
+    except (KeyError, TypeError, ValueError):
+        st.warning("Location was received but did not contain valid coordinates.")
+elif isinstance(browser_location, dict) and "error" in browser_location:
+    st.info("Location access is unavailable. Allow location permission to see local weather.")
+else:
+    st.caption("Allow location access to view weather at your current farm.")
 
-loc_info = {"lat": latitude, "lon": longitude, "city": city.strip() or "Selected farm"}
-weather = get_local_weather(loc_info["lat"], loc_info["lon"])
+if loc_info:
+    weather = get_local_weather(loc_info["lat"], loc_info["lon"])
 
-if weather["temp"] != "N/A":
-    city_html = html.escape(loc_info["city"])
+if loc_info and weather["temp"] != "N/A":
     st.markdown(f"""
     <div style="background-color: #F0FDF4; border: 1px solid #86EFAC; border-radius: 12px; padding: 10px 14px; margin-bottom: 12px;">
-        <div style="font-weight: 600; font-size: 0.85rem; color: #166534;">📍 {city_html} Live Weather</div>
+        <div style="font-weight: 600; font-size: 0.85rem; color: #166534;">📍 Current Weather</div>
         <div style="font-size: 0.95rem; color: #14532D; margin-top: 2px;">
             🌡️ <b>{weather['temp']}°C</b> &nbsp;|&nbsp; 
             💧 Humidity: <b>{weather['humidity']}%</b> &nbsp;|&nbsp; 
