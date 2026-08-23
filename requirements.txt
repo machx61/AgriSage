@@ -1,8 +1,6 @@
---only-binary=:all:
---prefer-binary
 streamlit
 ultralytics
 Pillow
 requests
-opencv-python-headless
+opencv-python
 streamlit-js-eval
