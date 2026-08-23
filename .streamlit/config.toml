@@ -1,0 +1,11 @@
+[theme]
+base = "light"
+primaryColor = "#27AE60"
+
+# Main background (Warm Botanical Cream)
+backgroundColor = "#FCFBF4" 
+
+# Secondary background for sidebars/expanders (Slightly darker cream/sand)
+secondaryBackgroundColor = "#F5F3E9" 
+
+font = "sans serif"
