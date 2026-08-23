@@ -19,7 +19,7 @@ DISEASE_DISPLAY_MAP = {
     "blueberry_rust": "Blueberry - Rust",
     "blueberry_scorch": "Blueberry - Scorch",
     "cherry_healthy": "Cherry - Healthy",
-    "cherry_powdery_ mildew": "Cherry - Powdery Mildew",
+    "cherry_powdery_mildew": "Cherry - Powdery Mildew",
     "cherry_spot": "Cherry - Spot",
     "citrus_canker": "Citrus - Canker",
     "citrus_greening_disease": "Citrus - Greening Disease",

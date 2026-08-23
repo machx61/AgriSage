@@ -5,60 +5,61 @@ import streamlit as st
 import requests
 import datetime
 import base64
+import hashlib
+import html
+from pathlib import Path
+import tempfile
+import uuid
 from PIL import Image
 from ultralytics import YOLO
 from treatments_db import get_treatment_data, THEME_COLORS
 from disease_map import DISEASE_DISPLAY_MAP
+from diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
 
 # --- Database Setup for Persistent History ---
+APP_DIR = Path(__file__).resolve().parent
+DATABASE_PATH = APP_DIR / "agrisage_history.db"
+MODEL_PATH = APP_DIR / "best.pt"
+DEFAULT_LOCATION = {"lat": 31.5960, "lon": 77.3520, "city": "Himachal Pradesh"}
+INDIA_TIMEZONE = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+
+
 def init_db():
     """Creates a local database file if it doesn't exist."""
-    conn = sqlite3.connect("agrisage_history.db")
-    c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS scans
-                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                  date TEXT,
-                  disease TEXT,
-                  confidence REAL)''')
-    conn.commit()
-    conn.close()
+    with sqlite3.connect(DATABASE_PATH, timeout=5) as conn:
+        c = conn.cursor()
+        c.execute('''CREATE TABLE IF NOT EXISTS scans
+                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      session_id TEXT,
+                      date TEXT,
+                      disease TEXT,
+                      confidence REAL)''')
+        existing_columns = {row[1] for row in c.execute("PRAGMA table_info(scans)")}
+        if "session_id" not in existing_columns:
+            c.execute("ALTER TABLE scans ADD COLUMN session_id TEXT")
+        c.execute("CREATE INDEX IF NOT EXISTS idx_scans_session_id ON scans(session_id)")
 
-def save_scan(disease_name, confidence):
+
+def save_scan(session_id, disease_name, confidence):
     """Saves a new scan to the database."""
-    conn = sqlite3.connect("agrisage_history.db")
-    c = conn.cursor()
     date_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-    c.execute("INSERT INTO scans (date, disease, confidence) VALUES (?, ?, ?)", 
-              (date_str, disease_name, confidence))
-    conn.commit()
-    conn.close()
+    with sqlite3.connect(DATABASE_PATH, timeout=5) as conn:
+        conn.execute(
+            "INSERT INTO scans (session_id, date, disease, confidence) VALUES (?, ?, ?, ?)",
+            (session_id, date_str, disease_name, confidence),
+        )
 
-def get_past_scans():
-    """Retrieves the last 10 scans."""
-    conn = sqlite3.connect("agrisage_history.db")
-    c = conn.cursor()
-    c.execute("SELECT date, disease, confidence FROM scans ORDER BY id DESC LIMIT 10")
-    data = c.fetchall()
-    conn.close()
-    return data
+
+def get_past_scans(session_id):
+    """Retrieves the last 10 scans from this browser session."""
+    with sqlite3.connect(DATABASE_PATH, timeout=5) as conn:
+        return conn.execute(
+            "SELECT date, disease, confidence FROM scans WHERE session_id = ? ORDER BY id DESC LIMIT 10",
+            (session_id,),
+        ).fetchall()
 
 # Initialize DB on startup
 init_db()
-
-# Weather and Location config
-def get_current_location_coordinates():
-    try:
-        res = requests.get("https://ipapi.co/json/", timeout=4)
-        if res.status_code == 200:
-            data = res.json()
-            return {
-                "lat": float(data.get("latitude")),
-                "lon": float(data.get("longitude")),
-                "city": data.get("city", "Local Area")
-            }
-    except Exception:
-        pass
-    return {"lat": 31.5960, "lon": 77.3520, "city": "Himachal Pradesh"}
 
 @st.cache_data(ttl=900)
 def get_local_weather(lat: float, lon: float):
@@ -205,11 +206,14 @@ st.markdown("""
 # Load Model
 @st.cache_resource
 def load_yolo():
-    model_path = "best.pt"
-    if not os.path.exists(model_path):
+    if not MODEL_PATH.is_file():
         st.error("⚠️ `best.pt` not found! Place your 3.2 MB model in this directory.")
         return None
-    return YOLO(model_path)
+    try:
+        return YOLO(MODEL_PATH)
+    except Exception as exc:
+        st.error(f"⚠️ The disease model could not be loaded: {exc}")
+        return None
 
 model = load_yolo()
 
@@ -217,14 +221,22 @@ model = load_yolo()
 st.markdown("## 🌱 Agrisage Vision")
 st.caption("Botanical Plant Pathology Engine")
 
-# Live Weather Widget
-loc_info = get_current_location_coordinates()
+if "history_session_id" not in st.session_state:
+    st.session_state.history_session_id = uuid.uuid4().hex
+
+with st.expander("📍 Farm Location", expanded=False):
+    city = st.text_input("Farm name or nearest town", DEFAULT_LOCATION["city"])
+    latitude = st.number_input("Latitude", min_value=-90.0, max_value=90.0, value=DEFAULT_LOCATION["lat"], format="%.4f")
+    longitude = st.number_input("Longitude", min_value=-180.0, max_value=180.0, value=DEFAULT_LOCATION["lon"], format="%.4f")
+
+loc_info = {"lat": latitude, "lon": longitude, "city": city.strip() or "Selected farm"}
 weather = get_local_weather(loc_info["lat"], loc_info["lon"])
 
 if weather["temp"] != "N/A":
+    city_html = html.escape(loc_info["city"])
     st.markdown(f"""
     <div style="background-color: #F0FDF4; border: 1px solid #86EFAC; border-radius: 12px; padding: 10px 14px; margin-bottom: 12px;">
-        <div style="font-weight: 600; font-size: 0.85rem; color: #166534;">📍 {loc_info['city']} Live Weather</div>
+        <div style="font-weight: 600; font-size: 0.85rem; color: #166534;">📍 {city_html} Live Weather</div>
         <div style="font-size: 0.95rem; color: #14532D; margin-top: 2px;">
             🌡️ <b>{weather['temp']}°C</b> &nbsp;|&nbsp; 
             💧 Humidity: <b>{weather['humidity']}%</b> &nbsp;|&nbsp; 
@@ -233,8 +245,11 @@ if weather["temp"] != "N/A":
     </div>
     """, unsafe_allow_html=True)
 
-    if weather["humidity"] != "N/A" and float(weather["humidity"]) >= 80:
-        st.warning("⚠️ **High Humidity Advisory:** Elevated risk for fungal blight and rust. Avoid overhead watering.")
+    try:
+        if float(weather["humidity"]) >= 80:
+            st.warning("⚠️ **High Humidity Advisory:** Elevated risk for fungal blight and rust. Avoid overhead watering.")
+    except (TypeError, ValueError):
+        pass
 
 # --- Image Input Section ---
 images_to_process = []
@@ -272,67 +287,105 @@ with st.expander("🌾 Add Field Notes (Optional)", expanded=False):
     elevation_zone = st.selectbox("Elevation Zone", ["Mid Hill (900–1500m)", "Low Hill (<900m)", "High Hill (1500–3000m)"])
     weather_note = st.text_input("Recent Weather", "Recent rainfall / high humidity")
 
-# Helper function defined BEFORE inference
 def generate_ics_file(treatment_name, days_until_next_spray):
-    """Generates a raw .ics file string for calendar imports."""
-    event_date = datetime.datetime.now() + datetime.timedelta(days=days_until_next_spray)
-    date_str = event_date.strftime("%Y%m%dT090000") # Set for 9:00 AM
-    
+    """Generate a standards-compliant calendar event for a recurring treatment."""
+    event_start = (datetime.datetime.now(INDIA_TIMEZONE) + datetime.timedelta(days=days_until_next_spray)).replace(
+        hour=9, minute=0, second=0, microsecond=0
+    )
+    event_end = event_start + datetime.timedelta(minutes=30)
+    escaped_treatment = treatment_name.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;")
     ics_content = f"""BEGIN:VCALENDAR
 VERSION:2.0
+PRODID:-//Agrisage//Treatment Reminder//EN
 BEGIN:VEVENT
-SUMMARY:🌿 Agrisage: Apply {treatment_name}
-DTSTART:{date_str}
-DTEND:{date_str}
+UID:{uuid.uuid4()}@agrisage
+DTSTAMP:{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')}
+SUMMARY:🌿 Agrisage: Apply {escaped_treatment}
+DTSTART;TZID=Asia/Kolkata:{event_start.strftime('%Y%m%dT%H%M%S')}
+DTEND;TZID=Asia/Kolkata:{event_end.strftime('%Y%m%dT%H%M%S')}
 DESCRIPTION:Time to reapply the treatment for your crop as diagnosed by Agrisage.
 END:VEVENT
 END:VCALENDAR"""
     return ics_content
 
-# --- Multi-Leaf Prediction & Diagnosis ---
-if images_to_process and model:
-    st.markdown("---")
-    st.write(f"🔍 Analyzing {len(images_to_process)} leaf image(s)...")
+def get_upload_signature(files):
+    """Return a stable identifier for the images currently in the uploader."""
+    digest = hashlib.sha256()
+    for uploaded_file in files:
+        digest.update(uploaded_file.name.encode("utf-8", errors="replace"))
+        digest.update(uploaded_file.getvalue())
+    return digest.hexdigest()
 
+
+upload_signature = get_upload_signature(images_to_process) if images_to_process else None
+analyze_requested = st.button(
+    "🔍 Analyze Leaf Images",
+    disabled=not images_to_process or model is None,
+    use_container_width=True,
+)
+
+if analyze_requested:
     predictions = []
     confidences = []
+    with st.spinner(f"Analyzing {len(images_to_process)} leaf image(s)..."):
+        for uploaded_file in images_to_process:
+            temp_path = None
+            try:
+                uploaded_file.seek(0)
+                with Image.open(uploaded_file) as source_image:
+                    image = source_image.convert("RGB")
+                st.image(image, caption=f"Analyzed: {uploaded_file.name}", use_container_width=True)
 
-    # Loop through batch
-    for file in images_to_process:
-        img = Image.open(file)
-        st.image(img, caption=f"Analyzed: {file.name}", use_container_width=True)
-        temp_path = f"temp_{file.name}"
-        img.convert("RGB").save(temp_path)
+                with tempfile.NamedTemporaryFile(prefix="agrisage_", suffix=".png", delete=False) as temp_file:
+                    temp_path = temp_file.name
+                    image.save(temp_file, format="PNG")
 
-        # Run YOLO model
-        results = model(temp_path)
-        probs = results[0].probs
-        top_idx = probs.top1
-        raw_class = results[0].names[top_idx]
-        conf = probs.top1conf.item() * 100
+                results = model(temp_path)
+                probs = results[0].probs
+                if probs is None:
+                    raise ValueError("The loaded model did not return classification probabilities.")
+                raw_class = results[0].names[probs.top1]
+                predictions.append(raw_class)
+                confidences.append(probs.top1conf.item() * 100)
+            except Exception as exc:
+                st.warning(f"Could not analyze '{uploaded_file.name}': {exc}")
+            finally:
+                if temp_path:
+                    try:
+                        os.unlink(temp_path)
+                    except FileNotFoundError:
+                        pass
 
-        predictions.append(raw_class)
-        confidences.append(conf)
+    if predictions:
+        final_raw_class, final_confidence = select_consensus_prediction(predictions, confidences)
+        display_name = DISEASE_DISPLAY_MAP.get(
+            final_raw_class, final_raw_class.replace("_", " ").title()
+        )
+        st.session_state.last_analysis = {
+            "upload_signature": upload_signature,
+            "raw_class": final_raw_class,
+            "confidence": final_confidence,
+        }
+        try:
+            save_scan(st.session_state.history_session_id, display_name, final_confidence)
+        except sqlite3.Error as exc:
+            st.warning(f"The diagnosis was completed, but its history could not be saved: {exc}")
+    else:
+        st.error("No image could be analyzed. Please upload a valid leaf photo and try again.")
 
-        if os.path.exists(temp_path):
-            os.remove(temp_path) # Clean up temp file
-
-    # Aggregate Results
-    final_raw_class = max(set(predictions), key=predictions.count)
-    avg_conf = sum(confidences) / len(confidences)
-
-    display_name = DISEASE_DISPLAY_MAP.get(final_raw_class, final_raw_class.replace('_', ' ').title())
+analysis = st.session_state.get("last_analysis")
+if analysis and analysis["upload_signature"] == upload_signature:
+    final_raw_class = analysis["raw_class"]
+    final_confidence = analysis["confidence"]
+    display_name = DISEASE_DISPLAY_MAP.get(final_raw_class, final_raw_class.replace("_", " ").title())
     treatment_info = get_treatment_data(final_raw_class)
-
-    # Save to Persistent Database
-    save_scan(display_name, avg_conf)
-
     st.markdown("---")
-    # Display the beautiful name from your mapping dictionary
     st.markdown(f"### 🔬 Diagnosis: **{display_name}**")
-    st.progress(int(avg_conf), text=f"Aggregate AI Confidence: {avg_conf:.1f}%")
+    st.progress(
+        max(0, min(100, round(final_confidence))),
+        text=f"Consensus AI Confidence: {final_confidence:.1f}%",
+    )
 
-    # Render Biological Treatments
     st.markdown("#### ✨ Botanical & Biological Solutions")
     for item in treatment_info.get("biological", []):
         theme = THEME_COLORS.get(item.get("theme", "mint_green"), THEME_COLORS["mint_green"])
@@ -354,17 +407,16 @@ if images_to_process and model:
         """, unsafe_allow_html=True)
         
         if "frequency" in item:
-            # Assuming 'item' is the treatment dictionary from your database
-            # Just extract a generic number of days for the prototype (e.g., 7 days)
-            ics_data = generate_ics_file(item['action'], 7)
-            
-            st.download_button(
-                label=f"📅 Add {item['action']} Reminder to Calendar",
-                data=ics_data,
-                file_name=f"{item['action'].replace(' ', '_')}_reminder.ics",
-                mime="text/calendar",
-                use_container_width=True
-            )
+            reminder_days = reminder_days_from_frequency(item["frequency"])
+            if reminder_days is not None:
+                ics_data = generate_ics_file(item['action'], reminder_days)
+                st.download_button(
+                    label=f"📅 Add {item['action']} Reminder to Calendar",
+                    data=ics_data,
+                    file_name=f"{item['action'].replace(' ', '_')}_reminder.ics",
+                    mime="text/calendar",
+                    use_container_width=True
+                )
 
     # Render Cultural Treatments
     st.markdown("#### 🌾 Cultural Practices & Garden Care")
@@ -389,9 +441,9 @@ if images_to_process and model:
 # --- Display Persistent History ---
 st.markdown("---")
 with st.expander("📂 View Past Scans (Saved)"):
-    past_scans = get_past_scans()
+    past_scans = get_past_scans(st.session_state.history_session_id)
     if not past_scans:
-        st.write("No previous scans found on this device.")
+        st.write("No previous scans found in this browser session.")
     else:
         for scan in past_scans:
             date, disease, confidence = scan
