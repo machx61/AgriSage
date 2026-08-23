@@ -2,5 +2,5 @@ streamlit
 ultralytics
 Pillow
 requests
-opencv-python
+opencv-python-headless
 streamlit-js-eval
