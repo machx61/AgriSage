@@ -1,3 +1,5 @@
+--only-binary=:all:
+--prefer-binary
 streamlit
 ultralytics
 Pillow
