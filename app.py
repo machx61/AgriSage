@@ -400,6 +400,8 @@ if analysis and analysis["upload_signature"] == upload_signature:
 
     st.markdown("#### ✨ Botanical & Biological Solutions")
     for item in treatment_info.get("biological", []):
+        if "action" not in item:
+            continue
         theme = THEME_COLORS.get(item.get("theme", "mint_green"), THEME_COLORS["mint_green"])
         freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
         
@@ -433,6 +435,8 @@ if analysis and analysis["upload_signature"] == upload_signature:
     # Render Cultural Treatments
     st.markdown("#### 🌾 Cultural Practices & Garden Care")
     for item in treatment_info.get("cultural", []):
+        if "action" not in item:
+            continue
         theme = THEME_COLORS.get(item.get("theme", "soft_yellow"), THEME_COLORS["soft_yellow"])
         freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
         
@@ -450,7 +454,71 @@ if analysis and analysis["upload_signature"] == upload_signature:
         </div>
         """, unsafe_allow_html=True)
 
-# --- Display Persistent History ---
+    # Render Botanical Treatments
+    botanical_items = [i for i in treatment_info.get("botanical", []) if "action" in i]
+    if botanical_items:
+        st.markdown("#### 🌿 Botanical & Plant Extract Solutions")
+        for item in botanical_items:
+            theme = THEME_COLORS.get(item.get("theme", "pastel_green"), THEME_COLORS["pastel_green"])
+            freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
+
+            st.markdown(f"""
+            <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
+                <div class="card-header">
+                    <span class="card-icon">{item.get('emoji', '🌿')}</span>
+                    {item.get('action', 'Treatment')}
+                </div>
+                <div class="card-summary">{item.get('summary', '')}</div>
+                <div class="card-instructions">
+                    <b>How to Apply:</b> {item.get('how', '')}
+                    <br>{freq_html}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Render Local Practices
+    local_items = [i for i in treatment_info.get("local_practice", []) if "action" in i]
+    if local_items:
+        st.markdown("#### 🏔️ Local Himachal Pradesh Practices")
+        for item in local_items:
+            theme = THEME_COLORS.get(item.get("theme", "peach"), THEME_COLORS["peach"])
+            freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
+
+            st.markdown(f"""
+            <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
+                <div class="card-header">
+                    <span class="card-icon">{item.get('emoji', '🏔️')}</span>
+                    {item.get('action', 'Local Practice')}
+                </div>
+                <div class="card-summary">{item.get('summary', '')}</div>
+                <div class="card-instructions">
+                    <b>How to Apply:</b> {item.get('how', '')}
+                    <br>{freq_html}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Render IKS (Indigenous Knowledge Systems) Treatments
+    iks_items = [i for i in treatment_info.get("iks", []) if "action" in i]
+    if iks_items:
+        st.markdown("#### 📜 Indigenous Knowledge Systems (Vrikshayurveda)")
+        for item in iks_items:
+            theme = THEME_COLORS.get(item.get("theme", "lavender"), THEME_COLORS["lavender"])
+            freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
+
+            st.markdown(f"""
+            <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
+                <div class="card-header">
+                    <span class="card-icon">{item.get('emoji', '📜')}</span>
+                    {item.get('action', 'Traditional Remedy')}
+                </div>
+                <div class="card-summary">{item.get('summary', '')}</div>
+                <div class="card-instructions">
+                    <b>How to Apply:</b> {item.get('how', '')}
+                    <br>{freq_html}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
 st.markdown("---")
 with st.expander("📂 View Past Scans (Saved)"):
     past_scans = get_past_scans(st.session_state.history_session_id)
