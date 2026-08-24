@@ -1,0 +1,53 @@
+{
+    "bacterial_leaf_blight": {
+        "name": "Bacterial Leaf Blight & Blast",
+        "cultural": [
+            {
+                "action": "Bana Border Bodyguard",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "Plant a friendly leafy hedge of Bana right beside your baby rice nursery to keep bugs and disease away!",
+                "how": "Plant Bana (Vitex negundo) alongside the paddy nursery bed.",
+                "frequency": "Once at nursery establishment"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Ramban River Gate Guardian",
+                "emoji": "🌊",
+                "theme": "sky_blue",
+                "summary": "Crush spiky Ramban leaves and drop them right where water enters your paddy field!",
+                "how": "Crush fresh Ramban (Agave americana) leaves and place them at the water channel inlet feeding the paddy field.",
+                "frequency": "Test at each irrigation cycle"
+            }
+        ]
+    },
+    "rice_hispa": {
+        "name": "Rice Hispa (Leaf-Feeding Beetle)",
+        "cultural": [
+            {
+                "action": "Ankharein Leaf Shield",
+                "emoji": "🍃",
+                "theme": "mint_green",
+                "summary": "A traditional leafy remedy farmers swear by to keep hungry hispa beetles off rice leaves!",
+                "how": "Apply ankharein leaves to control rice hispa, following local farmer practice in Kangra and Hamirpur.",
+                "frequency": "As needed"
+            }
+        ],
+        "biological": []
+    },
+    "post_harvest_storage": {
+        "name": "Post-Harvest Grain Storage Protection",
+        "cultural": [
+            {
+                "action": "Perru Bamboo Basket Home",
+                "emoji": "🧺",
+                "theme": "peach",
+                "summary": "Store harvested grain in a big spindle-shaped bamboo basket—a cozy, breathable, pest-proof home!",
+                "how": "Store harvested paddy and finger millet grain in large spindle-shaped bamboo baskets, locally called 'Perru'.",
+                "frequency": "At harvest/storage time"
+            }
+        ],
+        "biological": []
+    }
+}

@@ -1,0 +1,159 @@
+{
+    "late_blight": {
+        "name": "Late Blight",
+        "cultural": [
+            {
+                "action": "Ask a Local Elder",
+                "emoji": "🗣️",
+                "theme": "lavender",
+                "summary": "No specific local HP practice is documented yet for late blight.",
+                "how": "Consult local elders or use the classical Vrikshayurveda treatments below."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Sweet Root Licorice Bath",
+                "emoji": "🌿",
+                "theme": "soft_pink",
+                "summary": "Give stressed potato plants a soothing licorice-honey drink to help them fight off cold wet rot!",
+                "how": "Prepare a decoction of Yashtimadhu (licorice root) and Madhuca, mixed with milk and honey. Irrigate the affected plant.",
+                "frequency": "Test every 10-14 days"
+            },
+            {
+                "action": "Honey-Ghee Smoke Hug",
+                "emoji": "🍯",
+                "theme": "peach",
+                "summary": "Wrap the sick plant in a gentle honey-ghee smoke to calm the stress before it spreads!",
+                "how": "Fumigate the affected area with honey and ghee.",
+                "frequency": "As needed"
+            }
+        ]
+    },
+    "early_blight": {
+        "name": "Early Blight",
+        "cultural": [
+            {
+                "action": "Ash Dust Root Cuddle",
+                "emoji": "🪵",
+                "theme": "soft_yellow",
+                "summary": "Himachal farmers have been dusting ash around plants for generations—simple, cheap, and it works!",
+                "how": "Dust wood ash around the base of the plant.",
+                "frequency": "Refresh as needed"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Cow Dung Guardian Mix",
+                "emoji": "🐄",
+                "theme": "mint_green",
+                "summary": "A traditional cow-dung mix that local farmers trust as a natural plant protector!",
+                "how": "Mix cow dung into a natural pesticide preparation and apply to the plant/soil.",
+                "frequency": "As needed"
+            },
+            {
+                "action": "Sweet Root Licorice Bath",
+                "emoji": "🌿",
+                "theme": "soft_pink",
+                "summary": "The same soothing licorice-honey drink also helps calm yellowing, sun-stressed leaves!",
+                "how": "Prepare a decoction of Yashtimadhu (licorice root) and Madhuca, mixed with milk and honey. Irrigate.",
+                "frequency": "As needed"
+            }
+        ]
+    },
+    "black_scurf_common_scab": {
+        "name": "Black Scurf & Common Scab",
+        "cultural": [
+            {
+                "action": "IKS Research Gap Identified",
+                "emoji": "🕵️",
+                "theme": "soft_pink",
+                "summary": "Vrikshayurveda centers on trees and leaves; it doesn't have a clear category for tuber-skin conditions.",
+                "how": "No HP-specific documented local practice found. Flagged for farmer interviews."
+            }
+        ],
+        "biological": []
+    },
+    "bacterial_wilt": {
+        "name": "Bacterial Wilt",
+        "cultural": [
+            {
+                "action": "IKS Research Gap Identified",
+                "emoji": "🕵️",
+                "theme": "lavender",
+                "summary": "No specific local HP practice is documented yet for bacterial wilt.",
+                "how": "Consult local elders or use the classical Vrikshayurveda treatments below."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Sweet Root Licorice Bath",
+                "emoji": "🌿",
+                "theme": "soft_pink",
+                "summary": "The same calming licorice-honey drink used for stressed, sun-struggling plants!",
+                "how": "Prepare a decoction of Yashtimadhu (licorice root) and Madhuca, mixed with milk and honey. Irrigate.",
+                "frequency": "As needed"
+            }
+        ]
+    },
+    "root_knot_nematode": {
+        "name": "Root-Knot Nematode",
+        "cultural": [
+            {
+                "action": "Neem Cake Soil Snuggle",
+                "emoji": "🪨",
+                "theme": "mint_green",
+                "summary": "Tuck neem cake into the soil to give roots a protective, worm-unfriendly bed!",
+                "how": "Mix neem cake into the soil before planting.",
+                "frequency": "Once at planting, refresh every 2-3 months"
+            },
+            {
+                "action": "Marigold Buddy Border",
+                "emoji": "🌼",
+                "theme": "soft_yellow",
+                "summary": "Plant cheerful marigolds nearby—their roots naturally shoo pesky nematodes away!",
+                "how": "Plant marigold near or before the potato crop.",
+                "frequency": "At or before planting time"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Seven-Day Cool Splash",
+                "emoji": "🧊",
+                "theme": "sky_blue",
+                "summary": "A week of cool water baths helps calm irritated, wiggly-worm-troubled roots!",
+                "how": "Irrigate the plant with cold water for seven consecutive days.",
+                "frequency": "7 consecutive days"
+            },
+            {
+                "action": "Milk & Dung Root Paste",
+                "emoji": "🐄",
+                "theme": "butter_yellow",
+                "summary": "A gentle homemade paste tucked right at the roots to soothe worm troubles!",
+                "how": "Apply a paste of cow dung, water, and milk to the affected root area.",
+                "frequency": "As needed"
+            },
+            {
+                "action": "Mustard-Spice Root Rub",
+                "emoji": "🌶️",
+                "theme": "peach",
+                "summary": "A zesty herbal paste that gives pesky root worms a reason to move along!",
+                "how": "Combine white mustard, Vacha (sweet flag), and Kushta into a paste. Apply directly to the affected part.",
+                "frequency": "As needed"
+            }
+        ]
+    },
+    "potato_tuber_moth": {
+        "name": "Potato Tuber Moth (Storage Pest)",
+        "cultural": [
+            {
+                "action": "Leafy Storage Shield",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "Tuck fragrant local leaves in with stored potatoes to keep hungry moths away all season!",
+                "how": "Layer leaves of Lantana, Eupatorium, and Eucalyptus in with or around stored potato tubers.",
+                "frequency": "At storage time, refresh as leaves dry out"
+            }
+        ],
+        "biological": []
+    }
+}

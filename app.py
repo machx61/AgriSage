@@ -295,9 +295,127 @@ if not images_to_process:
         if cam_file:
             images_to_process.append(cam_file)
 
-with st.expander("🌾 Add Field Notes (Optional)", expanded=False):
-    elevation_zone = st.selectbox("Elevation Zone", ["Mid Hill (900–1500m)", "Low Hill (<900m)", "High Hill (1500–3000m)"])
-    weather_note = st.text_input("Recent Weather", "Recent rainfall / high humidity")
+with st.expander("🌾 Add Field Notes", expanded=False):
+    import requests
+    if st.button("📍 Auto-Detect Location & Weather"):
+        lat, lon = None, None
+        try:
+            # Try browser GPS first (works on Android/iOS)
+            loc = get_geolocation()
+            if loc and loc.get("coords"):
+                lat = loc["coords"]["latitude"]
+                lon = loc["coords"]["longitude"]
+                st.success(f"📡 GPS location detected!")
+        except Exception:
+            pass
+        
+        # Fallback to IP-based detection
+        if lat is None:
+            try:
+                ip_info = requests.get("http://ip-api.com/json/", timeout=5).json()
+                if ip_info.get("status") == "success":
+                    lat, lon = ip_info["lat"], ip_info["lon"]
+                    st.info("📡 Approximate location via network (allow GPS in browser for better accuracy)")
+            except Exception:
+                pass
+        
+        if lat is not None and lon is not None:
+            try:
+                r = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m,relative_humidity_2m&elevation=nan", timeout=5).json()
+                elevation = r.get("elevation", 0)
+                current = r.get("current", {})
+                if elevation < 900:
+                    st.session_state.auto_elev = "Low Hill (<900m)"
+                elif elevation <= 1500:
+                    st.session_state.auto_elev = "Mid Hill (900–1500m)"
+                else:
+                    st.session_state.auto_elev = "High Hill (1500–3000m)"
+                st.session_state.auto_weather = f"{current.get('temperature_2m', '')}°C, {current.get('relative_humidity_2m', '')}% humidity"
+            except Exception as e:
+                st.error(f"Weather fetch failed: {e}")
+        else:
+            st.error("Could not detect location. Please allow location access in your browser settings and try again.")
+
+    elev_opts = ["Mid Hill (900–1500m)", "Low Hill (<900m)", "High Hill (1500–3000m)"]
+    elev_index = None
+    if 'auto_elev' in st.session_state and st.session_state.auto_elev in elev_opts:
+        elev_index = elev_opts.index(st.session_state.auto_elev)
+
+    elevation_zone = st.selectbox("Elevation Zone", elev_opts, index=elev_index, placeholder="Select Elevation Zone...")
+    weather_note = st.text_input("Recent Weather", placeholder="e.g. Recent rainfall / high humidity", value=st.session_state.get('auto_weather', ""))
+    fertilizer_usage = st.selectbox("Fertilizer Usage", ["Cow Dung/Compost (Organic)", "Urea/Chemical (High Nitrogen)", "Mixed", "None"], index=None, placeholder="Select Fertilizer Usage...")
+    fertilizer_note = st.text_input("Fertilizer Notes", placeholder="Any specific local inputs used?", value="")
+    watering_pattern = st.selectbox("Field Conditions", ["Rainfed only", "Flat ground (holds water)", "Sloped/Well-drained", "Ridges/Raised beds"], index=None, placeholder="Select Field Conditions...")
+    watering_note = st.text_input("Additional Notes", placeholder="Additional field notes", value="")
+
+
+def create_pdf(disease_name, treatment_info):
+    try:
+        from fpdf import FPDF
+    except ImportError:
+        return None
+
+    def safe(text):
+        """Strip non-latin characters to avoid FPDF rendering errors."""
+        if not text:
+            return ""
+        return text.encode('latin-1', 'replace').decode('latin-1')
+
+    pdf = FPDF()
+    pdf.add_page()
+
+    # Title
+    pdf.set_font("Helvetica", "B", 18)
+    pdf.cell(0, 10, safe(f"AgriSage: {disease_name}"), new_x="LMARGIN", new_y="NEXT")
+    pdf.set_font("Helvetica", "", 10)
+    pdf.cell(0, 6, safe("IKS-based Treatment Plan (Himachal Pradesh)"), new_x="LMARGIN", new_y="NEXT")
+    pdf.ln(4)
+    pdf.set_draw_color(180, 180, 180)
+    pdf.line(10, pdf.get_y(), 200, pdf.get_y())
+    pdf.ln(4)
+
+    category_labels = {
+        "botanical": "Botanical Solutions",
+        "biological": "Biological Solutions",
+        "cultural": "Cultural Practices & Garden Care",
+        "local_practice": "Local Practices",
+        "iks": "Indigenous Knowledge (IKS)",
+    }
+
+    for cat, label in category_labels.items():
+        items = treatment_info.get(cat, [])
+        valid_items = [i for i in items if i.get('status') != 'gap_identified' and i.get('action') != 'IKS Research Gap Identified']
+        if not valid_items:
+            continue
+
+        pdf.ln(3)
+        pdf.set_font("Helvetica", "B", 13)
+        pdf.set_fill_color(235, 245, 235)
+        pdf.cell(0, 8, safe(f"  {label}"), new_x="LMARGIN", new_y="NEXT", fill=True)
+        pdf.ln(2)
+
+        for item in valid_items:
+            action  = safe(item.get("action", ""))
+            summary = safe(item.get("summary", ""))
+            how     = safe(item.get("how", ""))
+            freq    = safe(item.get("frequency", ""))
+
+            pdf.set_font("Helvetica", "B", 11)
+            pdf.cell(0, 7, f"  {action}", new_x="LMARGIN", new_y="NEXT")
+
+            pdf.set_font("Helvetica", "", 10)
+            if summary:
+                pdf.set_x(14)
+                pdf.multi_cell(w=186, h=5, text=f"  {summary}", new_x="LMARGIN", new_y="NEXT")
+            if how:
+                pdf.set_x(14)
+                pdf.multi_cell(w=186, h=5, text=f"  How: {how}", new_x="LMARGIN", new_y="NEXT")
+            if freq:
+                pdf.set_font("Helvetica", "I", 9)
+                pdf.cell(0, 5, f"    Frequency: {freq}", new_x="LMARGIN", new_y="NEXT")
+            pdf.ln(2)
+
+    return pdf.output()
 
 def generate_ics_file(treatment_name, days_until_next_spray):
     """Generate a standards-compliant calendar event for a recurring treatment."""
@@ -385,146 +503,158 @@ if analyze_requested:
     else:
         st.error("No image could be analyzed. Please upload a valid leaf photo and try again.")
 
-analysis = st.session_state.get("last_analysis")
-if analysis and analysis["upload_signature"] == upload_signature:
-    final_raw_class = analysis["raw_class"]
-    final_confidence = analysis["confidence"]
-    display_name = DISEASE_DISPLAY_MAP.get(final_raw_class, final_raw_class.replace("_", " ").title())
-    treatment_info = get_treatment_data(final_raw_class)
-    st.markdown("---")
-    st.markdown(f"### 🔬 Diagnosis: **{display_name}**")
-    st.progress(
-        max(0, min(100, round(final_confidence))),
-        text=f"Consensus AI Confidence: {final_confidence:.1f}%",
-    )
 
-    st.markdown("#### ✨ Botanical & Biological Solutions")
-    for item in treatment_info.get("biological", []):
-        if "action" not in item:
-            continue
-        theme = THEME_COLORS.get(item.get("theme", "mint_green"), THEME_COLORS["mint_green"])
-        freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
+def reorder_and_highlight_treatments(treatments_list, fertilizer, watering):
+    if not treatments_list: return []
+    boosted = []
+    regular = []
+    for t in treatments_list:
+        action = t.get('action', '')
+        highlight = False
+        warning = ''
         
-        st.markdown(f"""
-        <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
-            <div class="card-header">
-                <span class="card-icon">{item.get('emoji', '🌿')}</span>
-                {item.get('action', 'Treatment')}
-            </div>
-            <div class="card-summary">{item.get('summary', '')}</div>
-            <div class="card-instructions">
-                <b>How to Apply:</b> {item.get('how', '')}
-                <br>{freq_html}
-            </div>
-        </div>
+            # Nitrogen logic
+        if fertilizer == 'Urea/Chemical (High Nitrogen)' and 'Nitrogen' in action:
+            highlight = True
+            warning = '🚨 **High Nitrogen Alert:** Your current fertilizer habit may worsen this disease. '
+            
+        # Watering logic
+        if watering == 'Flat ground (holds water)' and 'Ridge' in action:
+            highlight = True
+            warning = '🚨 **Drainage Alert:** Flat ground retains moisture. Consider ridges. '
+            
+        if highlight:
+            t['_highlight_warning'] = warning
+            boosted.append(t)
+        else:
+            t['_highlight_warning'] = ''
+            regular.append(t)
+            
+    return boosted + regular
+
+def render_treatment_section(title, items, default_theme, fertilizer, watering):
+    if not items:
+        return
         
-        """, unsafe_allow_html=True)
+    st.markdown(f"#### {title}")
+    ordered_items = reorder_and_highlight_treatments(items, fertilizer, watering)
+    
+    for item in ordered_items:
+        theme_name = item.get('theme', default_theme)
+        theme = THEME_COLORS.get(theme_name, THEME_COLORS[default_theme])
+        freq_html = f'''<div class="freq-badge">⏱️ {item['frequency']}</div>''' if 'frequency' in item else ''
+        warning_html = f"<div style='color: #B91C1C; margin-bottom: 8px; font-weight: 600;'>{item['_highlight_warning']}</div>" if item.get('_highlight_warning') else ''
         
-        if "frequency" in item:
-            reminder_days = reminder_days_from_frequency(item["frequency"])
+        details_html = ''
+        if 'details' in item:
+            d = item['details']
+            details_html = "<details style='margin-top: 12px; cursor: pointer; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px;'>"
+            details_html += "<summary style='font-weight: 600; outline: none;'>View Details 📖</summary>"
+            details_html += f"<div style='margin-top: 8px;'><b>What it does:</b> {d.get('what_it_does', '')}</div>"
+            
+            if d.get('materials_needed'):
+                details_html += "<div style='margin-top: 8px;'><b>Materials Needed:</b><ul>"
+                for m in d['materials_needed']: details_html += f"<li>{m}</li>"
+                details_html += "</ul></div>"
+                
+            if d.get('preparation_steps'):
+                details_html += "<div style='margin-top: 8px;'><b>Preparation:</b><ol>"
+                for step in d['preparation_steps']: details_html += f"<li>{step}</li>"
+                details_html += "</ol></div>"
+                
+            if d.get('application_steps'):
+                details_html += "<div style='margin-top: 8px;'><b>Application:</b><ol>"
+                for step in d['application_steps']: details_html += f"<li>{step}</li>"
+                details_html += "</ol></div>"
+                
+            if d.get('time_commitment'):
+                details_html += f"<div style='margin-top: 8px;'><b>Time Commitment:</b> {d['time_commitment']}</div>"
+                
+            if d.get('expected_results_timeline'):
+                details_html += f"<div style='margin-top: 8px;'><b>Expected Results:</b> {d['expected_results_timeline']}</div>"
+                
+            if d.get('safety_notes'):
+                details_html += "<div style='margin-top: 8px; color: #B91C1C;'><b>Safety Notes:</b><ul>"
+                for note in d['safety_notes']: details_html += f"<li>{note}</li>"
+                details_html += "</ul></div>"
+                
+            details_html += "</details>"
+            
+        html_content = f"""
+<div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
+<div class="card-header">
+<span class="card-icon">{item.get('emoji', '🌿')}</span>
+{item.get('action', 'Treatment')}
+</div>
+<div class="card-summary">{warning_html}{item.get('summary', '')}</div>
+<div class="card-instructions">
+<b>How to Apply:</b> {item.get('how', '')}
+<br>{freq_html}
+{details_html}
+</div>
+</div>
+"""
+        st.markdown(html_content, unsafe_allow_html=True)
+        
+        if 'frequency' in item:
+            reminder_days = reminder_days_from_frequency(item['frequency'])
             if reminder_days is not None:
+                # Add uuid to prevent duplicate keys
+                import uuid
                 ics_data = generate_ics_file(item['action'], reminder_days)
                 st.download_button(
                     label=f"📅 Add {item['action']} Reminder to Calendar",
                     data=ics_data,
                     file_name=f"{item['action'].replace(' ', '_')}_reminder.ics",
                     mime="text/calendar",
-                    use_container_width=True
+                    use_container_width=True,
+                    key=f"btn_{uuid.uuid4().hex[:8]}"
                 )
 
-    # Render Cultural Treatments
-    st.markdown("#### 🌾 Cultural Practices & Garden Care")
-    for item in treatment_info.get("cultural", []):
-        if "action" not in item:
-            continue
-        theme = THEME_COLORS.get(item.get("theme", "soft_yellow"), THEME_COLORS["soft_yellow"])
-        freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
-        
-        st.markdown(f"""
-        <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
-            <div class="card-header">
-                <span class="card-icon">{item.get('emoji', '🌱')}</span>
-                {item.get('action', 'Action')}
-            </div>
-            <div class="card-summary">{item.get('summary', '')}</div>
-            <div class="card-instructions">
-                <b>Action Plan:</b> {item.get('how', '')}
-                <br>{freq_html}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+analysis = st.session_state.get("last_analysis")
+if analysis and (analysis.get("upload_signature") == upload_signature or analysis.get("from_history")):
+    final_raw_class = analysis["raw_class"]
+    final_confidence = analysis["confidence"]
+    display_name = DISEASE_DISPLAY_MAP.get(final_raw_class, final_raw_class.replace("_", " ").title())
+    treatment_info = get_treatment_data(final_raw_class)
+    st.markdown("---")
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.markdown(f"### 🔬 Diagnosis: **{display_name}**")
+        st.progress(
+            max(0, min(100, round(final_confidence))),
+            text=f"Consensus AI Confidence: {final_confidence:.1f}%",
+        )
+    with col2:
+        pdf_bytes = create_pdf(display_name, treatment_info)
+        if pdf_bytes:
+            st.download_button("📄 Download PDF", data=bytes(pdf_bytes), file_name=f"{display_name.replace(' ', '_')}.pdf", mime="application/pdf", use_container_width=True)
 
-    # Render Botanical Treatments
-    botanical_items = [i for i in treatment_info.get("botanical", []) if "action" in i]
-    if botanical_items:
-        st.markdown("#### 🌿 Botanical & Plant Extract Solutions")
-        for item in botanical_items:
-            theme = THEME_COLORS.get(item.get("theme", "pastel_green"), THEME_COLORS["pastel_green"])
-            freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
+    fert = fertilizer_usage if 'fertilizer_usage' in locals() else ''
+    water = watering_pattern if 'watering_pattern' in locals() else ''
+    
+    render_treatment_section("🌿 Botanical Solutions", treatment_info.get("botanical", []), "pastel_green", fert, water)
+    render_treatment_section("✨ Biological Solutions", treatment_info.get("biological", []), "mint_green", fert, water)
+    render_treatment_section("🌾 Cultural Practices & Garden Care", treatment_info.get("cultural", []), "soft_yellow", fert, water)
+    render_treatment_section("👩‍🌾 Local Practices", treatment_info.get("local_practice", []), "peach", fert, water)
+    render_treatment_section("📜 Indigenous Knowledge (IKS)", treatment_info.get("iks", []), "lavender", fert, water)
 
-            st.markdown(f"""
-            <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
-                <div class="card-header">
-                    <span class="card-icon">{item.get('emoji', '🌿')}</span>
-                    {item.get('action', 'Treatment')}
-                </div>
-                <div class="card-summary">{item.get('summary', '')}</div>
-                <div class="card-instructions">
-                    <b>How to Apply:</b> {item.get('how', '')}
-                    <br>{freq_html}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-    # Render Local Practices
-    local_items = [i for i in treatment_info.get("local_practice", []) if "action" in i]
-    if local_items:
-        st.markdown("#### 🏔️ Local Himachal Pradesh Practices")
-        for item in local_items:
-            theme = THEME_COLORS.get(item.get("theme", "peach"), THEME_COLORS["peach"])
-            freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
-
-            st.markdown(f"""
-            <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
-                <div class="card-header">
-                    <span class="card-icon">{item.get('emoji', '🏔️')}</span>
-                    {item.get('action', 'Local Practice')}
-                </div>
-                <div class="card-summary">{item.get('summary', '')}</div>
-                <div class="card-instructions">
-                    <b>How to Apply:</b> {item.get('how', '')}
-                    <br>{freq_html}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-    # Render IKS (Indigenous Knowledge Systems) Treatments
-    iks_items = [i for i in treatment_info.get("iks", []) if "action" in i]
-    if iks_items:
-        st.markdown("#### 📜 Indigenous Knowledge Systems (Vrikshayurveda)")
-        for item in iks_items:
-            theme = THEME_COLORS.get(item.get("theme", "lavender"), THEME_COLORS["lavender"])
-            freq_html = f"""<div class="freq-badge">⏱️ {item['frequency']}</div>""" if "frequency" in item else ""
-
-            st.markdown(f"""
-            <div class="treatment-card" style="background-color: {theme['bg']}; border: 1px solid {theme['border']}; color: {theme['text']};">
-                <div class="card-header">
-                    <span class="card-icon">{item.get('emoji', '📜')}</span>
-                    {item.get('action', 'Traditional Remedy')}
-                </div>
-                <div class="card-summary">{item.get('summary', '')}</div>
-                <div class="card-instructions">
-                    <b>How to Apply:</b> {item.get('how', '')}
-                    <br>{freq_html}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+# --- Display Persistent History ---
 st.markdown("---")
 with st.expander("📂 View Past Scans (Saved)"):
     past_scans = get_past_scans(st.session_state.history_session_id)
     if not past_scans:
         st.write("No previous scans found in this browser session.")
     else:
-        for scan in past_scans:
+        reverse_map = {v: k for k, v in DISEASE_DISPLAY_MAP.items()}
+        for idx, scan in enumerate(past_scans):
             date, disease, confidence = scan
-            st.markdown(f"**{date}** — {disease} *(Conf: {confidence:.1f}%)*")
+            if st.button(f"🗓️ {date} — {disease} *(Conf: {confidence:.1f}%)*", key=f"hist_{idx}"):
+                raw_class = reverse_map.get(disease, disease.lower().replace(" ", "_"))
+                st.session_state.last_analysis = {
+                    "upload_signature": None,
+                    "raw_class": raw_class,
+                    "confidence": confidence,
+                    "from_history": True
+                }
+                st.rerun()

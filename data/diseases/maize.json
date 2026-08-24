@@ -1,0 +1,984 @@
+{
+    "banded_leaf_and_sheath_blight": {
+        "name": "Banded Leaf and Sheath Blight (BLSB)",
+        "cultural": [
+            {
+                "action": "Early Bird Sowing",
+                "emoji": "🌱",
+                "theme": "peach",
+                "summary": "Plant a little earlier in the season to dodge the disease's favorite wet-weather window!",
+                "how": "Sow around 30th May rather than late June.",
+                "frequency": "Once, at sowing",
+                "details": {
+                    "what_it_does": "Reduces disease pressure by getting the crop through its most vulnerable early growth stage before peak monsoon humidity arrives.",
+                    "materials_needed": [
+                        "No extra materials — this is a timing change"
+                    ],
+                    "preparation_steps": [],
+                    "application_steps": [
+                        "Check your local agricultural zone's recommended sowing window for maize.",
+                        "Within that window, choose the earliest safe date — trials found disease severity lowest around 30th May and highest around 30th June.",
+                        "Prepare your field and seed so you're ready to sow at this earlier date.",
+                        "Sow as normal once the date arrives."
+                    ],
+                    "time_commitment": "No extra time beyond normal sowing",
+                    "frequency_detail": "Once per season, at the start",
+                    "expected_results_timeline": "Preventive measure — reduced BLSB symptoms typically visible from July onward if disease pressure is present, compared to later-sown crop.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Gentle Nitrogen Meal",
+                "emoji": "⚖️",
+                "theme": "soft_yellow",
+                "summary": "Skip the extra-large nitrogen serving — a lighter, balanced meal keeps disease away!",
+                "how": "Avoid high nitrogen doses; cap at the recommended rate for your zone.",
+                "frequency": "Split across top-dressing stages",
+                "details": {
+                    "what_it_does": "Lowers plant susceptibility — high nitrogen (150 kg/ha) was directly linked to increased disease severity in field trials.",
+                    "materials_needed": [
+                        "Your normal nitrogen fertilizer (e.g. urea)",
+                        "A way to measure quantity"
+                    ],
+                    "preparation_steps": [
+                        "Find your zone's recommended nitrogen rate for maize (ask your local KVK if unsure)."
+                    ],
+                    "application_steps": [
+                        "Do not exceed the recommended rate — specifically avoid pushing toward 150 kg/ha.",
+                        "Split the total nitrogen dose across 2-3 top-dressing applications rather than one large dose.",
+                        "Apply at recommended growth stages: basal/at sowing, knee-high stage, and tasseling."
+                    ],
+                    "time_commitment": "30-45 minutes per application for a small plot",
+                    "frequency_detail": "2-3 split applications across the growing season",
+                    "expected_results_timeline": "Ongoing effect through the season; disease severity difference visible by mid-to-late vegetative stage.",
+                    "safety_notes": [
+                        "Avoid direct skin contact with concentrated urea",
+                        "Wash hands after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Ridge-Top Home",
+                "emoji": "⛰️",
+                "theme": "butter_yellow",
+                "summary": "Give your maize a raised ridge to call home — it grows happier and healthier there!",
+                "how": "Sow maize on ridges rather than flat ground.",
+                "frequency": "Once, at field preparation",
+                "details": {
+                    "what_it_does": "Improves drainage and airflow around the plant base, reducing the humid microclimate the fungus needs.",
+                    "materials_needed": [
+                        "Hoe, small plough, or ridger tool"
+                    ],
+                    "preparation_steps": [
+                        "Before sowing, form ridges across the field roughly 15-20cm high, adjusted for your soil type and rainfall.",
+                        "Space ridges according to your normal row spacing."
+                    ],
+                    "application_steps": [
+                        "Sow seeds along the top of the ridges rather than on flat ground.",
+                        "Maintain the ridges through the season — re-firm them if heavy rain washes them down."
+                    ],
+                    "time_commitment": "Half a day to a full day for ridge formation on a small-to-medium plot",
+                    "frequency_detail": "Once, at field preparation, with occasional maintenance after heavy rain",
+                    "expected_results_timeline": "Drainage benefit is immediate; disease severity difference becomes visible as the season progresses.",
+                    "safety_notes": [
+                        "Normal caution with hand tools"
+                    ]
+                }
+            },
+            {
+                "action": "Room-to-Breathe Spacing",
+                "emoji": "📏",
+                "theme": "sky_blue",
+                "summary": "Give each plant a little extra elbow room so disease can't sneak between them!",
+                "how": "Use wider spacing rather than tight spacing (avoid 60cm × 15cm).",
+                "frequency": "Once, at sowing",
+                "details": {
+                    "what_it_does": "Reduces humidity buildup between plants by improving airflow. Closer spacing (60cm × 15cm) was found to increase disease severity and reduce yield.",
+                    "materials_needed": [
+                        "Measuring stick or rope marked at target spacing"
+                    ],
+                    "preparation_steps": [
+                        "Determine your variety's recommended spacing range (seed packet or local extension office).",
+                        "Choose the wider end of that range."
+                    ],
+                    "application_steps": [
+                        "Mark out rows and planting points using your measuring tool before sowing.",
+                        "Sow one seed per marked point at the correct depth for your variety."
+                    ],
+                    "time_commitment": "Adds roughly 10-20% more time to normal sowing, done once",
+                    "frequency_detail": "Once, at sowing",
+                    "expected_results_timeline": "Airflow benefit immediate; disease severity difference visible as season progresses.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Weed Detective Patrol",
+                "emoji": "🔍",
+                "theme": "lavender",
+                "summary": "Two sneaky weeds are secretly hosting the disease — hunt them down first!",
+                "how": "Prioritize removing barnyard grass and nutgrass specifically.",
+                "frequency": "Ongoing, every 2-3 weeks",
+                "details": {
+                    "what_it_does": "Removes the two specific weed species found to harbor and spread the BLSB pathogen.",
+                    "materials_needed": [
+                        "Hand tools (khurpi/hoe) or normal weeding method"
+                    ],
+                    "preparation_steps": [
+                        "Learn to identify Echinochloa colonum (barnyard grass) and Cyperus rotundus (nutgrass) — ask your local KVK for a photo reference if unsure."
+                    ],
+                    "application_steps": [
+                        "During normal weeding rounds, prioritize removing these two species completely, including root systems where possible (especially nutgrass tubers).",
+                        "Remove and dispose of pulled weeds away from the field edge, not piled near the crop."
+                    ],
+                    "time_commitment": "Modest extra time added to normal weeding rounds",
+                    "frequency_detail": "Ongoing throughout the season, roughly every 2-3 weeks",
+                    "expected_results_timeline": "Ongoing preventive effect; reduces pathogen reservoir over the course of the season and future seasons.",
+                    "safety_notes": [
+                        "Normal weeding precautions"
+                    ]
+                }
+            },
+            {
+                "action": "Lower Leaf Trim",
+                "emoji": "✂️",
+                "theme": "mint_green",
+                "summary": "Snip away the lowest leaves during rainy season to keep the humid disease hideout away!",
+                "how": "Pluck the lower leaves and sheaths from each plant.",
+                "frequency": "Every 2-3 weeks during rainy season",
+                "details": {
+                    "what_it_does": "Physically removes the lowest leaves/sheaths where humidity concentrates near the soil, directly reducing the fungus's favored microclimate.",
+                    "materials_needed": [
+                        "Hands, or a small knife/blade for tougher sheaths"
+                    ],
+                    "preparation_steps": [
+                        "Wait until plants are well-established, roughly 3-4 weeks after emergence — check plant vigor before starting."
+                    ],
+                    "application_steps": [
+                        "During the rainy season, identify the lowest 1-2 leaves and their sheaths on each plant.",
+                        "Gently pull or cut these lower leaves and sheaths away from the stalk, close to the point of attachment.",
+                        "Dispose of removed material away from the plant base.",
+                        "Repeat periodically as new lower leaves age into the 'lowest' position."
+                    ],
+                    "time_commitment": "A few seconds per plant; 1-3 hours total for a small-to-medium field per pass",
+                    "frequency_detail": "Every 2-3 weeks through the rainy season",
+                    "expected_results_timeline": "Reduces humid microclimate immediately; disease severity difference builds over the rainy season.",
+                    "safety_notes": [
+                        "Be gentle to avoid damaging the main stalk or upper healthy leaves"
+                    ]
+                }
+            }
+        ],
+        "biological": [
+            {
+                "action": "MDA-1 Fungus Fighter",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "A specially selected friendly fungus strain that crushes disease growth in the lab!",
+                "how": "Apply Trichoderma sp. isolate MDA-1 as seed treatment and/or soil application.",
+                "frequency": "Once, at sowing",
+                "details": {
+                    "what_it_does": "Introduces a highly effective antagonistic fungus (87.1% mycelial inhibition of the pathogen in lab trials).",
+                    "materials_needed": [
+                        "Trichoderma sp. (MDA-1 isolate or general Trichoderma product)",
+                        "Water",
+                        "Mixing container"
+                    ],
+                    "preparation_steps": [
+                        "Purchase or obtain a Trichoderma-based product from a local agri-input store or KVK.",
+                        "Follow the product's label rate for seed treatment or soil application."
+                    ],
+                    "application_steps": [
+                        "Seed method: mix the product with seed in a container, ensuring even coating.",
+                        "Allow treated seed to air-dry briefly in shade before sowing.",
+                        "Sow treated seed as normal.",
+                        "Soil method (alternative/additional): mix product into water or compost per label rate and apply to soil at the base of the planting row."
+                    ],
+                    "time_commitment": "15-30 minutes for seed treatment on a small-to-medium batch",
+                    "frequency_detail": "Once, at sowing",
+                    "expected_results_timeline": "Establishes in root zone over 1-2 weeks; protective effect builds through vegetative stage.",
+                    "safety_notes": [
+                        "Naturally-occurring soil fungus, low risk",
+                        "Store away from direct sunlight and extreme heat"
+                    ]
+                }
+            },
+            {
+                "action": "Twenty-Gram Seed Bath",
+                "emoji": "🛁",
+                "theme": "pastel_green",
+                "summary": "Coat your seeds in a protective bio-bath before they even go in the ground!",
+                "how": "Treat seed with Trichoderma viridi at 20g per kg of seed.",
+                "frequency": "Once, at sowing",
+                "details": {
+                    "what_it_does": "Introduces a confirmed effective bio-agent at a specific research-validated dosage.",
+                    "materials_needed": [
+                        "Trichoderma viridi powder",
+                        "Kitchen/farm scale if available",
+                        "Mixing container or bag",
+                        "Seed"
+                    ],
+                    "preparation_steps": [
+                        "Weigh out your seed batch.",
+                        "Calculate 20 grams of Trichoderma viridi powder per kilogram of seed."
+                    ],
+                    "application_steps": [
+                        "Place seed and measured powder in a container or bag.",
+                        "Mix thoroughly by shaking or hand-tossing until seed is evenly coated.",
+                        "Sow immediately or within the same day for best results."
+                    ],
+                    "time_commitment": "15-20 minutes",
+                    "frequency_detail": "Once, at sowing",
+                    "expected_results_timeline": "Establishment over 1-2 weeks; protective effect through vegetative stage.",
+                    "safety_notes": [
+                        "Low-risk natural product",
+                        "Wash hands after handling powder"
+                    ]
+                }
+            },
+            {
+                "action": "Dream Team Soil Duo",
+                "emoji": "🤝",
+                "theme": "soft_blue",
+                "summary": "Two friendly microbes teaming up in the soil for extra-strong protection!",
+                "how": "Apply Trichoderma asperellum + Bacillus subtilis, 200g/m² each, to soil before sowing.",
+                "frequency": "Once, before sowing",
+                "details": {
+                    "what_it_does": "Combined bio-agents shown in a two-season trial to reduce BLSB incidence and improve yield more than either alone.",
+                    "materials_needed": [
+                        "Trichoderma asperellum product",
+                        "Bacillus subtilis product",
+                        "Water",
+                        "Measuring container"
+                    ],
+                    "preparation_steps": [
+                        "Obtain both bio-agent products from your local KVK or agri-input store.",
+                        "Measure each at 200 grams per square metre of planting area, scaled to your bed's actual area."
+                    ],
+                    "application_steps": [
+                        "Mix into the soil surface at the planting row before sowing.",
+                        "Work in lightly with a hand tool.",
+                        "Sow seed as normal after application."
+                    ],
+                    "time_commitment": "30-45 minutes for a small-to-medium plot",
+                    "frequency_detail": "Once, before sowing",
+                    "expected_results_timeline": "Effect builds gradually over the season; season-long protection rather than a quick fix.",
+                    "safety_notes": [
+                        "Low-risk natural products",
+                        "Wash hands after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Immune-Boost Bacteria Mist",
+                "emoji": "🛡️",
+                "theme": "soft_green",
+                "summary": "A friendly bacteria spray that trains your plant's own immune system to fight back!",
+                "how": "Apply Pseudomonas strains (AS19, AS21) as foliar spray.",
+                "frequency": "Every 10-14 days from early vegetative stage",
+                "details": {
+                    "what_it_does": "Triggers systemic immune response in the plant and has direct antifungal activity — pot trials showed 25-38% reduction in disease incidence.",
+                    "materials_needed": [
+                        "Pseudomonas-based bio-agent product",
+                        "Water",
+                        "Sprayer (hand-pump or backpack)"
+                    ],
+                    "preparation_steps": [
+                        "Obtain a Pseudomonas fluorescens-based product from a local agri-input source.",
+                        "Mix per the product's label rate in a sprayer with clean water."
+                    ],
+                    "application_steps": [
+                        "Spray evenly over foliage, covering upper and lower leaf surfaces.",
+                        "Spray in early morning or evening to reduce evaporation and improve absorption."
+                    ],
+                    "time_commitment": "20-30 minutes for a small-to-medium plot per session",
+                    "frequency_detail": "Starting at early vegetative stage, repeat every 10-14 days",
+                    "expected_results_timeline": "Systemic resistance builds over 1-2 weeks; ongoing protection maintained through repeated spraying.",
+                    "safety_notes": [
+                        "Low-risk biological product",
+                        "Avoid inhaling spray mist directly",
+                        "Wash hands/exposed skin after spraying"
+                    ]
+                }
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Eucalyptus Power Splash",
+                "emoji": "🌿",
+                "theme": "sky_blue",
+                "summary": "A strong eucalyptus leaf brew that knocked out disease growth by over 90% in the lab!",
+                "how": "Spray Eucalyptus globulus aqueous leaf extract at 50% concentration.",
+                "frequency": "Every 10-14 days",
+                "confidence": "strong_92_percent_lab_inhibition",
+                "details": {
+                    "what_it_does": "Strong direct antifungal effect — 92.1% mycelial inhibition in lab trials, the strongest single botanical result for this disease.",
+                    "materials_needed": [
+                        "Fresh eucalyptus leaves",
+                        "Water",
+                        "Container for boiling/steeping",
+                        "Cloth or fine strainer",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Collect eucalyptus leaves — pack a container half-full with crushed/chopped leaves, fill the rest with water, for roughly a 50% concentration.",
+                        "Crush or roughly chop the leaves to help release compounds.",
+                        "Steep for 24 hours (cold soak), or gently boil for 15-20 minutes and let cool.",
+                        "Strain through a cloth or fine strainer, keeping only the liquid.",
+                        "Let cool completely if boiled."
+                    ],
+                    "application_steps": [
+                        "Pour the prepared extract into your sprayer.",
+                        "Spray evenly over foliage, covering upper and lower leaf surfaces.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes preparation, 20-30 minutes application per session",
+                    "frequency_detail": "Every 10-14 days starting at early vegetative stage (suggested, pending direct field confirmation)",
+                    "expected_results_timeline": "Direct antifungal contact effect — some benefit within days of each application, cumulative protection over repeated sprays.",
+                    "safety_notes": [
+                        "Avoid contact with eyes",
+                        "Wash hands after preparation and application",
+                        "Prepare fresh extract each time rather than storing long-term"
+                    ]
+                }
+            },
+            {
+                "action": "Eupatorium Total Knockout",
+                "emoji": "🥊",
+                "theme": "pastel_green",
+                "summary": "A wild hillside weed brewed into a spray that completely stopped disease growth in the lab!",
+                "how": "Spray Eupatorium adenophorum crude extract at 2.5% concentration.",
+                "frequency": "Every 10-14 days",
+                "confidence": "very_strong_100_percent_lab_inhibition_locally_abundant_in_HP",
+                "details": {
+                    "what_it_does": "Your strongest single result for this disease — 100% mycelial inhibition, matching chemical fungicide performance. Locally abundant across Himachal hillsides.",
+                    "materials_needed": [
+                        "Fresh Eupatorium adenophorum leaves (confirm identification with KVK)",
+                        "Water",
+                        "Container",
+                        "Strainer",
+                        "Sprayer",
+                        "Gloves recommended"
+                    ],
+                    "preparation_steps": [
+                        "Collect fresh Eupatorium adenophorum leaves — confirm identification with a knowledgeable local source before first use.",
+                        "For 2.5% concentration, use roughly 25 grams of fresh crushed leaf material per litre of water.",
+                        "Crush the leaves to release compounds.",
+                        "Steep for 24 hours, or gently simmer 15-20 minutes and cool.",
+                        "Strain thoroughly through a cloth or fine strainer."
+                    ],
+                    "application_steps": [
+                        "Pour strained extract into sprayer.",
+                        "Spray evenly over foliage, upper and lower surfaces.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes prep, 20-30 minutes application",
+                    "frequency_detail": "Every 10-14 days",
+                    "expected_results_timeline": "Given the very strong lab inhibition rate, expect a noticeably strong direct effect; monitor after first 1-2 sprays.",
+                    "safety_notes": [
+                        "IMPORTANT: known to be toxic to grazing livestock if consumed in quantity",
+                        "Wear gloves when crushing/handling large quantities",
+                        "Avoid application near grazing animals' feeding areas",
+                        "Do not let livestock graze on treated plant material immediately after spraying"
+                    ]
+                }
+            },
+            {
+                "action": "Bakain Leaf Mist",
+                "emoji": "🍃",
+                "theme": "mint_green",
+                "summary": "A Persian lilac leaf extract that fights disease almost as well as the strongest options!",
+                "how": "Spray Melia azedarach (Bakain) extract on foliage.",
+                "frequency": "Every 10-14 days",
+                "confidence": "strong_87_percent_lab_inhibition",
+                "details": {
+                    "what_it_does": "Strong antifungal effect — 87.8% mycelial inhibition in lab trials.",
+                    "materials_needed": [
+                        "Fresh Bakain (Persian lilac) leaves",
+                        "Water",
+                        "Container",
+                        "Strainer",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Collect fresh Bakain leaves.",
+                        "Crush the leaves.",
+                        "Steep in water — roughly equal parts crushed leaf to water as a starting ratio, since exact concentration wasn't fully specified in source — 24-hour cold soak, or simmer 15-20 minutes and cool.",
+                        "Strain thoroughly."
+                    ],
+                    "application_steps": [
+                        "Spray on foliage, upper and lower surfaces.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes prep, 20-30 minutes application",
+                    "frequency_detail": "Every 10-14 days",
+                    "expected_results_timeline": "Noticeable direct effect expected; monitor and adjust based on results.",
+                    "safety_notes": [
+                        "Generally safe to handle",
+                        "Wash hands after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Vermicompost Soil Snuggle",
+                "emoji": "🪱",
+                "theme": "soft_yellow",
+                "summary": "Rich worm-made compost that feeds your soil and fights disease at the same time!",
+                "how": "Work vermicompost-enriched organic compost into soil at 50% concentration before sowing.",
+                "frequency": "Once, before sowing",
+                "confidence": "strong_84_percent_lab_inhibition_dual_purpose_soil_amendment",
+                "details": {
+                    "what_it_does": "Doubles as fertility input and disease suppressant — 83.8% mycelial inhibition in lab trials, likely via improved soil microbial competition.",
+                    "materials_needed": [
+                        "Vermicompost (purchased or homemade)"
+                    ],
+                    "preparation_steps": [
+                        "Obtain vermicompost, purchased locally or from your own setup."
+                    ],
+                    "application_steps": [
+                        "Work vermicompost into the soil at the planting row before sowing, at roughly 50% of your total soil amendment volume.",
+                        "Sow seed into the amended soil as normal."
+                    ],
+                    "time_commitment": "1-2 hours for a small-to-medium plot",
+                    "frequency_detail": "Once, before sowing (repeatable each season as part of normal fertility management)",
+                    "expected_results_timeline": "Ongoing benefit through the season; disease-suppressive effect builds gradually alongside fertility benefits.",
+                    "safety_notes": []
+                }
+            }
+        ],
+        "local_practice": [
+            {
+                "status": "gap_identified",
+                "note": "No HP-district-specific traditional practice found specifically for BLSB. Worth asking directly in farmer interviews."
+            }
+        ]
+    },
+    "turcicum_leaf_blight": {
+        "name": "Turcicum Leaf Blight (Northern Corn Leaf Blight)",
+        "cultural": [
+            {
+                "action": "Tough Genotype Pick",
+                "emoji": "💪",
+                "theme": "lavender",
+                "summary": "Grow HP-tested tough maize lines that naturally shrug off leaf blight!",
+                "how": "Use resistant/tolerant genotypes identified in CSK HPKV's Palampur trials.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "Uses genetics rather than intervention — CSK HPKV's Palampur trials identified specific resistant inbred lines under real Himachal field conditions.",
+                    "materials_needed": [
+                        "Access to CSK HPKV's recommended resistant seed lines"
+                    ],
+                    "preparation_steps": [
+                        "Contact CSK HPKV Palampur or your local KVK for their current publicly-released resistant maize lines."
+                    ],
+                    "application_steps": [
+                        "Source seed of the recommended resistant variety through official channels.",
+                        "Sow as you would any maize variety, following that variety's specific spacing/timing recommendations."
+                    ],
+                    "time_commitment": "Variable time to contact KVK/source seed (days to weeks); sowing itself is standard time",
+                    "frequency_detail": "Once, at the seed-sourcing stage each season",
+                    "expected_results_timeline": "Resistance is built in from germination — reduced disease expression visible throughout the season without additional intervention.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Room-to-Breathe Spacing",
+                "emoji": "📏",
+                "theme": "sky_blue",
+                "summary": "Wider spacing and a lighter nitrogen meal both keep leaf blight pressure down!",
+                "how": "Use wider spacing and avoid excess nitrogen at top-dressing.",
+                "frequency": "At sowing and top-dressing",
+                "details": {
+                    "what_it_does": "Same underlying logic as BLSB cultural treatments — reduces disease-favorable humid, crowded conditions.",
+                    "materials_needed": [
+                        "Same as BLSB's 'Wider Plant Spacing' and 'Reduced Nitrogen Dosing' treatments"
+                    ],
+                    "preparation_steps": [
+                        "See full step-by-step under BLSB → Cultural → Wider Plant Spacing and Reduced Nitrogen Dosing"
+                    ],
+                    "application_steps": [],
+                    "time_commitment": "Same as referenced BLSB treatments",
+                    "frequency_detail": "At sowing (spacing) and split top-dressing stages (nitrogen)",
+                    "expected_results_timeline": "Same as referenced BLSB treatments",
+                    "safety_notes": []
+                }
+            }
+        ],
+        "biological": [
+            {
+                "action": "Harzianum Triple Threat",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "This friendly fungus shows up again and again in trials as a top disease fighter!",
+                "how": "Apply Trichoderma harzianum as seed treatment plus foliar spray during vegetative stage.",
+                "frequency": "Seed treatment once; foliar spray every 10-14 days",
+                "details": {
+                    "what_it_does": "Repeatedly confirmed as one of the most effective bio-agents against this pathogen across multiple independent studies.",
+                    "materials_needed": [
+                        "Trichoderma harzianum product (powder or liquid)",
+                        "Water",
+                        "Container",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Seed treatment: follow the same method as BLSB's Trichoderma seed treatment (product label rate, coat seed evenly, dry briefly in shade)."
+                    ],
+                    "application_steps": [
+                        "Sow treated seed same day.",
+                        "For foliar spray: mix product per label rate with water in sprayer.",
+                        "Spray on foliage during vegetative stage, covering upper and lower leaf surfaces.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "Seed treatment: 15-20 minutes once. Foliar spray: 20-30 minutes per session",
+                    "frequency_detail": "Seed treatment once at sowing; foliar spray during vegetative stage, suggest every 10-14 days",
+                    "expected_results_timeline": "Establishment over 1-2 weeks after seed treatment; ongoing protection through foliar applications.",
+                    "safety_notes": [
+                        "Low-risk natural biological product",
+                        "Wash hands after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Bacteria Bodyguard Duo",
+                "emoji": "🛡️",
+                "theme": "soft_green",
+                "summary": "Two strong bacterial allies working together to fight off leaf blight fungus!",
+                "how": "Apply Bacillus subtilis and Pseudomonas fluorescens as foliar spray or seed treatment.",
+                "frequency": "Every 10-14 days if foliar",
+                "details": {
+                    "what_it_does": "Both bacteria independently show strong antagonistic activity against the pathogen; combined use may offer broader protection.",
+                    "materials_needed": [
+                        "Bacillus subtilis product",
+                        "Pseudomonas fluorescens product",
+                        "Water",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Mix both products per their respective label rates into the same sprayer tank.",
+                        "Confirm with product labels or your KVK that combining is safe for the specific products you have."
+                    ],
+                    "application_steps": [
+                        "If foliar: spray evenly over leaves in early morning or evening.",
+                        "If seed treatment: follow standard seed-coating method as described for other bio-agents above."
+                    ],
+                    "time_commitment": "20-30 minutes per application",
+                    "frequency_detail": "Suggest every 10-14 days if foliar, once if seed treatment",
+                    "expected_results_timeline": "Protection builds over 1-2 weeks and continues through repeated application.",
+                    "safety_notes": [
+                        "Low-risk biological products",
+                        "Standard hygiene precautions"
+                    ]
+                }
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Vacha Total Knockout",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "A traditional sweet flag extract that completely stopped fungus growth in the lab!",
+                "how": "Spray Acorus calamus (Vacha) extract at 1% w/v concentration.",
+                "frequency": "Every 10-14 days",
+                "confidence": "very_strong_100_percent_lab_inhibition",
+                "details": {
+                    "what_it_does": "Strongest result across the entire maize research dataset — 100% mycelial inhibition.",
+                    "materials_needed": [
+                        "Acorus calamus (Vacha/sweet flag) rhizome or leaf material",
+                        "Water",
+                        "Container",
+                        "Strainer",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Obtain Acorus calamus material — rhizome is most commonly used traditionally, though confirm which part matches the trial if possible.",
+                        "For 1% w/v, use 10 grams of plant material per litre of water.",
+                        "Crush or grind the plant material to increase extraction surface area.",
+                        "Steep for 24 hours, or simmer gently 15-20 minutes and cool.",
+                        "Strain thoroughly through a cloth or fine strainer."
+                    ],
+                    "application_steps": [
+                        "Pour into sprayer.",
+                        "Spray evenly over foliage.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes prep, 20-30 minutes application",
+                    "frequency_detail": "Suggest every 10-14 days as a starting schedule",
+                    "expected_results_timeline": "Given the 100% lab inhibition result, expect a strong direct effect; monitor after first 1-2 applications.",
+                    "safety_notes": [
+                        "Generally considered safe to handle",
+                        "Wash hands after preparation"
+                    ]
+                }
+            },
+            {
+                "action": "Artemisia Leaf Splash",
+                "emoji": "🍃",
+                "theme": "mint_green",
+                "summary": "A strong herbal spray that knocks out three-quarters of the fungus growth!",
+                "how": "Spray Artemisia indica extract at 2.5% w/v concentration.",
+                "frequency": "Every 10-14 days",
+                "confidence": "strong_75_percent_lab_inhibition",
+                "details": {
+                    "what_it_does": "75.18% mycelial inhibition in lab trials.",
+                    "materials_needed": [
+                        "Fresh Artemisia indica leaves",
+                        "Water",
+                        "Container",
+                        "Strainer",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Collect fresh Artemisia indica leaves.",
+                        "For 2.5% w/v, use 25 grams of leaf material per litre of water.",
+                        "Crush leaves and steep — 24-hour cold soak, or 15-20 minute simmer and cool.",
+                        "Strain thoroughly."
+                    ],
+                    "application_steps": [
+                        "Spray on foliage in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes prep, 20-30 minutes application",
+                    "frequency_detail": "Every 10-14 days",
+                    "expected_results_timeline": "Strong direct effect expected given the solid lab inhibition rate; monitor and adjust.",
+                    "safety_notes": [
+                        "Generally safe to handle",
+                        "Wash hands after preparation"
+                    ]
+                }
+            },
+            {
+                "action": "Lantana Leaf Mist",
+                "emoji": "🌸",
+                "theme": "soft_pink",
+                "summary": "A cheerful wildflower leaf spray that fights fungus nearly as well as Artemisia!",
+                "how": "Spray Lantana camara extract at 2.5% w/v concentration.",
+                "frequency": "Every 10-14 days",
+                "confidence": "strong_74_percent_lab_inhibition",
+                "details": {
+                    "what_it_does": "74.00% mycelial inhibition — very close to Artemisia's performance.",
+                    "materials_needed": [
+                        "Fresh Lantana camara leaves",
+                        "Water",
+                        "Container",
+                        "Strainer",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Collect fresh Lantana camara leaves (leaves only, not berries).",
+                        "For 2.5% w/v, use 25 grams crushed leaf material per litre of water.",
+                        "Crush leaves and steep — 24-hour cold soak, or 15-20 minute simmer and cool.",
+                        "Strain thoroughly."
+                    ],
+                    "application_steps": [
+                        "Spray on foliage in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes prep, 20-30 minutes application",
+                    "frequency_detail": "Every 10-14 days",
+                    "expected_results_timeline": "Similar to Artemisia — strong direct effect expected.",
+                    "safety_notes": [
+                        "IMPORTANT: Lantana camara berries are toxic if ingested, particularly to children and livestock",
+                        "Handle the whole plant with care even though only leaves are used",
+                        "Keep prepared extract away from children",
+                        "Wash hands thoroughly after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Timru Spice Splash",
+                "emoji": "🌶️",
+                "theme": "peach",
+                "summary": "A wild Himalayan spice plant, already growing on hillsides, that fights fungus too!",
+                "how": "Spray Xanthoxylum armatum (Timru) extract at 2.5% w/v concentration.",
+                "frequency": "Every 10-14 days",
+                "confidence": "moderate_44_percent_lab_inhibition_locally_abundant_in_HP_hills",
+                "details": {
+                    "what_it_does": "Moderate inhibition (44.21%) — likely most useful as a supplementary treatment, from a plant already common across Himachal's mid-hill forests.",
+                    "materials_needed": [
+                        "Fresh Xanthoxylum armatum (Timru) leaves or bark/fruit",
+                        "Water",
+                        "Container",
+                        "Strainer",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Collect fresh Timru plant material.",
+                        "For 2.5% w/v, use 25 grams crushed plant material per litre of water.",
+                        "Crush and steep — 24-hour cold soak, or 15-20 minute simmer and cool.",
+                        "Strain thoroughly."
+                    ],
+                    "application_steps": [
+                        "Spray on foliage in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes prep, 20-30 minutes application",
+                    "frequency_detail": "Every 10-14 days",
+                    "expected_results_timeline": "Moderate effect expected — consider combining with a stronger botanical (Vacha) or a bio-agent for best results.",
+                    "safety_notes": [
+                        "Generally safe as a traditional food/medicine plant",
+                        "Wash hands after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Dhatura Leaf Brew",
+                "emoji": "🌱",
+                "theme": "lavender",
+                "summary": "A strong herbal spray that performed as well as top treatments when paired with a friendly fungus seed treatment!",
+                "how": "Apply Datura stramonium leaf extract at 50% concentration, combined with Trichoderma seed treatment.",
+                "frequency": "Foliar spray every 10-14 days; seed treatment once",
+                "confidence": "strong_matched_best_integrated_treatment_in_field_trial",
+                "details": {
+                    "what_it_does": "Best performing when combined with seed-stage Trichoderma — matched top treatments in a field trial.",
+                    "materials_needed": [
+                        "Datura stramonium leaves",
+                        "Water",
+                        "Container",
+                        "Strainer",
+                        "Sprayer",
+                        "Trichoderma product for seed treatment",
+                        "Gloves"
+                    ],
+                    "preparation_steps": [
+                        "First, treat seed with Trichoderma before sowing (same method as other Trichoderma seed treatments in this document).",
+                        "Separately, prepare Datura extract at 50%: pack a container about half-full with crushed Datura leaves, fill with water.",
+                        "Steep 24 hours, or simmer 15-20 minutes and cool.",
+                        "Strain thoroughly."
+                    ],
+                    "application_steps": [
+                        "Spray extract on foliage during the growing season.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "Seed treatment: 15-20 minutes once. Foliar prep: 30-45 minutes per session; application 20-30 minutes",
+                    "frequency_detail": "Seed treatment once at sowing; foliar spray suggest every 10-14 days",
+                    "expected_results_timeline": "Combined approach builds protection from sowing through the vegetative season; expect notably better performance than either treatment alone.",
+                    "safety_notes": [
+                        "CAUTION REQUIRED: Datura stramonium is genuinely toxic — all parts contain alkaloids poisonous if ingested",
+                        "Can cause skin/eye irritation on contact for sensitive individuals",
+                        "Wear gloves when handling and crushing the plant",
+                        "Keep prepared extract and all plant material away from children and livestock grazing areas",
+                        "Wash hands thoroughly after handling; avoid touching face/eyes during preparation",
+                        "This treatment requires genuine caution, not just routine hygiene"
+                    ]
+                }
+            },
+            {
+                "action": "Tea Tree & Garlic Duo",
+                "emoji": "🧄",
+                "theme": "sky_blue",
+                "summary": "Two essential oils that completely stopped fungus growth in a recent lab study!",
+                "how": "Apply Tea Tree oil and Garlic oil, conservatively diluted.",
+                "frequency": "Foliar application, rate to be confirmed",
+                "confidence": "very_strong_100_percent_lab_inhibition_recent_2025_study",
+                "details": {
+                    "what_it_does": "Complete inhibition of the pathogen in a recent (2025) in vitro trial.",
+                    "materials_needed": [
+                        "Tea tree oil",
+                        "Garlic oil",
+                        "Water",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Dilute both oils conservatively in water, since exact field concentration wasn't specified beyond the in vitro trial.",
+                        "Small-patch test on a few plants before wider application."
+                    ],
+                    "application_steps": [
+                        "Spray on foliage after confirming no adverse reaction from patch test.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "15-20 minutes prep, 20-30 minutes application",
+                    "frequency_detail": "Exact field rate not yet confirmed — monitor closely and adjust",
+                    "expected_results_timeline": "Strong effect expected given the 100% lab result, but field response should be monitored closely since this is a newer, less field-tested option.",
+                    "safety_notes": [
+                        "Always patch-test before full application",
+                        "Essential oils can be potent — avoid over-concentration"
+                    ]
+                }
+            }
+        ],
+        "local_practice": [
+            {
+                "status": "gap_identified",
+                "note": "No HP-district-specific traditional practice found specifically for turcicum leaf blight. Flagged for farmer interviews."
+            }
+        ]
+    },
+    "fall_armyworm": {
+        "name": "Fall Armyworm (Currently Active Outbreak in HP, ~19,000 hectares affected as of July 2026)",
+        "cultural": [
+            {
+                "action": "Old-Seed Resistance Test",
+                "emoji": "🌽",
+                "theme": "butter_yellow",
+                "summary": "Traditional local seeds might naturally resist this pest better than newer hybrids — worth testing!",
+                "how": "Plant indigenous/desi seed varieties instead of hybrids.",
+                "frequency": "At sowing",
+                "confidence": "unverified_field_observation_not_a_controlled_trial_high_research_value",
+                "details": {
+                    "what_it_does": "A natural-farming trainer reported this pest spreads much less in indigenous seeds compared to hybrid seeds — unverified but directly relevant to your research question.",
+                    "materials_needed": [
+                        "Indigenous/desi maize seed"
+                    ],
+                    "preparation_steps": [
+                        "Source indigenous/desi seed varieties, e.g. through local seed savers or KVK."
+                    ],
+                    "application_steps": [
+                        "Consider planting a side-by-side comparison plot: indigenous seed vs. hybrid seed under equal conditions.",
+                        "Monitor both plots for fall armyworm incidence through the season."
+                    ],
+                    "time_commitment": "Standard sowing time, plus ongoing monitoring time if running a comparison",
+                    "frequency_detail": "Once, at sowing",
+                    "expected_results_timeline": "Comparison results would build over the season as pest pressure develops — this is a genuine data-gathering opportunity, not a guaranteed fix.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "HPKV Resistant Line Watch",
+                "emoji": "👀",
+                "theme": "mint_green",
+                "summary": "Keep an eye out for HP-tested maize lines bred to resist this exact pest!",
+                "how": "Use resistant inbred lines identified in CSK HPKV's 2023 Palampur screening trial.",
+                "frequency": "At sowing, once released",
+                "details": {
+                    "what_it_does": "CSK HPKV directly screened maize lines for fall armyworm resistance alongside three fungal blights.",
+                    "materials_needed": [
+                        "Access to CSK HPKV's resistant seed lines, once publicly released"
+                    ],
+                    "preparation_steps": [
+                        "Contact CSK HPKV Palampur or local KVK to check on public release status of these specific lines."
+                    ],
+                    "application_steps": [
+                        "Sow as normal once seed is sourced."
+                    ],
+                    "time_commitment": "Variable, dependent on seed sourcing",
+                    "frequency_detail": "At sowing, pending public release of specific lines",
+                    "expected_results_timeline": "Resistance built in from germination.",
+                    "safety_notes": []
+                }
+            }
+        ],
+        "local_practice": [
+            {
+                "action": "Smoky Kitchen Cob Hang",
+                "emoji": "💨",
+                "theme": "peach",
+                "summary": "Tie up your maize cobs in the kitchen where cooking smoke naturally keeps bugs away!",
+                "how": "Tie maize cobs in bundles and suspend them in the kitchen area.",
+                "frequency": "Applied at harvest/storage time",
+                "documented_districts": [
+                    "Malan (Kangra) - 50% adoption",
+                    "Sujanpur (Hamirpur) - 74% adoption",
+                    "Palam valley",
+                    "Akrot",
+                    "Kotla"
+                ],
+                "confidence": "high_directly_documented_maize_specific_storage_practice",
+                "category_note": "This is a post-harvest storage practice, not a field-stage pest treatment. Recommend placing in storage module.",
+                "details": {
+                    "what_it_does": "Cooking smoke naturally deters insect pests and controls moisture in stored cobs.",
+                    "materials_needed": [
+                        "String or rope for bundling",
+                        "A kitchen area with regular cooking-fire smoke exposure"
+                    ],
+                    "preparation_steps": [
+                        "Harvest and dry maize cobs to appropriate storage moisture level."
+                    ],
+                    "application_steps": [
+                        "Tie maize cobs (along with pigeonpea and cowpea pods, if applicable) in bundles.",
+                        "Suspend the bundles in the kitchen area where cooking smoke will regularly reach them.",
+                        "Leave in place through the storage period."
+                    ],
+                    "time_commitment": "15-20 minutes to bundle and hang",
+                    "frequency_detail": "Once per harvest, maintained through the storage period",
+                    "expected_results_timeline": "Ongoing protective effect throughout storage as smoke exposure continues.",
+                    "safety_notes": [
+                        "Standard kitchen fire safety precautions apply"
+                    ]
+                }
+            }
+        ]
+    },
+    "stalk_rot": {
+        "name": "Stalk Rot (Bacterial and Fusarium)",
+        "cultural": [
+            {
+                "action": "Gentle Nitrogen Meal",
+                "emoji": "⚖️",
+                "theme": "soft_yellow",
+                "summary": "A balanced diet keeps stalks strong and standing tall against rot!",
+                "how": "Avoid excess nitrogen combined with dense planting.",
+                "frequency": "At top-dressing",
+                "details": {
+                    "what_it_does": "High nitrogen combined with dense planting increases stalk rot susceptibility.",
+                    "materials_needed": [
+                        "Same as BLSB's 'Reduced Nitrogen Dosing' treatment"
+                    ],
+                    "preparation_steps": [
+                        "See full step-by-step under BLSB → Cultural → Reduced Nitrogen Dosing"
+                    ],
+                    "application_steps": [],
+                    "time_commitment": "Same as referenced BLSB treatment",
+                    "frequency_detail": "At top-dressing",
+                    "expected_results_timeline": "Ongoing effect through the season.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Timely Harvest Habit",
+                "emoji": "⏰",
+                "theme": "peach",
+                "summary": "Harvest promptly once ready, don't let mature plants sit in wet fields!",
+                "how": "Avoid leaving mature crop standing in wet field conditions.",
+                "frequency": "At harvest",
+                "details": {
+                    "what_it_does": "Stalk rot pathogens exploit weakened, waterlogged stalks left standing too long.",
+                    "materials_needed": [
+                        "No special materials — timing decision"
+                    ],
+                    "preparation_steps": [
+                        "Monitor crop maturity closely as harvest time approaches."
+                    ],
+                    "application_steps": [
+                        "Harvest promptly once the crop reaches maturity, especially avoiding delay during wet weather."
+                    ],
+                    "time_commitment": "Standard harvest time, just done promptly rather than delayed",
+                    "frequency_detail": "Once, at harvest",
+                    "expected_results_timeline": "Immediate — reduces the window for pathogen exploitation of weakened stalks.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Tough Genotype Pick",
+                "emoji": "💪",
+                "theme": "lavender",
+                "summary": "Grow HP-tested maize lines specifically bred to resist stalk rot!",
+                "how": "Use resistant genotypes identified in CSK HPKV mid-hill trials.",
+                "frequency": "At sowing",
+                "details": {
+                    "what_it_does": "CSK HPKV has directly evaluated maize inbreds and hybrids against bacterial stalk rot under Himachal mid-hill conditions.",
+                    "materials_needed": [
+                        "Access to CSK HPKV's recommended resistant lines"
+                    ],
+                    "preparation_steps": [
+                        "Contact CSK HPKV or local KVK for current recommended resistant lines from this research."
+                    ],
+                    "application_steps": [
+                        "Source and sow recommended seed as normal."
+                    ],
+                    "time_commitment": "Variable, dependent on seed sourcing",
+                    "frequency_detail": "At sowing",
+                    "expected_results_timeline": "Resistance built in from germination.",
+                    "safety_notes": []
+                }
+            }
+        ],
+        "biological": [
+            {
+                "status": "gap_identified",
+                "note": "No dedicated bioagent trial specific to maize stalk rot found. Trichoderma/Pseudomonas evidence from BLSB and turcicum leaf blight above plausibly cross-applies but is unconfirmed for stalk rot specifically."
+            }
+        ],
+        "botanical": [
+            {
+                "status": "gap_identified",
+                "note": "No dedicated botanical trial specific to maize stalk rot found. Flagged as a research gap."
+            }
+        ]
+    }
+}

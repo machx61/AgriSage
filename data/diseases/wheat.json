@@ -1,0 +1,108 @@
+{
+    "yellow_rust": {
+        "name": "Yellow Rust / Stripe Rust",
+        "cultural": [
+            {
+                "action": "IKS Research Gap Identified",
+                "emoji": "🕵️",
+                "theme": "soft_pink",
+                "summary": "No traditional Himachal field-treatment is currently documented for Wheat Rust.",
+                "how": "This is a great opportunity to interview local elders! For now, rely on modern resistant varieties."
+            }
+        ],
+        "biological": []
+    },
+    "powdery_mildew": {
+        "name": "Powdery Mildew",
+        "cultural": [
+            {
+                "action": "IKS Research Gap Identified",
+                "emoji": "🕵️",
+                "theme": "soft_pink",
+                "summary": "No traditional Himachal field-treatment is currently documented for Wheat Mildew.",
+                "how": "Consult with local farmers to see if unrecorded traditional practices exist in your district."
+            }
+        ],
+        "biological": []
+    },
+    "loose_smut": {
+        "name": "Loose Smut",
+        "cultural": [
+            {
+                "action": "IKS Research Gap Identified",
+                "emoji": "🕵️",
+                "theme": "lavender",
+                "summary": "No traditional Himachal field-treatment is currently documented for Loose Smut.",
+                "how": "Consult with local farmers to see if unrecorded traditional practices exist."
+            }
+        ],
+        "biological": []
+    },
+    "karnal_bunt": {
+        "name": "Karnal Bunt",
+        "cultural": [
+            {
+                "action": "IKS Research Gap Identified",
+                "emoji": "🕵️",
+                "theme": "lavender",
+                "summary": "No traditional Himachal field-treatment is currently documented for Karnal Bunt.",
+                "how": "Consult with local farmers to see if unrecorded traditional practices exist."
+            }
+        ],
+        "biological": []
+    },
+    "storage_and_harvest": {
+        "name": "Post-Harvest Grain Storage Protection",
+        "cultural": [
+            {
+                "action": "Bangru Mint Blanket",
+                "emoji": "🌿",
+                "theme": "mint_green",
+                "summary": "Tuck dry wild mint leaves in with your stored wheat—bugs and mold hate it!",
+                "how": "Mix dry Bangru (Mentha arvensis) leaves into stored wheat grain.",
+                "frequency": "At storage time"
+            },
+            {
+                "action": "Kali Basuti Leaf Layer",
+                "emoji": "🍃",
+                "theme": "pastel_green",
+                "summary": "Layer in this traditional leafy herb to keep stored grain fungus-free and pest-free!",
+                "how": "Mix dry Kali Basuti (Adhatoda vasica) leaves into stored wheat grain.",
+                "frequency": "At storage time"
+            },
+            {
+                "action": "Safeda Eucalyptus Hug",
+                "emoji": "🍃",
+                "theme": "sky_blue",
+                "summary": "Fragrant eucalyptus leaves tucked into your grain bin, standing guard against sneaky storage fungi!",
+                "how": "Mix dry Safeda (Eucalyptus citriodora) leaves into stored wheat grain.",
+                "frequency": "At storage time"
+            },
+            {
+                "action": "Walnut & Jugnu Wood Guard",
+                "emoji": "🪵",
+                "theme": "butter_yellow",
+                "summary": "A traditional trio of walnut leaves, resin-rich wood, and wood ash tucked in for grain protection!",
+                "how": "Combine walnut leaves, pieces of Jugnu wood, and wood ash with stored grain.",
+                "frequency": "At storage time"
+            },
+            {
+                "action": "Matchstick Mystery Guard",
+                "emoji": "🔥",
+                "theme": "peach",
+                "summary": "An unusual old trick—tucking match sticks in with stored grain to keep pests away!",
+                "how": "Place match box sticks in with stored wheat grain, following local farmer practice.",
+                "frequency": "At storage time"
+            },
+            {
+                "action": "Perru Bamboo Basket Home",
+                "emoji": "🧺",
+                "theme": "soft_yellow",
+                "summary": "Store harvested wheat in a big spindle-shaped bamboo basket!",
+                "how": "Store harvested wheat grain in large spindle-shaped bamboo baskets, locally called 'Perru'.",
+                "frequency": "At harvest/storage time"
+            }
+        ],
+        "biological": []
+    }
+}

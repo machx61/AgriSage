@@ -1,0 +1,403 @@
+{
+    "yellow_vein_mosaic_virus": {
+        "name": "Yellow Vein Mosaic Virus (YVMV)",
+        "cultural": [
+            {
+                "action": "Champion Variety Pick",
+                "emoji": "🏆",
+                "theme": "lavender",
+                "summary": "Grow a tough, ICAR-tested variety that naturally shrugs off the yellow vein virus!",
+                "how": "Plant Parbhani Kranti or Ghana selection both found highly resistant in ICAR field screening of 14 okra cultivars.",
+                "frequency": "At sowing time"
+            },
+            {
+                "action": "Perfect Timing Sowing",
+                "emoji": "⏱️",
+                "theme": "peach",
+                "summary": "Sow a little earlier to dodge the peak whitefly rush before it even begins!",
+                "how": "Adjust sowing to an earlier date within the recommended window, since early sowing has shown reduced YVMV incidence in field trials.",
+                "frequency": "At sowing time"
+            },
+            {
+                "action": "Weed Patrol Sweep",
+                "emoji": "🧹",
+                "theme": "soft_yellow",
+                "summary": "Clear out sneaky weeds around your field where whiteflies love to hide!",
+                "how": "Remove weed hosts from in and around the field.",
+                "frequency": "Every 2 weeks"
+            },
+            {
+                "action": "Quick Goodbye Removal",
+                "emoji": "👋",
+                "theme": "soft_pink",
+                "summary": "The moment a plant shows yellow veins, give it a swift, caring send-off to protect the rest!",
+                "how": "Uproot and destroy infected plants immediately, away from the garden (not in compost).",
+                "frequency": "Immediately when identified"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Yellow Sticky Watch Post",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Hang cheerful yellow traps to catch and count sneaky whiteflies before they spread trouble!",
+                "how": "Hang yellow sticky traps around the field/canopy to trap and monitor whitefly.",
+                "frequency": "Set once, replace every 2-3 weeks"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Shield Mist",
+                "emoji": "🌿",
+                "theme": "mint_green",
+                "summary": "A gentle neem mist keeps whitefly numbers down and virus spread slower!",
+                "how": "Apply a neem-based product spray around sowing time and repeat regularly.",
+                "frequency": "Every 7-10 days"
+            }
+        ],
+        "local_practice": [
+            {
+                "action": "Cow Urine Splash",
+                "emoji": "🐄",
+                "theme": "soft_yellow",
+                "summary": "A traditional cow urine spray farmers trust to keep plants strong and pests away!",
+                "how": "Spray 10% cow urine solution on the plant.",
+                "frequency": "3 times, at 10-day intervals"
+            }
+        ],
+        "iks": [
+            {
+                "action": "Nimastra Neem Ferment",
+                "emoji": "🧪",
+                "theme": "pastel_green",
+                "summary": "A powerful fermented neem-and-cow-gift potion, brewed the traditional way!",
+                "how": "Ferment 5kg crushed neem leaves + 100L water + 5L cow urine + 2kg fresh cow dung, stirring twice daily for 48 hours in shade, then strain. Makes enough for 1 acre.",
+                "frequency": "Spray within 2 days of preparation",
+                "confidence": "documented_traditional_formulation_general_pest_deterrent"
+            }
+        ]
+    },
+    "cercospora_leaf_spot": {
+        "name": "Cercospora Leaf Spot",
+        "cultural": [
+            {
+                "action": "Field Rest Rotation",
+                "emoji": "🔄",
+                "theme": "lavender",
+                "summary": "Give your soil a break from okra every couple of years to starve out leftover fungus!",
+                "how": "Avoid continuous okra cropping in the same field.",
+                "frequency": "2+ years between plantings"
+            },
+            {
+                "action": "Leafy Cleanup Duty",
+                "emoji": "🧹",
+                "theme": "soft_yellow",
+                "summary": "Sweep away sick fallen leaves so spores don't get a second chance!",
+                "how": "Remove and destroy infected leaf debris.",
+                "frequency": "Post-harvest and as needed"
+            },
+            {
+                "action": "Breezy Row Spacing",
+                "emoji": "🌬️",
+                "theme": "sky_blue",
+                "summary": "Give each plant room to breathe so fresh air keeps fungus away!",
+                "how": "Ensure adequate plant spacing at sowing time.",
+                "frequency": "At sowing time"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Friendly Bacteria Splash",
+                "emoji": "🦠",
+                "theme": "mint_green",
+                "summary": "The single most powerful microbe mist tested spray it on to keep leaf spots away!",
+                "how": "Spray Pseudomonas fluorescens at 5% concentration on foliage.",
+                "frequency": "Every 15 days from disease onset"
+            },
+            {
+                "action": "Fungus-Fighting Fairy Mist",
+                "emoji": "🧚",
+                "theme": "pastel_green",
+                "summary": "A gentle beneficial-fungus spray that keeps leaf spots from spreading!",
+                "how": "Spray Trichoderma viride at 5% concentration on foliage.",
+                "frequency": "Every 15 days"
+            },
+            {
+                "action": "Dream Team Duo Spray",
+                "emoji": "🤝",
+                "theme": "soft_blue",
+                "summary": "Two friendly microbes teaming up for the strongest leaf spot defense!",
+                "how": "Combine Trichoderma (2%) + Pseudomonas fluorescens (2%) and spray together.",
+                "frequency": "3 sprays at 15-day intervals"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Oil Leaf Wash",
+                "emoji": "🍃",
+                "theme": "mint_green",
+                "summary": "A classic neem oil spray to keep leaf spots from taking hold!",
+                "how": "Spray neem oil at 5% concentration on foliage.",
+                "frequency": "Every 15 days"
+            },
+            {
+                "action": "Garlic Punch Spray",
+                "emoji": "🧄",
+                "theme": "peach",
+                "summary": "A zesty garlic oil mist that fungi really don't enjoy!",
+                "how": "Spray garlic oil at 4% concentration on foliage.",
+                "frequency": "Every 15 days"
+            },
+            {
+                "action": "Onion Power Mist",
+                "emoji": "🧅",
+                "theme": "butter_yellow",
+                "summary": "A sharp onion oil spray adding extra leaf spot protection!",
+                "how": "Spray onion oil at 4% concentration on foliage.",
+                "frequency": "Every 15 days"
+            }
+        ],
+        "local_practice": [
+            {
+                "action": "Beejamrit & Panchagavya Combo",
+                "emoji": "✨",
+                "theme": "soft_pink",
+                "summary": "The winning traditional combo! Seeds get a special bath, then leaves get a gentle five-gift spray!",
+                "how": "Treat seeds with Beejamrit at 200ml/kg seed before sowing, then follow with 3 foliar sprays of Panchagavya at 10% concentration.",
+                "frequency": "Seed treatment once; foliar spray 3 times at 15-day intervals from disease onset",
+                "confidence": "high_best_performing_organic_combination_in_field_trial"
+            }
+        ]
+    },
+    "damping_off_root_rot": {
+        "name": "Damping Off & Root Rot",
+        "cultural": [
+            {
+                "action": "Dry Feet Planting",
+                "emoji": "🏜️",
+                "theme": "sky_blue",
+                "summary": "Choose well-drained ground so little roots never sit in soggy soil!",
+                "how": "Avoid waterlogged, poorly-drained sowing sites.",
+                "frequency": "At sowing time"
+            },
+            {
+                "action": "Just-Right Watering",
+                "emoji": "💧",
+                "theme": "soft_blue",
+                "summary": "Check the soil before watering so seedlings get just what they need, not too much!",
+                "how": "Avoid overwatering nursery beds; check soil moisture before each watering.",
+                "frequency": "Every 1-2 days"
+            },
+            {
+                "action": "Cozy Potting Mix",
+                "emoji": "🪴",
+                "theme": "pastel_green",
+                "summary": "A fluffy vermicompost or farmyard-manure mix gives seedlings a healthy home!",
+                "how": "Use vermicompost + soil or FYM + soil as potting media.",
+                "frequency": "At sowing time"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Root-Guard Bacteria Bath",
+                "emoji": "🛡️",
+                "theme": "mint_green",
+                "summary": "A soil treatment of friendly bacteria to keep tiny roots safe from rot!",
+                "how": "Apply Pseudomonas fluorescens to the soil at sowing.",
+                "frequency": "Once, at sowing time"
+            },
+            {
+                "action": "Fungus-Fighter Seed Coat",
+                "emoji": "🍄",
+                "theme": "soft_green",
+                "summary": "Coat seeds in a helpful fungus before planting to block disease from day one!",
+                "how": "Treat seed with Trichoderma harzianum before sowing.",
+                "frequency": "Once, at sowing time"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Garlic Root Rescue",
+                "emoji": "🧄",
+                "theme": "peach",
+                "summary": "Surprise! Garlic extract beat neem in real trials for protecting roots from rot!",
+                "how": "Apply garlic clove extract at sowing/early seedling stage.",
+                "frequency": "At sowing/early seedling stage"
+            },
+            {
+                "action": "Neem Root Guard",
+                "emoji": "🌿",
+                "theme": "mint_green",
+                "summary": "A trusty neem extract, second only to garlic in keeping seedlings safe!",
+                "how": "Apply neem leaf/seed extract at sowing/early seedling stage.",
+                "frequency": "At sowing/early seedling stage"
+            }
+        ],
+        "local_practice": [
+            {
+                "status": "gap_identified",
+                "note": "No documented local/IKS practice found specifically for okra damping-off. A strong candidate for direct farmer interviews."
+            }
+        ],
+        "iks": []
+    },
+    "fusarium_wilt": {
+        "name": "Fusarium Wilt",
+        "cultural": [
+            {
+                "action": "Field Rest Rotation",
+                "emoji": "🔄",
+                "theme": "lavender",
+                "summary": "Rotate away from okra and its relatives to break the wilt fungus's cycle!",
+                "how": "Avoid okra/solanaceous crops in the same soil.",
+                "frequency": "2-3 years between plantings"
+            },
+            {
+                "action": "Moisture Balance Watch",
+                "emoji": "⚖️",
+                "theme": "sky_blue",
+                "summary": "Keep soil moisture steady, since this fungus loves it too wet!",
+                "how": "Control soil moisture, avoid excess humidity around roots.",
+                "frequency": "Every 2-3 days"
+            },
+            {
+                "action": "Quick Goodbye Removal",
+                "emoji": "👋",
+                "theme": "soft_pink",
+                "summary": "Say goodbye to wilted plants right away to stop the fungus from spreading!",
+                "how": "Destroy affected plants promptly when spotted.",
+                "frequency": "Immediately when identified"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Fungus-Fighter Seed Coat",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "The same helpful fungus seed coat used for damping-off also fights wilt!",
+                "how": "Treat seed/soil with Trichoderma harzianum before sowing.",
+                "frequency": "Once, at sowing time"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Leaf Splash",
+                "emoji": "🍃",
+                "theme": "pastel_green",
+                "summary": "A neem leaf brew tested against wilt fungus, right alongside citrus extract!",
+                "how": "Apply neem leaf aqueous extract at sowing and during early growth.",
+                "frequency": "At sowing, repeat as needed during early growth"
+            }
+        ],
+        "local_practice": [
+            {
+                "status": "gap_identified",
+                "note": "No documented local/IKS practice found specifically for okra Fusarium wilt. Flagged for farmer interviews."
+            }
+        ],
+        "iks": []
+    },
+    "powdery_mildew": {
+        "name": "Powdery Mildew",
+        "cultural": [
+            {
+                "action": "Breezy Row Spacing",
+                "emoji": "🌬️",
+                "theme": "sky_blue",
+                "summary": "Good airflow between plants keeps powdery mildew from settling in!",
+                "how": "Ensure good spacing between plants at sowing.",
+                "frequency": "At sowing time"
+            },
+            {
+                "action": "Gentle Fertilizer Meal",
+                "emoji": "⚖️",
+                "theme": "soft_yellow",
+                "summary": "Feed plants a balanced diet, since too much nitrogen invites mildew!",
+                "how": "Avoid excess nitrogen fertilizer.",
+                "frequency": "At top-dressing stage"
+            }
+        ],
+        "biological": [
+            {
+                "status": "gap_identified",
+                "note": "No confirmed microbial bio-agent trial found specifically for okra powdery mildew. Worth testing Pseudomonas fluorescens/Trichoderma here too, since both are confirmed effective against Cercospora leaf spot in okra, but this hasn't been directly tested for powdery mildew yet."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Mist",
+                "emoji": "🌰",
+                "theme": "mint_green",
+                "summary": "A neem seed extract spray to keep white powdery spots from spreading!",
+                "how": "Spray neem seed kernel extract (NSKE) at 5% concentration.",
+                "frequency": "Every 10-14 days"
+            },
+            {
+                "action": "Lime Water Splash",
+                "emoji": "🍋",
+                "theme": "soft_blue",
+                "summary": "A simple lime water spray, a classic okra grower's trick against mildew!",
+                "how": "Spray 10% lime water solution on affected leaves.",
+                "frequency": "Repeat as needed"
+            }
+        ],
+        "local_practice": [
+            {
+                "action": "Cow Urine Splash",
+                "emoji": "🐄",
+                "theme": "butter_yellow",
+                "summary": "The same traditional cow urine spray, trusted here too for keeping mildew away!",
+                "how": "Spray 10% cow urine solution on the plant.",
+                "frequency": "3 times, at 10-day intervals"
+            }
+        ],
+        "iks": [
+            {
+                "status": "not_confirmed",
+                "note": "No classical-text-specific formula identified for okra powdery mildew (okra postdates Vrikshayurveda). General tonics like Panchagavya/Nimastra could reasonably be tested here as a hypothesis, but aren't confirmed against this disease specifically in our sources."
+            }
+        ]
+    },
+    "general_preventive_formulations": {
+        "name": "General Preventive Traditional Formulations (Multi-Disease)",
+        "iks": [
+            {
+                "action": "Nimastra Neem Ferment",
+                "emoji": "🧪",
+                "theme": "pastel_green",
+                "summary": "A powerful fermented neem-and-cow-gift potion for all-around plant protection!",
+                "how": "Ferment 5kg crushed neem leaves + 100L water + 5L cow urine + 2kg fresh cow dung, stirring twice daily for 48 hours in shade, then strain. Makes enough for 1 acre.",
+                "frequency": "Spray within 2 days of preparation",
+                "confidence": "scientist_corroborated_general_practice"
+            },
+            {
+                "action": "Agneyastra Spice Ferment",
+                "emoji": "🌶️",
+                "theme": "peach",
+                "summary": "A spicier fermented potion with chili and tobacco for extra pest-fighting power!",
+                "how": "Ferment 5kg neem leaves + 20L cow urine + 500g tobacco leaves + 500g green chilies + ginger.",
+                "frequency": "Same general application pattern as Nimastra",
+                "confidence": "scientist_corroborated_general_practice"
+            },
+            {
+                "action": "Jiwamrita Soil Tonic",
+                "emoji": "🌱",
+                "theme": "soft_yellow",
+                "summary": "A simple four-ingredient tonic passed down for generations of healthy soil!",
+                "how": "Ferment cow dung, cow urine, jaggery, and water together.",
+                "frequency": "Applied as soil drench or diluted foliar spray",
+                "confidence": "widely_documented_traditional_practice"
+            },
+            {
+                "action": "Five-Gift Panchagavya Tonic",
+                "emoji": "🎁",
+                "theme": "soft_pink",
+                "summary": "A gentle five-ingredient cow tonic no animal harmed, just cow-given gifts!",
+                "how": "Ferment cow milk, curd, ghee, cow urine, and cow dung together, then dilute before use.",
+                "frequency": "Soil drench or diluted foliar spray, typically 3-10% concentration",
+                "confidence": "modern_field_trial_supported",
+                "animal_product_flag": "dairy_and_urine_only_no_slaughter"
+            }
+        ]
+    }
+}
