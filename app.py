@@ -114,7 +114,7 @@ st.set_page_config(
     page_title="Agrisage PWA",
     page_icon="🌱",
     layout="centered",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
 # Define your PWA Manifest
@@ -269,6 +269,7 @@ elif st.session_state.history_session_id is None:
 # Sidebar — navigation
 st.sidebar.markdown("### ⚙️ AgriSage")
 st.session_state.gemini_key = st.secrets["GEMINI_API_KEY"]
+st.session_state.gemini_key = st.secrets.get("GEMINI_API_KEY", "")
 st.sidebar.page_link("app.py", label="Scan", icon="🔬")
 st.sidebar.page_link("pages/my_plants.py", label="My Plants", icon="🌱")
 
