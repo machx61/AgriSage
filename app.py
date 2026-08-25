@@ -226,6 +226,10 @@ st.markdown("""
     }
 
     footer {visibility: hidden;}
+    /* Hide the Streamlit Cloud Share/GitHub ribbon but keep the sidebar arrow */
+    [data-testid="stHeaderActionElements"] {display: none !important;}
+    .stApp > header > div:not(:first-child) {display: none !important;}
+    #viewerBadge {display: none !important;}
 </style>
 """, unsafe_allow_html=True)
 
