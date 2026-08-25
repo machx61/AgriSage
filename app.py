@@ -114,11 +114,11 @@ st.set_page_config(
     page_title="Agrisage PWA",
     page_icon="🌱",
     layout="centered",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Define your PWA Manifest
-manifest = """
+manifest = '''
 {
   "name": "Agrisage Pathology",
   "short_name": "Agrisage",
@@ -132,7 +132,7 @@ manifest = """
       "type": "image/png"
   }]
 }
-"""
+'''
 b64_manifest = base64.b64encode(manifest.encode('utf-8')).decode('utf-8')
 
 # Inject it into the Streamlit DOM
@@ -238,7 +238,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load Model
-@st.cache_resource
+@st.cache_resource(show_spinner="🧠 Initializing Botanical AI Engine...")
 def load_yolo():
     if not MODEL_PATH.is_file():
         st.error("⚠️ `best.pt` not found! Place your 3.2 MB model in this directory.")

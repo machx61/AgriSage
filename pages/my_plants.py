@@ -88,11 +88,11 @@ def delete_plant(plant_id):
     conn.commit()
     conn.close()
 
-@st.cache_resource
+@st.cache_resource(show_spinner="🧠 Initializing Botanical AI Engine...")
 def load_model():
     return YOLO(MODEL_PATH)
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner="📡 Scanning horizon for weather patterns...")
 def get_weather_alert(lat, lon):
     if not lat or not lon: return None
     import requests
