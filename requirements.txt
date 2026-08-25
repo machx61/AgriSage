@@ -3,3 +3,6 @@ ultralytics-opencv-headless
 Pillow
 requests
 streamlit-js-eval
+google-generativeai
+fpdf2
+pandas
