@@ -228,6 +228,7 @@ st.markdown("""
     #MainMenu {visibility: hidden;}
     [data-testid="stToolbar"] {visibility: hidden !important;}
     .stDeployButton {display: none !important;}
+    [data-testid="collapsedControl"] {visibility: visible !important; display: flex !important; z-index: 9999;}
     footer {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
@@ -268,7 +269,6 @@ elif st.session_state.history_session_id is None:
 
 # Sidebar — navigation
 st.sidebar.markdown("### ⚙️ AgriSage")
-st.session_state.gemini_key = st.secrets["GEMINI_API_KEY"]
 st.session_state.gemini_key = st.secrets.get("GEMINI_API_KEY", "")
 st.sidebar.page_link("app.py", label="Scan", icon="🔬")
 st.sidebar.page_link("pages/my_plants.py", label="My Plants", icon="🌱")
