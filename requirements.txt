@@ -1,6 +1,6 @@
 streamlit
-ultralytics-opencv-headless
 Pillow
+ultralytics-opencv-headless
 requests
 streamlit-js-eval
 google-generativeai
