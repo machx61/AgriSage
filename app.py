@@ -230,6 +230,10 @@ st.markdown("""
     [data-testid="stHeaderActionElements"] {display: none !important;}
     .stApp > header > div:not(:first-child) {display: none !important;}
     #viewerBadge {display: none !important;}
+    [data-testid="stSidebarNav"] {display: none !important;}
+    [data-testid="stSidebarUserContent"] {
+        padding-top: 1rem;
+    }
 </style>
 """, unsafe_allow_html=True)
 
