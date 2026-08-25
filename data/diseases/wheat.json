@@ -3,106 +3,708 @@
         "name": "Yellow Rust / Stripe Rust",
         "cultural": [
             {
-                "action": "IKS Research Gap Identified",
-                "emoji": "🕵️",
-                "theme": "soft_pink",
-                "summary": "No traditional Himachal field-treatment is currently documented for Wheat Rust.",
-                "how": "This is a great opportunity to interview local elders! For now, rely on modern resistant varieties."
+                "action": "Super-Brave Seed Squad",
+                "emoji": "\ud83e\uddb8",
+                "theme": "lavender",
+                "summary": "Choose brave, local-recommended wheat varieties that know how to fight off cold yellow rust!",
+                "how": "Plant only the wheat varieties officially recommended for your specific area of Himachal.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "Uses genetics as the first line of defense \u2014 the most reliable non-chemical control, since resistant varieties don't develop severe symptoms even under heavy disease pressure.",
+                    "materials_needed": [
+                        "Access to your zone's officially recommended wheat variety list"
+                    ],
+                    "preparation_steps": [
+                        "Before sowing season, contact your local KVK or CSK HPKV Palampur for currently recommended varieties for your elevation/district \u2014 this changes periodically as rust strains evolve."
+                    ],
+                    "application_steps": [
+                        "Source certified seed of the recommended variety through official channels (state seed corporation, certified dealers, or KVK seed programs).",
+                        "Sow this variety rather than saving seed from an older variety, even if it worked well in past years \u2014 rust strains evolve."
+                    ],
+                    "time_commitment": "Days to weeks for sourcing; sowing itself is standard time",
+                    "frequency_detail": "Once per season, at variety-selection/seed-sourcing stage",
+                    "expected_results_timeline": "Resistance is built in from germination \u2014 little to no rust development expected if the recommendation matches your zone and current rust strain.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Weekly Tree-Line Patrol",
+                "emoji": "\ud83d\udd75\ufe0f",
+                "theme": "soft_yellow",
+                "summary": "Take a cozy winter walk around your field edge, especially under tall shade trees, to spot early leaf dust!",
+                "how": "Check fields regularly, especially areas near trees which are more prone to infection.",
+                "frequency": "Starting late December, weekly",
+                "details": {
+                    "what_it_does": "Catches the disease early, when management options are most effective, since rust spreads fast once established.",
+                    "materials_needed": [
+                        "Nothing beyond your own eyes and routine"
+                    ],
+                    "preparation_steps": [],
+                    "application_steps": [
+                        "Starting late December, walk your field once a week.",
+                        "Pay particular attention to areas near tall trees or shade, which are more prone to infection due to altered humidity and airflow.",
+                        "Look for small, bright yellow-orange dusty pustules arranged in stripes along leaf veins \u2014 the telltale rust symptom.",
+                        "If spotted, note location and extent \u2014 this is your trigger to begin biological/botanical treatments if not already started preventively."
+                    ],
+                    "time_commitment": "20-30 minutes per week for a small-to-medium field",
+                    "frequency_detail": "Weekly, starting late December through roughly end of March",
+                    "expected_results_timeline": "A monitoring practice \u2014 its value is triggering timely action on other treatments.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Perfect Timing Sowing",
+                "emoji": "\u23f1\ufe0f",
+                "theme": "peach",
+                "summary": "Plant right on schedule so your sprouts grow strong before the deep winter chills roll in!",
+                "how": "Sow at the recommended time for your zone, avoid very early or very late sowing.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "Ensures the crop passes through its most vulnerable early growth stages on a schedule that avoids the disease's most favorable conditions.",
+                    "materials_needed": [
+                        "Nothing extra \u2014 a scheduling decision"
+                    ],
+                    "preparation_steps": [
+                        "Determine the recommended sowing window for wheat in your specific zone (varies by elevation within Himachal)."
+                    ],
+                    "application_steps": [
+                        "Sow within this window \u2014 avoid very early (exposes tender growth too soon) or very late (pushes critical stages into disease-favorable weather).",
+                        "Prepare seed and field in advance to sow exactly within the window."
+                    ],
+                    "time_commitment": "No extra time \u2014 scheduling decision made once",
+                    "frequency_detail": "Once per season, at sowing",
+                    "expected_results_timeline": "Preventive \u2014 reduced disease pressure through the season relative to poorly-timed sowing.",
+                    "safety_notes": []
+                }
             }
         ],
-        "biological": []
+        "biological": [
+            {
+                "action": "Friendly Bacteria Shield",
+                "emoji": "\ud83d\udee1\ufe0f",
+                "theme": "mint_green",
+                "summary": "Mist your wheat with helpful microbe friends to create a protective barrier on green leaves!",
+                "how": "Apply a Bacillus subtilis-based biocontrol spray on foliage, following product label concentration.",
+                "frequency": "Starting when symptoms first appear, repeat every 10-15 days",
+                "details": {
+                    "what_it_does": "A global meta-analysis found this reduces stripe rust severity by 40-60% and increases yield \u2014 real but generally less complete than chemical control under heavy pressure. CSK HPKV's current advisory still leads with chemical fungicide as primary response.",
+                    "materials_needed": [
+                        "Bacillus subtilis-based biocontrol product",
+                        "Water",
+                        "Sprayer (hand-pump or backpack)",
+                        "Clean measuring container"
+                    ],
+                    "preparation_steps": [
+                        "Obtain a Bacillus subtilis-based product from your local KVK or agri-input store.",
+                        "Read the product label for its specific concentration/mixing rate, since this varies by manufacturer.",
+                        "Measure the correct amount per litre of water as specified on the label.",
+                        "Mix thoroughly in your sprayer."
+                    ],
+                    "application_steps": [
+                        "Spray evenly over wheat foliage, covering as much leaf surface as possible since rust can appear on both surfaces.",
+                        "Spray in early morning or late evening, avoiding the hottest part of the day."
+                    ],
+                    "time_commitment": "30-45 minutes for a small-to-medium field per session, including mixing",
+                    "frequency_detail": "Starting when symptoms first appear (or preventively a few weeks before typical December onset), repeat every 10-15 days",
+                    "expected_results_timeline": "Some effect on new infection visible within 1-2 weeks; fuller seasonal severity reduction and yield benefit shows at harvest comparison.",
+                    "safety_notes": [
+                        "Low-risk biological product",
+                        "Wash hands after handling",
+                        "Avoid direct inhalation of spray mist"
+                    ]
+                }
+            },
+            {
+                "action": "Fairy Dust Leaf Shower",
+                "emoji": "\u2728",
+                "theme": "pastel_green",
+                "summary": "Give wheat leaves a light spray of beneficial fungi to keep rust spots from spreading!",
+                "how": "Apply a Trichoderma harzianum or T. viride-based foliar spray.",
+                "frequency": "Starting when symptoms first appear, repeat every 10-15 days",
+                "details": {
+                    "what_it_does": "Provides a complementary biocontrol mechanism to Bacillus subtilis, commonly used alongside or as an alternative.",
+                    "materials_needed": [
+                        "Trichoderma harzianum or T. viride-based product",
+                        "Water",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Obtain a Trichoderma harzianum or T. viride-based product from your local agri-input store or KVK.",
+                        "Mix per the product's label rate in your sprayer with clean water."
+                    ],
+                    "application_steps": [
+                        "Spray evenly over foliage, covering upper and lower leaf surfaces as much as practical.",
+                        "Spray in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes per session for a small-to-medium field",
+                    "frequency_detail": "Starting when symptoms first appear, repeat every 10-15 days",
+                    "expected_results_timeline": "Similar to Bacillus subtilis \u2014 some effect within 1-2 weeks, fuller seasonal benefit measured at harvest.",
+                    "safety_notes": [
+                        "Low-risk natural biological product",
+                        "Wash hands after handling"
+                    ]
+                }
+            }
+        ]
     },
     "powdery_mildew": {
         "name": "Powdery Mildew",
+        "confidence_note": "weakest_sourced_wheat_entry_confirmed_priority_disease_but_no_wheat_specific_trial_percentages_found",
         "cultural": [
             {
-                "action": "IKS Research Gap Identified",
-                "emoji": "🕵️",
-                "theme": "soft_pink",
-                "summary": "No traditional Himachal field-treatment is currently documented for Wheat Mildew.",
-                "how": "Consult with local farmers to see if unrecorded traditional practices exist in your district."
+                "action": "Mildew-Tough Varieties",
+                "emoji": "\ud83d\udcaa",
+                "theme": "lavender",
+                "summary": "Pick seeds that naturally love hill weather and resist dusty white mildew!",
+                "how": "Choose varieties with documented powdery mildew tolerance for HP conditions.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "Genetic resistance is the most reliable non-chemical control.",
+                    "materials_needed": [
+                        "Same as Yellow Rust's resistant variety treatment"
+                    ],
+                    "preparation_steps": [
+                        "Follow the same method as Yellow Rust \u2192 Cultural \u2192 Resistant Variety Selection, but specifically ask about mildew tolerance, since rust-resistant varieties aren't necessarily mildew-resistant."
+                    ],
+                    "application_steps": [],
+                    "time_commitment": "Same as Yellow Rust variety selection",
+                    "frequency_detail": "Once per season, at seed-sourcing",
+                    "expected_results_timeline": "Reduced mildew development if the variety recommendation matches your zone.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Breezy Wheat Rows",
+                "emoji": "\ud83c\udf2c\ufe0f",
+                "theme": "sky_blue",
+                "summary": "Space seeds gently so fresh mountain air flows through every growing green stalk!",
+                "how": "Avoid overly dense sowing rates.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "Reduces humidity buildup between plants, since powdery mildew favors dense, poorly-ventilated canopies.",
+                    "materials_needed": [
+                        "Standard sowing equipment",
+                        "Awareness of your normal seed rate"
+                    ],
+                    "preparation_steps": [
+                        "Check your variety's recommended seed rate/sowing density."
+                    ],
+                    "application_steps": [
+                        "Avoid the denser end of the acceptable range \u2014 aim for the lower-density end within recommended limits.",
+                        "Sow as normal at this adjusted density."
+                    ],
+                    "time_commitment": "No significant extra time",
+                    "frequency_detail": "Once, at sowing",
+                    "expected_results_timeline": "Ongoing airflow benefit through the season; disease pressure difference visible as canopy develops.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Gentle Fertilizer Meal",
+                "emoji": "\u2696\ufe0f",
+                "theme": "soft_yellow",
+                "summary": "Feed your wheat a balanced diet without giving too much nitrogen!",
+                "how": "Avoid excess nitrogen fertilizer.",
+                "frequency": "At top-dressing stage",
+                "details": {
+                    "what_it_does": "Excess nitrogen produces soft, lush growth more susceptible to powdery mildew.",
+                    "materials_needed": [
+                        "Normal nitrogen fertilizer"
+                    ],
+                    "preparation_steps": [
+                        "Cap nitrogen at your zone's recommended rate rather than pushing higher."
+                    ],
+                    "application_steps": [
+                        "Split across top-dressing stages per normal fertilizer schedule."
+                    ],
+                    "time_commitment": "30-45 minutes per application for a small plot",
+                    "frequency_detail": "At top-dressing stage(s)",
+                    "expected_results_timeline": "Ongoing effect through the season.",
+                    "safety_notes": [
+                        "Avoid direct skin contact with concentrated fertilizer",
+                        "Wash hands after handling"
+                    ]
+                }
             }
         ],
-        "biological": []
+        "botanical": [
+            {
+                "action": "Neem Tea Leaf Splash",
+                "emoji": "\ud83c\udf75",
+                "theme": "mint_green",
+                "summary": "Brew fresh neem leaf water and spray foliage to keep white dusty spots away!",
+                "how": "Prepare a neem leaf extract (soak crushed neem leaves in water, strain) and spray on foliage.",
+                "frequency": "Every 10-14 days from early tillering stage",
+                "confidence": "extrapolated_no_wheat_specific_trial_confirmed",
+                "details": {
+                    "what_it_does": "A plant-derived spray commonly used against powdery-mildew-type fungal issues \u2014 we did not find a wheat-specific efficacy trial confirming an exact percentage result for this combination.",
+                    "materials_needed": [
+                        "Fresh neem leaves (or neem leaf powder if unavailable locally)",
+                        "Water",
+                        "Container for soaking",
+                        "Cloth or fine strainer",
+                        "Sprayer"
+                    ],
+                    "preparation_steps": [
+                        "Collect a good handful of fresh neem leaves.",
+                        "Crush the leaves to release compounds.",
+                        "Soak in water at roughly 100 grams crushed leaves per litre of water.",
+                        "Steep 24 hours, or gently simmer 15-20 minutes and let cool.",
+                        "Strain thoroughly through a cloth or fine strainer."
+                    ],
+                    "application_steps": [
+                        "Pour strained extract into sprayer.",
+                        "Spray evenly over foliage from early tillering stage onward.",
+                        "Apply in early morning or evening."
+                    ],
+                    "time_commitment": "30-45 minutes prep, 20-30 minutes application per session",
+                    "frequency_detail": "Every 10-14 days from early tillering stage",
+                    "expected_results_timeline": "Not backed by a wheat-specific trial \u2014 treat the first season as a real test. Monitor plant response closely after the first 2-3 applications; this is one of the treatments where your own field observation will tell you more than the literature currently can.",
+                    "safety_notes": [
+                        "Generally very safe to handle",
+                        "Wash hands after preparation and application",
+                        "Avoid contact with eyes"
+                    ]
+                }
+            }
+        ],
+        "biological": [
+            {
+                "action": "Bio-Shield Leaf Mist",
+                "emoji": "\ud83c\udf3f",
+                "theme": "pastel_green",
+                "summary": "Mist leaves every fortnight with friendly Trichoderma microbes to keep foliage clean!",
+                "how": "Apply Trichoderma harzianum or T. viride-based spray on foliage.",
+                "frequency": "Every 10-14 days",
+                "confidence": "extrapolated_no_wheat_specific_trial_confirmed",
+                "details": {
+                    "what_it_does": "Same bio-agent used against yellow rust, applied here for general antifungal/plant-health properties \u2014 not confirmed by a wheat-powdery-mildew-specific trial.",
+                    "materials_needed": [
+                        "Same as Yellow Rust's Trichoderma spray treatment"
+                    ],
+                    "preparation_steps": [
+                        "Follow the same method as Yellow Rust \u2192 Biological \u2192 Fairy Dust Leaf Shower."
+                    ],
+                    "application_steps": [],
+                    "time_commitment": "Same as Yellow Rust Trichoderma spray",
+                    "frequency_detail": "Every 10-14 days",
+                    "expected_results_timeline": "Same honest caveat as the neem entry above \u2014 monitor closely as a genuine field test rather than assuming confirmed efficacy.",
+                    "safety_notes": [
+                        "Low-risk natural biological product",
+                        "Wash hands after handling"
+                    ]
+                }
+            }
+        ]
     },
     "loose_smut": {
         "name": "Loose Smut",
         "cultural": [
             {
-                "action": "IKS Research Gap Identified",
-                "emoji": "🕵️",
+                "action": "Smut-Proof Seed Selection",
+                "emoji": "\ud83d\udee1\ufe0f",
                 "theme": "lavender",
-                "summary": "No traditional Himachal field-treatment is currently documented for Loose Smut.",
-                "how": "Consult with local farmers to see if unrecorded traditional practices exist."
+                "summary": "Select strong wheat varieties that naturally prevent dark smut spores!",
+                "how": "Choose varieties with documented resistance where available.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "Combines genetic resistance (where available) with reduced smut risk.",
+                    "materials_needed": [
+                        "Access to resistant variety information for your zone"
+                    ],
+                    "preparation_steps": [
+                        "Ask your KVK which varieties, if any, have documented loose smut resistance for your zone."
+                    ],
+                    "application_steps": [
+                        "Prioritize a resistant variety if available, combined with certified seed status (see next treatment)."
+                    ],
+                    "time_commitment": "Time spent sourcing seed",
+                    "frequency_detail": "Once per season, at seed-sourcing",
+                    "expected_results_timeline": "Reduced smut incidence if resistant variety is genuinely available and matched to your zone.",
+                    "safety_notes": []
+                }
+            },
+            {
+                "action": "Certified Clean Seeds",
+                "emoji": "\ud83d\udcdc",
+                "theme": "butter_yellow",
+                "summary": "Start with lab-tested, super-clean certified seeds for total peace of mind!",
+                "how": "Use certified, disease-tested seed.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "Since this fungus is seed-borne and travels dormant inside the seed itself, correct starting material is the single most important intervention for this disease.",
+                    "materials_needed": [
+                        "Access to certified, disease-tested wheat seed"
+                    ],
+                    "preparation_steps": [
+                        "Ask your KVK or seed supplier specifically for 'certified' seed, tested and verified free of loose smut infection.",
+                        "This is meaningfully different from uncertified or farmer-saved seed, which carries higher risk of hidden internal smut infection."
+                    ],
+                    "application_steps": [
+                        "Source and sow certified seed.",
+                        "Avoid saving your own seed for replanting if your previous crop had any loose smut incidence, since the fungus can be seed-borne without obvious external symptoms."
+                    ],
+                    "time_commitment": "Advance planning time, as certified seed can sell out",
+                    "frequency_detail": "Once per season, at seed-sourcing",
+                    "expected_results_timeline": "Directly reduces starting infection load \u2014 visible throughout the season if certified seed was genuinely clean.",
+                    "safety_notes": []
+                }
             }
         ],
-        "biological": []
+        "biological": [
+            {
+                "action": "Friendly Microbe Seed Bath",
+                "emoji": "\ud83d\udec1",
+                "theme": "mint_green",
+                "summary": "Coat your seeds in a helpful bio-suspension before planting to block hidden seed spores!",
+                "how": "Treat seed with a Trichoderma viride suspension (0.4% concentration) before sowing.",
+                "frequency": "Once, at sowing time",
+                "details": {
+                    "what_it_does": "A multi-location Indian trial found this alone reduced smutted tillers by up to 17.5% \u2014 a real but partial effect on its own.",
+                    "materials_needed": [
+                        "Trichoderma viride product",
+                        "Water",
+                        "Mixing container",
+                        "Seed batch",
+                        "A way to measure concentration accurately"
+                    ],
+                    "preparation_steps": [
+                        "Obtain a Trichoderma viride product from your local agri-input store or KVK.",
+                        "Prepare a 0.4% concentration suspension \u2014 roughly 4 grams of product per litre of water for a wettable powder (confirm exact dilution against your specific product with your KVK, since calculation can vary by formulation).",
+                        "Mix thoroughly until the powder is well-suspended."
+                    ],
+                    "application_steps": [
+                        "Either briefly soak the seed in this suspension, or sprinkle the suspension over spread-out seed and mix by hand until evenly coated.",
+                        "Allow to air-dry in shade before sowing.",
+                        "Sow the treated seed, ideally same day or within 24 hours."
+                    ],
+                    "time_commitment": "30-45 minutes for a small-to-medium seed batch, including drying time",
+                    "frequency_detail": "Once, at sowing",
+                    "expected_results_timeline": "Since this treats the seed-borne fungus directly, the effect (reduced smutted tillers) becomes apparent once the crop reaches tillering/heading stage \u2014 no visible difference at emergence.",
+                    "safety_notes": [
+                        "Low-risk natural product",
+                        "Wash hands after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Soil & Sprout Booster",
+                "emoji": "\ud83c\udf31",
+                "theme": "soft_blue",
+                "summary": "Add an extra boost of Trichoderma to the soil so baby shoots grow up healthy!",
+                "how": "Apply Trichoderma viride to soil or as foliar spray in addition to seed treatment.",
+                "frequency": "At sowing, then optionally repeat once during early growth",
+                "details": {
+                    "what_it_does": "Supplements the seed treatment above with additional soil or foliar-stage protection.",
+                    "materials_needed": [
+                        "Trichoderma viride product",
+                        "Water",
+                        "Sprayer or soil application method"
+                    ],
+                    "preparation_steps": [
+                        "Prepare a suspension per label rate, similar to the seed treatment method."
+                    ],
+                    "application_steps": [
+                        "Apply to soil at sowing, or as a foliar spray during early growth.",
+                        "Optionally repeat once during early growth for additional coverage."
+                    ],
+                    "time_commitment": "20-30 minutes per application",
+                    "frequency_detail": "At sowing, then optionally once more during early growth",
+                    "expected_results_timeline": "Supplements the seed treatment's protection through establishment.",
+                    "safety_notes": [
+                        "Low-risk natural product",
+                        "Wash hands after handling"
+                    ]
+                }
+            },
+            {
+                "action": "Team-Up Flowering Boost",
+                "emoji": "\ud83e\udd1d",
+                "theme": "soft_pink",
+                "summary": "Pair your friendly microbe seed bath with one extra spray at flowering for near-total protection!",
+                "how": "Combine Trichoderma viride seed treatment with a single labeled fungicide spray at the flowering growth stage.",
+                "frequency": "Seed treatment once; one fungicide spray at flowering",
+                "confidence": "integrated_approach_includes_one_chemical_spray_strongest_performing_option_in_literature",
+                "details": {
+                    "what_it_does": "A separate study found this combination gave near-complete disease control. This combines a biological seed treatment with one chemical spray \u2014 flagged clearly since a strictly chemical-free research arm should use the Trichoderma-alone protocol instead. Included as a strong reference point if your research design has an integrated/hybrid comparison category.",
+                    "materials_needed": [
+                        "Same as Trichoderma seed treatment above",
+                        "A labeled fungicide product approved for wheat loose smut"
+                    ],
+                    "preparation_steps": [
+                        "Perform the Trichoderma viride seed treatment exactly as described above."
+                    ],
+                    "application_steps": [
+                        "Apply a single labeled fungicide spray at the flowering growth stage, following that specific product's label instructions for wheat loose smut."
+                    ],
+                    "time_commitment": "Seed treatment as above, plus one additional 20-30 minute spray session at flowering",
+                    "frequency_detail": "Seed treatment once at sowing; one fungicide spray at flowering",
+                    "expected_results_timeline": "Near-complete control reported in the source trial \u2014 the strongest comparison point if your research includes an integrated category.",
+                    "safety_notes": [
+                        "This entry includes a chemical component",
+                        "Follow the specific fungicide product's label safety instructions, including protective equipment recommendations",
+                        "Not appropriate for a strictly chemical-free comparison arm"
+                    ]
+                }
+            }
+        ]
     },
     "karnal_bunt": {
         "name": "Karnal Bunt",
         "cultural": [
             {
-                "action": "IKS Research Gap Identified",
-                "emoji": "🕵️",
-                "theme": "lavender",
-                "summary": "No traditional Himachal field-treatment is currently documented for Karnal Bunt.",
-                "how": "Consult with local farmers to see if unrecorded traditional practices exist."
-            }
-        ],
-        "biological": []
-    },
-    "storage_and_harvest": {
-        "name": "Post-Harvest Grain Storage Protection",
-        "cultural": [
-            {
-                "action": "Bangru Mint Blanket",
-                "emoji": "🌿",
-                "theme": "mint_green",
-                "summary": "Tuck dry wild mint leaves in with your stored wheat—bugs and mold hate it!",
-                "how": "Mix dry Bangru (Mentha arvensis) leaves into stored wheat grain.",
-                "frequency": "At storage time"
+                "action": "Early Bird Sowing",
+                "emoji": "\ud83d\udc26",
+                "theme": "peach",
+                "summary": "Sow early so your wheat flowers before cool, muggy weather can trigger bunt spores!",
+                "how": "Sow at the earliest recommended date for your zone \u2014 avoiding disease-favorable flowering-stage weather is the single biggest lever.",
+                "frequency": "At sowing time",
+                "details": {
+                    "what_it_does": "No fully resistant wheat variety currently exists for this disease in India, making cultural timing the single biggest lever \u2014 avoiding disease-favorable weather specifically during the flowering window, when infection risk is highest under cool, humid conditions.",
+                    "materials_needed": [
+                        "Nothing extra \u2014 a scheduling decision"
+                    ],
+                    "preparation_steps": [
+                        "Determine the earliest recommended sowing date for your zone with local extension services, since sowing too early outside the safe window can create other problems."
+                    ],
+                    "application_steps": [
+                        "Sow at this earliest safe date rather than the later end of your typical window.",
+                        "This shifts the crop's flowering stage earlier in the season, ideally before the coolest, most humid weather typically arrives."
+                    ],
+                    "time_commitment": "No extra time \u2014 scheduling decision made once",
+                    "frequency_detail": "Once per season, at sowing",
+                    "expected_results_timeline": "Preventive \u2014 reduced Karnal bunt incidence at harvest, since the vulnerable flowering window was timed to avoid peak risk conditions.",
+                    "safety_notes": []
+                }
             },
             {
-                "action": "Kali Basuti Leaf Layer",
-                "emoji": "🍃",
-                "theme": "pastel_green",
-                "summary": "Layer in this traditional leafy herb to keep stored grain fungus-free and pest-free!",
-                "how": "Mix dry Kali Basuti (Adhatoda vasica) leaves into stored wheat grain.",
-                "frequency": "At storage time"
+                "action": "Sunny Plastic Sauna",
+                "emoji": "\u2600\ufe0f",
+                "theme": "soft_yellow",
+                "summary": "Give soil a warm summer sun-bath under clear plastic sheets to clean out old spores!",
+                "how": "Cover moist soil with clear plastic sheeting for several weeks before sowing to raise soil temperature and reduce soil-borne inoculum.",
+                "frequency": "Before sowing, in summer fallow period",
+                "details": {
+                    "what_it_does": "Uses summer heat to reduce soil-borne inoculum before the season starts.",
+                    "materials_needed": [
+                        "Clear plastic sheeting, enough to cover your field or bed area"
+                    ],
+                    "preparation_steps": [
+                        "During summer fallow, moisten the soil before covering \u2014 solarization works better on moist soil, which conducts heat more effectively."
+                    ],
+                    "application_steps": [
+                        "Lay clear plastic sheeting tightly over the moistened soil, sealing the edges with soil/stones to trap heat.",
+                        "Leave in place for several weeks during peak summer heat.",
+                        "Remove the plastic before sowing preparation begins."
+                    ],
+                    "time_commitment": "Half a day to lay sheeting; minimal maintenance during the weeks-long solarization; another short session to remove",
+                    "frequency_detail": "Once, before each wheat sowing season, ideally during peak summer",
+                    "expected_results_timeline": "Reduces starting soil inoculum load \u2014 no visible immediate result, but reduced Karnal bunt pressure through the following wheat season if done correctly.",
+                    "safety_notes": [
+                        "Handle plastic sheeting carefully in windy conditions to avoid it blowing away"
+                    ]
+                }
+            },
+            {
+                "action": "Non-Cereal Crop Shuffle",
+                "emoji": "\ud83d\udd04",
+                "theme": "lavender",
+                "summary": "Switch your fields between wheat and legume or veggie crops to break fungal cycles!",
+                "how": "Avoid continuous wheat monocropping on the same field. Rotate with a non-cereal crop periodically.",
+                "frequency": "Rotate periodically",
+                "details": {
+                    "what_it_does": "Breaks the continuous wheat cropping cycle that allows the fungus to build up in the field over successive seasons.",
+                    "materials_needed": [
+                        "A suitable rotation crop (legumes, oilseeds, or vegetables \u2014 ask your KVK for what fits your field and market)"
+                    ],
+                    "preparation_steps": [
+                        "Plan rotation crop based on field conditions and market needs."
+                    ],
+                    "application_steps": [
+                        "Avoid planting wheat in the exact same field in consecutive seasons if Karnal bunt has been a problem.",
+                        "Rotate in a non-cereal crop periodically \u2014 even occasional rotation provides some benefit.",
+                        "Return to wheat after the rotation period, ideally combined with other cultural practices above."
+                    ],
+                    "time_commitment": "Standard planning and planting time for the rotation crop",
+                    "frequency_detail": "Rotate periodically, interval depending on field history",
+                    "expected_results_timeline": "Gradual \u2014 benefits build over multiple seasons of consistent rotation.",
+                    "safety_notes": []
+                }
+            }
+        ]
+    },
+    "storage_stage_protection": {
+        "name": "Storage-Stage Protection (Post-Harvest)",
+        "category_note": "Distinct from field diseases above \u2014 protects stored wheat grain from fungal spoilage and insect pests, not from field-stage diseases like rust or smut.",
+        "local_practice": [
+            {
+                "action": "Bangru Mint Blanket",
+                "emoji": "\ud83c\udf3f",
+                "theme": "mint_green",
+                "summary": "Tuck dry wild mint leaves in with your stored wheat \u2014 bugs and mold hate it, your grain loves it!",
+                "how": "Mix dry Bangru (Mentha arvensis) leaves into stored wheat grain.",
+                "frequency": "Applied at storage time, refresh every few months",
+                "confidence": "high_direct_crop_and_context_match",
+                "details": {
+                    "what_it_does": "A study testing this exact plant against stored wheat found fumigant activity against both insect pests and Aspergillus flavus (a toxin-producing storage fungus) \u2014 a direct match on plant, crop, and context.",
+                    "materials_needed": [
+                        "Dry Bangru (wild mint) leaves"
+                    ],
+                    "preparation_steps": [
+                        "Collect wild mint leaves and dry them thoroughly, air-dried in shade to preserve compounds.",
+                        "Ensure grain is properly dried to safe storage moisture before adding leaves."
+                    ],
+                    "application_steps": [
+                        "Mix or layer the dried leaves directly into your stored wheat grain as you fill your storage container."
+                    ],
+                    "time_commitment": "Several days passive drying time; 15-20 minutes to layer into storage",
+                    "frequency_detail": "Applied once at storage time; refresh every few months for extended storage",
+                    "expected_results_timeline": "Ongoing protective effect throughout the storage period.",
+                    "safety_notes": [
+                        "Safe, food-grade traditional practice",
+                        "Normal food storage hygiene"
+                    ]
+                }
             },
             {
                 "action": "Safeda Eucalyptus Hug",
-                "emoji": "🍃",
+                "emoji": "\ud83c\udf3f",
                 "theme": "sky_blue",
                 "summary": "Fragrant eucalyptus leaves tucked into your grain bin, standing guard against sneaky storage fungi!",
                 "how": "Mix dry Safeda (Eucalyptus citriodora) leaves into stored wheat grain.",
-                "frequency": "At storage time"
+                "frequency": "Applied at storage time, refresh every few months",
+                "confidence": "high_direct_crop_and_context_match",
+                "details": {
+                    "what_it_does": "Tested directly on stored durum wheat against multiple Aspergillus species, including inhibiting aflatoxin production \u2014 noted as the least potent of the oils compared in that trial, though still effective.",
+                    "materials_needed": [
+                        "Dry Safeda (eucalyptus) leaves"
+                    ],
+                    "preparation_steps": [
+                        "Dry leaves thoroughly.",
+                        "Ensure grain is properly dried first."
+                    ],
+                    "application_steps": [
+                        "Layer into stored grain."
+                    ],
+                    "time_commitment": "Passive drying time, 15-20 minutes to layer",
+                    "frequency_detail": "Applied once at storage, refresh every few months",
+                    "expected_results_timeline": "Ongoing protective effect through the storage period.",
+                    "safety_notes": [
+                        "Safe traditional practice"
+                    ]
+                }
+            },
+            {
+                "action": "Kali Basuti Leaf Layer",
+                "emoji": "\ud83c\udf42",
+                "theme": "pastel_green",
+                "summary": "Layer in this traditional leafy herb to keep stored grain fungus-free and pest-free!",
+                "how": "Mix dry Kali Basuti (Adhatoda vasica) leaves into stored wheat grain.",
+                "frequency": "Applied at storage time, refresh periodically",
+                "confidence": "high_for_general_property_medium_for_wheat_specific",
+                "details": {
+                    "what_it_does": "Documented as fungicidal and an effective storage preservative \u2014 the direct crop-tested evidence found was on groundnut rather than wheat specifically, so this is strong general evidence with a wheat-specific confidence gap.",
+                    "materials_needed": [
+                        "Dry Kali Basuti leaves"
+                    ],
+                    "preparation_steps": [
+                        "Dry leaves thoroughly, same general method as Bangru and Safeda."
+                    ],
+                    "application_steps": [
+                        "Layer into stored grain."
+                    ],
+                    "time_commitment": "Same as the other storage leaf treatments",
+                    "frequency_detail": "Applied once at storage, refresh periodically",
+                    "expected_results_timeline": "Ongoing protective effect expected; monitor your own results specifically for wheat since direct trial evidence was on a different crop.",
+                    "safety_notes": [
+                        "Safe traditional practice"
+                    ]
+                }
             },
             {
                 "action": "Walnut & Jugnu Wood Guard",
-                "emoji": "🪵",
+                "emoji": "\ud83c\udf30",
                 "theme": "butter_yellow",
                 "summary": "A traditional trio of walnut leaves, resin-rich wood, and wood ash tucked in for grain protection!",
-                "how": "Combine walnut leaves, pieces of Jugnu wood, and wood ash with stored grain.",
-                "frequency": "At storage time"
+                "how": "Combine walnut leaves, resin-rich Jugnu wood, and wood ash together with stored grain/seed.",
+                "frequency": "Applied at storage time",
+                "confidence": "medium_documented_mechanism_unconfirmed",
+                "details": {
+                    "what_it_does": "A traditional three-part combination for grain/seed storage protection \u2014 mechanism not independently confirmed in modern research, but genuinely documented as local HP practice.",
+                    "materials_needed": [
+                        "Walnut (Juglans regia) leaves",
+                        "Resin-rich wood pieces (locally called Jugnu)",
+                        "Wood ash"
+                    ],
+                    "preparation_steps": [
+                        "Collect walnut leaves and allow to dry.",
+                        "Source Jugnu wood pieces locally, asking if unfamiliar with the material."
+                    ],
+                    "application_steps": [
+                        "Combine dried walnut leaves, Jugnu wood pieces, and a light dusting of wood ash with your stored grain."
+                    ],
+                    "time_commitment": "Passive drying time, plus 15-20 minutes to combine and layer",
+                    "frequency_detail": "Applied once at storage, refresh as needed",
+                    "expected_results_timeline": "Unconfirmed by modern research, but documented as a real ongoing local practice \u2014 worth testing directly and comparing to better-evidenced options.",
+                    "safety_notes": [
+                        "Normal hygiene"
+                    ]
+                }
             },
             {
                 "action": "Matchstick Mystery Guard",
-                "emoji": "🔥",
+                "emoji": "\ud83d\udd25",
                 "theme": "peach",
-                "summary": "An unusual old trick—tucking match sticks in with stored grain to keep pests away!",
+                "summary": "An unusual old trick \u2014 tucking match sticks in with stored grain to keep pests away!",
                 "how": "Place match box sticks in with stored wheat grain, following local farmer practice.",
-                "frequency": "At storage time"
+                "frequency": "Not specified in source",
+                "confidence": "low_medium_mechanism_unconfirmed",
+                "details": {
+                    "what_it_does": "Documented as used specifically for wheat storage pest management in multiple HP districts. Mechanism not explained in source material \u2014 possibly related to sulfur content acting as a mild fumigant, but this is speculative and unconfirmed.",
+                    "materials_needed": [
+                        "Match box sticks"
+                    ],
+                    "preparation_steps": [],
+                    "application_steps": [
+                        "Place match sticks in with stored wheat grain, following local practice."
+                    ],
+                    "time_commitment": "A few minutes",
+                    "frequency_detail": "Not specified in source",
+                    "expected_results_timeline": "Unconfirmed \u2014 good candidate for direct farmer interview to clarify method and reasoning.",
+                    "safety_notes": [
+                        "Mechanism unconfirmed",
+                        "Good candidate for direct farmer interview"
+                    ]
+                }
             },
             {
                 "action": "Perru Bamboo Basket Home",
-                "emoji": "🧺",
+                "emoji": "\ud83e\uddfa",
                 "theme": "soft_yellow",
-                "summary": "Store harvested wheat in a big spindle-shaped bamboo basket!",
+                "summary": "Store harvested wheat in a big spindle-shaped bamboo basket \u2014 a cozy, breathable, pest-proof home!",
                 "how": "Store harvested wheat grain in large spindle-shaped bamboo baskets, locally called 'Perru'.",
-                "frequency": "At harvest/storage time"
+                "frequency": "Applied at harvest/storage time",
+                "confidence": "high_documented_structural_method",
+                "category_note": "Physical/structural storage method, not a botanical or biological treatment.",
+                "details": {
+                    "what_it_does": "Controls airflow, moisture, and physical pest access through the basket's design, rather than through any active chemical/biological compound.",
+                    "materials_needed": [
+                        "A large, spindle-shaped bamboo basket (Perru) \u2014 may need sourcing from a local craftsperson"
+                    ],
+                    "preparation_steps": [
+                        "Ensure the basket is clean and dry before use.",
+                        "Dry your wheat grain to proper storage moisture."
+                    ],
+                    "application_steps": [
+                        "Fill the basket with grain, leaving some airflow space rather than packing solid \u2014 ask a local farmer familiar with Perru baskets for filling guidance if this is new to you.",
+                        "Store the filled basket in a dry, sheltered location."
+                    ],
+                    "time_commitment": "Variable sourcing time if you don't have a basket; 20-30 minutes to fill",
+                    "frequency_detail": "Set up once per harvest/storage cycle",
+                    "expected_results_timeline": "Ongoing structural protection throughout the storage period.",
+                    "safety_notes": []
+                }
             }
-        ],
-        "biological": []
+        ]
     }
 }

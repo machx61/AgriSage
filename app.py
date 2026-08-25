@@ -9,9 +9,10 @@ import hashlib
 from pathlib import Path
 import tempfile
 import uuid
+import io
 from PIL import Image
 from ultralytics import YOLO
-from streamlit_js_eval import get_geolocation
+from streamlit_js_eval import get_geolocation, streamlit_js_eval
 from treatments_db import get_treatment_data, THEME_COLORS
 from disease_map import DISEASE_DISPLAY_MAP
 from diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
@@ -37,6 +38,34 @@ def init_db():
         if "session_id" not in existing_columns:
             c.execute("ALTER TABLE scans ADD COLUMN session_id TEXT")
         c.execute("CREATE INDEX IF NOT EXISTS idx_scans_session_id ON scans(session_id)")
+        
+        # Plant tracking tables
+        c.execute('''CREATE TABLE IF NOT EXISTS tracked_plants
+                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      device_id TEXT,
+                      plant_name TEXT,
+                      crop_type TEXT,
+                      initial_disease TEXT,
+                      created_date TEXT,
+                      current_status TEXT DEFAULT 'stable',
+                      current_score INTEGER DEFAULT 50,
+                      next_checkin_date TEXT)''')
+        c.execute("CREATE INDEX IF NOT EXISTS idx_tracked_device ON tracked_plants(device_id)")
+        
+        c.execute('''CREATE TABLE IF NOT EXISTS progress_entries
+                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      plant_id INTEGER,
+                      date TEXT,
+                      disease_detected TEXT,
+                      confidence REAL,
+                      health_score INTEGER,
+                      status_label TEXT,
+                      ai_notes TEXT,
+                      adjusted_treatment TEXT,
+                      next_checkin_days INTEGER,
+                      photo_b64 TEXT,
+                      FOREIGN KEY (plant_id) REFERENCES tracked_plants(id))''')
+        c.execute("CREATE INDEX IF NOT EXISTS idx_progress_plant ON progress_entries(plant_id)")
 
 
 def save_scan(session_id, disease_name, confidence):
@@ -221,7 +250,26 @@ st.markdown("## 🌱 Agrisage Vision")
 st.caption("Botanical Plant Pathology Engine")
 
 if "history_session_id" not in st.session_state:
+    st.session_state.history_session_id = None
+
+# Persistent device ID via localStorage — survives browser restarts
+device_id = streamlit_js_eval(js_expressions="""
+    (function() {
+        var id = localStorage.getItem('agrisage_device_id');
+        if (!id) { id = crypto.randomUUID(); localStorage.setItem('agrisage_device_id', id); }
+        return id;
+    })()
+""", key="device_id")
+if device_id:
+    st.session_state.history_session_id = device_id
+elif st.session_state.history_session_id is None:
     st.session_state.history_session_id = uuid.uuid4().hex
+
+# Sidebar — navigation
+st.sidebar.markdown("### ⚙️ AgriSage")
+st.session_state.gemini_key = st.secrets["GEMINI_API_KEY"]
+st.sidebar.page_link("app.py", label="Scan", icon="🔬")
+st.sidebar.page_link("pages/my_plants.py", label="My Plants", icon="🌱")
 
 # This browser component asks the visitor for permission and returns their device's
 # GPS/network coordinates. Streamlit itself only runs on the server, so it cannot
@@ -296,30 +344,30 @@ if not images_to_process:
             images_to_process.append(cam_file)
 
 with st.expander("🌾 Add Field Notes", expanded=False):
-    import requests
-    if st.button("📍 Auto-Detect Location & Weather"):
+    # Auto-detect location/weather once per session (or update if GPS just arrived)
+    gps_ready = 'loc_info' in globals() and loc_info is not None
+    if 'auto_elev' not in st.session_state or (gps_ready and not st.session_state.get('used_gps')):
         lat, lon = None, None
-        try:
-            # Try browser GPS first (works on Android/iOS)
-            loc = get_geolocation()
-            if loc and loc.get("coords"):
-                lat = loc["coords"]["latitude"]
-                lon = loc["coords"]["longitude"]
-                st.success(f"📡 GPS location detected!")
-        except Exception:
-            pass
         
-        # Fallback to IP-based detection
-        if lat is None:
+        if gps_ready:
+            lat, lon = loc_info["lat"], loc_info["lon"]
+            st.session_state.used_gps = True
+            st.success(f"📡 GPS location detected automatically!")
+        else:
+            # Fallback to IP
+            import requests
             try:
                 ip_info = requests.get("http://ip-api.com/json/", timeout=5).json()
                 if ip_info.get("status") == "success":
                     lat, lon = ip_info["lat"], ip_info["lon"]
-                    st.info("📡 Approximate location via network (allow GPS in browser for better accuracy)")
+                    st.info("📡 Approximate location detected via network.")
             except Exception:
                 pass
-        
+                
         if lat is not None and lon is not None:
+            st.session_state.user_lat = lat
+            st.session_state.user_lon = lon
+            import requests
             try:
                 r = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m,relative_humidity_2m&elevation=nan", timeout=5).json()
                 elevation = r.get("elevation", 0)
@@ -331,10 +379,12 @@ with st.expander("🌾 Add Field Notes", expanded=False):
                 else:
                     st.session_state.auto_elev = "High Hill (1500–3000m)"
                 st.session_state.auto_weather = f"{current.get('temperature_2m', '')}°C, {current.get('relative_humidity_2m', '')}% humidity"
-            except Exception as e:
-                st.error(f"Weather fetch failed: {e}")
+            except Exception:
+                st.session_state.auto_elev = None
+                st.session_state.auto_weather = ""
         else:
-            st.error("Could not detect location. Please allow location access in your browser settings and try again.")
+            st.session_state.auto_elev = None
+            st.session_state.auto_weather = ""
 
     elev_opts = ["Mid Hill (900–1500m)", "Low Hill (<900m)", "High Hill (1500–3000m)"]
     elev_index = None
@@ -638,6 +688,126 @@ if analysis and (analysis.get("upload_signature") == upload_signature or analysi
     render_treatment_section("🌾 Cultural Practices & Garden Care", treatment_info.get("cultural", []), "soft_yellow", fert, water)
     render_treatment_section("👩‍🌾 Local Practices", treatment_info.get("local_practice", []), "peach", fert, water)
     render_treatment_section("📜 Indigenous Knowledge (IKS)", treatment_info.get("iks", []), "lavender", fert, water)
+
+    # --- Plant Tracking ---
+    st.markdown("---")
+    st.markdown("#### 🌱 Plant Tracking")
+    
+    # Get existing tracked plants for this device
+    device_id_val = st.session_state.history_session_id
+    with sqlite3.connect(DATABASE_PATH, timeout=5) as conn:
+        existing_plants = conn.execute(
+            "SELECT id, plant_name FROM tracked_plants WHERE device_id = ? ORDER BY id DESC",
+            (device_id_val,)
+        ).fetchall()
+    
+    track_tab, link_tab = st.tabs(["🆕 Track New Plant", "📎 Link to Existing Plant"])
+    
+    with track_tab:
+        if not st.session_state.get("gemini_key"):
+            st.info("🔑 Enter your Gemini API key in the sidebar to enable plant tracking.")
+        else:
+            plant_name = st.text_input("Give this plant a name", placeholder="e.g. Backyard Tomato", key="new_plant_name")
+            if st.button("🌱 Start Tracking", use_container_width=True):
+                if not plant_name or not plant_name.strip():
+                    st.warning("Please enter a name for your plant.")
+                else:
+                    # Compress photo to thumbnail
+                    photo_b64 = ""
+                    if images_to_process:
+                        try:
+                            img = Image.open(images_to_process[0])
+                            img.thumbnail((400, 400))
+                            buf = io.BytesIO()
+                            img.save(buf, format="JPEG", quality=60)
+                            photo_b64 = base64.b64encode(buf.getvalue()).decode()
+                        except Exception:
+                            pass
+                    
+                    # Get initial AI assessment for accurate baseline score
+                    from gemini_tracker import get_initial_assessment
+                    with st.spinner("🤖 Assessing plant health..."):
+                        assessment = get_initial_assessment(
+                            st.session_state.gemini_key,
+                            photo_b64,
+                            display_name,
+                            final_confidence
+                        )
+                    
+                    # Extract crop type from raw class
+                    crop_type = final_raw_class.split("_")[0] if "_" in final_raw_class else final_raw_class
+                    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+                    next_date = (datetime.datetime.now() + datetime.timedelta(days=assessment["next_checkin_days"])).strftime("%Y-%m-%d")
+                    
+                    with sqlite3.connect(DATABASE_PATH, timeout=5) as conn:
+                        cursor = conn.execute(
+                            "INSERT INTO tracked_plants (device_id, plant_name, crop_type, initial_disease, created_date, current_status, current_score, next_checkin_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                            (device_id_val, plant_name.strip(), crop_type, final_raw_class, now_str, assessment["status_label"], assessment["health_score"], next_date)
+                        )
+                        plant_id = cursor.lastrowid
+                        conn.execute(
+                            "INSERT INTO progress_entries (plant_id, date, disease_detected, confidence, health_score, status_label, ai_notes, adjusted_treatment, next_checkin_days, photo_b64) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                            (plant_id, now_str, display_name, final_confidence, assessment["health_score"], assessment["status_label"], assessment["ai_notes"], "", assessment["next_checkin_days"], photo_b64)
+                        )
+                    st.success(f"✅ **{plant_name.strip()}** tracked! Health Score: {assessment['health_score']}/100. Next check-in: {next_date}")
+    
+    with link_tab:
+        if not existing_plants:
+            st.caption("No existing plants to link to. Create a new one above!")
+        elif not st.session_state.get("gemini_key"):
+            st.info("🔑 Enter your Gemini API key in the sidebar to enable tracking.")
+        else:
+            plant_options = {f"{name} (#{pid})": pid for pid, name in existing_plants}
+            selected = st.selectbox("Link this scan to:", list(plant_options.keys()), index=None, placeholder="Select a plant...", key="link_plant_select")
+            if selected and st.button("📎 Add Check-in", use_container_width=True):
+                plant_id = plant_options[selected]
+                
+                # Get previous entry for comparison
+                with sqlite3.connect(DATABASE_PATH, timeout=5) as conn:
+                    prev = conn.execute(
+                        "SELECT health_score, photo_b64, adjusted_treatment FROM progress_entries WHERE plant_id = ? ORDER BY id DESC LIMIT 1",
+                        (plant_id,)
+                    ).fetchone()
+                
+                prev_score = prev[0] if prev else 50
+                prev_photo = prev[1] if prev else ""
+                prev_treatment = prev[2] if prev else ""
+                
+                # Compress current photo
+                photo_b64 = ""
+                if images_to_process:
+                    try:
+                        img = Image.open(images_to_process[0])
+                        img.thumbnail((400, 400))
+                        buf = io.BytesIO()
+                        img.save(buf, format="JPEG", quality=60)
+                        photo_b64 = base64.b64encode(buf.getvalue()).decode()
+                    except Exception:
+                        pass
+                
+                from gemini_tracker import analyze_progress
+                with st.spinner("🤖 Analyzing progress..."):
+                    result = analyze_progress(
+                        st.session_state.gemini_key,
+                        prev_photo, photo_b64,
+                        display_name, prev_score, prev_treatment
+                    )
+                
+                now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+                next_date = (datetime.datetime.now() + datetime.timedelta(days=result["next_checkin_days"])).strftime("%Y-%m-%d")
+                
+                with sqlite3.connect(DATABASE_PATH, timeout=5) as conn:
+                    conn.execute(
+                        "INSERT INTO progress_entries (plant_id, date, disease_detected, confidence, health_score, status_label, ai_notes, adjusted_treatment, next_checkin_days, photo_b64) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                        (plant_id, now_str, display_name, final_confidence, result["health_score"], result["status_label"], result["ai_notes"], result.get("treatment_adjustments", ""), result["next_checkin_days"], photo_b64)
+                    )
+                    conn.execute(
+                        "UPDATE tracked_plants SET current_status = ?, current_score = ?, next_checkin_date = ? WHERE id = ?",
+                        (result["status_label"], result["health_score"], next_date, plant_id)
+                    )
+                
+                status_emoji = {"improving": "🟢", "stable": "🟡", "worsening": "🔴", "recovered": "✨"}.get(result["status_label"], "🟡")
+                st.success(f"{status_emoji} Check-in recorded! Health: {result['health_score']}% | Next check-in: {next_date}")
 
 # --- Display Persistent History ---
 st.markdown("---")
