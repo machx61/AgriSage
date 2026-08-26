@@ -434,9 +434,14 @@ def create_pdf(disease_name, treatment_info):
         "botanical": "Botanical Solutions",
         "biological": "Biological Solutions",
         "cultural": "Cultural Practices & Garden Care",
-        "local_practice": "Local Practices",
         "iks": "Indigenous Knowledge (IKS)",
     }
+
+    # Merge local_practice into cultural for PDF
+    if "local_practice" in treatment_info:
+        combined_cultural = treatment_info.get("cultural", []) + treatment_info.get("local_practice", [])
+        treatment_info = dict(treatment_info)  # shallow copy
+        treatment_info["cultural"] = combined_cultural
 
     for cat, label in category_labels.items():
         items = treatment_info.get(cat, [])
@@ -589,6 +594,8 @@ def reorder_and_highlight_treatments(treatments_list, fertilizer, watering):
     return boosted + regular
 
 def render_treatment_section(title, items, default_theme, fertilizer, watering):
+    # Filter out empty/placeholder entries
+    items = [i for i in items if i.get('action') and i.get('action') != 'IKS Research Gap Identified' and (i.get('how') or i.get('summary'))]
     if not items:
         return
         
@@ -689,10 +696,12 @@ if analysis and (analysis.get("upload_signature") == upload_signature or analysi
     fert = fertilizer_usage if 'fertilizer_usage' in locals() else ''
     water = watering_pattern if 'watering_pattern' in locals() else ''
     
+    # Merge local_practice into cultural
+    cultural_items = treatment_info.get("cultural", []) + treatment_info.get("local_practice", [])
+    
     render_treatment_section("🌿 Botanical Solutions", treatment_info.get("botanical", []), "pastel_green", fert, water)
     render_treatment_section("✨ Biological Solutions", treatment_info.get("biological", []), "mint_green", fert, water)
-    render_treatment_section("🌾 Cultural Practices & Garden Care", treatment_info.get("cultural", []), "soft_yellow", fert, water)
-    render_treatment_section("👩‍🌾 Local Practices", treatment_info.get("local_practice", []), "peach", fert, water)
+    render_treatment_section("🌾 Cultural Practices & Garden Care", cultural_items, "soft_yellow", fert, water)
     render_treatment_section("📜 Indigenous Knowledge (IKS)", treatment_info.get("iks", []), "lavender", fert, water)
 
     # --- Plant Tracking ---

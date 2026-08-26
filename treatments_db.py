@@ -111,14 +111,44 @@ def get_treatment_data(predicted_class: str):
             return data.get("post_harvest_storage", DEFAULT_TREATMENT)
                 
     elif crop == "wheat":
-        if "leaf_rust" in disease or "stripe_rust" in disease:
+        if "leaf_rust" in disease or "stripe_rust" in disease or "stem_rust" in disease:
             return data.get("yellow_rust", DEFAULT_TREATMENT)
+        if "smut" in disease:
+            return data.get("loose_smut", DEFAULT_TREATMENT)
+        if "mildew" in disease:
+            return data.get("powdery_mildew", DEFAULT_TREATMENT)
+        if "bunt" in disease or "scab" in disease:
+            return data.get("karnal_bunt", DEFAULT_TREATMENT)
         if "storage" in disease or "harvest" in disease:
-            return data.get("storage_and_harvest", DEFAULT_TREATMENT)
+            return data.get("storage_stage_protection", DEFAULT_TREATMENT)
+    
+    elif crop in ("corn", "maize"):
+        if "blight" in disease:
+            return data.get("banded_leaf_and_sheath_blight", DEFAULT_TREATMENT)
+        if "gray" in disease or "spot" in disease:
+            return data.get("turcicum_leaf_blight", DEFAULT_TREATMENT)
+        if "rust" in disease:
+            return data.get("turcicum_leaf_blight", DEFAULT_TREATMENT)
+        if "smut" in disease or "rot" in disease:
+            return data.get("stalk_rot", DEFAULT_TREATMENT)
+        if "armyworm" in disease or "worm" in disease:
+            return data.get("fall_armyworm", DEFAULT_TREATMENT)
+    
+    elif crop in ("pepper", "okra"):
+        if "mosaic" in disease or "yellow" in disease:
+            return data.get("yellow_vein_mosaic_virus", DEFAULT_TREATMENT)
+        if "spot" in disease or "cercospora" in disease:
+            return data.get("cercospora_leaf_spot", DEFAULT_TREATMENT)
+        if "mildew" in disease:
+            return data.get("powdery_mildew", DEFAULT_TREATMENT)
+        if "wilt" in disease:
+            return data.get("fusarium_wilt", DEFAULT_TREATMENT)
+        if "rot" in disease or "damp" in disease:
+            return data.get("damping_off_root_rot", DEFAULT_TREATMENT)
             
-    # Generic matching if no specific aliases matched
+    # Generic matching — check both directions for substring match
     for db_key in data:
-        if db_key in disease:
+        if db_key in disease or disease in db_key:
             return data[db_key]
 
     return DEFAULT_TREATMENT

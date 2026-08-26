@@ -3,13 +3,25 @@
         "name": "Tomato Leaf Curl Virus (Vata Imbalance)",
         "cultural": [
             {
-                "action": "Traditional Seed Soak",
-                "emoji": "💧",
-                "theme": "lavender",
-                "summary": "Boost seed immunity right from the start using local Himachal methods!",
-                "how": "Soak seeds in cow urine before sowing, especially for kharif-season crops.",
-                "frequency": "Once, before sowing"
-            },
+                "action": "Quick Removal Action",
+                "emoji": "✂️",
+                "theme": "soft_pink",
+                "summary": "Remove sick plants right away so the Vata imbalance doesn't spread!",
+                "how": "Remove and destroy entire plant immediately on symptom appearance.",
+                "frequency": "Immediately when identified"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Gentle Neem Oil Spa",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "Soapy neem bath prevents whiteflies from spreading the curl virus.",
+                "how": "Mix 5 ml neem oil with a couple of drops of liquid soap in 1 litre water. Spray whole plant.",
+                "frequency": "Every 7 days"
+            }
+        ],
+        "local_practice": [
             {
                 "action": "Bright Yellow Fly Traps",
                 "emoji": "🟨",
@@ -19,15 +31,23 @@
                 "frequency": "Set once, replace every 2-3 weeks"
             },
             {
-                "action": "Quick Removal Action",
-                "emoji": "✂️",
-                "theme": "soft_pink",
-                "summary": "Remove sick plants right away so the Vata imbalance doesn't spread!",
-                "how": "Remove and destroy entire plant immediately on symptom appearance.",
-                "frequency": "Immediately when identified"
+                "action": "Neem Leaf Smoke Bath",
+                "emoji": "💨",
+                "theme": "mint_green",
+                "summary": "Purify the air around the leaves using traditional Ayurvedic fumigation.",
+                "how": "Burn dried neem leaves near the plant and allow the smoke to pass near the foliage.",
+                "frequency": "As needed"
             }
         ],
-        "biological": [
+        "iks": [
+            {
+                "action": "Traditional Seed Soak",
+                "emoji": "💧",
+                "theme": "lavender",
+                "summary": "Boost seed immunity right from the start using local Himachal methods!",
+                "how": "Soak seeds in cow urine before sowing, especially for kharif-season crops.",
+                "frequency": "Once, before sowing"
+            },
             {
                 "action": "Panchagavya Root Drench",
                 "emoji": "🥛",
@@ -35,22 +55,6 @@
                 "summary": "A powerful classical fermented tonic of dairy and cow urine to restore root strength.",
                 "how": "Ferment cow milk, curd, ghee, cow urine, and cow dung. Dilute and irrigate the root zone.",
                 "frequency": "Every 10-14 days"
-            },
-            {
-                "action": "Neem Leaf Smoke Bath",
-                "emoji": "💨",
-                "theme": "mint_green",
-                "summary": "Purify the air around the leaves using traditional Ayurvedic fumigation.",
-                "how": "Burn dried neem leaves near the plant and allow the smoke to pass near the foliage.",
-                "frequency": "As needed"
-            },
-            {
-                "action": "Gentle Neem Oil Spa",
-                "emoji": "🌿",
-                "theme": "pastel_green",
-                "summary": "Soapy neem bath prevents whiteflies from spreading the curl virus.",
-                "how": "Mix 5 ml neem oil with a couple of drops of liquid soap in 1 litre water. Spray whole plant.",
-                "frequency": "Every 7 days"
             }
         ]
     },
@@ -64,7 +68,9 @@
                 "summary": "A simple, local Himachal trick to dry out fungi around the roots!",
                 "how": "Dust wood ash directly around the base of the plant.",
                 "frequency": "Refresh as needed"
-            },
+            }
+        ],
+        "botanical": [
             {
                 "action": "Pine Needle Blanket",
                 "emoji": "🌲",
@@ -72,9 +78,7 @@
                 "summary": "Use fallen pine needles as a protective mulch layer over the soil.",
                 "how": "Spread Pinus roxburgii needles around the base of the plant, 5-7cm thick.",
                 "frequency": "Refresh every 3-4 weeks"
-            }
-        ],
-        "biological": [
+            },
             {
                 "action": "Licorice & Honey Root Drink",
                 "emoji": "🍯",
@@ -82,7 +86,9 @@
                 "summary": "A soothing classical Pitta-balancing decoction to cool the plant's system.",
                 "how": "Prepare a decoction of Yashtimadhu (licorice root) and Madhuca, mix with milk and honey, and irrigate.",
                 "frequency": "As needed"
-            },
+            }
+        ],
+        "iks": [
             {
                 "action": "Cow Dung Bio-Mix",
                 "emoji": "🐄",
@@ -103,7 +109,9 @@
                 "summary": "Give plants plenty of personal space to dry out excess Kapha moisture.",
                 "how": "Ensure adequate spacing at planting for maximum airflow.",
                 "frequency": "At planting time"
-            },
+            }
+        ],
+        "botanical": [
             {
                 "action": "Buttermilk Pest Traps",
                 "emoji": "🥛",
@@ -111,9 +119,7 @@
                 "summary": "A clever local trick from Bilaspur to trap pests using fermented dairy!",
                 "how": "Set out containers of buttermilk around the crop to act as local pest traps.",
                 "frequency": "Refresh weekly"
-            }
-        ],
-        "biological": [
+            },
             {
                 "action": "Morning Milk Glow Spray",
                 "emoji": "☀️",
@@ -128,14 +134,6 @@
         "name": "Root-Knot Nematode (Worm Infestation)",
         "cultural": [
             {
-                "action": "Neem Cake Soil Mix",
-                "emoji": "🪨",
-                "theme": "lavender",
-                "summary": "Enrich the soil with bitter neem cake to make it hostile for root worms.",
-                "how": "Mix neem cake into the soil before planting.",
-                "frequency": "Once at planting, refresh every 2-3 months"
-            },
-            {
                 "action": "Marigold Flower Guards",
                 "emoji": "🌼",
                 "theme": "butter_yellow",
@@ -144,14 +142,14 @@
                 "frequency": "At or before planting time"
             }
         ],
-        "biological": [
+        "botanical": [
             {
-                "action": "7-Day Cold Water & Dung Paste",
-                "emoji": "🧊",
-                "theme": "sky_blue",
-                "summary": "A classical shock-and-heal treatment for infested root zones.",
-                "how": "Irrigate with cold water for 7 consecutive days, then apply a cow dung, water, and milk paste to roots.",
-                "frequency": "7 consecutive days"
+                "action": "Neem Cake Soil Mix",
+                "emoji": "🪨",
+                "theme": "lavender",
+                "summary": "Enrich the soil with bitter neem cake to make it hostile for root worms.",
+                "how": "Mix neem cake into the soil before planting.",
+                "frequency": "Once at planting, refresh every 2-3 months"
             },
             {
                 "action": "Mustard & Vacha Root Paste",
@@ -160,6 +158,16 @@
                 "summary": "A potent Ayurvedic herbal paste applied directly to affected plant parts.",
                 "how": "Combine white mustard, Vacha, and Kushta into a paste. Apply directly to affected root/plant part.",
                 "frequency": "As needed"
+            }
+        ],
+        "iks": [
+            {
+                "action": "7-Day Cold Water & Dung Paste",
+                "emoji": "🧊",
+                "theme": "sky_blue",
+                "summary": "A classical shock-and-heal treatment for infested root zones.",
+                "how": "Irrigate with cold water for 7 consecutive days, then apply a cow dung, water, and milk paste to roots.",
+                "frequency": "7 consecutive days"
             }
         ]
     },
@@ -175,7 +183,7 @@
                 "frequency": "Ongoing"
             }
         ],
-        "biological": [
+        "iks": [
             {
                 "action": "Banyan & Fig Bark Healing Paste",
                 "emoji": "🩹",
