@@ -7,11 +7,9 @@ import io
 import pandas as pd
 from pathlib import Path
 from PIL import Image
-from ultralytics import YOLO
 
 APP_DIR = Path(__file__).resolve().parent.parent
 DATABASE_PATH = APP_DIR / 'agrisage_history.db'
-MODEL_PATH = APP_DIR / 'best.pt'
 
 st.markdown('## 🌱 My Plants Dashboard')
 
@@ -87,10 +85,6 @@ def delete_plant(plant_id):
     c.execute("DELETE FROM tracked_plants WHERE id=?", (plant_id,))
     conn.commit()
     conn.close()
-
-@st.cache_resource(show_spinner="🧠 Initializing Botanical AI Engine...")
-def load_model():
-    return YOLO(MODEL_PATH)
 
 @st.cache_data(ttl=3600, show_spinner="📡 Scanning horizon for weather patterns...")
 def get_weather_alert(lat, lon):

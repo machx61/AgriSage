@@ -4,13 +4,73 @@ import io
 import google.generativeai as genai
 from PIL import Image
 
+def get_initial_diagnosis(api_key, photo_b64, allowed_classes):
+    """
+    Sends a leaf photo to Gemini to classify it via the modern google.genai API.
+    """
+    from google import genai
+    from google.genai import types
+    import io, base64
+    from PIL import Image
+    
+    try:
+        client = genai.Client(api_key=api_key)
+        
+        image_data = base64.b64decode(photo_b64)
+        image = Image.open(io.BytesIO(image_data))
+        
+        prompt = f"""
+You are an expert plant pathologist. Analyze this leaf image and identify the crop and disease.
+
+Here is a list of known database keys for reference:
+{', '.join(allowed_classes)}
+
+If the plant and disease exactly match one of these known keys, please use that exact key.
+If it is a completely different disease or crop not on this list, output a descriptive lowercase string in the format 'crop_disease_name' (e.g., 'lemon_sooty_mold').
+
+Respond ONLY with a valid JSON object. Do not include markdown formatting or code blocks.
+The JSON object must have exactly the following keys:
+- "class": the disease identifier string.
+- "confidence": an integer between 0 and 100 representing your confidence.
+"""
+        
+        response = client.models.generate_content(
+            model='gemini-3.5-flash-lite',
+            contents=[prompt, image],
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json"
+            )
+        )
+        
+        text = response.text.strip()
+        
+        if text.startswith('```json'):
+            text = text[7:]
+        elif text.startswith('```'):
+            text = text[3:]
+        if text.endswith('```'):
+            text = text[:-3]
+        
+        return json.loads(text.strip())
+    except Exception as e:
+        error_msg = str(e)
+        print(f"GEMINI DIAGNOSIS ERROR: {repr(e)}")
+        return {
+            'class': f"error_{error_msg[:30]}",
+            'confidence': 0
+        }
+
 def get_initial_assessment(api_key, photo_b64, disease_name, confidence):
     """
-    Sends the initial plant photo to Gemini for a baseline health assessment.
+    Sends the initial plant photo to Gemini for a baseline health assessment via modern google.genai API.
     """
+    from google import genai
+    from google.genai import types
+    import io, base64
+    from PIL import Image
+    
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-3.6-flash')
+        client = genai.Client(api_key=api_key)
         
         image_data = base64.b64decode(photo_b64)
         image = Image.open(io.BytesIO(image_data))
@@ -24,7 +84,14 @@ The JSON object must have exactly the following keys and data types:
 - "ai_notes": a string containing brief observations.
 - "next_checkin_days": an integer representing the recommended number of days until the next check-in.
 """
-        response = model.generate_content([prompt, image])
+        response = client.models.generate_content(
+            model='gemini-3.5-flash-lite',
+            contents=[prompt, image],
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json"
+            )
+        )
+        
         text = response.text.strip()
         if text.startswith('```json'):
             text = text[7:]
@@ -35,6 +102,7 @@ The JSON object must have exactly the following keys and data types:
         
         return json.loads(text.strip())
     except Exception as e:
+        print(f"GEMINI TRACKER ERROR: {repr(e)}")
         return {
             'health_score': 50,
             'status_label': 'Unknown',
@@ -44,11 +112,15 @@ The JSON object must have exactly the following keys and data types:
 
 def analyze_progress(api_key, prev_photo_b64, curr_photo_b64, disease_name, prev_score, treatment_history):
     """
-    Sends previous and current plant photos to Gemini to assess progress.
+    Sends previous and current plant photos to Gemini to assess progress via modern google.genai API.
     """
+    from google import genai
+    from google.genai import types
+    import io, base64
+    from PIL import Image
+    
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-3.6-flash')
+        client = genai.Client(api_key=api_key)
         
         prev_image_data = base64.b64decode(prev_photo_b64)
         prev_image = Image.open(io.BytesIO(prev_image_data))
@@ -58,17 +130,26 @@ def analyze_progress(api_key, prev_photo_b64, curr_photo_b64, disease_name, prev
         
         prompt = f"""
 You are an expert plant pathologist. Please analyze the two provided images of a plant undergoing treatment for '{disease_name}'.
-The first image is the previous state (score: {prev_score}). The second image is the current state.
-Treatment history: {treatment_history}
-Compare the two images and assess the progress. Respond ONLY with a valid JSON object. Do not include markdown formatting or code blocks.
+Image 1 is the baseline (previous state with health score {prev_score}/100).
+Image 2 is the current state.
+The patient has been following this treatment plan: {treatment_history}
+
+Provide a progress assessment. Respond ONLY with a valid JSON object. Do not include markdown formatting or code blocks.
 The JSON object must have exactly the following keys and data types:
-- "health_score": an integer between 0 and 100 representing the current overall plant health.
-- "status_label": a string, must be one of: "improving", "stable", "worsening", or "recovered".
-- "ai_notes": a string containing brief observations on the changes.
-- "treatment_adjustments": a string containing suggestions for adjusting treatment based on progress.
-- "next_checkin_days": an integer between 2 and 14 representing recommended days until next check-in.
+- "health_score": an integer (0-100) representing the CURRENT overall plant health.
+- "status_label": exactly one of these strings: "improving", "stable", "worsening", "recovered".
+- "ai_notes": a string comparing the two images and noting any changes.
+- "treatment_adjustments": a string with brief, specific recommendations (e.g., "Continue plan", "Increase watering", "Try copper fungicide").
+- "next_checkin_days": an integer (2-14) representing days until the next check-in.
 """
-        response = model.generate_content([prompt, "Image 1 (Previous):", prev_image, "Image 2 (Current):", curr_image])
+        response = client.models.generate_content(
+            model='gemini-3.5-flash-lite',
+            contents=[prompt, prev_image, curr_image],
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json"
+            )
+        )
+        
         text = response.text.strip()
         if text.startswith('```json'):
             text = text[7:]
@@ -79,10 +160,11 @@ The JSON object must have exactly the following keys and data types:
         
         return json.loads(text.strip())
     except Exception as e:
+        print(f"GEMINI PROGRESS ERROR: {repr(e)}")
         return {
             'health_score': prev_score,
             'status_label': 'stable',
-            'ai_notes': f'Error analyzing progress: {str(e)}',
-            'treatment_adjustments': 'Continue current treatment',
-            'next_checkin_days': 7
+            'ai_notes': f'Error comparing images: {str(e)}',
+            'treatment_adjustments': 'Please consult manual treatments.',
+            'next_checkin_days': 3
         }

@@ -79,6 +79,7 @@ DISEASE_DISPLAY_MAP = {
     "tomato_target_spot": "Tomato - Target Spot",
     "tomato_two_spotted_spider_mites": "Tomato - Two Spotted Spider Mites",
     "tomato_yellow_virus": "Tomato - Yellow Virus (Leaf Curl)",
+    # General model wheat labels
     "wheat_bacterial_streak_black_chaff": "Wheat - Bacterial Streak Black Chaff",
     "wheat_head_scab": "Wheat - Head Scab",
     "wheat_leaf_rust": "Wheat - Leaf Rust",
@@ -86,5 +87,5 @@ DISEASE_DISPLAY_MAP = {
     "wheat_powdery_mildew": "Wheat - Powdery Mildew",
     "wheat_septoria_blotch": "Wheat - Septoria Blotch",
     "wheat_stem_rust": "Wheat - Stem Rust",
-    "wheat_stripe_rust": "Wheat - Stripe Rust"
+    "wheat_stripe_rust": "Wheat - Stripe Rust",
 }

@@ -11,16 +11,16 @@ import tempfile
 import uuid
 import io
 from PIL import Image
-from ultralytics import YOLO
 from streamlit_js_eval import get_geolocation, streamlit_js_eval
 from treatments_db import get_treatment_data, THEME_COLORS
 from disease_map import DISEASE_DISPLAY_MAP
 from diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
+from gemini_tracker import get_initial_diagnosis
 
 # --- Database Setup for Persistent History ---
 APP_DIR = Path(__file__).resolve().parent
 DATABASE_PATH = APP_DIR / "agrisage_history.db"
-MODEL_PATH = APP_DIR / "best.pt"
+MODEL_PATH = APP_DIR / "weights" / "general.pt"
 INDIA_TIMEZONE = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 
@@ -237,19 +237,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Load Model
-@st.cache_resource(show_spinner="🧠 Initializing Botanical AI Engine...")
-def load_yolo():
-    if not MODEL_PATH.is_file():
-        st.error("⚠️ `best.pt` not found! Place your 3.2 MB model in this directory.")
-        return None
-    try:
-        return YOLO(MODEL_PATH)
-    except Exception as exc:
-        st.error(f"⚠️ The disease model could not be loaded: {exc}")
-        return None
-
-model = load_yolo()
+gemini_api_key = st.secrets.get("GEMINI_API_KEY", "")
 
 # App Header
 st.markdown("## 🌱 Agrisage Vision")
@@ -511,7 +499,7 @@ def get_upload_signature(files):
 upload_signature = get_upload_signature(images_to_process) if images_to_process else None
 analyze_requested = st.button(
     "🔍 Analyze Leaf Images",
-    disabled=not images_to_process or model is None,
+    disabled=not images_to_process or not gemini_api_key,
     use_container_width=True,
 )
 
@@ -520,32 +508,39 @@ if analyze_requested:
     confidences = []
     with st.spinner(f"Analyzing {len(images_to_process)} leaf image(s)..."):
         for uploaded_file in images_to_process:
-            temp_path = None
             try:
                 uploaded_file.seek(0)
-                with Image.open(uploaded_file) as source_image:
+                image_bytes = uploaded_file.getvalue()
+                
+                with Image.open(io.BytesIO(image_bytes)) as source_image:
                     image = source_image.convert("RGB")
+                    
+                    # Resize to prevent huge payloads and timeouts
+                    image.thumbnail((800, 800))
+                    
+                    buffer = io.BytesIO()
+                    image.save(buffer, format="JPEG", quality=80)
+                    photo_b64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+                    
                 st.image(image, caption=f"Analyzed: {uploaded_file.name}", use_container_width=True)
-
-                with tempfile.NamedTemporaryFile(prefix="agrisage_", suffix=".png", delete=False) as temp_file:
-                    temp_path = temp_file.name
-                    image.save(temp_file, format="PNG")
-
-                results = model(temp_path)
-                probs = results[0].probs
-                if probs is None:
-                    raise ValueError("The loaded model did not return classification probabilities.")
-                raw_class = results[0].names[probs.top1]
+                
+                # --- Gemini Inference ---
+                allowed_classes = list(DISEASE_DISPLAY_MAP.keys())
+                result = get_initial_diagnosis(gemini_api_key, photo_b64, allowed_classes)
+                
+                raw_class = result.get('class', 'corn_healthy')
+                top_conf = float(result.get('confidence', 90))
+                
+                if raw_class.startswith("error_"):
+                    err_msg = raw_class.split("_", 1)[1] if "_" in raw_class else raw_class
+                    st.error(f"⚠️ **Google Gemini API is unavailable:** {err_msg}")
+                    continue
+                
                 predictions.append(raw_class)
-                confidences.append(probs.top1conf.item() * 100)
+                confidences.append(top_conf)
+                
             except Exception as exc:
                 st.warning(f"Could not analyze '{uploaded_file.name}': {exc}")
-            finally:
-                if temp_path:
-                    try:
-                        os.unlink(temp_path)
-                    except FileNotFoundError:
-                        pass
 
     if predictions:
         final_raw_class, final_confidence = select_consensus_prediction(predictions, confidences)

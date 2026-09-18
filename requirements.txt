@@ -1,8 +1,8 @@
 streamlit
 Pillow
-ultralytics-opencv-headless
 requests
 streamlit-js-eval
-google-generativeai
+google-genai
 fpdf2
 pandas
+numpy
