@@ -1,7 +1,7 @@
 import sys, base64, io
 from PIL import Image
 sys.path.insert(0, 'd:/AgriSage/main')
-from disease_map import DISEASE_DISPLAY_MAP
+from agrisage.disease_map import DISEASE_DISPLAY_MAP
 import google.generativeai as genai
 
 secrets_path = 'd:/AgriSage/main/.streamlit/secrets.toml'
@@ -25,4 +25,3 @@ try:
     print('Result:', response.text)
 except Exception as e:
     print('Error:', e)
-

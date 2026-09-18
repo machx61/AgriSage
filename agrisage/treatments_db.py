@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import streamlit as st
 
-DATA_DIR = Path(__file__).resolve().parent / "data" / "diseases"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "diseases"
 
 THEME_COLORS = {
     "mint_green": {"bg": "#E8F8F5", "border": "#2ECC71", "text": "#117A65"},

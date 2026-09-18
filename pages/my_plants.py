@@ -189,7 +189,7 @@ else:
                         disease_name = p_init_disease
                         confidence = 1.0
                         
-                        from gemini_tracker import analyze_progress
+                        from agrisage.gemini_tracker import analyze_progress
                         
                         result = analyze_progress(gemini_key, prev_photo_b64, current_photo_b64, disease_name, previous_score, treatment_history)
                         

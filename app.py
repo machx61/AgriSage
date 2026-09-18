@@ -12,15 +12,15 @@ import uuid
 import io
 from PIL import Image
 from streamlit_js_eval import get_geolocation, streamlit_js_eval
-from treatments_db import get_treatment_data, THEME_COLORS
-from disease_map import DISEASE_DISPLAY_MAP
-from diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
-from gemini_tracker import get_initial_diagnosis
+from agrisage.treatments_db import get_treatment_data, THEME_COLORS
+from agrisage.disease_map import DISEASE_DISPLAY_MAP
+from agrisage.diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
+from agrisage.gemini_tracker import get_initial_diagnosis
 
 # --- Database Setup for Persistent History ---
 APP_DIR = Path(__file__).resolve().parent
 DATABASE_PATH = APP_DIR / "agrisage_history.db"
-MODEL_PATH = APP_DIR / "weights" / "general.pt"
+MODEL_PATH = APP_DIR / "models" / "general.pt"
 INDIA_TIMEZONE = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 
@@ -735,7 +735,7 @@ if analysis and (analysis.get("upload_signature") == upload_signature or analysi
                             pass
                     
                     # Get initial AI assessment for accurate baseline score
-                    from gemini_tracker import get_initial_assessment
+                    from agrisage.gemini_tracker import get_initial_assessment
                     with st.spinner("🤖 Assessing plant health..."):
                         assessment = get_initial_assessment(
                             st.session_state.gemini_key,
@@ -795,7 +795,7 @@ if analysis and (analysis.get("upload_signature") == upload_signature or analysi
                     except Exception:
                         pass
                 
-                from gemini_tracker import analyze_progress
+                from agrisage.gemini_tracker import analyze_progress
                 with st.spinner("🤖 Analyzing progress..."):
                     result = analyze_progress(
                         st.session_state.gemini_key,

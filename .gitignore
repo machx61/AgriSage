@@ -1,4 +1,5 @@
 __pycache__
+*.py[cod]
 agrisage_history.db
 .vscode
 .streamlit/secrets.toml

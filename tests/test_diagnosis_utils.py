@@ -1,6 +1,6 @@
 import unittest
 
-from diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
+from agrisage.diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
 
 
 class ConsensusPredictionTests(unittest.TestCase):
