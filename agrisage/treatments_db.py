@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import streamlit as st
 
+from agrisage.disease_map import CLASS_TO_KB
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "diseases"
 
 THEME_COLORS = {
@@ -40,115 +42,56 @@ HEALTHY_TREATMENT = {
     "name": "Healthy Plant",
     "cultural": [
         {
-            "action": "General Seed Health",
-            "emoji": "🐄",
+            "action": "Weekly Leaf Check",
+            "emoji": "🔍",
             "theme": "butter_yellow",
-            "summary": "Keep seeds healthy with a traditional ash-and-dung blanket or cow urine soak!",
-            "how": "Mix ash and cow dung together and apply to seeds, or soak in cow urine before sowing.",
-            "frequency": "Once, before sowing"
+            "summary": "Your plant looks healthy! Catching problems early is the best protection.",
+            "how": "Look at both sides of a few leaves every week for spots, curling, yellowing or insects, and scan again if anything changes.",
+            "frequency": "Weekly"
+        },
+        {
+            "action": "Water at the Roots",
+            "emoji": "💧",
+            "theme": "sky_blue",
+            "summary": "Wet leaves invite fungal diseases, especially in humid hill weather.",
+            "how": "Water the soil around the base in the morning instead of sprinkling over the leaves, and keep drainage channels clear.",
+            "frequency": "Whenever watering"
         }
     ],
     "biological": []
 }
 
+# Preventive tonics from the okra knowledge base that suit any healthy crop.
+_PREVENTIVE_KB = ("okra", "general_preventive_formulations")
+_PREVENTIVE_ACTIONS = {"Jiwamrita Soil Tonic", "Five-Gift Panchagavya Tonic"}
+
+
 @st.cache_data
 def load_disease_data(crop_name: str) -> dict:
     """Load the disease JSON for a specific crop."""
-    # handle alias
-    if crop_name == "corn":
-        crop_name = "maize"
-    elif crop_name == "pepper":
-        crop_name = "okra"
-        
     file_path = DATA_DIR / f"{crop_name}.json"
     if not file_path.exists():
         return {}
-    
+
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def get_treatment_data(predicted_class: str):
-    """Normalize YOLO label, route to the correct crop dict, and retrieve matching treatment profile."""
+
+def get_healthy_treatment() -> dict:
+    crop_file, kb_key = _PREVENTIVE_KB
+    preventive = load_disease_data(crop_file).get(kb_key, {}).get("iks", [])
+    return {**HEALTHY_TREATMENT, "iks": [i for i in preventive if i.get("action") in _PREVENTIVE_ACTIONS]}
+
+
+def get_treatment_data(predicted_class: str) -> dict:
+    """Return the treatment profile for a supported diagnosis class."""
     key = predicted_class.lower().strip()
-    
-    if "healthy" in key:
-        return HEALTHY_TREATMENT
-        
-    parts = key.split("_", 1) 
-    
-    if len(parts) != 2:
-        return DEFAULT_TREATMENT
-        
-    crop = parts[0]
-    disease = parts[1]
-
-    data = load_disease_data(crop)
-    if not data:
+    if key not in CLASS_TO_KB:
         return DEFAULT_TREATMENT
 
-    if crop == "tomato":
-        if "yellow_virus" in disease or "mosaic_virus" in disease or "leaf_curl" in disease:
-            return data.get("leaf_curl_virus", DEFAULT_TREATMENT)
-        if "nematode" in disease:
-            return data.get("root_knot_nematode", DEFAULT_TREATMENT)
-        if "stem" in disease or "wound" in disease:
-            return data.get("stem_wound_damage", DEFAULT_TREATMENT)
-                
-    elif crop == "potato":
-        if "scurf" in disease or "scab" in disease:
-            return data.get("black_scurf_common_scab", DEFAULT_TREATMENT)
-        if "wilt" in disease:
-            return data.get("bacterial_wilt", DEFAULT_TREATMENT)
-        if "nematode" in disease:
-            return data.get("root_knot_nematode", DEFAULT_TREATMENT)
-        if "moth" in disease:
-            return data.get("potato_tuber_moth", DEFAULT_TREATMENT)
+    kb = CLASS_TO_KB[key]
+    if kb is None:
+        return get_healthy_treatment()
 
-    elif crop == "rice":
-        if "hispa" in disease:
-            return data.get("rice_hispa", DEFAULT_TREATMENT)
-        if "storage" in disease or "post_harvest" in disease:
-            return data.get("post_harvest_storage", DEFAULT_TREATMENT)
-                
-    elif crop == "wheat":
-        if "leaf_rust" in disease or "stripe_rust" in disease or "stem_rust" in disease:
-            return data.get("yellow_rust", DEFAULT_TREATMENT)
-        if "smut" in disease:
-            return data.get("loose_smut", DEFAULT_TREATMENT)
-        if "mildew" in disease:
-            return data.get("powdery_mildew", DEFAULT_TREATMENT)
-        if "bunt" in disease or "scab" in disease:
-            return data.get("karnal_bunt", DEFAULT_TREATMENT)
-        if "storage" in disease or "harvest" in disease:
-            return data.get("storage_stage_protection", DEFAULT_TREATMENT)
-    
-    elif crop in ("corn", "maize"):
-        if "blight" in disease:
-            return data.get("banded_leaf_and_sheath_blight", DEFAULT_TREATMENT)
-        if "gray" in disease or "spot" in disease:
-            return data.get("turcicum_leaf_blight", DEFAULT_TREATMENT)
-        if "rust" in disease:
-            return data.get("turcicum_leaf_blight", DEFAULT_TREATMENT)
-        if "smut" in disease or "rot" in disease:
-            return data.get("stalk_rot", DEFAULT_TREATMENT)
-        if "armyworm" in disease or "worm" in disease:
-            return data.get("fall_armyworm", DEFAULT_TREATMENT)
-    
-    elif crop in ("pepper", "okra"):
-        if "mosaic" in disease or "yellow" in disease:
-            return data.get("yellow_vein_mosaic_virus", DEFAULT_TREATMENT)
-        if "spot" in disease or "cercospora" in disease:
-            return data.get("cercospora_leaf_spot", DEFAULT_TREATMENT)
-        if "mildew" in disease:
-            return data.get("powdery_mildew", DEFAULT_TREATMENT)
-        if "wilt" in disease:
-            return data.get("fusarium_wilt", DEFAULT_TREATMENT)
-        if "rot" in disease or "damp" in disease:
-            return data.get("damping_off_root_rot", DEFAULT_TREATMENT)
-            
-    # Generic matching — check both directions for substring match
-    for db_key in data:
-        if db_key in disease or disease in db_key:
-            return data[db_key]
-
-    return DEFAULT_TREATMENT
+    crop_file, kb_key = kb
+    return load_disease_data(crop_file).get(kb_key, DEFAULT_TREATMENT)

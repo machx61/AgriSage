@@ -1,170 +1,236 @@
+"""Gemini calls for leaf diagnosis and plant-progress tracking.
+
+Images are passed as JPEG bytes. Responses are constrained with a JSON schema,
+so Gemini always returns parseable JSON with the expected keys.
+"""
+
 import json
-import base64
-import io
-import google.generativeai as genai
-from PIL import Image
+import time
+from functools import lru_cache
 
-def get_initial_diagnosis(api_key, photo_b64, allowed_classes):
-    """
-    Sends a leaf photo to Gemini to classify it via the modern google.genai API.
-    """
-    from google import genai
-    from google.genai import types
-    import io, base64
-    from PIL import Image
-    
+import httpx
+from google import genai
+from google.genai import errors, types
+
+from agrisage.disease_map import NOT_A_LEAF, UNSUPPORTED
+
+# Tried in order; when one is overloaded the next one is used.
+MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.5-flash"]
+MODEL = MODELS[0]
+
+STATUS_LABELS = ["improving", "stable", "worsening", "recovered"]
+
+_S = types.Schema
+_T = types.Type
+
+REQUEST_TIMEOUT_S = 40   # one request
+TOTAL_TIMEOUT_S = 90     # all attempts together, so the app never hangs
+
+
+@lru_cache(maxsize=4)
+def _client(api_key: str) -> genai.Client:
+    return genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_S * 1000))
+
+
+class GeminiTimeout(Exception):
+    pass
+
+
+# Free-tier models often answer "503 high demand", "504 deadline exceeded" or
+# "429 rate limit"; these are worth retrying on another model.
+_RETRY_CODES = {429, 500, 503, 504}
+
+
+def _generate(api_key: str, prompt: str, images: list[bytes], schema: types.Schema) -> dict:
+    parts = [prompt] + [types.Part.from_bytes(data=img, mime_type="image/jpeg") for img in images]
+    config = types.GenerateContentConfig(
+        response_mime_type="application/json",
+        response_schema=schema,
+        automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
+    )
+    deadline = time.monotonic() + TOTAL_TIMEOUT_S
+    last_error = None
+    for round_no in range(2):
+        for model in MODELS:
+            if time.monotonic() >= deadline:
+                raise last_error or GeminiTimeout()
+            try:
+                response = _client(api_key).models.generate_content(model=model, contents=parts, config=config)
+                return json.loads(response.text)
+            except errors.APIError as e:
+                if e.code not in _RETRY_CODES:
+                    raise
+                last_error = e
+            except httpx.TimeoutException:
+                last_error = GeminiTimeout()
+        if round_no == 0:
+            time.sleep(3)
+    raise last_error
+
+
+def friendly_error(e: Exception) -> str:
+    """Short, readable message for errors shown in the app."""
+    if isinstance(e, GeminiTimeout):
+        return "This is taking too long. Please try again in a minute."
+    if isinstance(e, errors.APIError):
+        if e.code == 429:
+            return "Too many scans in a short time. Please wait a minute and try again."
+        if e.code in (500, 503, 504):
+            return "The service is busy right now. Please try again in a moment."
+        if e.code in (400, 401, 403):
+            return "Something went wrong. Please try again later."
+    return "Something went wrong. Please try again."
+
+
+def _clamp(value, low: int, high: int, default: int) -> int:
     try:
-        client = genai.Client(api_key=api_key)
-        
-        image_data = base64.b64decode(photo_b64)
-        image = Image.open(io.BytesIO(image_data))
-        
-        prompt = f"""
-You are an expert plant pathologist. Analyze this leaf image and identify the crop and disease.
+        return max(low, min(high, int(value)))
+    except (TypeError, ValueError):
+        return default
 
-Here is a list of known database keys for reference:
+
+def get_initial_diagnosis(api_key: str, image_jpeg: bytes, allowed_classes: list[str]) -> dict:
+    """Classify a leaf photo into one of `allowed_classes`.
+
+    Returns {"class": str, "confidence": int}. "class" can also be
+    UNSUPPORTED or NOT_A_LEAF. On failure it returns {"class": None, "error": str}.
+    """
+    prompt = f"""
+You are an expert plant pathologist. Identify the crop and disease in this photo.
+
+Choose "class" from this list only:
 {', '.join(allowed_classes)}
 
-If the plant and disease exactly match one of these known keys, please use that exact key.
-If it is a completely different disease or crop not on this list, output a descriptive lowercase string in the format 'crop_disease_name' (e.g., 'lemon_sooty_mold').
-
-Respond ONLY with a valid JSON object. Do not include markdown formatting or code blocks.
-The JSON object must have exactly the following keys:
-- "class": the disease identifier string.
-- "confidence": an integer between 0 and 100 representing your confidence.
+Use "{UNSUPPORTED}" if the crop or the disease is not in the list.
+Use "{NOT_A_LEAF}" if the photo does not show a plant.
+"confidence" is how sure you are, from 0 to 100.
 """
-        
-        response = client.models.generate_content(
-            model='gemini-3.5-flash-lite',
-            contents=[prompt, image],
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
-        )
-        
-        text = response.text.strip()
-        
-        if text.startswith('```json'):
-            text = text[7:]
-        elif text.startswith('```'):
-            text = text[3:]
-        if text.endswith('```'):
-            text = text[:-3]
-        
-        return json.loads(text.strip())
+    schema = _S(
+        type=_T.OBJECT,
+        properties={
+            "class": _S(type=_T.STRING, enum=list(allowed_classes) + [UNSUPPORTED, NOT_A_LEAF]),
+            "confidence": _S(type=_T.INTEGER),
+        },
+        required=["class", "confidence"],
+    )
+    try:
+        result = _generate(api_key, prompt, [image_jpeg], schema)
+        return {"class": result["class"], "confidence": _clamp(result.get("confidence"), 0, 100, 50)}
     except Exception as e:
-        error_msg = str(e)
-        print(f"GEMINI DIAGNOSIS ERROR: {repr(e)}")
+        print(f"GEMINI DIAGNOSIS ERROR: {e!r}")
+        return {"class": None, "error": friendly_error(e)}
+
+
+_ASSESSMENT_SCHEMA = _S(
+    type=_T.OBJECT,
+    properties={
+        "health_score": _S(type=_T.INTEGER),
+        "status_label": _S(type=_T.STRING),
+        "ai_notes": _S(type=_T.STRING),
+        "next_checkin_days": _S(type=_T.INTEGER),
+    },
+    required=["health_score", "status_label", "ai_notes", "next_checkin_days"],
+)
+
+
+def get_initial_assessment(api_key: str, image_jpeg: bytes, disease_name: str, confidence: float) -> dict:
+    """Baseline health assessment for a newly tracked plant."""
+    prompt = f"""
+You are an expert plant pathologist. This plant was diagnosed with '{disease_name}' (confidence {confidence:.0f}%).
+Give a baseline health assessment:
+- "health_score": overall plant health from 0 to 100 (100 = perfectly healthy).
+- "status_label": a short summary such as "Critical", "Moderate" or "Mild".
+- "ai_notes": brief observations about the plant.
+- "next_checkin_days": recommended days until the next check-in (2-14).
+"""
+    try:
+        if not image_jpeg:
+            raise ValueError("no photo available")
+        result = _generate(api_key, prompt, [image_jpeg], _ASSESSMENT_SCHEMA)
         return {
-            'class': f"error_{error_msg[:30]}",
-            'confidence': 0
+            "health_score": _clamp(result.get("health_score"), 0, 100, 50),
+            "status_label": str(result.get("status_label", "Unknown")),
+            "ai_notes": str(result.get("ai_notes", "")),
+            "next_checkin_days": _clamp(result.get("next_checkin_days"), 2, 14, 3),
+        }
+    except Exception as e:
+        print(f"GEMINI TRACKER ERROR: {e!r}")
+        return {
+            "health_score": 50,
+            "status_label": "Unknown",
+            "ai_notes": f"Could not assess the photo: {friendly_error(e)}",
+            "next_checkin_days": 3,
         }
 
-def get_initial_assessment(api_key, photo_b64, disease_name, confidence):
+
+_PROGRESS_SCHEMA = _S(
+    type=_T.OBJECT,
+    properties={
+        "health_score": _S(type=_T.INTEGER),
+        "status_label": _S(type=_T.STRING, enum=STATUS_LABELS),
+        "ai_notes": _S(type=_T.STRING),
+        "treatment_adjustments": _S(type=_T.STRING),
+        "next_checkin_days": _S(type=_T.INTEGER),
+    },
+    required=["health_score", "status_label", "ai_notes", "treatment_adjustments", "next_checkin_days"],
+)
+
+
+def analyze_progress(
+    api_key: str,
+    prev_image_jpeg: bytes | None,
+    curr_image_jpeg: bytes,
+    disease_name: str,
+    prev_score: int,
+    treatment_history: str,
+) -> dict:
+    """Compare the current photo with the previous one and score progress.
+
+    If there is no previous photo, only the current photo is assessed.
     """
-    Sends the initial plant photo to Gemini for a baseline health assessment via modern google.genai API.
-    """
-    from google import genai
-    from google.genai import types
-    import io, base64
-    from PIL import Image
-    
-    try:
-        client = genai.Client(api_key=api_key)
-        
-        image_data = base64.b64decode(photo_b64)
-        image = Image.open(io.BytesIO(image_data))
-        
-        prompt = f"""
-You are an expert plant pathologist. Please analyze the provided image of a plant diagnosed with '{disease_name}' (Confidence: {confidence:.2f}).
-Provide a baseline health assessment. Respond ONLY with a valid JSON object. Do not include markdown formatting or code blocks.
-The JSON object must have exactly the following keys and data types:
-- "health_score": an integer between 0 and 100 representing overall plant health (100 is perfectly healthy).
-- "status_label": a string summarizing the status (e.g., "Critical", "Moderate", "Mild").
-- "ai_notes": a string containing brief observations.
-- "next_checkin_days": an integer representing the recommended number of days until the next check-in.
-"""
-        response = client.models.generate_content(
-            model='gemini-3.5-flash-lite',
-            contents=[prompt, image],
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
+    if prev_image_jpeg:
+        images = [prev_image_jpeg, curr_image_jpeg]
+        photo_text = (
+            f"Image 1 is the previous state (health score {prev_score}/100).\n"
+            "Image 2 is the current state."
         )
-        
-        text = response.text.strip()
-        if text.startswith('```json'):
-            text = text[7:]
-        elif text.startswith('```'):
-            text = text[3:]
-        if text.endswith('```'):
-            text = text[:-3]
-        
-        return json.loads(text.strip())
-    except Exception as e:
-        print(f"GEMINI TRACKER ERROR: {repr(e)}")
+    else:
+        images = [curr_image_jpeg]
+        photo_text = (
+            f"No earlier photo is available; the previous health score was {prev_score}/100.\n"
+            "The image shows the current state."
+        )
+
+    prompt = f"""
+You are an expert plant pathologist. This plant is being treated for '{disease_name}'.
+{photo_text}
+Most recent treatment advice: {treatment_history or 'the standard treatment plan'}
+
+Give a progress assessment:
+- "health_score": CURRENT overall plant health from 0 to 100.
+- "status_label": one of {', '.join(STATUS_LABELS)}.
+- "ai_notes": what has changed and what you observe.
+- "treatment_adjustments": brief, specific advice (e.g. "Continue plan", "Improve drainage").
+- "next_checkin_days": days until the next check-in (2-14).
+"""
+    try:
+        if not curr_image_jpeg:
+            raise ValueError("no current photo available")
+        result = _generate(api_key, prompt, images, _PROGRESS_SCHEMA)
+        status = result.get("status_label")
         return {
-            'health_score': 50,
-            'status_label': 'Unknown',
-            'ai_notes': f'Error assessing image: {str(e)}',
-            'next_checkin_days': 3
+            "health_score": _clamp(result.get("health_score"), 0, 100, prev_score),
+            "status_label": status if status in STATUS_LABELS else "stable",
+            "ai_notes": str(result.get("ai_notes", "")),
+            "treatment_adjustments": str(result.get("treatment_adjustments", "")),
+            "next_checkin_days": _clamp(result.get("next_checkin_days"), 2, 14, 3),
         }
-
-def analyze_progress(api_key, prev_photo_b64, curr_photo_b64, disease_name, prev_score, treatment_history):
-    """
-    Sends previous and current plant photos to Gemini to assess progress via modern google.genai API.
-    """
-    from google import genai
-    from google.genai import types
-    import io, base64
-    from PIL import Image
-    
-    try:
-        client = genai.Client(api_key=api_key)
-        
-        prev_image_data = base64.b64decode(prev_photo_b64)
-        prev_image = Image.open(io.BytesIO(prev_image_data))
-        
-        curr_image_data = base64.b64decode(curr_photo_b64)
-        curr_image = Image.open(io.BytesIO(curr_image_data))
-        
-        prompt = f"""
-You are an expert plant pathologist. Please analyze the two provided images of a plant undergoing treatment for '{disease_name}'.
-Image 1 is the baseline (previous state with health score {prev_score}/100).
-Image 2 is the current state.
-The patient has been following this treatment plan: {treatment_history}
-
-Provide a progress assessment. Respond ONLY with a valid JSON object. Do not include markdown formatting or code blocks.
-The JSON object must have exactly the following keys and data types:
-- "health_score": an integer (0-100) representing the CURRENT overall plant health.
-- "status_label": exactly one of these strings: "improving", "stable", "worsening", "recovered".
-- "ai_notes": a string comparing the two images and noting any changes.
-- "treatment_adjustments": a string with brief, specific recommendations (e.g., "Continue plan", "Increase watering", "Try copper fungicide").
-- "next_checkin_days": an integer (2-14) representing days until the next check-in.
-"""
-        response = client.models.generate_content(
-            model='gemini-3.5-flash-lite',
-            contents=[prompt, prev_image, curr_image],
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
-        )
-        
-        text = response.text.strip()
-        if text.startswith('```json'):
-            text = text[7:]
-        elif text.startswith('```'):
-            text = text[3:]
-        if text.endswith('```'):
-            text = text[:-3]
-        
-        return json.loads(text.strip())
     except Exception as e:
-        print(f"GEMINI PROGRESS ERROR: {repr(e)}")
+        print(f"GEMINI PROGRESS ERROR: {e!r}")
         return {
-            'health_score': prev_score,
-            'status_label': 'stable',
-            'ai_notes': f'Error comparing images: {str(e)}',
-            'treatment_adjustments': 'Please consult manual treatments.',
-            'next_checkin_days': 3
+            "health_score": prev_score,
+            "status_label": "stable",
+            "ai_notes": f"Could not compare the photos: {friendly_error(e)}",
+            "treatment_adjustments": "Please follow the treatment plan shown on the scan page.",
+            "next_checkin_days": 3,
         }

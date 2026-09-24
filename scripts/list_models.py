@@ -1,15 +1,15 @@
-import google.generativeai as genai
-secrets_path = 'd:/AgriSage/main/.streamlit/secrets.toml'
-gemini_key = None
-with open(secrets_path, 'r') as f:
-    for line in f:
-        if 'GEMINI_API_KEY' in line:
-            gemini_key = line.split('=')[1].strip().strip('"').strip("'")
-            break
+"""List the Gemini models available to the key in .streamlit/secrets.toml."""
 
-genai.configure(api_key=gemini_key)
+import tomllib
+from pathlib import Path
+
+from google import genai
+
+secrets_path = Path(__file__).resolve().parent.parent / ".streamlit" / "secrets.toml"
+api_key = tomllib.loads(secrets_path.read_text(encoding="utf-8"))["GEMINI_API_KEY"]
+
+client = genai.Client(api_key=api_key)
 print("Listing models...")
-for m in genai.list_models():
-    if 'generateContent' in m.supported_generation_methods:
-        print(m.name)
-
+for model in client.models.list():
+    if "generateContent" in (model.supported_actions or []):
+        print(model.name)

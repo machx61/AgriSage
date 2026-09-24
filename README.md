@@ -2,6 +2,11 @@
 
 AgriSage is a Streamlit plant-disease diagnosis and plant-tracking application.
 
+Leaf photos are diagnosed by Google Gemini, which is restricted to the classes
+listed in `agrisage/disease_map.py`. Only crops with a treatment knowledge base
+in `data/diseases/` are supported: **maize (corn), okra, potato, rice, tomato
+and wheat**. Photos of other crops are reported as unsupported.
+
 ## Project structure
 
 ```text
@@ -9,14 +14,17 @@ AgriSage is a Streamlit plant-disease diagnosis and plant-tracking application.
 ├── app.py                 # Streamlit home page and diagnosis flow
 ├── pages/                 # Streamlit multipage views
 ├── agrisage/              # Reusable application code
+│   ├── db.py              # SQLite scan history & plant tracking
 │   ├── diagnosis_utils.py
-│   ├── disease_map.py
-│   ├── gemini_tracker.py
+│   ├── disease_map.py     # Supported classes -> knowledge-base entries
+│   ├── gemini_tracker.py  # Gemini diagnosis & progress analysis
+│   ├── images.py
+│   ├── session.py         # Browser device ID
 │   └── treatments_db.py
 ├── data/diseases/         # Crop treatment knowledge base
-├── models/                # Local model weights
+├── models/                # Experimental local weights (not used by the app)
 ├── tests/                 # Automated tests
-├── scripts/               # Manual model/API diagnostics
+├── scripts/               # list_models.py: list Gemini models for your key
 ├── .streamlit/            # Local Streamlit configuration and secrets
 └── requirements.txt
 ```
