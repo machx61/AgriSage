@@ -6,15 +6,87 @@ Each class maps to its display name and the (crop_file, kb_key) entry that
 holds its treatments; healthy classes map to None.
 """
 
-SUPPORTED_CROPS = ["Maize (Corn)", "Okra", "Potato", "Rice", "Tomato", "Wheat"]
+SUPPORTED_CROPS = ["Apple", "Brinjal (Eggplant)", "Cabbage", "Capsicum (Bell Pepper & Chilli)", "Carrot", "Cauliflower",
+                   "Cucumber", "Garlic", "Maize (Corn)", "Mustard", "Okra", "Onion", "Pea", "Potato", "Rice",
+                   "Spinach", "Tomato", "Wheat"]
 
 # class -> (display name, (crop_file, kb_key) or None for healthy)
 _CLASSES = {
+    "apple_healthy": ("Apple - Healthy", None),
+    "apple_scab": ("Apple - Scab", ("apple", "scab")),
+    "apple_powdery_mildew": ("Apple - Powdery Mildew", ("apple", "powdery_mildew")),
+    "apple_marssonina_blotch": ("Apple - Marssonina Leaf Blotch", ("apple", "marssonina_blotch")),
+    "apple_alternaria_blotch": ("Apple - Alternaria Leaf Blotch", ("apple", "alternaria_blotch")),
+    "apple_woolly_aphid": ("Apple - Woolly Apple Aphid", ("apple", "woolly_aphid")),
+    "apple_mite_bronzing": ("Apple - Mite Bronzing", ("apple", "mite_bronzing")),
+
+    "brinjal_healthy": ("Brinjal - Healthy", None),
+    "brinjal_shoot_fruit_borer": ("Brinjal - Shoot & Fruit Borer", ("brinjal", "shoot_fruit_borer")),
+    "brinjal_phomopsis_blight": ("Brinjal - Phomopsis Blight & Fruit Rot", ("brinjal", "phomopsis_blight")),
+    "brinjal_little_leaf": ("Brinjal - Little Leaf", ("brinjal", "little_leaf")),
+    "brinjal_bacterial_wilt": ("Brinjal - Bacterial Wilt", ("brinjal", "bacterial_wilt")),
+    "brinjal_hadda_beetle": ("Brinjal - Hadda (Epilachna) Beetle", ("brinjal", "hadda_beetle")),
+
+    "cabbage_healthy": ("Cabbage - Healthy", None),
+    "cabbage_black_rot": ("Cabbage - Black Rot", ("cabbage", "black_rot")),
+    "cabbage_downy_mildew": ("Cabbage - Downy Mildew", ("cabbage", "downy_mildew")),
+    "cabbage_alternaria_leaf_spot": ("Cabbage - Alternaria Leaf Spot", ("cabbage", "alternaria_leaf_spot")),
+    "cabbage_diamondback_moth": ("Cabbage - Diamondback Moth", ("cabbage", "diamondback_moth")),
+    "cabbage_cabbage_butterfly": ("Cabbage - Cabbage Butterfly Caterpillars", ("cabbage", "cabbage_butterfly")),
+    "cabbage_aphid": ("Cabbage - Aphid", ("cabbage", "aphid")),
+    "cabbage_clubroot": ("Cabbage - Clubroot", ("cabbage", "clubroot")),
+
+    "capsicum_healthy": ("Capsicum - Healthy", None),
+    "capsicum_phytophthora_blight": ("Capsicum - Phytophthora Blight", ("capsicum", "phytophthora_blight")),
+    "capsicum_anthracnose": ("Capsicum - Anthracnose & Die-back", ("capsicum", "anthracnose")),
+    "capsicum_bacterial_leaf_spot": ("Capsicum - Bacterial Leaf Spot", ("capsicum", "bacterial_leaf_spot")),
+    "capsicum_powdery_mildew": ("Capsicum - Powdery Mildew", ("capsicum", "powdery_mildew")),
+    "capsicum_cercospora_leaf_spot": ("Capsicum - Cercospora Leaf Spot", ("capsicum", "cercospora_leaf_spot")),
+    "capsicum_leaf_curl_mosaic": ("Capsicum - Leaf Curl & Mosaic", ("capsicum", "leaf_curl_mosaic")),
+
+    "carrot_healthy": ("Carrot - Healthy", None),
+    "carrot_alternaria_leaf_blight": ("Carrot - Alternaria Leaf Blight", ("carrot", "alternaria_leaf_blight")),
+    "carrot_cercospora_leaf_spot": ("Carrot - Cercospora Leaf Spot", ("carrot", "cercospora_leaf_spot")),
+    "carrot_powdery_mildew": ("Carrot - Powdery Mildew", ("carrot", "powdery_mildew")),
+
+    # Cauliflower shares the cabbage knowledge base: same pathogens and pests, same treatments
+    "cauliflower_healthy": ("Cauliflower - Healthy", None),
+    "cauliflower_black_rot": ("Cauliflower - Black Rot", ("cabbage", "black_rot")),
+    "cauliflower_downy_mildew": ("Cauliflower - Downy Mildew", ("cabbage", "downy_mildew")),
+    "cauliflower_alternaria_leaf_spot": ("Cauliflower - Alternaria Leaf Spot", ("cabbage", "alternaria_leaf_spot")),
+    "cauliflower_diamondback_moth": ("Cauliflower - Diamondback Moth", ("cabbage", "diamondback_moth")),
+    "cauliflower_cabbage_butterfly": ("Cauliflower - Cabbage Butterfly Caterpillars", ("cabbage", "cabbage_butterfly")),
+    "cauliflower_aphid": ("Cauliflower - Aphid", ("cabbage", "aphid")),
+    "cauliflower_clubroot": ("Cauliflower - Clubroot", ("cabbage", "clubroot")),
+
     "corn_healthy": ("Maize - Healthy", None),
     "corn_turcicum_leaf_blight": ("Maize - Turcicum (Northern) Leaf Blight", ("maize", "turcicum_leaf_blight")),
     "corn_banded_leaf_sheath_blight": ("Maize - Banded Leaf & Sheath Blight", ("maize", "banded_leaf_and_sheath_blight")),
     "corn_fall_armyworm": ("Maize - Fall Armyworm", ("maize", "fall_armyworm")),
     "corn_stalk_rot": ("Maize - Stalk Rot", ("maize", "stalk_rot")),
+
+    "cucumber_healthy": ("Cucumber - Healthy", None),
+    "cucumber_downy_mildew": ("Cucumber - Downy Mildew", ("cucumber", "downy_mildew")),
+    "cucumber_powdery_mildew": ("Cucumber - Powdery Mildew", ("cucumber", "powdery_mildew")),
+    "cucumber_mosaic_virus": ("Cucumber - Mosaic Virus", ("cucumber", "mosaic_virus")),
+    "cucumber_red_pumpkin_beetle": ("Cucumber - Red Pumpkin Beetle", ("cucumber", "red_pumpkin_beetle")),
+    "cucumber_leaf_miner": ("Cucumber - Serpentine Leaf Miner", ("cucumber", "leaf_miner")),
+
+    "garlic_healthy": ("Garlic - Healthy", None),
+    "garlic_stemphylium_blight": ("Garlic - Stemphylium Blight", ("garlic", "stemphylium_blight")),
+    "garlic_rust": ("Garlic - Rust", ("garlic", "rust")),
+    "garlic_basal_white_rot": ("Garlic - Basal Rot & White Rot", ("garlic", "basal_white_rot")),
+    "garlic_thrips": ("Garlic - Thrips", ("garlic", "thrips")),
+    # Same pathogen as onion purple blotch, so it shares those treatments
+    "garlic_purple_blotch": ("Garlic - Purple Blotch", ("onion", "purple_blotch")),
+
+    "mustard_healthy": ("Mustard - Healthy", None),
+    "mustard_alternaria_blight": ("Mustard - Alternaria Blight", ("mustard", "alternaria_blight")),
+    "mustard_white_rust": ("Mustard - White Rust", ("mustard", "white_rust")),
+    "mustard_downy_mildew": ("Mustard - Downy Mildew", ("mustard", "downy_mildew")),
+    "mustard_powdery_mildew": ("Mustard - Powdery Mildew", ("mustard", "powdery_mildew")),
+    "mustard_aphid": ("Mustard - Aphid", ("mustard", "aphid")),
+    "mustard_sawfly": ("Mustard - Sawfly (Shot-Hole Seedlings)", ("mustard", "sawfly")),
 
     "okra_healthy": ("Okra - Healthy", None),
     "okra_yellow_vein_mosaic_virus": ("Okra - Yellow Vein Mosaic Virus", ("okra", "yellow_vein_mosaic_virus")),
@@ -22,6 +94,21 @@ _CLASSES = {
     "okra_damping_off_root_rot": ("Okra - Damping Off & Root Rot", ("okra", "damping_off_root_rot")),
     "okra_fusarium_wilt": ("Okra - Fusarium Wilt", ("okra", "fusarium_wilt")),
     "okra_powdery_mildew": ("Okra - Powdery Mildew", ("okra", "powdery_mildew")),
+
+    "onion_healthy": ("Onion - Healthy", None),
+    "onion_purple_blotch": ("Onion - Purple Blotch", ("onion", "purple_blotch")),
+    "onion_stemphylium_blight": ("Onion - Stemphylium Leaf Blight", ("onion", "stemphylium_blight")),
+    "onion_downy_mildew": ("Onion - Downy Mildew", ("onion", "downy_mildew")),
+    # Thrips on onion and garlic are managed the same way, so onion shares the garlic entry
+    "onion_thrips": ("Onion - Thrips", ("garlic", "thrips")),
+
+    "pea_healthy": ("Pea - Healthy", None),
+    "pea_powdery_mildew": ("Pea - Powdery Mildew", ("pea", "powdery_mildew")),
+    "pea_rust": ("Pea - Rust", ("pea", "rust")),
+    "pea_ascochyta_blight": ("Pea - Ascochyta Blight", ("pea", "ascochyta_blight")),
+    "pea_leaf_miner": ("Pea - Leaf Miner", ("pea", "leaf_miner")),
+    "pea_aphid": ("Pea - Aphid", ("pea", "aphid")),
+    "pea_root_rot_wilt": ("Pea - Root Rot & Wilt", ("pea", "root_rot_wilt")),
 
     "potato_healthy": ("Potato - Healthy", None),
     "potato_early_blight": ("Potato - Early Blight", ("potato", "early_blight")),
@@ -34,6 +121,12 @@ _CLASSES = {
     "rice_healthy": ("Rice - Healthy", None),
     "rice_bacterial_leaf_blight": ("Rice - Bacterial Leaf Blight & Blast", ("rice", "bacterial_leaf_blight")),
     "rice_hispa": ("Rice - Hispa", ("rice", "rice_hispa")),
+
+    "spinach_healthy": ("Spinach - Healthy", None),
+    "spinach_downy_mildew": ("Spinach - Downy Mildew", ("spinach", "downy_mildew")),
+    "spinach_cercospora_leaf_spot": ("Spinach - Cercospora Leaf Spot", ("spinach", "cercospora_leaf_spot")),
+    "spinach_leaf_miner": ("Spinach - Leaf Miner", ("spinach", "leaf_miner")),
+    "spinach_aphid": ("Spinach - Aphid", ("spinach", "aphid")),
 
     "tomato_healthy": ("Tomato - Healthy", None),
     "tomato_leaf_curl_virus": ("Tomato - Leaf Curl Virus", ("tomato", "leaf_curl_virus")),

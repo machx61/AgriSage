@@ -1,0 +1,437 @@
+{
+    "scab": {
+        "name": "Apple Scab",
+        "cultural": [
+            {
+                "action": "Leaf Litter Clean-Up",
+                "emoji": "🍂",
+                "theme": "soft_yellow",
+                "summary": "The fungus winters in fallen leaves, so clear them before spring!",
+                "how": "Collect fallen leaves into a compost pit, or spray 5% urea (10 kg in 200 L water) on the orchard floor in October-November, before leaf fall.",
+                "frequency": "Once, Oct-Nov",
+                "evidence": "HP apple spray schedule (UHF Nauni 2023) and the GIZ/HP Horticulture trainers' manual. Count the urea nitrogen in the yearly fertiliser plan. J&K advises 3-4% because of reported bud damage at higher rates."
+            },
+            {
+                "action": "Open the Canopy",
+                "emoji": "✂️",
+                "theme": "sky_blue",
+                "summary": "Light and airflow dry the leaves fast, and dry leaves stay healthy!",
+                "how": "Prune for air and light, encourage early shoot closure, control rainy-season weeds, and with sprinklers do not let the trees stay wet longer than 8 hours.",
+                "frequency": "Every winter, and keep weeds down in the rains",
+                "evidence": "GIZ/HP Horticulture trainers' manual (scab, Marssonina, Alternaria)."
+            },
+            {
+                "action": "Scab-Resistant Varieties",
+                "emoji": "🍏",
+                "theme": "lavender",
+                "summary": "Plant breeds that shrug off scab!",
+                "how": "For new plantings, the HP manual lists scab-resistant varieties (Co-op 12, Co-op 13, Priscilla, Macfree, Florina, Topaz and others). Their resistance has been overcome in many regions, so still protect them in long wet spells.",
+                "frequency": "At planting",
+                "evidence": "GIZ manual list; no HP field performance data found. Check nursery availability and market acceptance first."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Natural methods help but cannot stop a heavy outbreak!",
+                "how": "Cleaning up leaf litter and improving airflow lowers disease pressure. Once spots spread in wet weather, talk to your horticulture officer or KVK: HP's official spray schedule relies on synthetic fungicides for this disease.",
+                "frequency": "At the first spots",
+                "evidence": "No botanical or natural-farming spray had HP evidence against this disease in the sources found (GIZ manual, HP spray schedule)."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray 10 L jeevamrit in 100 L water (10%) on the foliage every 15 days, or drench 3-5 L per plant every 21 days in a trench outside the tree basin and cover with dry grass.",
+                "frequency": "Every 15 days (spray) or every 21 days (soil drench)",
+                "evidence": "UHF Nauni / RHR&TS Mashobra natural-farming apple trial (Indian Horticulture, 2026): rate and 15-day interval quoted from it; the paper reports no disease or pest percentages, only 'variable but notable' effectiveness.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 10 L strained jeevamrit with 90 L water and spray every 15 days or as needed.",
+                        "Soil: pour 3 L per rootstock plant or 5 L per seedling plant into a 3-4 inch trench outside the basin every 21 days, then cover with dry grass.",
+                        "Use soon after it is ready; do not keep it for long."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "marssonina_blotch": {
+        "name": "Marssonina Leaf Blotch",
+        "cultural": [
+            {
+                "action": "Leaf Litter Clean-Up",
+                "emoji": "🍂",
+                "theme": "soft_yellow",
+                "summary": "The fungus winters in fallen leaves, so clear them before spring!",
+                "how": "Collect fallen leaves into a compost pit, or spray 5% urea (10 kg in 200 L water) on the orchard floor in October-November, before leaf fall.",
+                "frequency": "Once, Oct-Nov",
+                "evidence": "HP apple spray schedule (UHF Nauni 2023) and the GIZ/HP Horticulture trainers' manual. Count the urea nitrogen in the yearly fertiliser plan. J&K advises 3-4% because of reported bud damage at higher rates."
+            },
+            {
+                "action": "Open the Canopy",
+                "emoji": "✂️",
+                "theme": "sky_blue",
+                "summary": "Light and airflow dry the leaves fast, and dry leaves stay healthy!",
+                "how": "Prune for air and light, encourage early shoot closure, control rainy-season weeds, and with sprinklers do not let the trees stay wet longer than 8 hours.",
+                "frequency": "Every winter, and keep weeds down in the rains",
+                "evidence": "GIZ/HP Horticulture trainers' manual (scab, Marssonina, Alternaria)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Natural methods help but cannot stop a heavy outbreak!",
+                "how": "Cleaning up leaf litter and improving airflow lowers disease pressure. Once spots spread in wet weather, talk to your horticulture officer or KVK: HP's official spray schedule relies on synthetic fungicides for this disease.",
+                "frequency": "At the first spots",
+                "evidence": "No botanical or natural-farming spray had HP evidence against this disease in the sources found (GIZ manual, HP spray schedule)."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray 10 L jeevamrit in 100 L water (10%) on the foliage every 15 days, or drench 3-5 L per plant every 21 days in a trench outside the tree basin and cover with dry grass.",
+                "frequency": "Every 15 days (spray) or every 21 days (soil drench)",
+                "evidence": "UHF Nauni / RHR&TS Mashobra natural-farming apple trial (Indian Horticulture, 2026): rate and 15-day interval quoted from it; the paper reports no disease or pest percentages, only 'variable but notable' effectiveness.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 10 L strained jeevamrit with 90 L water and spray every 15 days or as needed.",
+                        "Soil: pour 3 L per rootstock plant or 5 L per seedling plant into a 3-4 inch trench outside the basin every 21 days, then cover with dry grass.",
+                        "Use soon after it is ready; do not keep it for long."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "alternaria_blotch": {
+        "name": "Alternaria Leaf Blotch",
+        "cultural": [
+            {
+                "action": "Leaf Litter Clean-Up",
+                "emoji": "🍂",
+                "theme": "soft_yellow",
+                "summary": "The fungus winters in fallen leaves, so clear them before spring!",
+                "how": "Collect fallen leaves into a compost pit, or spray 5% urea (10 kg in 200 L water) on the orchard floor in October-November, before leaf fall.",
+                "frequency": "Once, Oct-Nov",
+                "evidence": "HP apple spray schedule (UHF Nauni 2023) and the GIZ/HP Horticulture trainers' manual. Count the urea nitrogen in the yearly fertiliser plan. J&K advises 3-4% because of reported bud damage at higher rates."
+            },
+            {
+                "action": "Open the Canopy",
+                "emoji": "✂️",
+                "theme": "sky_blue",
+                "summary": "Light and airflow dry the leaves fast, and dry leaves stay healthy!",
+                "how": "Prune for air and light, encourage early shoot closure, control rainy-season weeds, and with sprinklers do not let the trees stay wet longer than 8 hours.",
+                "frequency": "Every winter, and keep weeds down in the rains",
+                "evidence": "GIZ/HP Horticulture trainers' manual (scab, Marssonina, Alternaria)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Natural methods help but cannot stop a heavy outbreak!",
+                "how": "Cleaning up leaf litter and improving airflow lowers disease pressure. Once spots spread in wet weather, talk to your horticulture officer or KVK: HP's official spray schedule relies on synthetic fungicides for this disease.",
+                "frequency": "At the first spots",
+                "evidence": "No botanical or natural-farming spray had HP evidence against this disease in the sources found (GIZ manual, HP spray schedule)."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray 10 L jeevamrit in 100 L water (10%) on the foliage every 15 days, or drench 3-5 L per plant every 21 days in a trench outside the tree basin and cover with dry grass.",
+                "frequency": "Every 15 days (spray) or every 21 days (soil drench)",
+                "evidence": "UHF Nauni / RHR&TS Mashobra natural-farming apple trial (Indian Horticulture, 2026): rate and 15-day interval quoted from it; the paper reports no disease or pest percentages, only 'variable but notable' effectiveness.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 10 L strained jeevamrit with 90 L water and spray every 15 days or as needed.",
+                        "Soil: pour 3 L per rootstock plant or 5 L per seedling plant into a 3-4 inch trench outside the basin every 21 days, then cover with dry grass.",
+                        "Use soon after it is ready; do not keep it for long."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "powdery_mildew": {
+        "name": "Apple Powdery Mildew",
+        "cultural": [
+            {
+                "action": "Cut the Silvery Shoots",
+                "emoji": "✂️",
+                "theme": "butter_yellow",
+                "summary": "Infected shoot tips carry the mildew through winter!",
+                "how": "Prune off silvery, mildewed shoot tips in winter and during the season and destroy them; encourage shoot closure in summer. Pruning alone is not enough in a bad year.",
+                "frequency": "Winter pruning and monthly in season",
+                "evidence": "HP spray schedule (2023) and GIZ manual."
+            },
+            {
+                "action": "Mind the Variety",
+                "emoji": "🍎",
+                "theme": "lavender",
+                "summary": "Some varieties get far more mildew!",
+                "how": "Granny Smith, Golden Delicious and the Gala group are highly susceptible; Red and Royal Delicious are less so. Watch susceptible varieties closely from April to July.",
+                "frequency": "Season long",
+                "evidence": "Kinnaur powdery-mildew study: 25-54% incidence, peak in July."
+            },
+            {
+                "action": "Open the Canopy",
+                "emoji": "✂️",
+                "theme": "sky_blue",
+                "summary": "Light and airflow dry the leaves fast, and dry leaves stay healthy!",
+                "how": "Prune for air and light, encourage early shoot closure, control rainy-season weeds, and with sprinklers do not let the trees stay wet longer than 8 hours.",
+                "frequency": "Every winter, and keep weeds down in the rains",
+                "evidence": "GIZ/HP Horticulture trainers' manual (scab, Marssonina, Alternaria)."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Wettable Sulphur at Dormancy",
+                "emoji": "🟡",
+                "theme": "soft_yellow",
+                "summary": "A mineral spray for the dormant season!",
+                "how": "Spray wettable sulphur at 600 g in 200 L water after pruning, at late dormancy. Sulphur harms predatory mites, so do not use it repeatedly in summer.",
+                "frequency": "Once, late dormancy",
+                "evidence": "GIZ manual: this is the first spray of a four-spray programme whose later sprays are synthetic fungicides. No in-season sulphur dose was found."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray 10 L jeevamrit in 100 L water (10%) on the foliage every 15 days, or drench 3-5 L per plant every 21 days in a trench outside the tree basin and cover with dry grass.",
+                "frequency": "Every 15 days (spray) or every 21 days (soil drench)",
+                "evidence": "UHF Nauni / RHR&TS Mashobra natural-farming apple trial (Indian Horticulture, 2026): rate and 15-day interval quoted from it; the paper reports no disease or pest percentages, only 'variable but notable' effectiveness.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 10 L strained jeevamrit with 90 L water and spray every 15 days or as needed.",
+                        "Soil: pour 3 L per rootstock plant or 5 L per seedling plant into a 3-4 inch trench outside the basin every 21 days, then cover with dry grass.",
+                        "Use soon after it is ready; do not keep it for long."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "woolly_aphid": {
+        "name": "Woolly Apple Aphid",
+        "cultural": [
+            {
+                "action": "Wound Care & Pruning",
+                "emoji": "🩹",
+                "theme": "soft_yellow",
+                "summary": "Fresh cuts are doorways for aphids!",
+                "how": "Make a few large pruning cuts instead of many small ones, paint cuts and wounds, remove water sprouts, prune and burn infested parts, avoid heavy nitrogen and plant aphid-free nursery stock.",
+                "frequency": "Winter pruning",
+                "evidence": "GIZ/HP Horticulture trainers' manual."
+            },
+            {
+                "action": "Sticky Bands",
+                "emoji": "🎗️",
+                "theme": "butter_yellow",
+                "summary": "Stop the crawlers from climbing the trunk!",
+                "how": "Wrap sticky bands around the stem in April-May and again in October; keep tree basins weed-free.",
+                "frequency": "April-May and October",
+                "evidence": "GIZ manual."
+            },
+            {
+                "action": "Pick the Right Rootstock",
+                "emoji": "🌳",
+                "theme": "lavender",
+                "summary": "Some rootstocks resist woolly aphid!",
+                "how": "For new plantings, MM 111 and MM 106 had the lowest infestation in glasshouse screening at IARI Shimla. MM 106 is highly susceptible to collar rot, so prefer MM 111 on wet soils.",
+                "frequency": "At planting",
+                "evidence": "Potted-plant screening of aerial colonies only; not a field result."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Natural sprays only knock colonies back!",
+                "how": "Neem oil, azadirachtin, fish oil and Beauveria reduced woolly aphid colonies by only about 29-31% in a Shimla trial, against about 90% for synthetic insecticides. Expect natural sprays to suppress, not clear, the infestation, and root colonies persist.",
+                "frequency": "Plan for repeat sprays",
+                "evidence": "UHF Nauni biopesticide thesis (Matiana, Shimla); Spiti natural-farming trial."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Protect Aphelinus Wasps",
+                "emoji": "🐝",
+                "theme": "mint_green",
+                "summary": "A tiny parasitic wasp does the work for free!",
+                "how": "Avoid broad-spectrum sprays in April-June and protect ladybirds and hoverflies. Keep flowering plants on the borders to feed them.",
+                "frequency": "April-June",
+                "evidence": "GIZ manual and HP spray schedule. No HP release dose for Aphelinus mali was found."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "agniastra",
+                "how": "Mix 5 L strained Agniastra in 100 L water (5%) and spray the shoots every 15 days or as needed. A Spiti trial used half that strength (5 L in 200 L) against woolly aphid.",
+                "frequency": "Every 15 days or as needed",
+                "evidence": "UHF Nauni / RHR&TS Mashobra natural-farming apple trial (Indian Horticulture, 2026): rate and 15-day interval quoted from it; the paper reports no disease or pest percentages, only 'variable but notable' effectiveness. Spiti (UHF Nauni, Tabo) woolly-aphid trial: agniastra made with the local herb Thuklang cut colonies from 6.06 to 2.96 per twig after 7 days, but the parasitoid in the same block also fell.",
+                "details": {
+                    "what_it_does": "Used against sucking insects, small caterpillars and pod/fruit borers.",
+                    "materials_needed": [
+                        "2 kg neem leaves, crushed",
+                        "500 g tobacco powder",
+                        "500 g green chilli paste",
+                        "250 g garlic paste",
+                        "20 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in the cow urine.",
+                        "Boil on a low flame with the lid on.",
+                        "Leave 48 hours, stirring morning and evening.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Agniastra in 100 L water (5%).",
+                        "Test on a few shoots first.",
+                        "Spray the shoots and leaf stalks in early morning or evening, avoiding open flowers; repeat every 15 days if needed."
+                    ],
+                    "safety_notes": [
+                        "Wear gloves, mask and eye protection: the chilli and tobacco irritate skin and eyes.",
+                        "Keep out of reach of children and animals.",
+                        "Tobacco can carry tobacco mosaic virus: on capsicum, chilli, brinjal and tomato prefer Neemastra or Brahmastra, or make it without tobacco, and wash hands well after handling tobacco."
+                    ]
+                }
+            }
+        ]
+    },
+    "mite_bronzing": {
+        "name": "Mite Bronzing (Red & Spider Mites)",
+        "cultural": [
+            {
+                "action": "Dust & Spray Sense",
+                "emoji": "🌬️",
+                "theme": "peach",
+                "summary": "Hot, dusty roadsides and wrong sprays breed mites!",
+                "how": "Mites rise in dry hot weather (peak July-August), near dusty roads, and after broad-spectrum insecticides kill their predators. Avoid indiscriminate sprays.",
+                "frequency": "July-August check",
+                "evidence": "GIZ manual."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Predatory Mite Release",
+                "emoji": "🕷️",
+                "theme": "mint_green",
+                "summary": "Bring in the mite-eating mites!",
+                "how": "Release the predatory mite Neoseiulus longispinosus three times at a predator-to-pest ratio of 1:30. Hanging predator-rich shoots from other trees into infested trees also helps.",
+                "frequency": "Three releases in the season",
+                "evidence": "GIZ manual. Predatory mites are very sensitive to sulphur and many pesticides."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Summer Oil, Last Resort",
+                "emoji": "🛢️",
+                "theme": "soft_yellow",
+                "summary": "A mineral oil smothers mites, but harms good bugs too!",
+                "how": "At walnut stage, 2 L horticultural mineral oil in 200 L water (1%). The same manual says to use oil only in exceptional cases of heavy infestation.",
+                "frequency": "Once, only if heavy",
+                "evidence": "HP spray schedule (2023) and GIZ manual."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "brahmastra",
+                "how": "Mix 5 L strained Brahmastra in 100 L water (5%) and spray every 15 days or as needed.",
+                "frequency": "Every 15 days or as needed",
+                "evidence": "UHF Nauni / RHR&TS Mashobra natural-farming apple trial (Indian Horticulture, 2026): rate and 15-day interval quoted from it; the paper reports no disease or pest percentages, only 'variable but notable' effectiveness.",
+                "details": {
+                    "what_it_does": "Used against sucking insects and caterpillars.",
+                    "materials_needed": [
+                        "200 g leaf paste each of any 5 plants (custard apple, castor, papaya, mango, guava, datura, duranta...)",
+                        "4 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Grind the leaves to a paste.",
+                        "Mix with the cow urine and heat until it boils.",
+                        "Cool and keep for 48 hours.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Brahmastra in 100 L water (5%).",
+                        "Spray the foliage in early morning or evening; repeat every 15 days if needed."
+                    ],
+                    "safety_notes": [
+                        "Datura and castor are poisonous: wear gloves and a mask.",
+                        "Keep out of reach of children and animals."
+                    ]
+                }
+            }
+        ]
+    }
+}

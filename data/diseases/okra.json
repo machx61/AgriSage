@@ -1,6 +1,7 @@
 {
     "yellow_vein_mosaic_virus": {
         "name": "Yellow Vein Mosaic Virus (YVMV)",
+        "natural_farming": ["neemastra", "brahmastra"],
         "cultural": [
             {
                 "action": "Champion Variety Pick",
@@ -79,6 +80,7 @@
     },
     "cercospora_leaf_spot": {
         "name": "Cercospora Leaf Spot",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Field Rest Rotation",
@@ -171,6 +173,7 @@
     },
     "damping_off_root_rot": {
         "name": "Damping Off & Root Rot",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Dry Feet Planting",
@@ -243,6 +246,7 @@
     },
     "fusarium_wilt": {
         "name": "Fusarium Wilt",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Field Rest Rotation",
@@ -299,6 +303,7 @@
     },
     "powdery_mildew": {
         "name": "Powdery Mildew",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Breezy Row Spacing",

@@ -1,0 +1,396 @@
+{
+    "powdery_mildew": {
+        "name": "Pea Powdery Mildew",
+        "cultural": [
+            {
+                "action": "Choose a Resistant Variety",
+                "emoji": "🏆",
+                "theme": "lavender",
+                "summary": "Resistant peas are the strongest weapon you have!",
+                "how": "Palam Sumool is the resistant check at Palampur; Him Palam Matar-1 is reported moderately resistant. Palam Priya and Pb-89 are only moderately susceptible and Azad P-1 is susceptible.",
+                "frequency": "At sowing",
+                "evidence": "CSK HPKV Palampur 48-genotype screen. Him Palam Matar-1 is snippet-level; check nursery availability."
+            },
+            {
+                "action": "Sow on Time",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Late sowing means more mildew!",
+                "how": "Sow in October-November in the low and mid hills (end of October gave the highest yields at Palampur) and April-May in the high hills. Avoid late sowing and late-maturing varieties.",
+                "frequency": "At sowing",
+                "evidence": "UHF Nauni pea economics paper; Palampur sowing-date study (snippet)."
+            },
+            {
+                "action": "Stake & Burn Stubble",
+                "emoji": "🪵",
+                "theme": "sky_blue",
+                "summary": "Airy, staked plants and clean fields get less mildew!",
+                "how": "Grow peas on stakes (bower system), burn infected pea stubble after harvest, do not sow next to last season's stubble, and remove volunteer pea plants.",
+                "frequency": "Every season",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Wettable Sulphur 0.2%",
+                "emoji": "🟡",
+                "theme": "soft_yellow",
+                "summary": "A mineral spray that cut mildew by about half in a Mandi trial!",
+                "how": "Spray wettable sulphur at 0.2% (2 g per litre of water) at the first white specks, covering both sides of the leaves.",
+                "frequency": "Repeat after 10-14 days if needed",
+                "evidence": "Mandi (HP) trial: about 54% disease control. The paper's treatment labels are inconsistent, so treat the figure as approximate."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) on the plants every 14 days, or drench at 10-20% at 14-15 day intervals.",
+                "frequency": "Every 14-15 days",
+                "evidence": "UHF Nauni pea nutrition studies (snippets) used 10-20% jeevamrit at 14-15 day intervals. These are yield trials; no natural-farming input has disease-control data on pea. A Palampur trial found natural-farming pea yields of 72-78 q/ha against 206-212 q/ha conventional.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%).",
+                        "Spray in the evening or drench near the roots every 14-15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "rust": {
+        "name": "Pea Rust",
+        "cultural": [
+            {
+                "action": "Know the Look-Alike",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Orange pustules underneath, not white powder!",
+                "how": "Rust gives orange-brown pustules mostly on the underside of leaves, and the spores come off as yellow powder. It likes 20-25 C with dews and rain; dry hot weather slows it. Take a photo of the underside.",
+                "frequency": "Weekly in humid weather",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Clean Debris, Rotate",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "The rust waits on old debris!",
+                "how": "Destroy all diseased plant debris after harvest, rotate with non-leguminous crops and try mixed cropping.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No natural spray with pea rust data was found. Rely on sanitation, rotation and spacing, and ask your KVK if pustules spread fast in humid weather.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM, UHF Nauni and CSK HPKV sources."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) on the plants every 14 days, or drench at 10-20% at 14-15 day intervals.",
+                "frequency": "Every 14-15 days",
+                "evidence": "UHF Nauni pea nutrition studies (snippets) used 10-20% jeevamrit at 14-15 day intervals. These are yield trials; no natural-farming input has disease-control data on pea. A Palampur trial found natural-farming pea yields of 72-78 q/ha against 206-212 q/ha conventional.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%).",
+                        "Spray in the evening or drench near the roots every 14-15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "ascochyta_blight": {
+        "name": "Ascochyta Blight (Leaf & Pod Spot)",
+        "cultural": [
+            {
+                "action": "Healthy Seed, Wider Spacing",
+                "emoji": "↔️",
+                "theme": "sky_blue",
+                "summary": "The disease is seed- and debris-borne!",
+                "how": "Use healthy certified seed, space plants for airflow, and remove and burn diseased plants soon after you see purplish-brown flecks on the lower leaves and stems.",
+                "frequency": "At sowing and weekly",
+                "evidence": "NIPHM AESA package (national, not HP-specific). Listed in the national package as a Himalayan-region disease."
+            },
+            {
+                "action": "Burn the Leftovers",
+                "emoji": "🔥",
+                "theme": "soft_pink",
+                "summary": "Old plant debris carries the disease to the next crop!",
+                "how": "Remove and burn (or bury deep) diseased plants and crop debris after harvest, and rotate with crops from a different family.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No natural spray with Ascochyta data on pea was found. The disease is worst in wet weather and when plants lodge, so staking and sanitation matter most.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM and HP sources; a Kumaon trial found foliar bioagent sprays did not reduce leaf blight."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) on the plants every 14 days, or drench at 10-20% at 14-15 day intervals.",
+                "frequency": "Every 14-15 days",
+                "evidence": "UHF Nauni pea nutrition studies (snippets) used 10-20% jeevamrit at 14-15 day intervals. These are yield trials; no natural-farming input has disease-control data on pea. A Palampur trial found natural-farming pea yields of 72-78 q/ha against 206-212 q/ha conventional.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%).",
+                        "Spray in the evening or drench near the roots every 14-15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "leaf_miner": {
+        "name": "Pea Leaf Miner",
+        "cultural": [
+            {
+                "action": "Snip Mined Leaves",
+                "emoji": "✂️",
+                "theme": "soft_yellow",
+                "summary": "The grubs live inside the leaf!",
+                "how": "Pick and destroy leaves with winding white mines early. Severe infestation can cause large yield loss; in HP more than 20% avoidable loss was reported beyond 40% infestation.",
+                "frequency": "Weekly in March-April",
+                "evidence": "CSK HPKV Palampur study (Thakur 2017)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Protect the Wasps",
+                "emoji": "🐝",
+                "theme": "mint_green",
+                "summary": "Tiny parasitic wasps already work for you!",
+                "how": "Diglyphus and Opius wasps parasitised 15-20% of leaf miners in natural-input plots against 2-7% in synthetic-spray plots, so avoid broad-spectrum insecticides.",
+                "frequency": "Ongoing",
+                "evidence": "CSK HPKV Palampur trial (Thakur 2017)."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem or Melia Drupe Extract 10%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "Best-documented natural spray for leaf miner in HP!",
+                "how": "Soak 100 g dried neem (or Melia/Bakain) drupes per litre of water (10%), strain, and spray three times.",
+                "frequency": "Three sprays, 10 days apart",
+                "evidence": "Palampur trial on var. Lincoln: leaf miner numbers fell about 59.5% and leaflet infestation about 38%, against about 51% for a synthetic. Cow urine 5% was the weakest treatment."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "agniastra",
+                "how": "Spray Agniastra at 5% (5 L strained Agniastra in 100 L water) when mines first appear.",
+                "frequency": "At first mines; repeat after 10 days",
+                "evidence": "A Neri (HP) thesis (snippet) ranked Agniastra 5% second among treatments for pea leaf miner, behind spinosad. Percentages were not retrieved.",
+                "details": {
+                    "what_it_does": "Used against sucking insects, small caterpillars and pod/fruit borers.",
+                    "materials_needed": [
+                        "2 kg neem leaves, crushed",
+                        "500 g tobacco powder",
+                        "500 g green chilli paste",
+                        "250 g garlic paste",
+                        "20 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in the cow urine.",
+                        "Boil on a low flame with the lid on.",
+                        "Leave 48 hours, stirring morning and evening.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Agniastra in 100 L water (5%).",
+                        "Test on a few plants first.",
+                        "Spray in early morning or evening and repeat after 10 days if needed."
+                    ],
+                    "safety_notes": [
+                        "Wear gloves, mask and eye protection: the chilli and tobacco irritate skin and eyes.",
+                        "Keep out of reach of children and animals.",
+                        "Tobacco can carry tobacco mosaic virus: on capsicum, chilli, brinjal and tomato prefer Neemastra or Brahmastra, or make it without tobacco, and wash hands well after handling tobacco."
+                    ]
+                }
+            }
+        ]
+    },
+    "aphid": {
+        "name": "Pea Aphid",
+        "cultural": [
+            {
+                "action": "Check Shoot Tips",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Aphids cluster on new shoots and under tender leaves!",
+                "how": "Look for curled, pale, sticky leaves with sooty mould. Aphids breed about a week per generation, so act early. Conserve ladybirds, lacewings and syrphid flies.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Green Lacewing Release",
+                "emoji": "🐞",
+                "theme": "mint_green",
+                "summary": "Lacewing larvae eat aphids!",
+                "how": "Release 4,000 green lacewing larvae per acre.",
+                "frequency": "Once at first aphids",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Yellow Sticky Traps",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Monitor and catch winged aphids!",
+                "how": "Hang 4-5 yellow sticky traps per acre just above the crop.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "natural_farming": [
+            "neemastra",
+            "brahmastra"
+        ]
+    },
+    "root_rot_wilt": {
+        "name": "Root Rot & Wilt Complex",
+        "cultural": [
+            {
+                "action": "Whole-Plant Photo",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Leaves alone can mislead: look at the roots!",
+                "how": "Fusarium wilt: yellowing of lower leaves, drooping cotyledons, leaflet margins curling in 3-5 week plants, brown inside the stem. Root rot: reddish-brown to black streaks on roots and a girdled lower stem. White rot: whitish shredded stem with hard black bodies.",
+                "frequency": "At first wilting",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Rotate & Solarize",
+                "emoji": "☀️",
+                "theme": "soft_yellow",
+                "summary": "These fungi live in the soil for years!",
+                "how": "Rotate with non-leguminous crops, avoid waterlogging, do deep summer ploughing, and solarize with clear polythene for about 25 days before sowing. Remove and burn diseased plants early.",
+                "frequency": "Every season",
+                "evidence": "NIPHM pea package. In dry-temperate NW Himalaya surveys, root rot averaged 34% and white rot 8.4% (snippet). A Lahaul project note suggests replacing root-rot-prone pea with capsicum or tomato."
+            },
+            {
+                "action": "Rhizobium Seed Coat",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Healthy nodules make stronger plants!",
+                "how": "Treat seed with Rhizobium culture at 250 g per acre of seed before sowing.",
+                "frequency": "At sowing",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed Treatment",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "A friendly fungus guards the seedling roots!",
+                "how": "Treat seed with Trichoderma viride at 4 g per kg seed (0.4%).",
+                "frequency": "At sowing",
+                "evidence": "Kumaon (non-HP) pea trial: best treatment, wilt 4.7%. NIPHM also advises Trichoderma-treated FYM at field preparation but prints no quantity."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) on the plants every 14 days, or drench at 10-20% at 14-15 day intervals.",
+                "frequency": "Every 14-15 days",
+                "evidence": "UHF Nauni pea nutrition studies (snippets) used 10-20% jeevamrit at 14-15 day intervals. These are yield trials; no natural-farming input has disease-control data on pea. A Palampur trial found natural-farming pea yields of 72-78 q/ha against 206-212 q/ha conventional.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%).",
+                        "Spray in the evening or drench near the roots every 14-15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    }
+}

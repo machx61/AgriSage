@@ -10,6 +10,7 @@ import streamlit as st
 from agrisage.disease_map import CLASS_TO_KB
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "diseases"
+FORMULATIONS_FILE = DATA_DIR.parent / "formulations.json"
 
 THEME_COLORS = {
     "mint_green": {"bg": "#E8F8F5", "border": "#2ECC71", "text": "#117A65"},
@@ -58,12 +59,10 @@ HEALTHY_TREATMENT = {
             "frequency": "Whenever watering"
         }
     ],
-    "biological": []
+    "biological": [],
+    # Soil-building natural-farming inputs that suit any healthy crop
+    "natural_farming": ["jeevamrit", "beejamrit"]
 }
-
-# Preventive tonics from the okra knowledge base that suit any healthy crop.
-_PREVENTIVE_KB = ("okra", "general_preventive_formulations")
-_PREVENTIVE_ACTIONS = {"Jiwamrita Soil Tonic", "Five-Gift Panchagavya Tonic"}
 
 
 @st.cache_data
@@ -77,10 +76,35 @@ def load_disease_data(crop_name: str) -> dict:
         return json.load(f)
 
 
+@st.cache_data
+def load_formulations() -> dict:
+    """Shared natural-farming recipes (Jeevamrit, Agniastra, ...) keyed by id."""
+    with open(FORMULATIONS_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def resolve_formulations(treatment: dict) -> dict:
+    """Swap the formulation ids under "natural_farming" for their recipe cards.
+
+    An entry is an id from formulations.json, or {"ref": id, ...} whose other
+    keys override the shared card (e.g. a crop-specific "how" or "frequency").
+    """
+    refs = treatment.get("natural_farming")
+    if not refs:
+        return treatment
+
+    library = load_formulations()
+    cards = []
+    for ref in refs:
+        overrides = {} if isinstance(ref, str) else {k: v for k, v in ref.items() if k != "ref"}
+        card = library.get(ref if isinstance(ref, str) else ref.get("ref"))
+        if card:
+            cards.append({**card, **overrides})
+    return {**treatment, "natural_farming": cards}
+
+
 def get_healthy_treatment() -> dict:
-    crop_file, kb_key = _PREVENTIVE_KB
-    preventive = load_disease_data(crop_file).get(kb_key, {}).get("iks", [])
-    return {**HEALTHY_TREATMENT, "iks": [i for i in preventive if i.get("action") in _PREVENTIVE_ACTIONS]}
+    return resolve_formulations(HEALTHY_TREATMENT)
 
 
 def get_treatment_data(predicted_class: str) -> dict:
@@ -94,4 +118,5 @@ def get_treatment_data(predicted_class: str) -> dict:
         return get_healthy_treatment()
 
     crop_file, kb_key = kb
-    return load_disease_data(crop_file).get(kb_key, DEFAULT_TREATMENT)
+    treatment = load_disease_data(crop_file).get(kb_key)
+    return resolve_formulations(treatment) if treatment else DEFAULT_TREATMENT

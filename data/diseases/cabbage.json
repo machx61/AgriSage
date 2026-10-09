@@ -1,0 +1,584 @@
+{
+    "black_rot": {
+        "name": "Black Rot",
+        "cultural": [
+            {
+                "action": "Look for V-Shapes",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Yellow V-shaped patches from the leaf edge, with black veins!",
+                "how": "Check leaf edges for V-shaped yellow wedges pointing to the midrib with blackened veins; the stem may rot black inside.",
+                "frequency": "Weekly",
+                "evidence": "UC IPM and national package symptoms."
+            },
+            {
+                "action": "Clean Seed & Dry Leaves",
+                "emoji": "🧼",
+                "theme": "soft_yellow",
+                "summary": "The bacteria travel on seed and in splashing water!",
+                "how": "Use disease-free seed and healthy transplants, rotate away from cabbage-family crops, avoid overhead irrigation and handling wet plants, control cruciferous weeds and destroy crop debris after harvest.",
+                "frequency": "Every season",
+                "evidence": "UC IPM black rot page; not HP-specific."
+            },
+            {
+                "action": "Hot-Water Seed Treatment",
+                "emoji": "♨️",
+                "theme": "peach",
+                "summary": "Warm water clears bacteria from the seed coat!",
+                "how": "Soak seed in water at 50 C for 30 minutes, then dry quickly before sowing.",
+                "frequency": "Before sowing",
+                "evidence": "German laboratory study on cabbage; not HP-tested and not in the NIPHM package. Use a thermometer and do not exceed the temperature."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No organic treatment for black rot was found. Sprays cannot cure infected plants; prevention and removal of infected plants are the only natural options.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM, UC IPM and HP sources."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit at 5% (5 L in 100 L water) on the foliage, or drench at 10% once a week near the roots.",
+                "frequency": "Foliar every 5 days or drench weekly",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (Plant Archives, 2026): drench 10% weekly and foliar spray 5% every 5 days. The paper reports yield but no pest or disease counts. UHF Nauni found jeevamrit at 10-50% on cabbage.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 5 L strained jeevamrit with 95 L water (5%) and spray every 5 days.",
+                        "Soil: dilute to 10% and drench near the roots once a week.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "downy_mildew": {
+        "name": "Downy Mildew",
+        "cultural": [
+            {
+                "action": "Space & Dry",
+                "emoji": "💧",
+                "theme": "sky_blue",
+                "summary": "Cool, damp nights drive it!",
+                "how": "Look for yellow patches on top with white-grey mould underneath. Give plants airflow, water at the roots in the morning and clear debris after harvest.",
+                "frequency": "Season long",
+                "evidence": "NIPHM cole-crop package (national)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "The national package lists only chemical options for downy mildew. No natural spray with efficacy data was found.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM and HP sources."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit at 5% (5 L in 100 L water) on the foliage, or drench at 10% once a week near the roots.",
+                "frequency": "Foliar every 5 days or drench weekly",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (Plant Archives, 2026): drench 10% weekly and foliar spray 5% every 5 days. The paper reports yield but no pest or disease counts. UHF Nauni found jeevamrit at 10-50% on cabbage.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 5 L strained jeevamrit with 95 L water (5%) and spray every 5 days.",
+                        "Soil: dilute to 10% and drench near the roots once a week.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "alternaria_leaf_spot": {
+        "name": "Alternaria Leaf Spot",
+        "cultural": [
+            {
+                "action": "Rings on Leaves",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Round brown spots with concentric rings!",
+                "how": "Look for brown spots with concentric rings, often on older leaves; they can also appear on heads. Use clean seed, rotate, clear debris and avoid long leaf wetness.",
+                "frequency": "Weekly in humid weather",
+                "evidence": "NIPHM cole-crop package (national)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "The national package lists only chemical options for Alternaria. Natural-farming support is anecdotal, plus one laboratory result for jeevamrit.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM and HP sources."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit at 5% (5 L in 100 L water) on the foliage, or drench at 10% once a week near the roots.",
+                "frequency": "Foliar every 5 days or drench weekly",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (Plant Archives, 2026): drench 10% weekly and foliar spray 5% every 5 days. The paper reports yield but no pest or disease counts. UHF Nauni found jeevamrit at 10-50% on cabbage.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 5 L strained jeevamrit with 95 L water (5%) and spray every 5 days.",
+                        "Soil: dilute to 10% and drench near the roots once a week.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "diamondback_moth": {
+        "name": "Diamondback Moth",
+        "cultural": [
+            {
+                "action": "Mustard Trap Rows",
+                "emoji": "🌼",
+                "theme": "soft_yellow",
+                "summary": "Mustard lures the moths away from the cabbage!",
+                "how": "Plant 2 rows of mustard for every 25 rows of cabbage: once 12 days before transplanting and again 25 days after.",
+                "frequency": "Two plantings per crop",
+                "evidence": "NIPHM cole-crop package (national)."
+            },
+            {
+                "action": "Know the Season",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Moth numbers peak in the cool months at mid-hill!",
+                "how": "At Nauni (1300 m), diamondback moth and head borer start in January and peak in February. Check the undersides of leaves for small green larvae that wriggle when touched, and for windowed leaves.",
+                "frequency": "Weekly from January",
+                "evidence": "UHF Nauni cauliflower pest study (Barakzai 2022). Diamondback moth is called a limiting factor for HP cabbage."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Bt Spray (Btk)",
+                "emoji": "🦠",
+                "theme": "mint_green",
+                "summary": "A natural bacterium that sickens caterpillars!",
+                "how": "Spray Bacillus thuringiensis var. kurstaki (Btk) at 1 g per litre of water.",
+                "frequency": "Two sprays, 15 days apart, in the evening",
+                "evidence": "UHF Nauni trial at 1500 m: 0.70 larvae per plant against about 4.05 untreated. One site and one year."
+            },
+            {
+                "action": "Trichogramma Cards",
+                "emoji": "🐝",
+                "theme": "pastel_green",
+                "summary": "Tiny wasps that eat moth eggs!",
+                "how": "Release Trichogramma at 20,000 per acre.",
+                "frequency": "4-6 weekly releases",
+                "evidence": "NIPHM cole-crop package (national)."
+            },
+            {
+                "action": "Diadegma Wasps",
+                "emoji": "🐝",
+                "theme": "mint_green",
+                "summary": "A wasp that parasitises moth caterpillars in the hills!",
+                "how": "Release Diadegma semiclausum at 100,000 per acre.",
+                "frequency": "As advised by your KVK",
+                "evidence": "NIPHM cole-crop package (national). Recommended for hill areas."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "A neem spray listed in the national package!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water) on both sides of the leaves.",
+                "frequency": "At first larvae; repeat after 10 days",
+                "evidence": "NIPHM cole-crop package. In the UHF Nauni trial, azadirachtin at 2 ml per litre was the weakest of four biopesticides tested."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "agniastra",
+                "how": "Mix 5 L strained Agniastra in 100 L water (5%), and spray fortnightly, alternating with Brahmastra. A UHF Nauni trial used 3%.",
+                "frequency": "Every 15 days, alternating with Brahmastra",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (2026) uses agniastra and brahmastra alternately at 5% fortnightly. A UHF Nauni cauliflower trial used 3% and found lower caterpillar and aphid peaks, but it also changed the intercrops, so the effect cannot be separated.",
+                "details": {
+                    "what_it_does": "Used against sucking insects, small caterpillars and pod/fruit borers.",
+                    "materials_needed": [
+                        "2 kg neem leaves, crushed",
+                        "500 g tobacco powder",
+                        "500 g green chilli paste",
+                        "250 g garlic paste",
+                        "20 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in the cow urine.",
+                        "Boil on a low flame with the lid on.",
+                        "Leave 48 hours, stirring morning and evening.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Agniastra in 100 L water (5%).",
+                        "Test on a few plants first.",
+                        "Spray in early morning or evening, alternating with Brahmastra every 15 days."
+                    ],
+                    "safety_notes": [
+                        "Wear gloves, mask and eye protection: the chilli and tobacco irritate skin and eyes.",
+                        "Keep out of reach of children and animals.",
+                        "Tobacco can carry tobacco mosaic virus: on capsicum, chilli, brinjal and tomato prefer Neemastra or Brahmastra, or make it without tobacco, and wash hands well after handling tobacco."
+                    ]
+                }
+            },
+            {
+                "ref": "brahmastra",
+                "how": "Mix 5 L strained Brahmastra in 100 L water (5%), and spray fortnightly, alternating with Agniastra. A UHF Nauni trial used 3%.",
+                "frequency": "Every 15 days, alternating with Agniastra",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (2026); a UHF Nauni trial used 3%.",
+                "details": {
+                    "what_it_does": "Used against sucking insects and caterpillars.",
+                    "materials_needed": [
+                        "200 g leaf paste each of any 5 plants (custard apple, castor, papaya, mango, guava, datura, duranta...)",
+                        "4 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Grind the leaves to a paste.",
+                        "Mix with the cow urine and heat until it boils.",
+                        "Cool and keep for 48 hours.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Brahmastra in 100 L water (5%).",
+                        "Spray in early morning or evening, alternating with Agniastra every 15 days."
+                    ],
+                    "safety_notes": [
+                        "Datura and castor are poisonous: wear gloves and a mask.",
+                        "Keep out of reach of children and animals."
+                    ]
+                }
+            }
+        ]
+    },
+    "cabbage_butterfly": {
+        "name": "Cabbage Butterfly Caterpillars",
+        "cultural": [
+            {
+                "action": "Hand-Pick the Caterpillars",
+                "emoji": "🖐️",
+                "theme": "soft_yellow",
+                "summary": "Yellow egg clusters and green caterpillars are easy to find!",
+                "how": "Check leaf undersides for clusters of yellow eggs and green caterpillars; pick and destroy them. Cabbage butterfly peaks at the end of February at Nauni.",
+                "frequency": "Twice a week",
+                "evidence": "UHF Nauni pest study; national package for symptoms."
+            },
+            {
+                "action": "Mustard Trap Rows",
+                "emoji": "🌼",
+                "theme": "soft_yellow",
+                "summary": "Mustard lures the moths away from the cabbage!",
+                "how": "Plant 2 rows of mustard for every 25 rows of cabbage: once 12 days before transplanting and again 25 days after.",
+                "frequency": "Two plantings per crop",
+                "evidence": "NIPHM cole-crop package (national)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Bt Spray (Btk)",
+                "emoji": "🦠",
+                "theme": "mint_green",
+                "summary": "A natural bacterium that sickens caterpillars!",
+                "how": "Spray Bacillus thuringiensis var. kurstaki (Btk) at 1 g per litre of water.",
+                "frequency": "Two sprays, 15 days apart, in the evening",
+                "evidence": "Dose from the UHF Nauni diamondback-moth trial on cabbage; the same product acts on other cabbage caterpillars."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "A neem spray listed in the national package!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water).",
+                "frequency": "At first larvae; repeat after 10 days",
+                "evidence": "NIPHM cole-crop package (national)."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "agniastra",
+                "how": "Mix 5 L strained Agniastra in 100 L water (5%), and spray fortnightly, alternating with Brahmastra. A UHF Nauni trial used 3%.",
+                "frequency": "Every 15 days, alternating with Brahmastra",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (2026) uses agniastra and brahmastra alternately at 5% fortnightly. A UHF Nauni cauliflower trial used 3% and found lower caterpillar and aphid peaks, but it also changed the intercrops, so the effect cannot be separated.",
+                "details": {
+                    "what_it_does": "Used against sucking insects, small caterpillars and pod/fruit borers.",
+                    "materials_needed": [
+                        "2 kg neem leaves, crushed",
+                        "500 g tobacco powder",
+                        "500 g green chilli paste",
+                        "250 g garlic paste",
+                        "20 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in the cow urine.",
+                        "Boil on a low flame with the lid on.",
+                        "Leave 48 hours, stirring morning and evening.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Agniastra in 100 L water (5%).",
+                        "Test on a few plants first.",
+                        "Spray in early morning or evening, alternating with Brahmastra every 15 days."
+                    ],
+                    "safety_notes": [
+                        "Wear gloves, mask and eye protection: the chilli and tobacco irritate skin and eyes.",
+                        "Keep out of reach of children and animals.",
+                        "Tobacco can carry tobacco mosaic virus: on capsicum, chilli, brinjal and tomato prefer Neemastra or Brahmastra, or make it without tobacco, and wash hands well after handling tobacco."
+                    ]
+                }
+            },
+            {
+                "ref": "brahmastra",
+                "how": "Mix 5 L strained Brahmastra in 100 L water (5%), and spray fortnightly, alternating with Agniastra. A UHF Nauni trial used 3%.",
+                "frequency": "Every 15 days, alternating with Agniastra",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (2026); a UHF Nauni trial used 3%.",
+                "details": {
+                    "what_it_does": "Used against sucking insects and caterpillars.",
+                    "materials_needed": [
+                        "200 g leaf paste each of any 5 plants (custard apple, castor, papaya, mango, guava, datura, duranta...)",
+                        "4 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Grind the leaves to a paste.",
+                        "Mix with the cow urine and heat until it boils.",
+                        "Cool and keep for 48 hours.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Brahmastra in 100 L water (5%).",
+                        "Spray in early morning or evening, alternating with Agniastra every 15 days."
+                    ],
+                    "safety_notes": [
+                        "Datura and castor are poisonous: wear gloves and a mask.",
+                        "Keep out of reach of children and animals."
+                    ]
+                }
+            }
+        ]
+    },
+    "aphid": {
+        "name": "Cabbage Aphid",
+        "cultural": [
+            {
+                "action": "Know the Season",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Aphids build up through winter!",
+                "how": "At Nauni (1300 m), aphids start in late October and peak from late January to early February. Look for grey clusters on the underside of leaves and in the heads, with sticky honeydew.",
+                "frequency": "Weekly in winter",
+                "evidence": "UHF Nauni cauliflower pest study (Barakzai 2022)."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "A neem spray listed in the national package!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), reaching leaf undersides.",
+                "frequency": "At first colonies; repeat after 10 days",
+                "evidence": "NIPHM cole-crop package (national)."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "agniastra",
+                "how": "Mix 5 L strained Agniastra in 100 L water (5%), and spray fortnightly, alternating with Brahmastra. A UHF Nauni trial used 3%.",
+                "frequency": "Every 15 days, alternating with Brahmastra",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (2026) uses agniastra and brahmastra alternately at 5% fortnightly. A UHF Nauni cauliflower trial used 3% and found lower caterpillar and aphid peaks, but it also changed the intercrops, so the effect cannot be separated.",
+                "details": {
+                    "what_it_does": "Used against sucking insects, small caterpillars and pod/fruit borers.",
+                    "materials_needed": [
+                        "2 kg neem leaves, crushed",
+                        "500 g tobacco powder",
+                        "500 g green chilli paste",
+                        "250 g garlic paste",
+                        "20 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in the cow urine.",
+                        "Boil on a low flame with the lid on.",
+                        "Leave 48 hours, stirring morning and evening.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Agniastra in 100 L water (5%).",
+                        "Test on a few plants first.",
+                        "Spray in early morning or evening, alternating with Brahmastra every 15 days."
+                    ],
+                    "safety_notes": [
+                        "Wear gloves, mask and eye protection: the chilli and tobacco irritate skin and eyes.",
+                        "Keep out of reach of children and animals.",
+                        "Tobacco can carry tobacco mosaic virus: on capsicum, chilli, brinjal and tomato prefer Neemastra or Brahmastra, or make it without tobacco, and wash hands well after handling tobacco."
+                    ]
+                }
+            },
+            {
+                "ref": "brahmastra",
+                "how": "Mix 5 L strained Brahmastra in 100 L water (5%), and spray fortnightly, alternating with Agniastra. A UHF Nauni trial used 3%.",
+                "frequency": "Every 15 days, alternating with Agniastra",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (2026); a UHF Nauni trial used 3%.",
+                "details": {
+                    "what_it_does": "Used against sucking insects and caterpillars.",
+                    "materials_needed": [
+                        "200 g leaf paste each of any 5 plants (custard apple, castor, papaya, mango, guava, datura, duranta...)",
+                        "4 L desi cow urine"
+                    ],
+                    "preparation_steps": [
+                        "Grind the leaves to a paste.",
+                        "Mix with the cow urine and heat until it boils.",
+                        "Cool and keep for 48 hours.",
+                        "Strain through cloth."
+                    ],
+                    "application_steps": [
+                        "Dilute 5 L of strained Brahmastra in 100 L water (5%).",
+                        "Spray in early morning or evening, alternating with Agniastra every 15 days."
+                    ],
+                    "safety_notes": [
+                        "Datura and castor are poisonous: wear gloves and a mask.",
+                        "Keep out of reach of children and animals."
+                    ]
+                }
+            }
+        ]
+    },
+    "clubroot": {
+        "name": "Clubroot",
+        "cultural": [
+            {
+                "action": "Whole-Plant Photo",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "The leaves wilt in the sun but the problem is underground!",
+                "how": "Look for stunted plants that wilt on hot days and yellowing leaves. Pull a plant: roots have swollen, club-shaped galls.",
+                "frequency": "At first wilting",
+                "evidence": "NIPHM cole-crop package (national)."
+            },
+            {
+                "action": "Lime the Soil",
+                "emoji": "🪨",
+                "theme": "soft_yellow",
+                "summary": "Sweeter soil starves the clubroot germ!",
+                "how": "Apply hydrated lime to raise soil pH to 7.2, at 1.5 t per acre, about 6 weeks before planting. Improve drainage and destroy cruciferous weeds.",
+                "frequency": "Once, 6 weeks before planting",
+                "evidence": "NIPHM cole-crop package. No HP clubroot data or HP-source lime dose was found; test soil pH first."
+            },
+            {
+                "action": "Long Rotation",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "The germ survives for years in the soil!",
+                "how": "Rotate for several years with non-crucifer crops and never move soil or transplants from infested plots.",
+                "frequency": "Every season",
+                "evidence": "NIPHM cole-crop package (national)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma or Pseudomonas in FYM",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Friendly microbes in the planting soil!",
+                "how": "Mix Trichoderma or Pseudomonas at 2 kg per acre into FYM or vermicompost and apply at planting.",
+                "frequency": "At planting",
+                "evidence": "NIPHM cole-crop package (national)."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit at 5% (5 L in 100 L water) on the foliage, or drench at 10% once a week near the roots.",
+                "frequency": "Foliar every 5 days or drench weekly",
+                "evidence": "KVK Solan natural-farming cauliflower schedule (Plant Archives, 2026): drench 10% weekly and foliar spray 5% every 5 days. The paper reports yield but no pest or disease counts. UHF Nauni found jeevamrit at 10-50% on cabbage.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Foliar: mix 5 L strained jeevamrit with 95 L water (5%) and spray every 5 days.",
+                        "Soil: dilute to 10% and drench near the roots once a week.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    }
+}

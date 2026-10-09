@@ -1,0 +1,148 @@
+{
+    "downy_mildew": {
+        "name": "Spinach Downy Mildew",
+        "cultural": [
+            {
+                "action": "Tolerant Varieties",
+                "emoji": "🏆",
+                "theme": "lavender",
+                "summary": "Pick varieties that cope with downy mildew!",
+                "how": "Tyee, Olympia, Melody and Regal are listed as tolerant to downy mildew.",
+                "frequency": "At sowing",
+                "evidence": "NIPHM spinach package (national list; not HP-tested)."
+            },
+            {
+                "action": "Raised Rows, Open Spacing",
+                "emoji": "↔️",
+                "theme": "sky_blue",
+                "summary": "Dry leaves, fewer spores!",
+                "how": "Sow on raised beds above 35 cm, in lines 20 cm apart, and thin to 10-12 cm. Water at the roots in the morning and avoid overhead irrigation.",
+                "frequency": "At sowing",
+                "evidence": "NIPHM spinach package."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No natural spray with efficacy data on spinach downy mildew was found. Look for grey-purple mould underneath the leaf with yellow patches on top.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM, UHF Nauni and ICAR sources."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "cercospora_leaf_spot": {
+        "name": "Cercospora Leaf Spot",
+        "cultural": [
+            {
+                "action": "Tolerant Variety & Hygiene",
+                "emoji": "🧹",
+                "theme": "soft_yellow",
+                "summary": "Round spots with pale centres thrive in humid weather!",
+                "how": "Ooty (Sp) 1 is listed as tolerant of Cercospora. Remove infected leaves, thin for airflow and rotate with non-spinach crops.",
+                "frequency": "Every 2 weeks",
+                "evidence": "NIPHM spinach variety table; not HP-tested."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No natural spray with efficacy data on spinach Cercospora was found.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM, ICAR and UHF Nauni sources."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "leaf_miner": {
+        "name": "Spinach Leaf Miner",
+        "cultural": [
+            {
+                "action": "Pick Off Mined Leaves",
+                "emoji": "✂️",
+                "theme": "soft_yellow",
+                "summary": "The grubs live inside the leaf!",
+                "how": "Remove and destroy leaves with winding mines early.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Yellow Sticky Traps",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Catch the adult flies!",
+                "how": "Hang 4-5 yellow sticky traps per acre just above the crop.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM spinach package."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 4%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "A neem spray listed for spinach leaf miner!",
+                "how": "Spray NSKE at 4% (40 ml per litre of water), or neem oil at 5 ml per litre with 0.5 ml per litre of sticker, covering both leaf surfaces.",
+                "frequency": "At first mines; repeat after 10 days",
+                "evidence": "NIPHM spinach package; no efficacy percentage given."
+            },
+            {
+                "action": "Neem or Pongamia Cake",
+                "emoji": "🥜",
+                "theme": "butter_yellow",
+                "summary": "Cake in the soil deters soil pests!",
+                "how": "Apply neem or pongamia cake at 100 kg per acre.",
+                "frequency": "Before sowing",
+                "evidence": "NIPHM spinach package."
+            }
+        ],
+        "natural_farming": [
+            "neemastra"
+        ]
+    },
+    "aphid": {
+        "name": "Spinach Aphid",
+        "cultural": [
+            {
+                "action": "Check the Underside",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Aphids hide under young leaves!",
+                "how": "Look for curled, sticky or sooty leaves. Wash colonies off with a firm water spray and conserve ladybirds and lacewings.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Green Lacewing Release",
+                "emoji": "🐞",
+                "theme": "mint_green",
+                "summary": "Lacewing larvae eat aphids!",
+                "how": "Release 4,000 green lacewing larvae per acre.",
+                "frequency": "Once at first aphids",
+                "evidence": "NIPHM spinach package."
+            },
+            {
+                "action": "Yellow Sticky Traps",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Catch winged aphids!",
+                "how": "Hang 4-5 yellow sticky traps per acre just above the crop.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM spinach package."
+            }
+        ],
+        "natural_farming": [
+            "neemastra"
+        ]
+    }
+}

@@ -1,0 +1,196 @@
+{
+    "stemphylium_blight": {
+        "name": "Stemphylium Blight",
+        "cultural": [
+            {
+                "action": "Sow Early October",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Nauni's tested sowing window!",
+                "how": "Plant well-sprouted cloves in early October at 20 cm between rows and 10 cm between plants; harvest around the first week of May.",
+                "frequency": "Early October",
+                "evidence": "UHF Nauni garlic trials."
+            },
+            {
+                "action": "Kandaghat Selection",
+                "emoji": "🏆",
+                "theme": "lavender",
+                "summary": "The only HP garlic with some tolerance!",
+                "how": "Kandaghat Selection was moderately resistant (15.6% severity) in Nauni screening; no variety is immune.",
+                "frequency": "At planting",
+                "evidence": "UHF Nauni Stemphylium thesis."
+            },
+            {
+                "action": "Burn the Crop Residue",
+                "emoji": "🔥",
+                "theme": "soft_pink",
+                "summary": "The fungus lives on leftover leaves!",
+                "how": "Collect and burn (or bury deep) diseased residue after harvest, rotate 2-3 years with non-host crops (cereals), keep drains open and avoid dense planting.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM onion package (purple blotch, Stemphylium)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Natural sprays are unproven here!",
+                "how": "In Sirmaur and Solan, 24-48% of plants were affected. Copper gave only about 21% inhibition in the lab, and the best HP field control was a synthetic fungicide. Rely on early sowing, tolerant variety, residue removal and spacing.",
+                "frequency": "At first symptoms",
+                "evidence": "UHF Nauni Stemphylium thesis."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Clove Treatment",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Protect cloves before planting!",
+                "how": "Treat cloves with Trichoderma harzianum at 10 g per kg cloves before planting.",
+                "frequency": "At planting",
+                "evidence": "Dharwad garlic trial (not HP); the best schedule there also included two fungicide sprays."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "rust": {
+        "name": "Garlic Rust",
+        "cultural": [
+            {
+                "action": "Wider Spacing, Clean Field",
+                "emoji": "↔️",
+                "theme": "sky_blue",
+                "summary": "Airy rows get less rust!",
+                "how": "Reduce plant density, remove diseased leaves and residue, and favour lower-rust types: rust ranged 11-32% across 35 genotypes at Nauni, lowest in LGC-3 (11%).",
+                "frequency": "At planting and season long",
+                "evidence": "UHF Nauni genotype trial; a wider-spacing result is from Pakistan, not HP."
+            },
+            {
+                "action": "Burn the Crop Residue",
+                "emoji": "🔥",
+                "theme": "soft_pink",
+                "summary": "The fungus lives on leftover leaves!",
+                "how": "Collect and burn (or bury deep) diseased residue after harvest, rotate 2-3 years with non-host crops (cereals), keep drains open and avoid dense planting.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM onion package (purple blotch, Stemphylium)."
+            },
+            {
+                "action": "No Proven Natural Cure",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "No natural control for rust was found!",
+                "how": "No natural spray with evidence against garlic rust was found. Reduce spread with spacing and sanitation and ask your KVK about options if leaves are drying early.",
+                "frequency": "At first pustules",
+                "evidence": "Searched UHF Nauni, ICAR and NIPHM sources."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "basal_white_rot": {
+        "name": "Basal Rot & White Rot",
+        "cultural": [
+            {
+                "action": "Long Rotation & Clean Ground",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "These soil fungi last for years!",
+                "how": "Rotate 4-5 years with cereals, use disease-free fields, avoid injuring plants during hoeing, keep drainage good, and solarize with clear polythene for 30 days in summer.",
+                "frequency": "Every season",
+                "evidence": "NIPHM onion package (basal and white rot rows merged). HP survey: 2.1% at Nauni to 30% at Lanacheta, Sirmaur."
+            },
+            {
+                "action": "Spot the Whole Plant",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Yellowing starts at the leaf tips and the roots rot!",
+                "how": "Look for yellowing and dying leaves, rotten roots and white fluffy growth at the bulb base. Pull affected plants gently with the soil and destroy them away from the field.",
+                "frequency": "Weekly",
+                "evidence": "Photograph the whole plant, since the leaf alone can look like Stemphylium or drought."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Clove Treatment",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Protect cloves before planting!",
+                "how": "Treat cloves with Trichoderma harzianum at 10 g per kg cloves before planting.",
+                "frequency": "At planting",
+                "evidence": "Dharwad garlic trial (not HP). A Nauni pot study reported about 61-63% white-rot reduction with Trichoderma, but no dose was retrieved."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "thrips": {
+        "name": "Thrips (Silvering)",
+        "cultural": [
+            {
+                "action": "Maize Barrier Rows",
+                "emoji": "🌽",
+                "theme": "soft_yellow",
+                "summary": "Two tall rows around the plot slow thrips!",
+                "how": "Sow two rows of maize around the plot, avoid following onion/garlic with onion/garlic or cabbage, tomato or cucumber, and plant the new crop upwind of older plantings.",
+                "frequency": "At planting",
+                "evidence": "NIPHM onion package."
+            },
+            {
+                "action": "Go Easy on Nitrogen",
+                "emoji": "⚖️",
+                "theme": "butter_yellow",
+                "summary": "Too much urea makes soft, disease-prone leaves!",
+                "how": "Use only the recommended nitrogen and phosphorus; excess nitrogen makes the crop succulent and also increases thrips.",
+                "frequency": "Every season",
+                "evidence": "NIPHM onion package."
+            },
+            {
+                "action": "Sprinkler Over Drip",
+                "emoji": "🚿",
+                "theme": "sky_blue",
+                "summary": "Water on leaves knocks thrips back!",
+                "how": "Overhead sprinkler irrigation reduces thrips more than drip or surface irrigation; avoid crop stress and thin patchy stands.",
+                "frequency": "Whenever watering",
+                "evidence": "NIPHM onion package. Thrips peak in April on rabi onion at Palampur."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Blue Sticky Traps",
+                "emoji": "🟦",
+                "theme": "sky_blue",
+                "summary": "Catch thrips on blue cards!",
+                "how": "Hang 4-5 blue sticky traps per acre just above the crop.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM onion package."
+            },
+            {
+                "action": "Thrips Fungus Spray",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Fungi that infect thrips!",
+                "how": "Spray Beauveria bassiana, Metarhizium anisopliae or Lecanicillium lecanii at 60 g in 10 L water (0.007%), covering both sides of the leaves.",
+                "frequency": "At first thrips; repeat after 10-15 days",
+                "evidence": "Navsari garlic trial (not HP): moderate control only."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The best-value spray in the garlic thrips trial!",
+                "how": "Mix 500 g neem seed kernel extract in 10 L water (5%) and spray, covering both sides of the leaves.",
+                "frequency": "At first thrips; repeat after 10-15 days",
+                "evidence": "Navsari garlic trial (not HP): thrips fell to 6-8 per plant against 18-25 in untreated plots, and yield rose from 40 to 62.5 q/ha."
+            }
+        ],
+        "natural_farming": [
+            "neemastra",
+            "brahmastra"
+        ]
+    }
+}

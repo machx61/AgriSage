@@ -5,7 +5,9 @@ import html
 
 import streamlit as st
 
-CROP_EMOJI = {"corn": "🌽", "okra": "🫛", "potato": "🥔", "rice": "🍚", "tomato": "🍅", "wheat": "🌾"}
+CROP_EMOJI = {"apple": "🍎", "brinjal": "🍆", "cabbage": "🥬", "capsicum": "🫑", "carrot": "🥕", "cauliflower": "🥦",
+              "corn": "🌽", "cucumber": "🥒", "garlic": "🧄", "mustard": "🌼", "okra": "🫛", "onion": "🧅",
+              "pea": "🫛", "potato": "🥔", "rice": "🍚", "spinach": "🥬", "tomato": "🍅", "wheat": "🌾"}
 
 STATUS_STYLE = {  # status_label -> (pill tone, text)
     "improving": ("good", "Improving"),
@@ -344,8 +346,8 @@ def treatment_card(item: dict, theme: dict) -> str:
            f'{esc(item["how"])}</div>') if item.get("how") else ""
 
     details = ""
-    d = item.get("details")
-    if d:
+    d = item.get("details") or {}
+    if d or item.get("evidence"):
         parts = []
         if d.get("what_it_does"):
             parts.append(f"<p><b>What it does:</b> {esc(d['what_it_does'])}</p>")
@@ -359,7 +361,10 @@ def treatment_card(item: dict, theme: dict) -> str:
         for key, label in [("time_commitment", "Time needed"), ("expected_results_timeline", "Expected results")]:
             if d.get(key):
                 parts.append(f"<p><b>{label}:</b> {esc(d[key])}</p>")
-        details = f"<details><summary>Full recipe &amp; steps</summary>{''.join(parts)}</details>"
+        if item.get("evidence"):
+            parts.append(f"<p><b>How well proven:</b> {esc(item['evidence'])}</p>")
+        title = "Full recipe &amp; steps" if d else "How well proven"
+        details = f"<details><summary>{title}</summary>{''.join(parts)}</details>"
 
     # Colours go straight into style attributes: Streamlit strips CSS variables from them
     return f"""

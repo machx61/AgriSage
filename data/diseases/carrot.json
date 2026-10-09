@@ -1,0 +1,186 @@
+{
+    "alternaria_leaf_blight": {
+        "name": "Alternaria Leaf Blight",
+        "cultural": [
+            {
+                "action": "Clean Seed, Clean Field",
+                "emoji": "🧼",
+                "theme": "soft_yellow",
+                "summary": "The fungus rides on seed and debris!",
+                "how": "Sow clean seed, rotate with non-carrot crops, remove crop debris after harvest, keep the field well drained and thin plants for airflow. Wet leaves for long stretches favour it.",
+                "frequency": "Every season",
+                "evidence": "TNAU, KAU and UC IPM pages (no NIPHM carrot package exists); not HP-specific."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "Control rests on seed, sanitation, drainage, spacing and rotation. No botanical or natural-farming spray had efficacy data against carrot leaf blight in the sources found.",
+                "frequency": "At first symptoms",
+                "evidence": "No HP trial found."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Cake in the Soil",
+                "emoji": "🥜",
+                "theme": "pastel_green",
+                "summary": "Neem cake cut blight a little in a pot trial!",
+                "how": "Mix neem cake into the soil at 2.5 t per hectare before sowing.",
+                "frequency": "Once, before sowing",
+                "evidence": "Rajasthan pot trial: 37.6% control of Alternaria, with 35.7% disease still remaining. Not an HP result."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) in the evening every 14 days, or drench with irrigation.",
+                "frequency": "Every 14 days",
+                "evidence": "A Shimla farmer growing carrot under natural farming reports jeevamrit and khatti lassi controlled fungal diseases (anecdote, no measurements). No trial of a natural spray on carrot leaf diseases was found.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%).",
+                        "Spray in the evening every 14 days, or drench near the roots.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "cercospora_leaf_spot": {
+        "name": "Cercospora Leaf Spot",
+        "cultural": [
+            {
+                "action": "Sanitation & Spacing",
+                "emoji": "🧹",
+                "theme": "soft_yellow",
+                "summary": "Small spots with pale centres spread in humid weather!",
+                "how": "Look for small round spots with pale centres on leaves and leaf stalks. Remove infected leaves, thin plants for airflow, avoid overhead irrigation late in the day and rotate with non-carrot crops.",
+                "frequency": "Every 2 weeks",
+                "evidence": "TNAU, KAU and UC IPM pages; not HP-specific."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No natural spray with efficacy data on carrot Cercospora was found; rely on hygiene and rotation.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched UHF Nauni, CSK HPKV, ICAR sources."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) in the evening every 14 days, or drench with irrigation.",
+                "frequency": "Every 14 days",
+                "evidence": "A Shimla farmer growing carrot under natural farming reports jeevamrit and khatti lassi controlled fungal diseases (anecdote, no measurements). No trial of a natural spray on carrot leaf diseases was found.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%).",
+                        "Spray in the evening every 14 days, or drench near the roots.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "powdery_mildew": {
+        "name": "Carrot Powdery Mildew",
+        "cultural": [
+            {
+                "action": "Airflow & Timing",
+                "emoji": "💨",
+                "theme": "sky_blue",
+                "summary": "White powder shows up late in dry, cool-night weather!",
+                "how": "Look for white powdery patches on the leaves. Thin plants for airflow, avoid heavy nitrogen and remove badly affected leaves.",
+                "frequency": "Weekly",
+                "evidence": "TNAU and KAU pages; not HP-specific."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Wettable Sulphur",
+                "emoji": "🟡",
+                "theme": "soft_yellow",
+                "summary": "A mineral spray allowed in many organic standards!",
+                "how": "Spray wettable sulphur 80 WP at 2 g per litre of water on both leaf surfaces; avoid hot days.",
+                "frequency": "As directed on the label",
+                "evidence": "Dose appears only in KAU's chemical table; no organic-standard check or HP trial was found."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) in the evening every 14 days, or drench with irrigation.",
+                "frequency": "Every 14 days",
+                "evidence": "A Shimla farmer growing carrot under natural farming reports jeevamrit and khatti lassi controlled fungal diseases (anecdote, no measurements). No trial of a natural spray on carrot leaf diseases was found.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%).",
+                        "Spray in the evening every 14 days, or drench near the roots.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    }
+}

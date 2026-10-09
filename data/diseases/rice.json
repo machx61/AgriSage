@@ -1,6 +1,7 @@
 {
     "bacterial_leaf_blight": {
         "name": "Bacterial Leaf Blight & Blast",
+        "natural_farming": ["beejamrit", "jeevamrit"],
         "botanical": [
             {
                 "action": "Bana Border Bodyguard",
@@ -22,6 +23,7 @@
     },
     "rice_hispa": {
         "name": "Rice Hispa (Leaf-Feeding Beetle)",
+        "natural_farming": ["neemastra", "agniastra", "brahmastra"],
         "botanical": [
             {
                 "action": "Ankharein Leaf Shield",

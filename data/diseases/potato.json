@@ -1,6 +1,7 @@
 {
     "late_blight": {
         "name": "Late Blight",
+        "natural_farming": ["jeevamrit"],
         "botanical": [
             {
                 "action": "Sweet Root Licorice Bath",
@@ -31,6 +32,7 @@
     },
     "early_blight": {
         "name": "Early Blight",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Ash Dust Root Cuddle",
@@ -64,6 +66,7 @@
     },
     "black_scurf_common_scab": {
         "name": "Black Scurf & Common Scab",
+        "natural_farming": ["jeevamrit"],
         "iks": [
             {
                 "action": "IKS Research Gap Identified",
@@ -76,6 +79,7 @@
     },
     "bacterial_wilt": {
         "name": "Bacterial Wilt",
+        "natural_farming": ["jeevamrit"],
         "botanical": [
             {
                 "action": "Sweet Root Licorice Bath",
@@ -98,6 +102,7 @@
     },
     "root_knot_nematode": {
         "name": "Root-Knot Nematode",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Marigold Buddy Border",
@@ -149,6 +154,7 @@
     },
     "potato_tuber_moth": {
         "name": "Potato Tuber Moth (Storage Pest)",
+        "natural_farming": ["neemastra", "brahmastra"],
         "local_practice": [
             {
                 "action": "Leafy Storage Shield",

@@ -1,6 +1,7 @@
 {
     "banded_leaf_and_sheath_blight": {
         "name": "Banded Leaf and Sheath Blight (BLSB)",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Early Bird Sowing",
@@ -454,6 +455,7 @@
     },
     "turcicum_leaf_blight": {
         "name": "Turcicum Leaf Blight (Northern Corn Leaf Blight)",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Tough Genotype Pick",
@@ -801,6 +803,7 @@
     },
     "fall_armyworm": {
         "name": "Fall Armyworm (Currently Active Outbreak in HP, ~19,000 hectares affected as of July 2026)",
+        "natural_farming": ["neemastra", "agniastra", "brahmastra"],
         "cultural": [
             {
                 "action": "Old-Seed Resistance Test",
@@ -896,6 +899,7 @@
     },
     "stalk_rot": {
         "name": "Stalk Rot (Bacterial and Fusarium)",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Gentle Nitrogen Meal",

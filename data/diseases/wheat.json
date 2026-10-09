@@ -1,6 +1,7 @@
 {
     "yellow_rust": {
         "name": "Yellow Rust / Stripe Rust",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Super-Brave Seed Squad",
@@ -149,6 +150,7 @@
     },
     "powdery_mildew": {
         "name": "Powdery Mildew",
+        "natural_farming": ["jeevamrit"],
         "confidence_note": "weakest_sourced_wheat_entry_confirmed_priority_disease_but_no_wheat_specific_trial_percentages_found",
         "cultural": [
             {
@@ -299,6 +301,7 @@
     },
     "loose_smut": {
         "name": "Loose Smut",
+        "natural_farming": ["beejamrit", "jeevamrit"],
         "cultural": [
             {
                 "action": "Smut-Proof Seed Selection",
@@ -451,6 +454,7 @@
     },
     "karnal_bunt": {
         "name": "Karnal Bunt",
+        "natural_farming": ["beejamrit", "jeevamrit"],
         "cultural": [
             {
                 "action": "Early Bird Sowing",

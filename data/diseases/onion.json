@@ -1,0 +1,167 @@
+{
+    "purple_blotch": {
+        "name": "Purple Blotch",
+        "cultural": [
+            {
+                "action": "Hot-Water Seed Soak",
+                "emoji": "♨️",
+                "theme": "peach",
+                "summary": "Warm water cleans the seed of fungus!",
+                "how": "Soak onion seed in water at 50 C for 20 minutes, then dry before sowing.",
+                "frequency": "Before sowing",
+                "evidence": "NIPHM onion package (national, not tested on HP seed lots). Not for garlic cloves: no clove protocol was found."
+            },
+            {
+                "action": "Burn the Crop Residue",
+                "emoji": "🔥",
+                "theme": "soft_pink",
+                "summary": "The fungus lives on leftover leaves!",
+                "how": "Collect and burn (or bury deep) diseased residue after harvest, rotate 2-3 years with non-host crops (cereals), keep drains open and avoid dense planting.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM onion package (purple blotch, Stemphylium)."
+            },
+            {
+                "action": "Go Easy on Nitrogen",
+                "emoji": "⚖️",
+                "theme": "butter_yellow",
+                "summary": "Too much urea makes soft, disease-prone leaves!",
+                "how": "Use only the recommended nitrogen and phosphorus; excess nitrogen makes the crop succulent and also increases thrips.",
+                "frequency": "Every season",
+                "evidence": "NIPHM onion package."
+            },
+            {
+                "action": "Pick a Tougher Variety",
+                "emoji": "🏆",
+                "theme": "lavender",
+                "summary": "No onion is immune, but some cope better!",
+                "how": "At Neri (Hamirpur), Agrifound Dark Red was moderately resistant (13.8% incidence); Palam Lohit, Nasik Red and Agrifound Dark Red suit the low hills. None is fully resistant.",
+                "frequency": "At transplanting",
+                "evidence": "UHF/CSK Neri variety trials."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "No natural spray has been proven against this in HP!",
+                "how": "Cultural steps, resistant types and clean seed do the most. In wet weather when leaves are dying quickly, ask your KVK or horticulture officer about options.",
+                "frequency": "At first symptoms",
+                "evidence": "No HP trial of a natural input on this disease was found; HP trials tested chemicals or gave only abstracts."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed Coat",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "A friendly fungus on the seed guards young roots!",
+                "how": "Coat seed with Trichoderma harzianum at 8 g per kg seed before sowing.",
+                "frequency": "At sowing",
+                "evidence": "Andhra Pradesh onion trial (not HP); the 'control' plots there also got Trichoderma, so the true benefit is unclear."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Panchagavya 10% Spray",
+                "emoji": "🥛",
+                "theme": "soft_pink",
+                "summary": "A cow-based tonic that reduced blotch in one trial!",
+                "how": "Spray panchagavya at 10% (1 L in 9 L water) on the leaves.",
+                "frequency": "Every 10-14 days in humid weather",
+                "evidence": "Andhra Pradesh trial (not HP); neem leaf extract 10% was also tested. Weather favours the disease at 21-30 C and RH 80-90%."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "stemphylium_blight": {
+        "name": "Stemphylium Leaf Blight",
+        "cultural": [
+            {
+                "action": "Burn the Crop Residue",
+                "emoji": "🔥",
+                "theme": "soft_pink",
+                "summary": "The fungus lives on leftover leaves!",
+                "how": "Collect and burn (or bury deep) diseased residue after harvest, rotate 2-3 years with non-host crops (cereals), keep drains open and avoid dense planting.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM onion package (purple blotch, Stemphylium)."
+            },
+            {
+                "action": "Hot-Water Seed Soak",
+                "emoji": "♨️",
+                "theme": "peach",
+                "summary": "Warm water cleans the seed of fungus!",
+                "how": "Soak onion seed in water at 50 C for 20 minutes, then dry before sowing.",
+                "frequency": "Before sowing",
+                "evidence": "NIPHM onion package (national, not tested on HP seed lots). Not for garlic cloves: no clove protocol was found."
+            },
+            {
+                "action": "Space Out the Plants",
+                "emoji": "↔️",
+                "theme": "sky_blue",
+                "summary": "Dry leaves, fewer spores!",
+                "how": "Reduce plant density and drain the field well; infection starts at the 3-4 leaf stage in late March-April in warm, humid weather.",
+                "frequency": "At transplanting",
+                "evidence": "NIPHM onion package; CSK HPKV survey: 35-45% severity across HP onion districts."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "No natural spray has been proven against this in HP!",
+                "how": "Cultural steps, resistant types and clean seed do the most. In wet weather when leaves are dying quickly, ask your KVK or horticulture officer about options.",
+                "frequency": "At first symptoms",
+                "evidence": "No HP trial of a natural input on this disease was found; HP trials tested chemicals or gave only abstracts."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed Coat",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "A friendly fungus on the seed guards young roots!",
+                "how": "Coat seed with Trichoderma harzianum at 8 g per kg seed before sowing.",
+                "frequency": "At sowing",
+                "evidence": "Andhra Pradesh onion trial (not HP); the 'control' plots there also got Trichoderma, so the true benefit is unclear."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "downy_mildew": {
+        "name": "Downy Mildew",
+        "cultural": [
+            {
+                "action": "Drain & Declutter",
+                "emoji": "💧",
+                "theme": "sky_blue",
+                "summary": "It loves cool, damp, cloudy weather!",
+                "how": "Plant in well-drained, airy spots (low-lying fields are worst), avoid dense stands, remove infected plants and debris, and use healthy bulbs and sets since it survives in infected bulbs and soil.",
+                "frequency": "Season long",
+                "evidence": "UHF Nauni Solan thesis: 4.8-58.7% severity, peaking in April at 52-68% RH; reported yield losses of 12-75%."
+            },
+            {
+                "action": "Go Easy on Nitrogen",
+                "emoji": "⚖️",
+                "theme": "butter_yellow",
+                "summary": "Too much urea makes soft, disease-prone leaves!",
+                "how": "Use only the recommended nitrogen and phosphorus; excess nitrogen makes the crop succulent and also increases thrips.",
+                "frequency": "Every season",
+                "evidence": "NIPHM onion package."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "No natural spray has been proven for this!",
+                "how": "The HP trial found control only with chemicals and chitosan (concentration inconsistent in the thesis, so it is not given here). Rely on drainage, clean stock and early removal, and ask your KVK if it spreads.",
+                "frequency": "At first symptoms",
+                "evidence": "UHF Nauni thesis."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    }
+}

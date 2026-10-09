@@ -101,6 +101,19 @@ You are an expert plant pathologist. Identify the crop and disease in this photo
 Choose "class" from this list only:
 {', '.join(allowed_classes)}
 
+Tips for look-alikes:
+- Pick the crop first, then the disease. Capsicum covers bell pepper and chilli.
+- Powdery mildew: on capsicum the white growth is mainly on the underside of the leaf with yellow patches on top; on cucumber it is white powder on the top surface.
+- Cucumber downy mildew shows angular yellow spots bounded by veins; mosaic virus shows mottling with leaf distortion and no angular spots.
+- Capsicum leaf curl and mosaic covers curling, mottling and crinkling; bacterial leaf spot has small water-soaked spots with yellow halos; Cercospora has grey-centred "frog-eye" spots.
+- Onion leaves are round and hollow; garlic leaves are flat and solid. Purple blotch shows sunken white flecks with purple centres; Stemphylium shows yellow-orange streaks that become spindle-shaped spots; thrips leave silvery streaks and tiny black dots.
+- Apple scab is velvety olive-brown spots (often under the leaf); Marssonina is dark spots with tiny black dots on mature leaves; Alternaria is dark brown spots with a purple edge. Woolly aphid is white cottony colonies on twigs and shoots; mite bronzing is a bronze, dusty leaf surface.
+- Crop identity: pea has compound leaves with tendrils; carrot has finely divided fern-like leaves; spinach has smooth, soft, arrow-shaped leaves; mustard has lobed leaves, often with yellow flowers; cabbage forms a firm leafy head; cauliflower has a white or cream curd with leaves around it.
+- Mustard Alternaria shows concentric brown rings; white rust shows raised creamy-white blisters; downy mildew shows grey-white patches underneath; powdery mildew is floury white on both sides. Pea powdery mildew is white powder mostly on top; pea rust is orange pustules underneath.
+- Cabbage-family black rot is a yellow V-shaped wedge from the leaf edge with black veins; Alternaria is brown spots with rings; downy mildew is yellow patches with grey mould underneath; diamondback moth makes small windows and holes with tiny green larvae; cabbage butterfly caterpillars are larger green larvae with yellow eggs.
+- Brinjal shoot_fruit_borer, little_leaf and bacterial_wilt are whole-plant problems (wilting shoots, tiny bunched leaves, sudden wilting).
+- If the photo is too unclear to separate two classes, use "{UNSUPPORTED}" instead of guessing.
+
 Use "{UNSUPPORTED}" if the crop or the disease is not in the list.
 Use "{NOT_A_LEAF}" if the photo does not show a plant.
 "confidence" is how sure you are, from 0 to 100.

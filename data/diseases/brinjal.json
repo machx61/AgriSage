@@ -1,0 +1,250 @@
+{
+    "shoot_fruit_borer": {
+        "name": "Shoot & Fruit Borer",
+        "cultural": [
+            {
+                "action": "Snip & Destroy",
+                "emoji": "✂️",
+                "theme": "soft_pink",
+                "summary": "Cut off wilting shoots and holed fruits with the grub still inside!",
+                "how": "Regularly remove and destroy wilted shoot tips and bored fruits until the last harvest; avoid continuous brinjal/potato; uproot and burn old plants; intercrop 2 rows of brinjal with 1 row of coriander or fennel; avoid ratooning.",
+                "frequency": "Weekly until last harvest",
+                "evidence": "NIPHM-Brinjal. In Kullu, transplanting on 15 May gave the lowest shoot infestation (9.9%); incidence peaks in July-August."
+            },
+            {
+                "action": "Crop Rotation Break",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "Give the soil a break from the same plant family!",
+                "how": "Avoid growing brinjal, tomato, potato or capsicum in the same field in consecutive seasons; rotate with maize, wheat, rice or soybean.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Brinjal (bacterial wilt, Phomopsis)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Pheromone Traps",
+                "emoji": "🪤",
+                "theme": "butter_yellow",
+                "summary": "Lure the male moths away!",
+                "how": "Use 10 pheromone traps per acre for mass trapping (4-5 for monitoring), 10 m apart, from 20 days after transplanting; change lures regularly.",
+                "frequency": "Change lures every 2-3 weeks",
+                "evidence": "NIPHM-Brinjal."
+            },
+            {
+                "action": "Trichogramma Cards",
+                "emoji": "🐝",
+                "theme": "mint_green",
+                "summary": "Tiny wasps that eat borer eggs!",
+                "how": "Release Trichogramma chilonis at 20,000 per acre per week from 21 days after transplanting to crop end; tie cards on sticks 4-5 m apart in the evening.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM-Brinjal."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The most widely endorsed botanical spray across these crops!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), covering both leaf surfaces.",
+                "frequency": "As pests appear, repeat after 10 days",
+                "evidence": "5% is the concentration in the NIPHM packages; they give no preparation recipe, so use a commercial NSKE or follow local KVK instructions."
+            }
+        ],
+        "natural_farming": [
+            "agniastra",
+            "brahmastra"
+        ]
+    },
+    "phomopsis_blight": {
+        "name": "Phomopsis Blight & Fruit Rot",
+        "cultural": [
+            {
+                "action": "Seed Hot-Water Bath",
+                "emoji": "♨️",
+                "theme": "peach",
+                "summary": "Clean the seed of the fungus before sowing!",
+                "how": "Take seed from healthy fruits and treat it in hot water at 50 C for 30 minutes.",
+                "frequency": "Before sowing",
+                "evidence": "NIPHM-Brinjal."
+            },
+            {
+                "action": "Crop Rotation Break",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "Give the soil a break from the same plant family!",
+                "how": "Avoid growing brinjal, tomato, potato or capsicum in the same field in consecutive seasons; rotate with maize, wheat, rice or soybean.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Brinjal (bacterial wilt, Phomopsis)."
+            },
+            {
+                "action": "Summer Deep Ploughing",
+                "emoji": "🚜",
+                "theme": "peach",
+                "summary": "Turn the soil in May-June so sun and birds clear out hiding pests and germs!",
+                "how": "Plough deeply and leave the soil exposed to sun for 2-3 weeks before planting.",
+                "frequency": "Once, before planting",
+                "evidence": "NIPHM AESA packages (chilli, cucurbits)."
+            },
+            {
+                "action": "Debris Clean-up",
+                "emoji": "🧹",
+                "theme": "soft_yellow",
+                "summary": "The fungus survives on old plant debris!",
+                "how": "Destroy diseased debris after harvest and avoid continuous brinjal.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM-Brinjal. Favoured by about 26 C, wet weather and high humidity."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed & Root Dip",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Protect seed and seedlings from day one!",
+                "how": "Seed: 5 g Trichoderma viride 1% WP per kg seed as a thin paste, shade-dry before sowing. Seedlings: dip roots for 15 minutes in 10 g per litre of water before transplanting.",
+                "frequency": "At sowing / transplanting",
+                "evidence": "Doses from NIPHM-Brinjal."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "little_leaf": {
+        "name": "Little Leaf (Phytoplasma)",
+        "cultural": [
+            {
+                "action": "Quick Goodbye Removal",
+                "emoji": "👋",
+                "theme": "soft_pink",
+                "summary": "Remove infected plants early to protect the rest!",
+                "how": "Uproot infected plants as soon as you see symptoms and destroy them away from the field (not in compost).",
+                "frequency": "Immediately when seen",
+                "evidence": "NIPHM packages (virus, wilt, little leaf)."
+            },
+            {
+                "action": "Weed-Host Sweep",
+                "emoji": "🧹",
+                "theme": "soft_yellow",
+                "summary": "Datura, Catharanthus and Argemone shelter the disease!",
+                "how": "Remove solanaceous weed hosts around the field, plant tolerant varieties (e.g. JC-1, JC-2) and control leafhoppers.",
+                "frequency": "Every 2 weeks",
+                "evidence": "NIPHM-Brinjal. No curative measure exists."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The most widely endorsed botanical spray across these crops!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), covering both leaf surfaces.",
+                "frequency": "As pests appear, repeat after 10 days",
+                "evidence": "5% is the concentration in the NIPHM packages; they give no preparation recipe, so use a commercial NSKE or follow local KVK instructions."
+            }
+        ],
+        "natural_farming": [
+            "neemastra",
+            "brahmastra"
+        ]
+    },
+    "bacterial_wilt": {
+        "name": "Bacterial Wilt",
+        "cultural": [
+            {
+                "action": "Resistant Variety + Rotation",
+                "emoji": "🏆",
+                "theme": "lavender",
+                "summary": "No spray cures this, so prevention is everything!",
+                "how": "Plant wilt-resistant varieties (e.g. Arka Nidhi, Arka Keshav, Arka Neelkanth, Pusa Anupama; Swarna Shyamli and Swarna Pratibha are released for Zone I including HP), rotate with maize/wheat/rice/soybean and use Brassica green manure.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Brinjal and ICAR records; check local availability of each variety. Wilt incidence reached 90-100% in the worst HP fields."
+            },
+            {
+                "action": "Drainage & Solarization",
+                "emoji": "☀️",
+                "theme": "soft_yellow",
+                "summary": "Keep the soil drier and hotter for the germ!",
+                "how": "Avoid waterlogging (the germ spreads in irrigation water, soil and tools). Solarize with 125 micron clear polythene for 8-10 weeks in March-June.",
+                "frequency": "Pre-season",
+                "evidence": "NIPHM-Brinjal."
+            },
+            {
+                "action": "Quick Goodbye Removal",
+                "emoji": "👋",
+                "theme": "soft_pink",
+                "summary": "Remove infected plants early to protect the rest!",
+                "how": "Uproot infected plants as soon as you see symptoms and destroy them away from the field (not in compost).",
+                "frequency": "Immediately when seen",
+                "evidence": "NIPHM packages (virus, wilt, little leaf)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Field Mix",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "A friendly soil fungus that crowds out root germs!",
+                "how": "Mix 1 kg Trichoderma viride 1% WP with 25 kg well-rotted FYM, broadcast over one acre and irrigate immediately.",
+                "frequency": "At planting, once per season",
+                "evidence": "Dose from NIPHM-Brinjal. For Phytophthora, a bioagent + raised bed + mulch package roughly halved severity versus grower practice but still used fungicides (IIHR 2021), so this is risk reduction, not a cure."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Cake Soil Boost",
+                "emoji": "🥜",
+                "theme": "butter_yellow",
+                "summary": "Neem cake in the soil deters nematodes and soil pests!",
+                "how": "Apply neem cake at 100 kg per acre at transplanting (second split 30 days later in chilli beds).",
+                "frequency": "At transplanting",
+                "evidence": "NIPHM-Chilli / NIPHM-Brinjal."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "hadda_beetle": {
+        "name": "Hadda (Epilachna) Beetle",
+        "cultural": [
+            {
+                "action": "Hand-Pick Patrol",
+                "emoji": "🖐️",
+                "theme": "soft_yellow",
+                "summary": "Beetles, grubs and pupae sit exposed on the leaves!",
+                "how": "Pick and destroy grubs, pupae and adults from skeletonised leaves.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM-Brinjal."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Friendly Beetle Helpers",
+                "emoji": "🐞",
+                "theme": "mint_green",
+                "summary": "Natural enemies keep hadda in check!",
+                "how": "Avoid harming the parasitoids Pediobius foveolatus and Tetrastichus ovularum (active March-July).",
+                "frequency": "Ongoing",
+                "evidence": "NIPHM-Brinjal."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The most widely endorsed botanical spray across these crops!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), covering both leaf surfaces.",
+                "frequency": "As pests appear, repeat after 10 days",
+                "evidence": "5% is the concentration in the NIPHM packages; they give no preparation recipe, so use a commercial NSKE or follow local KVK instructions."
+            }
+        ],
+        "natural_farming": [
+            "neemastra",
+            "brahmastra"
+        ]
+    }
+}

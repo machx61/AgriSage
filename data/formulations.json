@@ -1,0 +1,168 @@
+{
+    "jeevamrit": {
+        "action": "Jeevamrit Soil Tonic",
+        "emoji": "🌱",
+        "theme": "soft_yellow",
+        "summary": "A fermented cow-dung tonic that feeds soil microbes and keeps the root zone alive!",
+        "how": "Mix 10 kg cow dung, 10 L cow urine, 2 kg jaggery, 2 kg pulse flour and a handful of bund soil in water to make 200 L. Ferment in shade for 48 hours. Drench 200 L per acre with irrigation water every 15 days, or spray diluted 1:9 (10%) on leaves in the evening.",
+        "frequency": "Every 15 days (soil drench) or every 2 weeks (foliar spray)",
+        "evidence": "UHF Nauni (Mandla & Sharma 2023, Indian Farming 73(8)): recipe documented; no controlled trial data on this crop's diseases was found. Treat as preventive/suppressive. The 200 L per acre every 15 days rate is the figure most often quoted by natural-farming trainers (not an official HP dose). A CSK HPKV Palampur wheat trial found 10-20% jeevamrit sprays at 2-week intervals gave the best yield, with 10% statistically similar to 20%. Hill farmers in Kinnaur/Shimla report it helps against fungal diseases (anecdotal, unmeasured). A capsicum nutrition trial at UHF Nauni used it among liquid manures (yield, not disease control).",
+        "details": {
+            "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+            "materials_needed": [
+                "10 kg desi cow dung",
+                "10 L desi cow urine",
+                "2 kg jaggery",
+                "2 kg pulse (besan) flour",
+                "A handful of undisturbed bund/forest soil",
+                "Water to make 200 L"
+            ],
+            "preparation_steps": [
+                "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                "Cover with a cloth or gunny bag and keep in shade.",
+                "Stir clockwise morning and evening.",
+                "Ready after 48 hours."
+            ],
+            "application_steps": [
+                "Soil: run 200 L per acre into the irrigation water, or drench near the roots, every 15 days.",
+                "Foliar: mix 1 part jeevamrit with 9 parts water (10%), strain well and spray in the evening every 2 weeks.",
+                "Use soon after it is ready; do not keep it for long."
+            ],
+            "safety_notes": [
+                "Use fresh batches only.",
+                "Do not apply on waterlogged soil."
+            ]
+        }
+    },
+    "beejamrit": {
+        "action": "Beejamrit Seed Coat",
+        "emoji": "🌰",
+        "theme": "butter_yellow",
+        "summary": "A cow-dung seed coating that protects young roots from soil germs before they even sprout!",
+        "how": "Hang 5 kg cow dung in a cloth in 20 L water for up to 12 hours, add lime water, 5 L cow urine and a handful of soil, coat the seeds, dry in shade and sow.",
+        "frequency": "Once, just before sowing or transplanting",
+        "evidence": "UHF Nauni (Mandla & Sharma 2023, Indian Farming 73(8)): recipe documented; no controlled trial data on this crop's diseases was found. Treat as preventive/suppressive. Seed-treatment recipe only; no disease-control numbers.",
+        "details": {
+            "what_it_does": "Coats seeds and seedling roots with beneficial microbes before planting.",
+            "materials_needed": [
+                "5 kg desi cow dung",
+                "5 L desi cow urine",
+                "50 g lime (chuna)",
+                "A handful of farm soil",
+                "20 L water",
+                "Cotton cloth"
+            ],
+            "preparation_steps": [
+                "Tie the cow dung in a cloth and hang it in 20 L water for up to 12 hours.",
+                "Mix 50 g lime in 1 L water and leave overnight.",
+                "Squeeze the dung bundle into the water three times.",
+                "Add the soil, cow urine and the lime water and stir."
+            ],
+            "application_steps": [
+                "Coat seeds (or dip seedling roots) in the mixture.",
+                "Dry the seeds in shade and sow the same day."
+            ],
+            "safety_notes": [
+                "Do not soak seeds for long.",
+                "Wash hands after handling lime."
+            ]
+        }
+    },
+    "neemastra": {
+        "action": "Neemastra Neem Spray",
+        "emoji": "🌿",
+        "theme": "pastel_green",
+        "summary": "A fermented neem-and-cow-urine spray against sap-suckers and small caterpillars!",
+        "how": "Ferment 5 kg neem twigs and leaves with 10 L cow urine and 2 kg cow dung in 100 L water for 48 hours in shade, stir twice daily, strain, dilute 2 L in 20 L water (10%) and spray.",
+        "frequency": "At first sign of pests; repeat after 7-10 days if they persist",
+        "evidence": "UHF Nauni (Mandla & Sharma 2023, Indian Farming 73(8)): recipe documented; no controlled trial data on this crop's diseases was found. Treat as preventive/suppressive. The UHF article gives no spray dilution. Training material disagrees (one source says use undiluted, another 2 L in 20 L), so start at 10% (2 L in 20 L) and test on a few plants first. TNAU gives a different recipe; do not mix recipes.",
+        "details": {
+            "what_it_does": "Repels and reduces whitefly, aphids, jassids, other sucking insects and small caterpillars.",
+            "materials_needed": [
+                "5 kg neem twigs with leaves",
+                "10 L desi cow urine",
+                "2 kg cow dung",
+                "100 L water"
+            ],
+            "preparation_steps": [
+                "Mix everything in a drum and cover with a gunny bag in shade for 48 hours.",
+                "Stir clockwise for 1 minute morning and evening.",
+                "Strain through cloth before use."
+            ],
+            "application_steps": [
+                "Dilute 2 L of strained Neemastra in 20 L water (10%).",
+                "Test on 2-3 plants first and check for leaf burn after a day.",
+                "Spray both sides of the leaves in early morning or evening, within a couple of days of straining."
+            ],
+            "safety_notes": [
+                "Keep away from eyes and children.",
+                "Test on a few plants first to check for leaf burn."
+            ]
+        }
+    },
+    "agniastra": {
+        "action": "Agniastra Fire Spray",
+        "emoji": "🌶️",
+        "theme": "peach",
+        "summary": "A hot neem, chilli and garlic brew in cow urine for borers and sucking pests!",
+        "how": "Boil 2 kg crushed neem leaves, 500 g tobacco powder, 500 g green chilli paste and 250 g garlic paste in 20 L cow urine on low flame under a lid, rest 48 hours, strain and spray 3 L in 100 L water (3%).",
+        "frequency": "At first sign of borers or caterpillars; repeat every 7-10 days",
+        "evidence": "UHF Nauni (Mandla & Sharma 2023, Indian Farming 73(8)): recipe documented; no controlled trial data on this crop's diseases was found. Treat as preventive/suppressive. Spray rates reported by trainers: 3 L per 100 L water (3-4 L in some sources), repeated every 7-10 days. A Kullu brinjal-borer thesis tested 5% and found it effective but weaker than the synthetic standard. Start at 3% and test on 2-3 plants first.",
+        "details": {
+            "what_it_does": "Used against sucking insects, small caterpillars and pod/fruit borers.",
+            "materials_needed": [
+                "2 kg neem leaves, crushed",
+                "500 g tobacco powder",
+                "500 g green chilli paste",
+                "250 g garlic paste",
+                "20 L desi cow urine"
+            ],
+            "preparation_steps": [
+                "Mix all ingredients in the cow urine.",
+                "Boil on a low flame with the lid on.",
+                "Leave 48 hours, stirring morning and evening.",
+                "Strain through cloth."
+            ],
+            "application_steps": [
+                "Dilute 3 L of strained Agniastra in 100 L water (3%).",
+                "Test on 2-3 plants first.",
+                "Spray the foliage in early morning or evening, avoiding open flowers, and repeat every 7-10 days if needed."
+            ],
+            "safety_notes": [
+                "Wear gloves, mask and eye protection: the chilli and tobacco irritate skin and eyes.",
+                "Keep out of reach of children and animals.",
+                "Tobacco can carry tobacco mosaic virus: on capsicum, chilli, brinjal and tomato prefer Neemastra or Brahmastra, or make it without tobacco, and wash hands well after handling tobacco."
+            ]
+        }
+    },
+    "brahmastra": {
+        "action": "Brahmastra Leaf Brew",
+        "emoji": "🍃",
+        "theme": "lavender",
+        "summary": "A bitter five-leaf brew in cow urine that tackles sucking pests and caterpillars!",
+        "how": "Grind 200 g leaves each of 5 bitter or toxic plants (custard apple, castor, papaya, datura, guava...), simmer in 4 L cow urine, cool 48 hours, strain, and spray 2.5-3 L in 200 L water per acre (up to 6-8 L in 200 L for heavy infestation).",
+        "frequency": "At first sign of pests; repeat every 10-15 days",
+        "evidence": "UHF Nauni (Mandla & Sharma 2023, Indian Farming 73(8)): recipe documented; no controlled trial data on this crop's diseases was found. Treat as preventive/suppressive. A Kullu brinjal-borer thesis found Brahmastra 5% effective but weaker than the synthetic standard. Other sources use up to 6-8 L per 200 L water per acre (3%), repeated every 10-15 days. TNAU gives a different recipe; do not mix recipes.",
+        "details": {
+            "what_it_does": "Used against sucking insects and caterpillars.",
+            "materials_needed": [
+                "200 g leaf paste each of any 5 plants (custard apple, castor, papaya, mango, guava, datura, duranta...)",
+                "4 L desi cow urine"
+            ],
+            "preparation_steps": [
+                "Grind the leaves to a paste.",
+                "Mix with the cow urine and heat until it boils.",
+                "Cool and keep for 48 hours.",
+                "Strain through cloth."
+            ],
+            "application_steps": [
+                "Start with 2.5-3 L in 200 L water per acre (UHF Nauni rate); use up to 6-8 L in 200 L only for heavy infestation.",
+                "Spray the foliage in early morning or evening and repeat every 10-15 days."
+            ],
+            "safety_notes": [
+                "Datura and castor are poisonous: wear gloves and a mask.",
+                "Keep out of reach of children and animals."
+            ]
+        }
+    }
+}

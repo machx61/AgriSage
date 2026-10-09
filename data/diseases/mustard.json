@@ -1,0 +1,377 @@
+{
+    "alternaria_blight": {
+        "name": "Alternaria Blight",
+        "cultural": [
+            {
+                "action": "Sow on Time",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Early, timely sowing escapes many pests and diseases!",
+                "how": "Sow between 10 and 25 October. At Palampur, gobhi sarson sown on 20 October out-yielded 30 October and 10 November sowings.",
+                "frequency": "At sowing",
+                "evidence": "Palampur yield trial (HP); the 10-25 October window and pest-escape advice are from the national NIPHM mustard package."
+            },
+            {
+                "action": "Clean Seed & Weeds",
+                "emoji": "🧼",
+                "theme": "soft_yellow",
+                "summary": "The fungus is carried in the seed and on weeds!",
+                "how": "Use certified seed, remove weeds (especially related plants), apply the recommended potash, and clear plant debris. Look for concentric brown rings on the lower leaves.",
+                "frequency": "Every season",
+                "evidence": "NIPHM AESA package (national, not HP-specific). HP average severity 47.1% (AICRP survey, 2004-2020)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "Control rests on timely sowing, clean seed and sanitation. Trichoderma and Pseudomonas gave only 'some' control in a Hisar trial, and the strong results there came from plots that also had a fungicide.",
+                "frequency": "At first symptoms",
+                "evidence": "Hisar (non-HP) trial; CSK HPKV Kangra extracts gave 65-80% control in pots but their concentrations were not published."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed Treatment",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "A friendly fungus on the seed!",
+                "how": "Treat seed with Trichoderma harzianum at 10 g per kg seed before sowing.",
+                "frequency": "At sowing",
+                "evidence": "Hisar trial (non-HP); the bio-only benefit was small."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) in the evening every 14 days, or drench 200 L per acre with irrigation every 15 days.",
+                "frequency": "Every 14-15 days",
+                "evidence": "ICAR-NEH Meghalaya (non-HP) natural-farming mustard: seed yield 16-44% above control, with no pest or disease data. No natural input had disease-control data on mustard in HP.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%) and spray in the evening, or run 200 L per acre into irrigation water every 15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "white_rust": {
+        "name": "White Rust",
+        "cultural": [
+            {
+                "action": "Cream-White Blisters",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Raised creamy-white pustules, not brown rings!",
+                "how": "Look for raised creamy-white pustules on the leaves; in humid weather flowers swell and distort ('stag head'). It is often mixed with downy mildew.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Sow on Time",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Early, timely sowing escapes many pests and diseases!",
+                "how": "Sow between 10 and 25 October. At Palampur, gobhi sarson sown on 20 October out-yielded 30 October and 10 November sowings.",
+                "frequency": "At sowing",
+                "evidence": "Palampur yield trial (HP); the 10-25 October window and pest-escape advice are from the national NIPHM mustard package."
+            },
+            {
+                "action": "Destroy Stag Heads",
+                "emoji": "🔥",
+                "theme": "soft_pink",
+                "summary": "Infected flower heads carry the spores!",
+                "how": "Remove and burn previous crop debris, especially stag heads, avoid over-irrigation and waterlogging, and rotate with non-mustard crops.",
+                "frequency": "After every crop",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "CSK HPKV Kangra found local plant extracts (neem, Agave, Eucalyptus citriodora, Zanthoxylum) cut white rust severity by 86-92%, but their concentrations were not published, so no dose is given here. Ask CSK HPKV Kangra or your KVK.",
+                "frequency": "At first symptoms",
+                "evidence": "CSK HPKV Kangra project page (HP)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed Treatment",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "A friendly fungus on the seed!",
+                "how": "Treat seed with Trichoderma harzianum at 10 g per kg seed before sowing.",
+                "frequency": "At sowing",
+                "evidence": "Hisar trial (non-HP); the bio-only benefit was small."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) in the evening every 14 days, or drench 200 L per acre with irrigation every 15 days.",
+                "frequency": "Every 14-15 days",
+                "evidence": "ICAR-NEH Meghalaya (non-HP) natural-farming mustard: seed yield 16-44% above control, with no pest or disease data. No natural input had disease-control data on mustard in HP.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%) and spray in the evening, or run 200 L per acre into irrigation water every 15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "downy_mildew": {
+        "name": "Downy Mildew",
+        "cultural": [
+            {
+                "action": "Grey Patches Underneath",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Grey-white mould under the leaf in cool, damp weather!",
+                "how": "Look for grey-white patches on the lower leaf surface and swollen flower stalks. It likes 10-20 C and humidity above 90%.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Sow on Time",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Early, timely sowing escapes many pests and diseases!",
+                "how": "Sow between 10 and 25 October. At Palampur, gobhi sarson sown on 20 October out-yielded 30 October and 10 November sowings.",
+                "frequency": "At sowing",
+                "evidence": "Palampur yield trial (HP); the 10-25 October window and pest-escape advice are from the national NIPHM mustard package."
+            },
+            {
+                "action": "Drain & Declutter",
+                "emoji": "💧",
+                "theme": "sky_blue",
+                "summary": "Avoid water standing around the plants!",
+                "how": "Avoid over-irrigation and waterlogging, destroy debris and rotate with non-mustard crops.",
+                "frequency": "Season long",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No natural spray with efficacy data on mustard downy mildew was found.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM, ICAR-DRMR and HP sources."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) in the evening every 14 days, or drench 200 L per acre with irrigation every 15 days.",
+                "frequency": "Every 14-15 days",
+                "evidence": "ICAR-NEH Meghalaya (non-HP) natural-farming mustard: seed yield 16-44% above control, with no pest or disease data. No natural input had disease-control data on mustard in HP.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%) and spray in the evening, or run 200 L per acre into irrigation water every 15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "powdery_mildew": {
+        "name": "Powdery Mildew",
+        "cultural": [
+            {
+                "action": "Floury White Patches",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "It prefers warm, dry, windy weather!",
+                "how": "Floury white patches on both sides of the leaves, mostly at 15-28 C with low humidity. It survives on crop debris, so clear and burn it after harvest.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Be realistic: natural options are limited here!",
+                "how": "No natural spray with efficacy data on mustard powdery mildew was found.",
+                "frequency": "At first symptoms",
+                "evidence": "Searched NIPHM, ICAR-DRMR and HP sources."
+            }
+        ],
+        "natural_farming": [
+            {
+                "ref": "jeevamrit",
+                "how": "Spray jeevamrit diluted to 10% (1 L in 9 L water) in the evening every 14 days, or drench 200 L per acre with irrigation every 15 days.",
+                "frequency": "Every 14-15 days",
+                "evidence": "ICAR-NEH Meghalaya (non-HP) natural-farming mustard: seed yield 16-44% above control, with no pest or disease data. No natural input had disease-control data on mustard in HP.",
+                "details": {
+                    "what_it_does": "Builds soil microbial life. Traditionally credited with suppressing fungal and bacterial diseases, but this is not quantified.",
+                    "materials_needed": [
+                        "10 kg desi cow dung",
+                        "10 L desi cow urine",
+                        "2 kg jaggery",
+                        "2 kg pulse (besan) flour",
+                        "A handful of undisturbed bund/forest soil",
+                        "Water to make 200 L"
+                    ],
+                    "preparation_steps": [
+                        "Mix all ingredients in a 200 L drum and make up to 200 L with water.",
+                        "Cover with a cloth or gunny bag and keep in shade.",
+                        "Stir clockwise morning and evening.",
+                        "Ready after 48 hours."
+                    ],
+                    "application_steps": [
+                        "Dilute 1 part strained jeevamrit with 9 parts water (10%) and spray in the evening, or run 200 L per acre into irrigation water every 15 days.",
+                        "Use soon after it is ready."
+                    ],
+                    "safety_notes": [
+                        "Use fresh batches only.",
+                        "Do not apply on waterlogged soil."
+                    ]
+                }
+            }
+        ]
+    },
+    "aphid": {
+        "name": "Mustard Aphid",
+        "cultural": [
+            {
+                "action": "Sow on Time",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Early, timely sowing escapes many pests and diseases!",
+                "how": "Sow between 10 and 25 October. At Palampur, gobhi sarson sown on 20 October out-yielded 30 October and 10 November sowings.",
+                "frequency": "At sowing",
+                "evidence": "Palampur yield trial (HP); the 10-25 October window and pest-escape advice are from the national NIPHM mustard package."
+            },
+            {
+                "action": "Irrigate at Week 4",
+                "emoji": "💧",
+                "theme": "sky_blue",
+                "summary": "A timely irrigation helps the crop outgrow aphids!",
+                "how": "Irrigate in the 4th week after sowing and check the tops of plants from December to March; aphid attacks usually start in the 2nd-3rd week of December.",
+                "frequency": "Weekly in winter",
+                "evidence": "NIPHM AESA package (national, not HP-specific). Not HP aphid data."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Oil 3%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "Neem oil cut aphids by about three-quarters in a trial!",
+                "how": "Spray neem oil at 3% (30 ml per litre of water) with a little soap as emulsifier, covering the flower and pod tops where aphids cluster.",
+                "frequency": "At first colonies; repeat after 10 days",
+                "evidence": "Hisar trial (non-HP): 76.4% aphid reduction (dimethoate 93.2%). NIPHM lists neem oil 2%; start at 2% on tender plants."
+            },
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌱",
+                "theme": "butter_yellow",
+                "summary": "A reliable botanical for aphids!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water) on the infested shoots.",
+                "frequency": "At first colonies; repeat after 10 days",
+                "evidence": "Hisar trial (non-HP): 71.4% aphid reduction. A Meghalaya mid-hill trial of 5% plant extracts gave only 50-62%."
+            }
+        ],
+        "natural_farming": [
+            "neemastra",
+            "brahmastra"
+        ]
+    },
+    "sawfly": {
+        "name": "Mustard Sawfly (Shot-Hole Seedlings)",
+        "cultural": [
+            {
+                "action": "Sow Before 20 October",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Sawfly larvae attack seedlings in October-November!",
+                "how": "Sow before 20 October and irrigate at the seedling stage, since most larvae drown. Look for black-green caterpillars that fall and play dead.",
+                "frequency": "At sowing and seedling stage",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            },
+            {
+                "action": "Hand-Pick Larvae",
+                "emoji": "🖐️",
+                "theme": "soft_yellow",
+                "summary": "Collect them morning and evening!",
+                "how": "Collect and destroy larvae in the morning and evening, deep plough in summer to destroy pupae, and burn crop residue after threshing.",
+                "frequency": "Daily at seedling stage",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "A neem spray listed in the national package!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water) on the seedlings.",
+                "frequency": "At first damage; repeat after 10 days",
+                "evidence": "NIPHM AESA package (national, not HP-specific)."
+            }
+        ],
+        "natural_farming": [
+            "neemastra"
+        ]
+    }
+}

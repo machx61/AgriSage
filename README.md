@@ -4,7 +4,7 @@ AgriSage is a Streamlit plant-disease diagnosis and plant-tracking application.
 
 Leaf photos are diagnosed by Google Gemini, which is restricted to the classes
 listed in `agrisage/disease_map.py`. Only crops with a treatment knowledge base
-in `data/diseases/` are supported: **maize (corn), okra, potato, rice, tomato
+in `data/diseases/` are supported: **apple, brinjal, cabbage, capsicum, carrot, cauliflower, cucumber, garlic, maize (corn), mustard, okra, onion, pea, potato, rice, spinach, tomato
 and wheat**. Photos of other crops are reported as unsupported.
 
 ## Project structure

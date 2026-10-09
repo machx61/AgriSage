@@ -1,0 +1,201 @@
+{
+    "downy_mildew": {
+        "name": "Downy Mildew",
+        "cultural": [
+            {
+                "action": "Trellis & Dry Leaves",
+                "emoji": "🪜",
+                "theme": "sky_blue",
+                "summary": "Dry leaves are the best defence!",
+                "how": "Trellis the vines, avoid overhead irrigation or water in late morning to shorten leaf wetness, and remove wild cucumber and volunteers at field edges. Resistant genotypes such as Solan Srijan are recommended for low-hill HP.",
+                "frequency": "Whenever watering",
+                "evidence": "NIPHM-Cucurbits; IJEP screening of cucumber genotypes in HP. Favoured by RH above 90%."
+            },
+            {
+                "action": "Look for Angles",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Yellow angular spots stopped by veins, with purple fuzz underneath!",
+                "how": "Check the underside of leaves for purplish downy growth in damp weather.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM-Cucurbits."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "powdery_mildew": {
+        "name": "Powdery Mildew",
+        "cultural": [
+            {
+                "action": "Airflow & Resistance",
+                "emoji": "💨",
+                "theme": "soft_yellow",
+                "summary": "White powder loves still, cramped air!",
+                "how": "Increase air movement in the canopy through trellising and spacing; use resistant varieties.",
+                "frequency": "Season long",
+                "evidence": "NIPHM-Cucurbits."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Milk Spray 10%",
+                "emoji": "🥛",
+                "theme": "soft_pink",
+                "summary": "Plain milk, diluted, can slow mildew!",
+                "how": "Mix 1 part cow's milk with 9 parts water and spray weekly, early in the day, as prevention or at the first signs.",
+                "frequency": "Weekly",
+                "evidence": "One greenhouse trial on zucchini (Brazil): a weekly 10% milk spray cut severity by about 90%. No Indian trial was found and some sources say milk does not work. Above 30% a harmless fungus grew on leaves."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "mosaic_virus": {
+        "name": "Cucumber Mosaic Virus",
+        "cultural": [
+            {
+                "action": "Quick Goodbye Removal",
+                "emoji": "👋",
+                "theme": "soft_pink",
+                "summary": "Remove infected plants early to protect the rest!",
+                "how": "Uproot infected plants as soon as you see symptoms and destroy them away from the field (not in compost).",
+                "frequency": "Immediately when seen",
+                "evidence": "NIPHM packages (virus, wilt, little leaf)."
+            },
+            {
+                "action": "Maize Barrier Rows",
+                "emoji": "🌽",
+                "theme": "soft_yellow",
+                "summary": "A tall border keeps virus-carrying insects out!",
+                "how": "Sow 4 rows of maize or sorghum around the field as a border crop; keep weeds down, since weeds host aphids and viruses.",
+                "frequency": "At sowing",
+                "evidence": "NIPHM-Chilli, NIPHM-Cucurbits."
+            },
+            {
+                "action": "Keep Away from Tomato",
+                "emoji": "🍅",
+                "theme": "soft_pink",
+                "summary": "Avoid planting next to susceptible crops!",
+                "how": "Do not plant near tomato, spinach or other susceptible crops, and control weed hosts.",
+                "frequency": "At planning",
+                "evidence": "NIPHM-Cucurbits."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Yellow Sticky Traps",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Catch whiteflies and leaf miners before they multiply!",
+                "how": "Hang 4-5 yellow sticky traps per acre (10 per acre for leaf miner) just above the canopy; home-made: yellow tins coated with grease or castor oil.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM packages."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The most widely endorsed botanical spray across these crops!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), covering both leaf surfaces.",
+                "frequency": "As pests appear, repeat after 10 days",
+                "evidence": "5% is the concentration in the NIPHM packages; they give no preparation recipe, so use a commercial NSKE or follow local KVK instructions."
+            }
+        ],
+        "natural_farming": [
+            "neemastra",
+            "brahmastra"
+        ]
+    },
+    "red_pumpkin_beetle": {
+        "name": "Red Pumpkin Beetle",
+        "cultural": [
+            {
+                "action": "Plough & Collect",
+                "emoji": "🚜",
+                "theme": "peach",
+                "summary": "Expose the grubs and collect the adults!",
+                "how": "Deep summer ploughing and ploughing just after harvest expose grubs, pupae and hibernating adults; collect and destroy adult beetles. Early-sown crops may need re-sowing if seedlings are eaten.",
+                "frequency": "Pre-season and weekly",
+                "evidence": "NIPHM-Cucurbits; TNAU Agritech."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The most widely endorsed botanical spray across these crops!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), covering both leaf surfaces.",
+                "frequency": "As pests appear, repeat after 10 days",
+                "evidence": "5% is the concentration in the NIPHM packages; they give no preparation recipe, so use a commercial NSKE or follow local KVK instructions."
+            }
+        ],
+        "natural_farming": [
+            "neemastra"
+        ],
+        "iks": [
+            {
+                "action": "Ash Dusting",
+                "emoji": "🪵",
+                "theme": "lavender",
+                "summary": "A traditional ash dust on seedlings!",
+                "how": "Dust wood ash on dew-wet seedlings in the early morning.",
+                "frequency": "When beetles appear",
+                "evidence": "Documented in tribal and UP inventories of indigenous practices, not specifically HP; no dose or efficacy measured."
+            }
+        ]
+    },
+    "leaf_miner": {
+        "name": "Serpentine Leaf Miner",
+        "cultural": [
+            {
+                "action": "Change Sowing & Trap Crop",
+                "emoji": "🗓️",
+                "theme": "butter_yellow",
+                "summary": "Dodge the peak and lure them elsewhere!",
+                "how": "Adjust the sowing date; castor, tomato or marigold have been listed as trap crops.",
+                "frequency": "At planning",
+                "evidence": "NIPHM-Cucurbits (table layout ambiguous in the source)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Yellow Sticky Traps",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Catch whiteflies and leaf miners before they multiply!",
+                "how": "Hang 4-5 yellow sticky traps per acre (10 per acre for leaf miner) just above the canopy; home-made: yellow tins coated with grease or castor oil.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM packages."
+            },
+            {
+                "action": "Parasitoid Helpers",
+                "emoji": "🐝",
+                "theme": "mint_green",
+                "summary": "Tiny wasps eat leaf miners!",
+                "how": "Avoid harming the parasitoids Diglyphus, Chrysocharis and Neochrysocharis.",
+                "frequency": "Ongoing",
+                "evidence": "NIPHM-Cucurbits."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The most widely endorsed botanical spray across these crops!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), covering both leaf surfaces.",
+                "frequency": "As pests appear, repeat after 10 days",
+                "evidence": "5% is the concentration in the NIPHM packages; they give no preparation recipe, so use a commercial NSKE or follow local KVK instructions."
+            }
+        ],
+        "natural_farming": [
+            "neemastra"
+        ]
+    }
+}

@@ -1,0 +1,283 @@
+{
+    "phytophthora_blight": {
+        "name": "Phytophthora Blight (Leaf Blight & Fruit Rot)",
+        "cultural": [
+            {
+                "action": "Raised Bed + Mulch",
+                "emoji": "🛏️",
+                "theme": "soft_yellow",
+                "summary": "Keep roots out of standing water, the disease's favourite place!",
+                "how": "Plant on beds 90-100 cm wide and 15-22 cm high with silver-black mulch, dig drainage channels, remove low or soil-touching diseased leaves, stake plants and remove weed hosts.",
+                "frequency": "At planting; check drainage before heavy rain",
+                "evidence": "IIHR 2021 open-field trial. Even this package plus fungicides left 28-30% severity. The monsoon (July-September) is the high-risk window in HP."
+            },
+            {
+                "action": "Sun-Cooked Nursery Beds",
+                "emoji": "☀️",
+                "theme": "soft_yellow",
+                "summary": "Let the sun sterilise your nursery soil before sowing!",
+                "how": "Cover moist nursery beds with clear polythene for 3 weeks before sowing; raise beds more than 15 cm high and use sterilised mix in plug trays.",
+                "frequency": "3 weeks before sowing",
+                "evidence": "NIPHM AESA packages (chilli, brinjal, cucurbits). The printed polythene gauge/thickness figures are inconsistent in the source, so no thickness is given."
+            },
+            {
+                "action": "Know the Limits",
+                "emoji": "🛡️",
+                "theme": "soft_pink",
+                "summary": "Natural methods lower the risk but cannot cure an advancing blight!",
+                "how": "Act at the first leaf lesion: remove affected leaves and plants, improve drainage, and ask your KVK/horticulture officer, since standard HP recommendations for this disease are fungicides.",
+                "frequency": "At first symptom",
+                "evidence": "IIHR 2021; all four sweet pepper genotypes tested were susceptible."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Field Mix",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "A friendly soil fungus that crowds out root germs!",
+                "how": "Mix 1 kg Trichoderma viride 1% WP with 25 kg well-rotted FYM, broadcast over one acre and irrigate immediately.",
+                "frequency": "At planting, once per season",
+                "evidence": "Dose from NIPHM-Brinjal. For Phytophthora, a bioagent + raised bed + mulch package roughly halved severity versus grower practice but still used fungicides (IIHR 2021), so this is risk reduction, not a cure."
+            },
+            {
+                "action": "Trichoderma Seed & Root Dip",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Protect seed and seedlings from day one!",
+                "how": "Seed: 5 g Trichoderma viride 1% WP per kg seed as a thin paste, shade-dry before sowing. Seedlings: dip roots for 15 minutes in 10 g per litre of water before transplanting.",
+                "frequency": "At sowing / transplanting",
+                "evidence": "Doses from NIPHM-Brinjal."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Cake Soil Boost",
+                "emoji": "🥜",
+                "theme": "butter_yellow",
+                "summary": "Neem cake in the soil deters nematodes and soil pests!",
+                "how": "Apply neem cake at 100 kg per acre at transplanting (second split 30 days later in chilli beds).",
+                "frequency": "At transplanting",
+                "evidence": "NIPHM-Chilli / NIPHM-Brinjal."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "anthracnose": {
+        "name": "Anthracnose & Die-back",
+        "cultural": [
+            {
+                "action": "Clean Seed, Clean Field",
+                "emoji": "🧼",
+                "theme": "soft_yellow",
+                "summary": "The fungus rides in on seed and old plant debris!",
+                "how": "Use disease-free seed, keep drainage good, avoid water stagnation in nursery and field, remove infected debris and weeds, and remove affected plants early. Turmeric is another host, so avoid growing it nearby.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Chilli. Favoured by about 28 C, RH above 97% and frequent rain."
+            },
+            {
+                "action": "Crop Rotation Break",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "Give the soil a break from the same plant family!",
+                "how": "Avoid growing brinjal, tomato, potato or capsicum in the same field in consecutive seasons; rotate with maize, wheat, rice or soybean.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Brinjal (bacterial wilt, Phomopsis)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed & Root Dip",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Protect seed and seedlings from day one!",
+                "how": "Seed: 5 g Trichoderma viride 1% WP per kg seed as a thin paste, shade-dry before sowing. Seedlings: dip roots for 15 minutes in 10 g per litre of water before transplanting.",
+                "frequency": "At sowing / transplanting",
+                "evidence": "Doses from NIPHM-Brinjal."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "bacterial_leaf_spot": {
+        "name": "Bacterial Leaf Spot",
+        "cultural": [
+            {
+                "action": "Seed & Sanitation",
+                "emoji": "🧼",
+                "theme": "soft_yellow",
+                "summary": "The bacteria travel on seed and rain splash!",
+                "how": "Use seed from disease-free plants and healthy fruits, clear field debris, and avoid working among wet plants.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Chilli. The standard recommendation is the antibiotic streptocycline, which is not a natural option; non-chemical control is limited to clean seed and sanitation."
+            },
+            {
+                "action": "Crop Rotation Break",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "Give the soil a break from the same plant family!",
+                "how": "Avoid growing brinjal, tomato, potato or capsicum in the same field in consecutive seasons; rotate with maize, wheat, rice or soybean.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Brinjal (bacterial wilt, Phomopsis)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed & Root Dip",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Protect seed and seedlings from day one!",
+                "how": "Seed: 5 g Trichoderma viride 1% WP per kg seed as a thin paste, shade-dry before sowing. Seedlings: dip roots for 15 minutes in 10 g per litre of water before transplanting.",
+                "frequency": "At sowing / transplanting",
+                "evidence": "Doses from NIPHM-Brinjal."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "powdery_mildew": {
+        "name": "Powdery Mildew (Leveillula)",
+        "natural_farming": [
+            "jeevamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Check Under the Leaf",
+                "emoji": "🔍",
+                "theme": "butter_yellow",
+                "summary": "Here the white growth is underneath, with yellow patches on top!",
+                "how": "Turn leaves over to confirm: white powder mainly on the lower surface and yellow patches above. Space plants for airflow and remove badly affected leaves.",
+                "frequency": "Weekly",
+                "evidence": "NIPHM-Chilli. Cool dry weather favours spore germination."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Sulphur Spray",
+                "emoji": "🟡",
+                "theme": "soft_yellow",
+                "summary": "A mineral option generally allowed in organic standards!",
+                "how": "Sulphur 80% WP at 1252 g in 300-400 L water per acre (national package dose); check your organic standard and avoid hot days.",
+                "frequency": "As directed on the label",
+                "evidence": "NIPHM-Chilli lists only chemical options for this disease; sulphur is the one mineral choice. No natural-farming trial on this crop was found."
+            }
+        ]
+    },
+    "cercospora_leaf_spot": {
+        "name": "Cercospora (Frog-eye) Leaf Spot",
+        "cultural": [
+            {
+                "action": "Clean-Up & Spacing",
+                "emoji": "🧹",
+                "theme": "soft_yellow",
+                "summary": "Remove infected leaves and give plants air!",
+                "how": "Remove fallen infected leaves, weed regularly and space plants for airflow. Look for circular spots with a brown margin and grey centre.",
+                "frequency": "Every 2 weeks",
+                "evidence": "Symptoms from NIPHM-Chilli; the practices are general hygiene."
+            },
+            {
+                "action": "Crop Rotation Break",
+                "emoji": "🔄",
+                "theme": "sky_blue",
+                "summary": "Give the soil a break from the same plant family!",
+                "how": "Avoid growing brinjal, tomato, potato or capsicum in the same field in consecutive seasons; rotate with maize, wheat, rice or soybean.",
+                "frequency": "Every season",
+                "evidence": "NIPHM-Brinjal (bacterial wilt, Phomopsis)."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma Seed & Root Dip",
+                "emoji": "🌱",
+                "theme": "pastel_green",
+                "summary": "Protect seed and seedlings from day one!",
+                "how": "Seed: 5 g Trichoderma viride 1% WP per kg seed as a thin paste, shade-dry before sowing. Seedlings: dip roots for 15 minutes in 10 g per litre of water before transplanting.",
+                "frequency": "At sowing / transplanting",
+                "evidence": "Doses from NIPHM-Brinjal."
+            }
+        ],
+        "natural_farming": [
+            "jeevamrit"
+        ]
+    },
+    "leaf_curl_mosaic": {
+        "name": "Leaf Curl & Mosaic Complex",
+        "cultural": [
+            {
+                "action": "Tell the Cause Apart",
+                "emoji": "🔍",
+                "theme": "lavender",
+                "summary": "Mites, thrips and viruses curl leaves differently!",
+                "how": "Yellow mite: leaves curl DOWN with long petioles. Thrips: leaves curl UP and fruit shows brown scars. Mosaic virus: mottling and distortion. What you do next depends on which it is.",
+                "frequency": "On first sighting",
+                "evidence": "NIPHM-Chilli."
+            },
+            {
+                "action": "Quick Goodbye Removal",
+                "emoji": "👋",
+                "theme": "soft_pink",
+                "summary": "Remove infected plants early to protect the rest!",
+                "how": "Uproot infected plants as soon as you see symptoms and destroy them away from the field (not in compost).",
+                "frequency": "Immediately when seen",
+                "evidence": "NIPHM packages (virus, wilt, little leaf)."
+            },
+            {
+                "action": "Maize Barrier Rows",
+                "emoji": "🌽",
+                "theme": "soft_yellow",
+                "summary": "A tall border keeps virus-carrying insects out!",
+                "how": "Sow 4 rows of maize or sorghum around the field as a border crop; keep weeds down, since weeds host aphids and viruses.",
+                "frequency": "At sowing",
+                "evidence": "NIPHM-Chilli, NIPHM-Cucurbits."
+            },
+            {
+                "action": "Net the Seedbed",
+                "emoji": "🕸️",
+                "theme": "sky_blue",
+                "summary": "Keep insect carriers off seedlings!",
+                "how": "Cover the seedbed with nylon net or paddy straw, use healthy seed, and do not mix chilli with onion.",
+                "frequency": "In the nursery",
+                "evidence": "NIPHM-Chilli."
+            }
+        ],
+        "biological": [
+            {
+                "action": "Yellow Sticky Traps",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Catch whiteflies and leaf miners before they multiply!",
+                "how": "Hang 4-5 yellow sticky traps per acre (10 per acre for leaf miner) just above the canopy; home-made: yellow tins coated with grease or castor oil.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM packages."
+            },
+            {
+                "action": "Blue Sticky Traps",
+                "emoji": "🟦",
+                "theme": "sky_blue",
+                "summary": "Blue traps for thrips!",
+                "how": "Hang 4-5 blue sticky traps per acre about 15 cm above the canopy.",
+                "frequency": "Replace every 2-3 weeks",
+                "evidence": "NIPHM-Chilli / NIPHM-Brinjal."
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract 5%",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "The most widely endorsed botanical spray across these crops!",
+                "how": "Spray NSKE at 5% (50 ml per litre of water), covering both leaf surfaces.",
+                "frequency": "As pests appear, repeat after 10 days",
+                "evidence": "5% is the concentration in the NIPHM packages; they give no preparation recipe, so use a commercial NSKE or follow local KVK instructions."
+            }
+        ],
+        "natural_farming": [
+            "neemastra",
+            "brahmastra"
+        ]
+    }
+}

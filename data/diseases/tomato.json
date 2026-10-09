@@ -1,6 +1,7 @@
 {
     "leaf_curl_virus": {
         "name": "Tomato Leaf Curl Virus (Vata Imbalance)",
+        "natural_farming": ["neemastra", "brahmastra"],
         "cultural": [
             {
                 "action": "Quick Removal Action",
@@ -60,6 +61,7 @@
     },
     "early_blight": {
         "name": "Early Blight (Pitta Imbalance)",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Wood Ash Dusting",
@@ -101,6 +103,7 @@
     },
     "powdery_mildew": {
         "name": "Powdery Mildew (Kapha Imbalance)",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Breezy Plant Spacing",
@@ -132,6 +135,7 @@
     },
     "root_knot_nematode": {
         "name": "Root-Knot Nematode (Worm Infestation)",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Marigold Flower Guards",
@@ -173,6 +177,7 @@
     },
     "stem_wound_damage": {
         "name": "Physical Stem Damage & Cracking",
+        "natural_farming": ["jeevamrit"],
         "cultural": [
             {
                 "action": "Preventative Care",
