@@ -12,7 +12,7 @@ from streamlit_js_eval import get_geolocation
 from agrisage import db, ui
 from agrisage.db import now_ist
 from agrisage.treatments_db import DEFAULT_TREATMENT, get_treatment_data, THEME_COLORS
-from agrisage.disease_map import DISEASE_DISPLAY_MAP, NOT_A_LEAF, UNSUPPORTED, display_name
+from agrisage.disease_map import DISEASE_DISPLAY_MAP, NOT_A_LEAF, SUPPORTED_CROPS, UNSUPPORTED, display_name
 from agrisage.diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
 from agrisage.gemini_tracker import analyze_progress, get_initial_assessment, get_initial_diagnosis
 from agrisage.images import make_jpeg
@@ -108,6 +108,8 @@ with st.container(key="card_scan"):
                 st.session_state.camera_active = False
                 st.rerun()
 
+    st.markdown(ui.supported_crops(SUPPORTED_CROPS), unsafe_allow_html=True)
+
 
 def elevation_zone_for(elevation):
     if elevation is None:
@@ -144,11 +146,14 @@ def create_pdf(raw_class):
     except ImportError:
         return None
 
+    # Typographic punctuation the built-in PDF font lacks, swapped for plain equivalents
+    plain_punctuation = str.maketrans({"—": "-", "–": "-", "‘": "'", "’": "'", "“": '"', "”": '"', "…": "..."})
+
     def safe(text):
         """Strip non-latin characters to avoid FPDF rendering errors."""
         if not text:
             return ""
-        return text.encode('latin-1', 'replace').decode('latin-1')
+        return text.translate(plain_punctuation).encode('latin-1', 'replace').decode('latin-1')
 
     disease_name = display_name(raw_class)
     treatment_info = get_treatment_data(raw_class)
@@ -284,7 +289,8 @@ if analyze_requested:
         elif raw_class == NOT_A_LEAF:
             st.warning(f"🍃 '{name}' doesn't look like a plant. Please take a clear photo of a leaf.")
         elif raw_class == UNSUPPORTED:
-            st.warning(f"🌾 We couldn't recognise the leaf in '{name}'. Try a closer, clearer photo.")
+            st.warning(f"🌾 We couldn't match '{name}' to a supported crop or disease. Check that it is one of the "
+                       f"{len(SUPPORTED_CROPS)} crops listed above, or try a closer, clearer photo.")
         else:
             predictions.append(raw_class)
             confidences.append(float(result["confidence"]))

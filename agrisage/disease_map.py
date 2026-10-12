@@ -6,10 +6,6 @@ Each class maps to its display name and the (crop_file, kb_key) entry that
 holds its treatments; healthy classes map to None.
 """
 
-SUPPORTED_CROPS = ["Apple", "Brinjal (Eggplant)", "Cabbage", "Capsicum (Bell Pepper & Chilli)", "Carrot", "Cauliflower",
-                   "Cucumber", "Garlic", "Maize (Corn)", "Mustard", "Okra", "Onion", "Pea", "Potato", "Rice",
-                   "Spinach", "Tomato", "Wheat"]
-
 # class -> (display name, (crop_file, kb_key) or None for healthy)
 _CLASSES = {
     "apple_healthy": ("Apple - Healthy", None),
@@ -146,6 +142,8 @@ _CLASSES = {
 
 DISEASE_DISPLAY_MAP = {cls: display for cls, (display, _) in _CLASSES.items()}
 CLASS_TO_KB = {cls: kb for cls, (_, kb) in _CLASSES.items()}
+# crop key (class prefix) -> crop name exactly as results show it, e.g. "corn" -> "Maize"
+SUPPORTED_CROPS = {cls.split("_")[0]: display.partition(" - ")[0] for cls, (display, _) in _CLASSES.items()}
 
 # Special answers the diagnosis model may give instead of a supported class.
 UNSUPPORTED = "unsupported"

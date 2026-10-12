@@ -118,6 +118,13 @@ footer, #viewerBadge, [data-testid="stHeaderActionElements"], [data-testid="stTo
 .chip.muted { color: var(--ink-soft); font-weight: 500; }
 .chip.warn { background: var(--amber-tint); border-color: #EBD3A0; color: #7A4E0E; }
 
+/* ---------- Supported crops (bottom of the scan card) ---------- */
+/* The bottom margin cancels Streamlit's negative markdown margin, which would clip the last row */
+.crops { border-top: 1px dashed var(--line); padding-top: 12px; margin: 2px 0 1rem; }
+.crops-label { font-size: .7rem; letter-spacing: .09em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft); margin-bottom: 7px; }
+.crops .chips { gap: 5px; margin: 0; }
+.crops .chip { padding: 3px 9px; font-size: .78rem; font-weight: 500; }
+
 /* ---------- Streamlit widgets ---------- */
 .stButton > button, .stDownloadButton > button, [data-testid="stFormSubmitButton"] > button {
   border-radius: 14px; min-height: 46px; font-weight: 600;
@@ -298,6 +305,13 @@ def section(title: str, hint: str | None = None):
 
 def chips(items: list[str], tone: str = "") -> str:
     return '<div class="chips">' + "".join(f'<span class="chip {tone}">{i}</span>' for i in items) + "</div>"
+
+
+def supported_crops(crops: dict[str, str]) -> str:
+    """Chip list of supported crops. `crops` maps a crop key to the name shown in results."""
+    names = sorted(crops.items(), key=lambda crop: crop[1])
+    items = [f"{CROP_EMOJI.get(key, '🌿')} {esc(name)}" for key, name in names]
+    return f'<div class="crops"><div class="crops-label">Works with {len(items)} crops</div>{chips(items, "soft")}</div>'
 
 
 def meter(value: float, left: str, right: str, tone: str = "") -> str:
