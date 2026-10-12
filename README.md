@@ -25,6 +25,7 @@ and wheat**. Photos of other crops are reported as unsupported.
 ├── models/                # Experimental local weights (not used by the app)
 ├── tests/                 # Automated tests
 ├── scripts/               # list_models.py: list Gemini models for your key
+│                          # keep_awake.py: visit the hosted app so it doesn't sleep
 ├── .streamlit/            # Local Streamlit configuration and secrets
 └── requirements.txt
 ```
@@ -48,6 +49,16 @@ Run the automated tests:
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+## Keeping the hosted app awake
+
+Streamlit Community Cloud puts an app to sleep after 12 hours without visitors.
+The `Keep app awake` GitHub Actions workflow opens the app in a browser every
+4 hours and wakes it if needed. It visits https://agrisage.streamlit.app/ by
+default; to point it elsewhere, set a repository variable named `APP_URL`
+(Settings > Secrets and variables > Actions > Variables).
+
+## Configuration
 
 Set `GEMINI_API_KEY` in `.streamlit/secrets.toml` to enable Gemini-powered
 diagnosis and plant progress analysis. The local SQLite history database is

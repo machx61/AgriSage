@@ -1,0 +1,31 @@
+name: Keep app awake
+
+# Streamlit Community Cloud puts an app to sleep after 12 hours without visitors.
+# This opens the deployed app in a browser every 4 hours, and wakes it if it is asleep.
+# If the app moves, change the address below or set a repository variable named APP_URL.
+
+on:
+  schedule:
+    - cron: "17 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install browser
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+      - name: Visit the app
+        env:
+          APP_URL: ${{ vars.APP_URL || 'https://agrisage.streamlit.app/' }}
+        run: python scripts/keep_awake.py "$APP_URL"
