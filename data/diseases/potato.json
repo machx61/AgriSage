@@ -2,15 +2,7 @@
     "late_blight": {
         "name": "Late Blight",
         "natural_farming": ["jeevamrit"],
-        "cultural": [
-            {
-                "action": "Ask a Local Elder",
-                "emoji": "🗣️",
-                "theme": "lavender",
-                "summary": "No specific local HP practice is documented yet for late blight.",
-                "how": "Consult local elders or use the classical Vrikshayurveda treatments below."
-            }
-        ],
+        "cultural": [],
         "biological": [
             {
                 "action": "Sweet Root Licorice Bath",
@@ -65,29 +57,13 @@
     "black_scurf_common_scab": {
         "name": "Black Scurf & Common Scab",
         "natural_farming": ["jeevamrit"],
-        "cultural": [
-            {
-                "action": "IKS Research Gap Identified",
-                "emoji": "🕵️",
-                "theme": "soft_pink",
-                "summary": "Vrikshayurveda centers on trees and leaves; it doesn't have a clear category for tuber-skin conditions.",
-                "how": "No HP-specific documented local practice found. Flagged for farmer interviews."
-            }
-        ],
+        "cultural": [],
         "biological": []
     },
     "bacterial_wilt": {
         "name": "Bacterial Wilt",
         "natural_farming": ["jeevamrit"],
-        "cultural": [
-            {
-                "action": "IKS Research Gap Identified",
-                "emoji": "🕵️",
-                "theme": "lavender",
-                "summary": "No specific local HP practice is documented yet for bacterial wilt.",
-                "how": "Consult local elders or use the classical Vrikshayurveda treatments below."
-            }
-        ],
+        "cultural": [],
         "biological": [
             {
                 "action": "Sweet Root Licorice Bath",

@@ -710,5 +710,90 @@
                 }
             }
         ]
+    },
+    "brown_rust": {
+        "name": "Brown (Leaf) Rust",
+        "natural_farming": [
+            "jeevamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Grow Resistant Varieties",
+                "emoji": "🌾",
+                "theme": "soft_yellow",
+                "summary": "Resistant varieties are the cheapest and safest control, but new rust races keep appearing in Himachal.",
+                "how": "Ask the local agriculture centre for currently recommended rust-resistant wheat varieties, and avoid growing a single variety across the whole farm.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Timely Sowing",
+                "emoji": "📅",
+                "theme": "butter_yellow",
+                "summary": "Sowing at the recommended time helps the crop pass its susceptible stage before warm, damp spells.",
+                "how": "Sow within your area's recommended window for the variety.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Go Easy on Nitrogen",
+                "emoji": "🌱",
+                "theme": "peach",
+                "summary": "Lush, over-fed wheat is where rust thrives.",
+                "how": "Use compost and split any urea into small doses; avoid late top-dressing.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Remove Volunteer Wheat",
+                "emoji": "🧹",
+                "theme": "soft_pink",
+                "summary": "Self-sown wheat over the summer carries rust spores to the next crop.",
+                "how": "Pull out volunteer wheat and grasses before the next sowing.",
+                "frequency": "Between seasons"
+            }
+        ],
+        "botanical": [],
+        "biological": []
+    },
+    "aphid": {
+        "name": "Wheat Aphid",
+        "natural_farming": [
+            "neemastra"
+        ],
+        "cultural": [
+            {
+                "action": "Save the Ladybirds",
+                "emoji": "🐞",
+                "theme": "soft_yellow",
+                "summary": "Ladybirds and other predators were more common in neem-treated wheat than in chemically sprayed plots.",
+                "how": "Avoid broad-spectrum insecticides while ladybird beetles or their larvae are on the plants, and let a few flowering weeds stand on the bunds.",
+                "frequency": "Whole season"
+            },
+            {
+                "action": "Yellow Sticky Traps",
+                "emoji": "🟨",
+                "theme": "butter_yellow",
+                "summary": "Winged aphids are drawn to yellow and get stuck, which also warns you early.",
+                "how": "Hang yellow sticky traps just above the crop canopy from the time aphids first appear, and replace them when covered with insects.",
+                "frequency": "Replace every 2-3 weeks"
+            },
+            {
+                "action": "Check the Ears",
+                "emoji": "🔍",
+                "theme": "sky_blue",
+                "summary": "Aphid numbers peak around ear emergence and milking stage, when they do the most harm.",
+                "how": "Look at 10 tillers in several places each week; act when you see colonies building up on the ears and flag leaves.",
+                "frequency": "Weekly from ear emergence"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Seed Kernel Extract",
+                "emoji": "🌿",
+                "theme": "pastel_green",
+                "summary": "In Punjab and Pantnagar trials, neem extracts cut wheat aphids by roughly 70% without harming natural enemies.",
+                "how": "Soak 5 kg crushed neem seed kernel in 100 L water overnight, strain, add a little mild soap and spray on the upper leaves and ears (5% extract).",
+                "frequency": "Every 7-10 days while aphids persist"
+            }
+        ],
+        "biological": []
     }
 }

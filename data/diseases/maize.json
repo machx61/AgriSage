@@ -970,5 +970,97 @@
                 "note": "No dedicated botanical trial specific to maize stalk rot found. Flagged as a research gap."
             }
         ]
+    },
+    "common_rust": {
+        "name": "Common Rust",
+        "natural_farming": [
+            "jeevamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Choose Resistant Hybrids",
+                "emoji": "🌽",
+                "theme": "soft_yellow",
+                "summary": "Resistant seed is the main defence: in Indian field screening, about a third of the hybrids tested were resistant.",
+                "how": "Ask the local agriculture centre or KVK for rust-resistant maize hybrids or composites suited to your elevation.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Early-Maturing Varieties",
+                "emoji": "⏩",
+                "theme": "butter_yellow",
+                "summary": "Faster varieties finish before the cool, humid spells that make rust explode.",
+                "how": "Where rust is common in your area, choose an early-maturing variety and sow within the recommended window.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Destroy Crop Debris",
+                "emoji": "🧹",
+                "theme": "soft_pink",
+                "summary": "Infected leaves and stalks carry the fungus to the next crop.",
+                "how": "After harvest, remove or plough in maize residue and pull out self-sown maize and nearby weeds.",
+                "frequency": "Each season"
+            },
+            {
+                "action": "Rotate with Non-Host Crops",
+                "emoji": "🔄",
+                "theme": "peach",
+                "summary": "Growing a crop rust cannot infect breaks the cycle.",
+                "how": "Follow maize with legumes, vegetables or other non-cereal crops for a season.",
+                "frequency": "Every season"
+            }
+        ],
+        "botanical": [],
+        "biological": []
+    },
+    "gray_leaf_spot": {
+        "name": "Gray Leaf Spot",
+        "natural_farming": [
+            "jeevamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Bury or Remove Residue",
+                "emoji": "🌱",
+                "theme": "soft_yellow",
+                "summary": "The fungus survives on old maize leaves and stalks, and the disease is worse where residue stays on the surface.",
+                "how": "After harvest, plough the residue under deeply or remove it from the field before the next sowing.",
+                "frequency": "Each season"
+            },
+            {
+                "action": "Rotate Away from Maize",
+                "emoji": "🔄",
+                "theme": "peach",
+                "summary": "Maize planted after maize gets the heaviest infection.",
+                "how": "Do not grow maize in the same plot two seasons in a row; follow with legumes or vegetables.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Choose Resistant Hybrids",
+                "emoji": "🌽",
+                "theme": "butter_yellow",
+                "summary": "Resistant seed is the most practical protection for farmers who cannot afford fungicides.",
+                "how": "Ask your KVK for hybrids with a good gray leaf spot rating.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Give Plants Air",
+                "emoji": "↔️",
+                "theme": "sky_blue",
+                "summary": "The disease needs long humid spells at 20-30 °C, and dense, weedy crops stay damp.",
+                "how": "Keep the recommended spacing, control weeds and avoid very late sowing.",
+                "frequency": "At sowing"
+            },
+            {
+                "action": "Intercrop with Beans",
+                "emoji": "🫘",
+                "theme": "mint_green",
+                "summary": "A maize-bean intercrop slowed spore movement into the maize canopy in an African field trial.",
+                "how": "Where it suits your farm, grow a row of beans between maize rows.",
+                "frequency": "At sowing"
+            }
+        ],
+        "botanical": [],
+        "biological": []
     }
 }

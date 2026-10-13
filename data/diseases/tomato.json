@@ -196,5 +196,166 @@
                 "frequency": "Once, or as needed until healed"
             }
         ]
+    },
+    "bacterial_wilt": {
+        "name": "Bacterial Wilt",
+        "natural_farming": [
+            "jeevamrit",
+            "beejamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Pull Out & Destroy Wilted Plants",
+                "emoji": "✂️",
+                "theme": "soft_pink",
+                "summary": "The germ lives in the soil and spreads through water and tools, so a wilted plant must go before it infects its neighbours.",
+                "how": "Uproot the whole plant with its roots and a ball of soil as soon as it wilts. Burn it or bury it deep; do not compost it. Wash tools and boots before moving to healthy plants.",
+                "frequency": "Immediately when seen"
+            },
+            {
+                "action": "Water-Glass Check",
+                "emoji": "🥛",
+                "theme": "sky_blue",
+                "summary": "A quick way to confirm bacterial wilt before you pull out more plants.",
+                "how": "Cut a piece of the lower stem and hang it in a glass of clear water. If milky white threads stream out of the cut end within a few minutes, it is bacterial wilt.",
+                "frequency": "Whenever a plant wilts suddenly"
+            },
+            {
+                "action": "Rotate with Non-Host Crops",
+                "emoji": "🔄",
+                "theme": "soft_yellow",
+                "summary": "The germ survives in the soil for years, so growing something it cannot infect starves it out.",
+                "how": "Keep tomato, potato, brinjal and capsicum out of an infected plot for at least 3-4 seasons. Grow maize, cabbage-family crops, onion or legumes there instead.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Raised Beds & Careful Watering",
+                "emoji": "⛰️",
+                "theme": "butter_yellow",
+                "summary": "The disease explodes in saturated soil at 30-35 °C, and flowing water carries the germs between plants.",
+                "how": "Plant on raised beds with drainage channels, irrigate lightly, and never let irrigation or rain water run from an infected plot into a healthy one. Avoid hoeing close to the roots.",
+                "frequency": "Whole season"
+            },
+            {
+                "action": "Lime Acidic Soil",
+                "emoji": "⚪",
+                "theme": "peach",
+                "summary": "The disease develops fastest in acidic soil (below pH 6), and lime gave one of the biggest yield gains in ICAR field trials.",
+                "how": "Get the soil pH tested and work agricultural lime into acidic soil about 15 days before transplanting, at the rate your local soil test or KVK advises.",
+                "frequency": "Once, about 15 days before planting"
+            },
+            {
+                "action": "Clean, Healthy Seedlings",
+                "emoji": "🌱",
+                "theme": "mint_green",
+                "summary": "Planting an infected seedling brings the disease into a clean field.",
+                "how": "Raise seedlings in a fresh nursery bed or trays with clean soil or compost, away from any plot that had wilt, and discard any seedling that looks weak or wilted.",
+                "frequency": "Every transplanting"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Cake in the Soil",
+                "emoji": "🪨",
+                "theme": "mint_green",
+                "summary": "Neem cake is part of the standard integrated programme for this disease.",
+                "how": "Apply neem cake at about 100 kg per acre, mixed into the soil before transplanting.",
+                "frequency": "Once before planting"
+            },
+            {
+                "action": "Karanj (Pongamia) Cake",
+                "emoji": "🌳",
+                "theme": "pastel_green",
+                "summary": "In ICAR field trials, karanj cake gave the best plant survival of all the soil treatments tried.",
+                "how": "Mix karanj cake into the soil about 15 days before transplanting, in the same quantity you would use for neem cake.",
+                "frequency": "Once, about 15 days before planting"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Trichoderma & Pseudomonas Compost",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Friendly soil microbes (Trichoderma, Pseudomonas fluorescens) crowd out the wilt bacteria around the roots and are part of ICAR's integrated trials.",
+                "how": "Mix the culture into well-rotted farmyard manure at the dose on the product pack, keep it moist in shade for about a week, then apply it to the soil.",
+                "frequency": "Refresh every 3-4 weeks"
+            },
+            {
+                "action": "Graft on a Wild Brinjal Rootstock",
+                "emoji": "🍆",
+                "theme": "lavender",
+                "summary": "Tomato grafted on wilt-tolerant wild brinjal (Solanum torvum) kept far more plants alive in Indian trials, though it does not make them immune.",
+                "how": "Use grafted seedlings from a nursery or the horticulture department for plots known to carry bacterial wilt.",
+                "frequency": "At transplanting"
+            }
+        ]
+    },
+    "septoria_leaf_spot": {
+        "name": "Septoria Leaf Spot",
+        "natural_farming": [
+            "jeevamrit",
+            "neemastra"
+        ],
+        "cultural": [
+            {
+                "action": "Strip the Lowest Leaves & Stake",
+                "emoji": "✂️",
+                "theme": "soft_pink",
+                "summary": "The fungus starts on the lowest leaves, splashed up from the soil. In HP trials at Palampur, staking with lower-leaf removal lowered disease.",
+                "how": "Tie plants to stakes and remove the spotted and ground-touching leaves on a dry day. Bag them and take them out of the field.",
+                "frequency": "Weekly in wet weather"
+            },
+            {
+                "action": "Give Plants Room",
+                "emoji": "↔️",
+                "theme": "sky_blue",
+                "summary": "Wider row spacing reduced severity in HP field trials because leaves dry faster.",
+                "how": "Keep to the wider end of the recommended spacing, and avoid working among wet plants.",
+                "frequency": "At transplanting"
+            },
+            {
+                "action": "Mulch the Soil",
+                "emoji": "🌾",
+                "theme": "soft_yellow",
+                "summary": "A 2-4 inch layer of mulch blocks the splash that carries spores from soil to leaves.",
+                "how": "After transplanting, spread straw, dry grass or pine needles 5-10 cm thick over the soil, keeping it off the stems.",
+                "frequency": "Refresh every 3-4 weeks"
+            },
+            {
+                "action": "Water the Roots, Not the Leaves",
+                "emoji": "💧",
+                "theme": "butter_yellow",
+                "summary": "The spots need long leaf wetness to develop.",
+                "how": "Water the soil at the base in the morning so leaves dry quickly.",
+                "frequency": "Whenever watering"
+            },
+            {
+                "action": "Rotate, Weed & Clean Up",
+                "emoji": "🔄",
+                "theme": "peach",
+                "summary": "The fungus winters on old debris and on wild nightshade-family weeds.",
+                "how": "Do not grow tomato or potato in the same plot for 3-4 years, pull out nightshade weeds and, after harvest, remove plant debris and plough the rest in.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Maize as a Neighbour",
+                "emoji": "🌽",
+                "theme": "mint_green",
+                "summary": "In HP trials, tomato intercropped with maize had less leaf spot than with beans or toria.",
+                "how": "Where space allows, grow maize rows alongside tomato instead of beans or mustard.",
+                "frequency": "At planting"
+            }
+        ],
+        "botanical": [],
+        "biological": [
+            {
+                "action": "Trichoderma Leaf Spray",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Foliar sprays of Trichoderma viride or T. harzianum reduced Septoria in hill-region trials, though less than chemical fungicide, so combine with the cultural steps.",
+                "how": "Mix the Trichoderma powder in clean water at the dose on the product pack and spray both sides of the leaves in the evening.",
+                "frequency": "Every 10-14 days"
+            }
+        ]
     }
 }

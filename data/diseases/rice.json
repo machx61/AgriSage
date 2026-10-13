@@ -51,5 +51,117 @@
             }
         ],
         "biological": []
+    },
+    "brown_spot": {
+        "name": "Brown Spot",
+        "natural_farming": [
+            "beejamrit",
+            "jeevamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Hot-Water Seed Treatment",
+                "emoji": "🌡️",
+                "theme": "peach",
+                "summary": "The fungus rides on the seed and can live in it for years, so clean seed protects the seedlings.",
+                "how": "Soak seed in cold water for 8 hours, then dip it in water held at 53-54 °C for 10-12 minutes. Cool in cold water and dry in shade before sowing.",
+                "frequency": "Before every sowing"
+            },
+            {
+                "action": "Healthy, Well-Fed Plants",
+                "emoji": "🌱",
+                "theme": "soft_yellow",
+                "summary": "Brown spot mainly attacks plants that are short of nutrients or stressed for water.",
+                "how": "Use well-rotted compost or green manure, avoid letting the field dry out at critical stages, and use seed from a healthy crop.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Silicon & Variety Choice",
+                "emoji": "🌾",
+                "theme": "butter_yellow",
+                "summary": "Rice on soils low in silicon is more prone to the disease, and some varieties tolerate it much better.",
+                "how": "Ask your KVK about tolerant local varieties, and about silicon-rich amendments if your soil is known to be low in silicon.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Clear Weeds & Stubble",
+                "emoji": "🧹",
+                "theme": "soft_pink",
+                "summary": "Weeds and old straw carry the fungus between seasons.",
+                "how": "Keep bunds free of weeds and remove or deep-bury diseased straw and stubble after harvest.",
+                "frequency": "Each season"
+            }
+        ],
+        "botanical": [],
+        "biological": [
+            {
+                "action": "Pseudomonas Seed Treatment & Seedling Dip",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Friendly bacteria on the seed and roots protect against brown spot; this is TNAU's recommended biocontrol.",
+                "how": "Treat seed with 10 g Pseudomonas fluorescens powder per kg of seed. For transplanted rice, also dip the seedling roots for 30 minutes in a suspension of the product at the pack dose.",
+                "frequency": "At sowing and at transplanting"
+            }
+        ]
+    },
+    "sheath_blight": {
+        "name": "Sheath Blight",
+        "natural_farming": [
+            "jeevamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Wider Spacing, Less Nitrogen",
+                "emoji": "↔️",
+                "theme": "soft_yellow",
+                "summary": "Dense, over-fed crops hold the humid air this fungus loves.",
+                "how": "Keep to the recommended spacing, avoid heavy urea or fresh dung, and split fertiliser into small portions.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Drain & Clear the Bunds",
+                "emoji": "💧",
+                "theme": "sky_blue",
+                "summary": "The fungus lives at the waterline and on weeds and floating debris.",
+                "how": "Drain the field briefly when lesions appear, remove weeds from bunds and skim floating plant debris out of the water.",
+                "frequency": "When first lesions appear"
+            },
+            {
+                "action": "Remove Infected Tillers",
+                "emoji": "✂️",
+                "theme": "soft_pink",
+                "summary": "Removing the first affected tillers slows the climb up the plant.",
+                "how": "Pull out tillers with greyish-green lesions near the water line and take them away from the field.",
+                "frequency": "At first sight"
+            }
+        ],
+        "botanical": [
+            {
+                "action": "Neem Cake Before Transplanting",
+                "emoji": "🪨",
+                "theme": "mint_green",
+                "summary": "Neem cake cut sheath blight in Indian trials, especially together with beneficial microbes.",
+                "how": "Broadcast neem cake at about 250 kg per hectare (roughly 100 kg per acre) and mix it into the puddled soil before transplanting.",
+                "frequency": "Once before planting"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Pseudomonas Seed & Leaf Programme",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Combining Pseudomonas seed treatment with two leaf sprays and neem cake cut disease by about 81% in a Tamil Nadu study.",
+                "how": "Treat seed with 10 g Pseudomonas fluorescens powder per kg. Then spray a 0.2% solution (2 g per litre of water) on the plants 30 and 45 days after transplanting.",
+                "frequency": "Seed treatment, then sprays at 30 and 45 days"
+            },
+            {
+                "action": "Trichoderma with Neem Cake",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Neem cake plus Trichoderma harzianum cut sheath blight by up to 57% in basmati rice.",
+                "how": "Mix Trichoderma harzianum culture into compost at the pack dose and apply it with the neem cake before transplanting.",
+                "frequency": "Once before planting"
+            }
+        ]
     }
 }

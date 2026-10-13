@@ -163,5 +163,64 @@
         "natural_farming": [
             "jeevamrit"
         ]
+    },
+    "basal_rot": {
+        "name": "Basal Rot",
+        "natural_farming": [
+            "jeevamrit"
+        ],
+        "cultural": [
+            {
+                "action": "Long Rotation",
+                "emoji": "🔄",
+                "theme": "soft_yellow",
+                "summary": "The fungus lives in the soil for years.",
+                "how": "Do not grow onion or garlic in the same plot for 4-5 years; follow with cereals, legumes or other non-hosts.",
+                "frequency": "Every season"
+            },
+            {
+                "action": "Summer Solarisation",
+                "emoji": "☀️",
+                "theme": "butter_yellow",
+                "summary": "Heating moist soil under plastic kills most of the fungus's resting spores.",
+                "how": "In hot months, wet the bed, cover it with clear 250-gauge polythene for about 30 days, then remove it and prepare the bed.",
+                "frequency": "Once in summer"
+            },
+            {
+                "action": "Drain Well, Avoid Wounds",
+                "emoji": "💧",
+                "theme": "sky_blue",
+                "summary": "Waterlogging and damaged roots let the rot in.",
+                "how": "Plant on raised beds, avoid over-watering, deep-plough in summer, and take care not to cut roots when weeding.",
+                "frequency": "Whole season"
+            },
+            {
+                "action": "Fresh Nursery Plot",
+                "emoji": "🌱",
+                "theme": "mint_green",
+                "summary": "Seedlings raised in an infected nursery carry the disease to the field.",
+                "how": "Raise seedlings on a plot that has not grown onion recently and discard yellowing seedlings with pink or rotting roots.",
+                "frequency": "Every nursery"
+            },
+            {
+                "action": "Discard Rotted Plants",
+                "emoji": "✂️",
+                "theme": "soft_pink",
+                "summary": "Infected plants rot from the base and the fungus spreads in the soil.",
+                "how": "Pull up plants with yellow leaves drying from the tip and a pink or soft brown, rotting base, and remove them from the field.",
+                "frequency": "At first sight"
+            }
+        ],
+        "botanical": [],
+        "biological": [
+            {
+                "action": "Trichoderma-Enriched Compost",
+                "emoji": "🍄",
+                "theme": "mint_green",
+                "summary": "Trichoderma-mixed compost gave the best yield in a field study on onion basal rot.",
+                "how": "Mix Trichoderma culture into well-rotted compost at the pack dose, keep it moist for about a week, and work it into the bed before transplanting (the study used about 500 kg of enriched compost per hectare).",
+                "frequency": "Once before planting"
+            }
+        ]
     }
 }
