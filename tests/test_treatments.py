@@ -51,6 +51,28 @@ class TreatmentCoverageTests(unittest.TestCase):
         self.assertIn("Yellow Rust", get_treatment_data("wheat_yellow_rust")["name"])
 
 
+class GroupTreatmentsTests(unittest.TestCase):
+    def test_placeholders_and_empty_cards_are_dropped(self):
+        from agrisage.treatments_db import group_treatments
+        grouped = group_treatments({
+            "cultural": [
+                {"action": "Ask a Local Elder", "how": "Consult local elders"},
+                {"action": "IKS Research Gap Identified", "summary": "gap"},
+                {"status": "gap_identified", "note": "no trial"},
+                {"action": "Rotate crops", "how": "Every 3 years"},
+            ],
+        })
+        self.assertEqual([c["action"] for c in grouped["cultural"]], ["Rotate crops"])
+
+    def test_no_shipped_treatment_shows_a_placeholder(self):
+        from agrisage.treatments_db import PLACEHOLDER_ACTIONS
+        for raw_class in DISEASE_DISPLAY_MAP:
+            cards = [c for section in get_treatment_data(raw_class).get("cultural", []) for c in [section]]
+            for card in cards:
+                with self.subTest(raw_class=raw_class):
+                    self.assertNotIn(card.get("action"), PLACEHOLDER_ACTIONS)
+
+
 class FormulationTests(unittest.TestCase):
     def test_every_formulation_is_a_complete_recipe_card(self):
         for key, card in load_formulations().items():

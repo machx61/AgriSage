@@ -60,6 +60,8 @@ _CLASSES = {
     "corn_banded_leaf_sheath_blight": ("Maize - Banded Leaf & Sheath Blight", ("maize", "banded_leaf_and_sheath_blight")),
     "corn_fall_armyworm": ("Maize - Fall Armyworm", ("maize", "fall_armyworm")),
     "corn_stalk_rot": ("Maize - Stalk Rot", ("maize", "stalk_rot")),
+    "corn_common_rust": ("Maize - Common Rust", ("maize", "common_rust")),
+    "corn_gray_leaf_spot": ("Maize - Gray Leaf Spot", ("maize", "gray_leaf_spot")),
 
     "cucumber_healthy": ("Cucumber - Healthy", None),
     "cucumber_downy_mildew": ("Cucumber - Downy Mildew", ("cucumber", "downy_mildew")),
@@ -97,6 +99,7 @@ _CLASSES = {
     "onion_downy_mildew": ("Onion - Downy Mildew", ("onion", "downy_mildew")),
     # Thrips on onion and garlic are managed the same way, so onion shares the garlic entry
     "onion_thrips": ("Onion - Thrips", ("garlic", "thrips")),
+    "onion_basal_rot": ("Onion - Basal Rot", ("onion", "basal_rot")),
 
     "pea_healthy": ("Pea - Healthy", None),
     "pea_powdery_mildew": ("Pea - Powdery Mildew", ("pea", "powdery_mildew")),
@@ -117,6 +120,8 @@ _CLASSES = {
     "rice_healthy": ("Rice - Healthy", None),
     "rice_bacterial_leaf_blight": ("Rice - Bacterial Leaf Blight & Blast", ("rice", "bacterial_leaf_blight")),
     "rice_hispa": ("Rice - Hispa", ("rice", "rice_hispa")),
+    "rice_brown_spot": ("Rice - Brown Spot", ("rice", "brown_spot")),
+    "rice_sheath_blight": ("Rice - Sheath Blight", ("rice", "sheath_blight")),
 
     "spinach_healthy": ("Spinach - Healthy", None),
     "spinach_downy_mildew": ("Spinach - Downy Mildew", ("spinach", "downy_mildew")),
@@ -126,6 +131,8 @@ _CLASSES = {
 
     "tomato_healthy": ("Tomato - Healthy", None),
     "tomato_leaf_curl_virus": ("Tomato - Leaf Curl Virus", ("tomato", "leaf_curl_virus")),
+    "tomato_bacterial_wilt": ("Tomato - Bacterial Wilt", ("tomato", "bacterial_wilt")),
+    "tomato_septoria_leaf_spot": ("Tomato - Septoria Leaf Spot", ("tomato", "septoria_leaf_spot")),
     "tomato_early_blight": ("Tomato - Early Blight", ("tomato", "early_blight")),
     # Same pathogen (Phytophthora infestans) as potato late blight, so it shares those treatments
     "tomato_late_blight": ("Tomato - Late Blight", ("potato", "late_blight")),
@@ -138,6 +145,8 @@ _CLASSES = {
     "wheat_powdery_mildew": ("Wheat - Powdery Mildew", ("wheat", "powdery_mildew")),
     "wheat_loose_smut": ("Wheat - Loose Smut", ("wheat", "loose_smut")),
     "wheat_karnal_bunt": ("Wheat - Karnal Bunt", ("wheat", "karnal_bunt")),
+    "wheat_brown_rust": ("Wheat - Brown (Leaf) Rust", ("wheat", "brown_rust")),
+    "wheat_aphid": ("Wheat - Aphid", ("wheat", "aphid")),
 }
 
 DISEASE_DISPLAY_MAP = {cls: display for cls, (display, _) in _CLASSES.items()}
@@ -148,6 +157,15 @@ SUPPORTED_CROPS = {cls.split("_")[0]: display.partition(" - ")[0] for cls, (disp
 # Special answers the diagnosis model may give instead of a supported class.
 UNSUPPORTED = "unsupported"
 NOT_A_LEAF = "not_a_leaf"
+# Given when the crop is one we support but the problem is not in our list.
+OTHER_DISEASE = "other_disease"
+# Given when the farmer named a crop but the photo clearly shows a different plant.
+CROP_MISMATCH = "crop_mismatch"
+
+
+def classes_for_crop(crop_key: str) -> list[str]:
+    """Diagnosis classes belonging to one crop, e.g. "corn" -> corn_healthy, corn_fall_armyworm, ..."""
+    return [cls for cls in _CLASSES if cls.split("_")[0] == crop_key]
 
 
 def display_name(raw_class: str) -> str:

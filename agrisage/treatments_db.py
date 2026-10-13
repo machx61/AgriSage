@@ -103,6 +103,34 @@ def resolve_formulations(treatment: dict) -> dict:
     return {**treatment, "natural_farming": cards}
 
 
+# Cards that only say "nothing is documented"; never shown to farmers
+PLACEHOLDER_ACTIONS = {"IKS Research Gap Identified", "Ask a Local Elder"}
+
+# Natural-farming recipes that are biological inputs rather than botanical sprays
+_BIOLOGICAL_KEYWORDS = ("jeevamrit", "beejamrit", "tonic", "coat", "microbe", "dung")
+
+
+def group_treatments(treatment: dict) -> dict[str, list[dict]]:
+    """Sort a treatment profile into botanical / biological / cultural cards,
+    dropping empty entries and placeholders."""
+    natural = treatment.get("natural_farming", [])
+    biological_natural = [c for c in natural
+                          if any(k in c.get("action", "").lower() for k in _BIOLOGICAL_KEYWORDS)]
+    botanical_natural = [c for c in natural if c not in biological_natural]
+    grouped = {
+        "botanical": treatment.get("botanical", []) + botanical_natural,
+        "biological": treatment.get("biological", []) + biological_natural,
+        "cultural": (treatment.get("cultural", []) + treatment.get("local_practice", [])
+                     + treatment.get("iks", [])),
+    }
+    return {
+        category: [c for c in cards
+                   if c.get("action") and c["action"] not in PLACEHOLDER_ACTIONS
+                   and (c.get("how") or c.get("summary"))]
+        for category, cards in grouped.items()
+    }
+
+
 def get_healthy_treatment() -> dict:
     return resolve_formulations(HEALTHY_TREATMENT)
 

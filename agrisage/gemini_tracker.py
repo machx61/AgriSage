@@ -6,13 +6,15 @@ so Gemini always returns parseable JSON with the expected keys.
 
 import json
 import time
+from concurrent.futures import ThreadPoolExecutor
+import threading
 from functools import lru_cache
 
 import httpx
 from google import genai
 from google.genai import errors, types
 
-from agrisage.disease_map import NOT_A_LEAF, UNSUPPORTED
+from agrisage.disease_map import CROP_MISMATCH, NOT_A_LEAF, OTHER_DISEASE, UNSUPPORTED
 
 # Tried in order; when one is overloaded the next one is used.
 MODELS = ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
@@ -23,13 +25,26 @@ STATUS_LABELS = ["improving", "stable", "worsening", "recovered"]
 _S = types.Schema
 _T = types.Type
 
+# Independent models asked up front; a third breaks a tie.
+VOTES_FIRST_ROUND = 2
+
 REQUEST_TIMEOUT_S = 40   # one request
 TOTAL_TIMEOUT_S = 90     # all attempts together, so the app never hangs
 
 
 @lru_cache(maxsize=4)
-def _client(api_key: str) -> genai.Client:
+def _build_client(api_key: str) -> genai.Client:
     return genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_S * 1000))
+
+
+def _client(api_key: str) -> genai.Client:
+    # lru_cache alone lets two threads each build a client on a miss; the one
+    # that loses is garbage-collected and closes the connection the other is using.
+    with _client_lock:
+        return _build_client(api_key)
+
+
+_client_lock = threading.Lock()
 
 
 class GeminiTimeout(Exception):
@@ -41,7 +56,9 @@ class GeminiTimeout(Exception):
 _RETRY_CODES = {429, 500, 503, 504}
 
 
-def _generate(api_key: str, prompt: str, images: list[bytes], schema: types.Schema) -> dict:
+def _generate(
+    api_key: str, prompt: str, images: list[bytes], schema: types.Schema, models: list[str] | None = None
+) -> dict:
     parts = [prompt] + [types.Part.from_bytes(data=img, mime_type="image/jpeg") for img in images]
     config = types.GenerateContentConfig(
         response_mime_type="application/json",
@@ -51,7 +68,7 @@ def _generate(api_key: str, prompt: str, images: list[bytes], schema: types.Sche
     deadline = time.monotonic() + TOTAL_TIMEOUT_S
     last_error = None
     for round_no in range(2):
-        for model in MODELS:
+        for model in models or MODELS:
             if time.monotonic() >= deadline:
                 raise last_error or GeminiTimeout()
             try:
@@ -89,19 +106,31 @@ def _clamp(value, low: int, high: int, default: int) -> int:
         return default
 
 
-def get_initial_diagnosis(api_key: str, image_jpeg: bytes, allowed_classes: list[str]) -> dict:
-    """Classify a leaf photo into one of `allowed_classes`.
+def _diagnose_once(
+    api_key: str, image_jpeg: bytes, allowed_classes: list[str], crop_name: str | None, models: list[str]
+) -> dict:
+    if crop_name:
+        crop_line = f"""The farmer says this plant is {crop_name}; take that as given unless the photo clearly shows a different kind of plant (then use "{CROP_MISMATCH}")."""
+        extra_classes = [OTHER_DISEASE, UNSUPPORTED, NOT_A_LEAF, CROP_MISMATCH]
+    else:
+        crop_line = "Work out which crop it is yourself."
+        extra_classes = [OTHER_DISEASE, UNSUPPORTED, NOT_A_LEAF]
 
-    Returns {"class": str, "confidence": int}. "class" can also be
-    UNSUPPORTED or NOT_A_LEAF. On failure it returns {"class": None, "error": str}.
-    """
     prompt = f"""
-You are an expert plant pathologist. Identify the crop and disease in this photo.
+You are an expert plant pathologist looking at a photo of a crop leaf or plant. {crop_line}
 
-Choose "class" from this list only:
+Do this in order:
+1. Describe what you see in "observations".
+2. Say which crop it is in "crop_seen" and what is wrong with it (or "healthy") in "diagnosis", using your own knowledge of
+   plant diseases, pests and disorders. Do NOT limit yourself to any list at this step: any disease, pest, nutrient
+   deficiency or disorder is allowed.
+3. Only then set "class". We keep verified treatments for a short list of conditions:
 {', '.join(allowed_classes)}
+   Use one of these only if your "diagnosis" is that same condition. If it is a different condition, or the photo does not
+   clearly fit, answer "{OTHER_DISEASE}" (supported crop, other problem) or "{UNSUPPORTED}" (crop not in the list).
+   A close match is not a match. Visible lesions, pests or virus symptoms are never "healthy".
 
-Tips for look-alikes:
+Reference notes for telling look-alikes apart:
 - Pick the crop first, then the disease. Capsicum covers bell pepper and chilli.
 - Powdery mildew: on capsicum the white growth is mainly on the underside of the leaf with yellow patches on top; on cucumber it is white powder on the top surface.
 - Cucumber downy mildew shows angular yellow spots bounded by veins; mosaic virus shows mottling with leaf distortion and no angular spots.
@@ -112,26 +141,99 @@ Tips for look-alikes:
 - Mustard Alternaria shows concentric brown rings; white rust shows raised creamy-white blisters; downy mildew shows grey-white patches underneath; powdery mildew is floury white on both sides. Pea powdery mildew is white powder mostly on top; pea rust is orange pustules underneath.
 - Cabbage-family black rot is a yellow V-shaped wedge from the leaf edge with black veins; Alternaria is brown spots with rings; downy mildew is yellow patches with grey mould underneath; diamondback moth makes small windows and holes with tiny green larvae; cabbage butterfly caterpillars are larger green larvae with yellow eggs.
 - Brinjal shoot_fruit_borer, little_leaf and bacterial_wilt are whole-plant problems (wilting shoots, tiny bunched leaves, sudden wilting).
+- Tomato bacterial wilt is sudden wilting of the whole plant or a shoot while the leaves are still green, with no spots; Septoria is many small round spots with dark edges, grey-white centres and tiny black dots on the lower leaves; early blight spots are larger with concentric rings; leaf curl virus curls and yellows the leaves.
+- Rice brown spot is oval brown spots with grey centres on leaves; sheath blight is large greenish-grey lesions on the sheath near the water line; bacterial leaf blight is yellow-white stripes from the leaf tip.
+- Maize common rust is brick-red powdery pustules on both leaf sides; gray leaf spot is long rectangular grey-tan lesions between veins; turcicum blight is long cigar-shaped grey-green lesions.
+- Wheat brown rust is small round orange-brown pustules scattered on leaves; yellow rust is yellow pustules in stripes along the veins; aphids are small green insect colonies on leaves and ears.
+- Onion basal rot is leaves yellowing and drying from the tip, with pink then rotting roots and a soft, brown base, sometimes with white mould.
 - If the photo is too unclear to separate two classes, use "{UNSUPPORTED}" instead of guessing.
 
-Use "{UNSUPPORTED}" if the crop or the disease is not in the list.
 Use "{NOT_A_LEAF}" if the photo does not show a plant.
-"confidence" is how sure you are, from 0 to 100.
+"observations" is one or two sentences: leaf shape, spot colour and pattern, which side of the leaf, any pests.
+"crop_seen" is the crop's common name, e.g. "Tomato".
+"diagnosis" is the common name of the disease, pest or disorder with the crop, e.g. "Tomato mosaic virus", or "healthy".
+"confidence" is how sure you are of your "class" answer, from 0 to 100.
 """
+    # The free-text fields come first so the model names the problem before it is steered to a listed class
     schema = _S(
         type=_T.OBJECT,
         properties={
-            "class": _S(type=_T.STRING, enum=list(allowed_classes) + [UNSUPPORTED, NOT_A_LEAF]),
+            "observations": _S(type=_T.STRING),
+            "crop_seen": _S(type=_T.STRING),
+            "diagnosis": _S(type=_T.STRING),
+            "class": _S(type=_T.STRING, enum=list(allowed_classes) + extra_classes),
             "confidence": _S(type=_T.INTEGER),
         },
-        required=["class", "confidence"],
+        property_ordering=["observations", "crop_seen", "diagnosis", "class", "confidence"],
+        required=["observations", "crop_seen", "diagnosis", "class", "confidence"],
     )
-    try:
-        result = _generate(api_key, prompt, [image_jpeg], schema)
-        return {"class": result["class"], "confidence": _clamp(result.get("confidence"), 0, 100, 50)}
-    except Exception as e:
-        print(f"GEMINI DIAGNOSIS ERROR: {e!r}")
-        return {"class": None, "error": friendly_error(e)}
+    result = _generate(api_key, prompt, [image_jpeg], schema, models)
+    return {
+        "class": result["class"],
+        "confidence": _clamp(result.get("confidence"), 0, 100, 50),
+        "name": str(result.get("diagnosis") or "").strip(),
+    }
+
+
+def get_initial_diagnosis(
+    api_key: str, image_jpeg: bytes, allowed_classes: list[str], crop_name: str | None = None
+) -> dict:
+    """Classify a leaf photo into one of `allowed_classes`.
+
+    `crop_name` is the crop the farmer says this is; `allowed_classes` should
+    then be limited to that crop's classes. Returns {"class", "confidence", "name"}.
+    "class" can also be OTHER_DISEASE (supported crop, problem not in the list;
+    "name" says what it looks like), UNSUPPORTED, NOT_A_LEAF, or CROP_MISMATCH
+    when a crop was given but the photo clearly shows another plant.
+
+    "confidence" combines two things: how many of the requested votes back the
+    winning class (independent models vote; two first, a third only when they
+    disagree) and how sure those winning models say they are. A lone or split
+    vote therefore lowers it, and it is not a rounded 100/67/33. When the votes are not unanimous the result also
+    carries "disagreed": True and the runner-up as "alternative".
+    On failure it returns {"class": None, "error": str}.
+    """
+    errors_seen: list[Exception] = []
+
+    def vote(index: int) -> dict | None:
+        try:
+            return _diagnose_once(api_key, image_jpeg, allowed_classes, crop_name,
+                                  MODELS[index:] + MODELS[:index])
+        except Exception as e:
+            print(f"GEMINI DIAGNOSIS ERROR: {e!r}")
+            errors_seen.append(e)
+            return None
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        votes = [v for v in pool.map(vote, range(VOTES_FIRST_ROUND)) if v]
+    requested = VOTES_FIRST_ROUND
+    if len({v["class"] for v in votes}) > 1 or len(votes) < VOTES_FIRST_ROUND:
+        third = vote(VOTES_FIRST_ROUND)
+        requested += 1
+        if third:
+            votes.append(third)
+
+    if not votes:
+        return {"class": None, "error": friendly_error(errors_seen[0])}
+
+    tally: dict[str, list[dict]] = {}
+    for v in votes:
+        tally.setdefault(v["class"], []).append(v)
+    # most votes first; the models' own stated confidence only breaks ties
+    ranked = sorted(tally.items(), key=lambda kv: (-len(kv[1]), -max(v["confidence"] for v in kv[1])))
+    winner, winner_votes = ranked[0]
+    result = {
+        "class": winner,
+        "confidence": round(
+            (len(winner_votes) / requested)
+            * sum(v["confidence"] for v in winner_votes) / len(winner_votes)
+        ),
+        "name": next((v["name"] for v in winner_votes if v["name"]), ""),
+    }
+    if len(winner_votes) < requested and len(ranked) > 1:
+        result["disagreed"] = True
+        result["alternative"] = ranked[1][0]
+    return result
 
 
 _ASSESSMENT_SCHEMA = _S(

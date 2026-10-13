@@ -16,7 +16,7 @@ def fake_client(payload=None, error=None):
 
 class GeminiTrackerTests(unittest.TestCase):
     def setUp(self):
-        gemini_tracker._client.cache_clear()
+        gemini_tracker._build_client.cache_clear()
 
     def patch_client(self, client):
         patcher = mock.patch.object(gemini_tracker, "_client", return_value=client)
@@ -27,10 +27,10 @@ class GeminiTrackerTests(unittest.TestCase):
         client = fake_client({"class": "rice_hispa", "confidence": 140})
         self.patch_client(client)
         result = gemini_tracker.get_initial_diagnosis("key", b"img", ["rice_hispa", "rice_healthy"])
-        self.assertEqual(result, {"class": "rice_hispa", "confidence": 100})
+        self.assertEqual(result, {"class": "rice_hispa", "confidence": 100, "name": ""})
 
         schema = client.models.generate_content.call_args.kwargs["config"].response_schema
-        self.assertEqual(schema.properties["class"].enum, ["rice_hispa", "rice_healthy", "unsupported", "not_a_leaf"])
+        self.assertEqual(schema.properties["class"].enum, ["rice_hispa", "rice_healthy", "other_disease", "unsupported", "not_a_leaf"])
 
     def test_diagnosis_error_returns_no_class(self):
         self.patch_client(fake_client(error=RuntimeError("quota exceeded")))
@@ -57,7 +57,7 @@ class GeminiTrackerTests(unittest.TestCase):
         client.models.generate_content.side_effect = [busy, ok]
         self.patch_client(client)
 
-        result = gemini_tracker.get_initial_diagnosis("key", b"img", ["rice_hispa"])
+        result = gemini_tracker._diagnose_once("key", b"img", ["rice_hispa"], None, gemini_tracker.MODELS)
         self.assertEqual(result["class"], "rice_hispa")
         models = [c.kwargs["model"] for c in client.models.generate_content.call_args_list]
         self.assertEqual(models, gemini_tracker.MODELS[:2])
@@ -69,7 +69,8 @@ class GeminiTrackerTests(unittest.TestCase):
             result = gemini_tracker.get_initial_diagnosis("key", b"img", ["rice_hispa"])
         self.assertIsNone(result["class"])
         self.assertIn("taking too long", result["error"])
-        self.assertEqual(client.models.generate_content.call_count, 2 * len(gemini_tracker.MODELS))
+        # two rounds over every model, for each of the three votes (two, plus the tie-breaker)
+        self.assertEqual(client.models.generate_content.call_count, 3 * 2 * len(gemini_tracker.MODELS))
 
     def test_assessment_without_photo_returns_fallback(self):
         client = fake_client({})

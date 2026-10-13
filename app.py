@@ -14,8 +14,10 @@ from agrisage import db, ui, disease_map
 importlib.reload(ui)
 importlib.reload(disease_map)
 from agrisage.db import now_ist
-from agrisage.treatments_db import DEFAULT_TREATMENT, get_treatment_data, THEME_COLORS
-from agrisage.disease_map import DISEASE_DISPLAY_MAP, NOT_A_LEAF, SUPPORTED_CROPS, UNSUPPORTED, display_name
+from agrisage.treatments_db import DEFAULT_TREATMENT, THEME_COLORS, get_treatment_data, group_treatments
+from agrisage.disease_map import (
+    CROP_MISMATCH, DISEASE_DISPLAY_MAP, NOT_A_LEAF, OTHER_DISEASE, SUPPORTED_CROPS, UNSUPPORTED, classes_for_crop, display_name,
+)
 from agrisage.diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
 from agrisage.gemini_tracker import analyze_progress, get_initial_assessment, get_initial_diagnosis
 from agrisage.images import make_jpeg
@@ -111,10 +113,16 @@ with st.container(key="card_scan"):
                 st.session_state.camera_active = False
                 st.rerun()
 
-    try:
+    crop_names = sorted(SUPPORTED_CROPS.values())
+    crop_choice = st.selectbox(
+        "Which crop is this? (optional)", crop_names, index=None,
+        placeholder="Not sure - let AgriSage detect it",
+        help="Telling us the crop makes the diagnosis more accurate.",
+    )
+    selected_crop = next((key for key, name in SUPPORTED_CROPS.items() if name == crop_choice), None)
+
+    with st.expander("Supported crops"):
         st.markdown(ui.supported_crops(SUPPORTED_CROPS), unsafe_allow_html=True)
-    except Exception:
-        pass
 
 
 def elevation_zone_for(elevation):
@@ -183,23 +191,10 @@ def create_pdf(raw_class):
         "cultural": "Cultural Practices & Traditional Knowledge",
     }
 
-    nf_cards = treatment_info.get("natural_farming", [])
-    nf_bio = [c for c in nf_cards if any(k in c.get("action", "").lower() for k in ("jeevamrit", "beejamrit", "tonic", "coat", "microbe", "dung"))]
-    nf_bot = [c for c in nf_cards if c not in nf_bio]
-
-    merged_treatment = {
-        "botanical": treatment_info.get("botanical", []) + nf_bot,
-        "biological": treatment_info.get("biological", []) + nf_bio,
-        "cultural": (
-            treatment_info.get("cultural", [])
-            + treatment_info.get("local_practice", [])
-            + treatment_info.get("iks", [])
-        ),
-    }
+    merged_treatment = group_treatments(treatment_info)
 
     for cat, label in category_labels.items():
-        items = merged_treatment.get(cat, [])
-        valid_items = [i for i in items if i.get('status') != 'gap_identified' and i.get('action') != 'IKS Research Gap Identified']
+        valid_items = merged_treatment.get(cat, [])
         if not valid_items:
             continue
 
@@ -254,26 +249,27 @@ END:VEVENT
 END:VCALENDAR"""
     return ics_content
 
-def get_upload_signature(files):
-    """Return a stable identifier for the images currently in the uploader."""
+def get_upload_signature(files, crop_key=None):
+    """Return a stable identifier for the images and crop currently selected."""
     digest = hashlib.sha256()
+    digest.update((crop_key or "").encode("utf-8"))
     for uploaded_file in files:
         digest.update(uploaded_file.name.encode("utf-8", errors="replace"))
         digest.update(uploaded_file.getvalue())
     return digest.hexdigest()
 
 
-def diagnose_image(name, image_bytes, allowed_classes):
+def diagnose_image(name, image_bytes, allowed_classes, crop_name):
     """Resize one photo and ask Gemini for a diagnosis. Runs in a worker thread,
     so it must not call any st.* functions."""
     try:
         jpeg = make_jpeg(image_bytes, 800)
     except Exception as exc:
         return name, None, {"class": None, "error": f"not a readable image ({exc})"}
-    return name, jpeg, get_initial_diagnosis(gemini_api_key, jpeg, allowed_classes)
+    return name, jpeg, get_initial_diagnosis(gemini_api_key, jpeg, allowed_classes, crop_name)
 
 
-upload_signature = get_upload_signature(images_to_process) if images_to_process else None
+upload_signature = get_upload_signature(images_to_process, selected_crop) if images_to_process else None
 photo_count = len(images_to_process)
 analyze_requested = st.button(
     f"🔍 Diagnose {photo_count} photo{'s' if photo_count != 1 else ''}" if photo_count else "🔍 Diagnose leaf",
@@ -286,11 +282,12 @@ if analyze_requested:
     predictions = []
     confidences = []
     tracking_photo = None
-    allowed_classes = list(DISEASE_DISPLAY_MAP.keys())
+    crop_name = SUPPORTED_CROPS[selected_crop] if selected_crop else None
+    allowed_classes = classes_for_crop(selected_crop) if selected_crop else list(DISEASE_DISPLAY_MAP)
     with st.spinner("🔬 Examining your leaf…"):
         with ThreadPoolExecutor(max_workers=4) as pool:
             results = list(pool.map(
-                lambda f: diagnose_image(f.name, f.getvalue(), allowed_classes),
+                lambda f: diagnose_image(f.name, f.getvalue(), allowed_classes, crop_name),
                 images_to_process,
             ))
 
@@ -300,10 +297,22 @@ if analyze_requested:
             st.error(f"⚠️ Could not analyze '{name}': {result.get('error', 'unknown error')}")
         elif raw_class == NOT_A_LEAF:
             st.warning(f"🍃 '{name}' doesn't look like a plant. Please take a clear photo of a leaf.")
+        elif raw_class == CROP_MISMATCH:
+            st.warning(f"🌱 '{name}' doesn't look like {crop_name}. Check the crop you selected, or clear "
+                       f"the selection and let AgriSage detect it.")
+        elif raw_class == OTHER_DISEASE:
+            what = f" like **{result['name']}**" if result.get("name") else " like a problem"
+            st.warning(f"🔎 '{name}' looks{what}, which is not in our database yet, so we have no verified "
+                       f"treatment for it. Please show the plant to your nearest Krishi Vigyan Kendra or "
+                       f"agriculture officer.")
         elif raw_class == UNSUPPORTED:
-            st.warning(f"🌾 We couldn't match '{name}' to a supported crop or disease. Check that it is one of the "
-                       f"{len(SUPPORTED_CROPS)} crops listed above, or try a closer, clearer photo.")
+            guess = f" It may be {result['name']}." if result.get("name") else ""
+            st.warning(f"🌾 We couldn't match '{name}' to a supported crop or disease.{guess} Check that it is one of the "
+                       f"{len(SUPPORTED_CROPS)} supported crops, or try a closer, clearer photo.")
         else:
+            if result.get("disagreed"):
+                st.warning(f"🤔 The checks of '{name}' did not fully agree: {display_name(raw_class)} won over "
+                           f"{display_name(result['alternative'])}. Please confirm with a clearer, closer photo.")
             predictions.append(raw_class)
             confidences.append(float(result["confidence"]))
             if tracking_photo is None:
@@ -356,26 +365,9 @@ TREATMENT_CATEGORIES = [  # (key, tab label, default card theme)
 ]
 
 
-def usable_items(items):
-    """Drop empty or placeholder entries."""
-    return [i for i in items if i.get('action') and i.get('action') != 'IKS Research Gap Identified' and (i.get('how') or i.get('summary'))]
-
-
 def render_treatments(treatment_info, fertilizer, watering):
-    nf_cards = treatment_info.get("natural_farming", [])
-    nf_bio = [c for c in nf_cards if any(k in c.get("action", "").lower() for k in ("jeevamrit", "beejamrit", "tonic", "coat", "microbe", "dung"))]
-    nf_bot = [c for c in nf_cards if c not in nf_bio]
-
-    by_category = {
-        "botanical": treatment_info.get("botanical", []) + nf_bot,
-        "biological": treatment_info.get("biological", []) + nf_bio,
-        "cultural": (
-            treatment_info.get("cultural", [])
-            + treatment_info.get("local_practice", [])
-            + treatment_info.get("iks", [])
-        ),
-    }
-    categories = [(key, label, theme, usable_items(by_category[key]))
+    by_category = group_treatments(treatment_info)
+    categories = [(key, label, theme, by_category[key])
                   for key, label, theme in TREATMENT_CATEGORIES]
     categories = [c for c in categories if c[3]]
     if not categories:
