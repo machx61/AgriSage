@@ -10,7 +10,9 @@
                 "summary": "Plant a friendly leafy hedge of Bana right beside your baby rice nursery to keep bugs and disease away!",
                 "how": "Plant Bana (Vitex negundo) alongside the paddy nursery bed.",
                 "frequency": "Once at nursery establishment"
-            },
+            }
+        ],
+        "biological": [
             {
                 "action": "Ramban River Gate Guardian",
                 "emoji": "🌊",
@@ -33,11 +35,12 @@
                 "how": "Apply ankharein leaves to control rice hispa, following local farmer practice in Kangra and Hamirpur.",
                 "frequency": "As needed"
             }
-        ]
+        ],
+        "biological": []
     },
     "post_harvest_storage": {
         "name": "Post-Harvest Grain Storage Protection",
-        "local_practice": [
+        "cultural": [
             {
                 "action": "Perru Bamboo Basket Home",
                 "emoji": "🧺",
@@ -46,6 +49,7 @@
                 "how": "Store harvested paddy and finger millet grain in large spindle-shaped bamboo baskets, locally called 'Perru'.",
                 "frequency": "At harvest/storage time"
             }
-        ]
+        ],
+        "biological": []
     }
 }

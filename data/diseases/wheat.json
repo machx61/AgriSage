@@ -540,7 +540,7 @@
     "storage_stage_protection": {
         "name": "Storage-Stage Protection (Post-Harvest)",
         "category_note": "Distinct from field diseases above \u2014 protects stored wheat grain from fungal spoilage and insect pests, not from field-stage diseases like rust or smut.",
-        "local_practice": [
+        "cultural": [
             {
                 "action": "Bangru Mint Blanket",
                 "emoji": "\ud83c\udf3f",

@@ -174,19 +174,25 @@ def create_pdf(raw_class):
     category_labels = {
         "botanical": "Botanical Solutions",
         "biological": "Biological Solutions",
-        "cultural": "Cultural Practices & Garden Care",
-        "natural_farming": "Natural Farming Formulations (Prakritik Kheti)",
-        "iks": "Indigenous Knowledge (IKS)",
+        "cultural": "Cultural Practices & Traditional Knowledge",
     }
 
-    # Merge local_practice into cultural for PDF
-    if "local_practice" in treatment_info:
-        combined_cultural = treatment_info.get("cultural", []) + treatment_info.get("local_practice", [])
-        treatment_info = dict(treatment_info)  # shallow copy
-        treatment_info["cultural"] = combined_cultural
+    nf_cards = treatment_info.get("natural_farming", [])
+    nf_bio = [c for c in nf_cards if any(k in c.get("action", "").lower() for k in ("jeevamrit", "beejamrit", "tonic", "coat", "microbe", "dung"))]
+    nf_bot = [c for c in nf_cards if c not in nf_bio]
+
+    merged_treatment = {
+        "botanical": treatment_info.get("botanical", []) + nf_bot,
+        "biological": treatment_info.get("biological", []) + nf_bio,
+        "cultural": (
+            treatment_info.get("cultural", [])
+            + treatment_info.get("local_practice", [])
+            + treatment_info.get("iks", [])
+        ),
+    }
 
     for cat, label in category_labels.items():
-        items = treatment_info.get(cat, [])
+        items = merged_treatment.get(cat, [])
         valid_items = [i for i in items if i.get('status') != 'gap_identified' and i.get('action') != 'IKS Research Gap Identified']
         if not valid_items:
             continue
@@ -341,8 +347,6 @@ TREATMENT_CATEGORIES = [  # (key, tab label, default card theme)
     ("botanical", "🌿 Botanical", "pastel_green"),
     ("biological", "✨ Biological", "mint_green"),
     ("cultural", "🌾 Cultural", "soft_yellow"),
-    ("natural_farming", "🐄 Natural Farming", "butter_yellow"),
-    ("iks", "📜 Traditional", "lavender"),
 ]
 
 
@@ -352,13 +356,18 @@ def usable_items(items):
 
 
 def render_treatments(treatment_info, fertilizer, watering):
+    nf_cards = treatment_info.get("natural_farming", [])
+    nf_bio = [c for c in nf_cards if any(k in c.get("action", "").lower() for k in ("jeevamrit", "beejamrit", "tonic", "coat", "microbe", "dung"))]
+    nf_bot = [c for c in nf_cards if c not in nf_bio]
+
     by_category = {
-        "botanical": treatment_info.get("botanical", []),
-        "biological": treatment_info.get("biological", []),
-        # local_practice entries are shown together with cultural ones
-        "cultural": treatment_info.get("cultural", []) + treatment_info.get("local_practice", []),
-        "natural_farming": treatment_info.get("natural_farming", []),
-        "iks": treatment_info.get("iks", []),
+        "botanical": treatment_info.get("botanical", []) + nf_bot,
+        "biological": treatment_info.get("biological", []) + nf_bio,
+        "cultural": (
+            treatment_info.get("cultural", [])
+            + treatment_info.get("local_practice", [])
+            + treatment_info.get("iks", [])
+        ),
     }
     categories = [(key, label, theme, usable_items(by_category[key]))
                   for key, label, theme in TREATMENT_CATEGORIES]

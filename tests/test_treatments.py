@@ -11,7 +11,7 @@ from agrisage.treatments_db import (
 )
 from agrisage.ui import CROP_EMOJI
 
-SECTIONS = ["cultural", "biological", "botanical", "natural_farming", "local_practice", "iks"]
+SECTIONS = ["cultural", "biological", "botanical", "natural_farming"]
 
 
 class TreatmentCoverageTests(unittest.TestCase):

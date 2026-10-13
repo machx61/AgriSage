@@ -445,12 +445,6 @@
                     "safety_notes": []
                 }
             }
-        ],
-        "local_practice": [
-            {
-                "status": "gap_identified",
-                "note": "No HP-district-specific traditional practice found specifically for BLSB. Worth asking directly in farmer interviews."
-            }
         ]
     },
     "turcicum_leaf_blight": {
@@ -793,12 +787,6 @@
                     ]
                 }
             }
-        ],
-        "local_practice": [
-            {
-                "status": "gap_identified",
-                "note": "No HP-district-specific traditional practice found specifically for turcicum leaf blight. Flagged for farmer interviews."
-            }
         ]
     },
     "fall_armyworm": {
@@ -854,9 +842,7 @@
                     "expected_results_timeline": "Resistance built in from germination.",
                     "safety_notes": []
                 }
-            }
-        ],
-        "local_practice": [
+            },
             {
                 "action": "Smoky Kitchen Cob Hang",
                 "emoji": "💨",

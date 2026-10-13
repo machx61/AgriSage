@@ -122,6 +122,15 @@
                 "how": "Deep summer ploughing and ploughing just after harvest expose grubs, pupae and hibernating adults; collect and destroy adult beetles. Early-sown crops may need re-sowing if seedlings are eaten.",
                 "frequency": "Pre-season and weekly",
                 "evidence": "NIPHM-Cucurbits; TNAU Agritech."
+            },
+            {
+                "action": "Ash Dusting",
+                "emoji": "🪵",
+                "theme": "lavender",
+                "summary": "A traditional ash dust on seedlings!",
+                "how": "Dust wood ash on dew-wet seedlings in the early morning.",
+                "frequency": "When beetles appear",
+                "evidence": "Documented in tribal and UP inventories of indigenous practices, not specifically HP; no dose or efficacy measured."
             }
         ],
         "botanical": [
@@ -137,17 +146,6 @@
         ],
         "natural_farming": [
             "neemastra"
-        ],
-        "iks": [
-            {
-                "action": "Ash Dusting",
-                "emoji": "🪵",
-                "theme": "lavender",
-                "summary": "A traditional ash dust on seedlings!",
-                "how": "Dust wood ash on dew-wet seedlings in the early morning.",
-                "frequency": "When beetles appear",
-                "evidence": "Documented in tribal and UP inventories of indigenous practices, not specifically HP; no dose or efficacy measured."
-            }
         ]
     },
     "leaf_miner": {

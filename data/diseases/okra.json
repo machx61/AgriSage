@@ -54,19 +54,7 @@
                 "summary": "A gentle neem mist keeps whitefly numbers down and virus spread slower!",
                 "how": "Apply a neem-based product spray around sowing time and repeat regularly.",
                 "frequency": "Every 7-10 days"
-            }
-        ],
-        "local_practice": [
-            {
-                "action": "Cow Urine Splash",
-                "emoji": "🐄",
-                "theme": "soft_yellow",
-                "summary": "A traditional cow urine spray farmers trust to keep plants strong and pests away!",
-                "how": "Spray 10% cow urine solution on the plant.",
-                "frequency": "3 times, at 10-day intervals"
-            }
-        ],
-        "iks": [
+            },
             {
                 "action": "Nimastra Neem Ferment",
                 "emoji": "🧪",
@@ -75,6 +63,16 @@
                 "how": "Ferment 5kg crushed neem leaves + 100L water + 5L cow urine + 2kg fresh cow dung, stirring twice daily for 48 hours in shade, then strain. Makes enough for 1 acre.",
                 "frequency": "Spray within 2 days of preparation",
                 "confidence": "documented_traditional_formulation_general_pest_deterrent"
+            }
+        ],
+        "biological": [
+            {
+                "action": "Cow Urine Splash",
+                "emoji": "🐄",
+                "theme": "soft_yellow",
+                "summary": "A traditional cow urine spray farmers trust to keep plants strong and pests away!",
+                "how": "Spray 10% cow urine solution on the plant.",
+                "frequency": "3 times, at 10-day intervals"
             }
         ]
     },
@@ -159,7 +157,7 @@
                 "frequency": "Every 15 days"
             }
         ],
-        "local_practice": [
+        "biological": [
             {
                 "action": "Beejamrit & Panchagavya Combo",
                 "emoji": "✨",
@@ -235,14 +233,7 @@
                 "how": "Apply neem leaf/seed extract at sowing/early seedling stage.",
                 "frequency": "At sowing/early seedling stage"
             }
-        ],
-        "local_practice": [
-            {
-                "status": "gap_identified",
-                "note": "No documented local/IKS practice found specifically for okra damping-off. A strong candidate for direct farmer interviews."
-            }
-        ],
-        "iks": []
+        ]
     },
     "fusarium_wilt": {
         "name": "Fusarium Wilt",
@@ -292,14 +283,7 @@
                 "how": "Apply neem leaf aqueous extract at sowing and during early growth.",
                 "frequency": "At sowing, repeat as needed during early growth"
             }
-        ],
-        "local_practice": [
-            {
-                "status": "gap_identified",
-                "note": "No documented local/IKS practice found specifically for okra Fusarium wilt. Flagged for farmer interviews."
-            }
-        ],
-        "iks": []
+        ]
     },
     "powdery_mildew": {
         "name": "Powdery Mildew",
@@ -346,7 +330,7 @@
                 "frequency": "Repeat as needed"
             }
         ],
-        "local_practice": [
+        "biological": [
             {
                 "action": "Cow Urine Splash",
                 "emoji": "🐄",
@@ -355,17 +339,11 @@
                 "how": "Spray 10% cow urine solution on the plant.",
                 "frequency": "3 times, at 10-day intervals"
             }
-        ],
-        "iks": [
-            {
-                "status": "not_confirmed",
-                "note": "No classical-text-specific formula identified for okra powdery mildew (okra postdates Vrikshayurveda). General tonics like Panchagavya/Nimastra could reasonably be tested here as a hypothesis, but aren't confirmed against this disease specifically in our sources."
-            }
         ]
     },
     "general_preventive_formulations": {
         "name": "General Preventive Traditional Formulations (Multi-Disease)",
-        "iks": [
+        "cultural": [
             {
                 "action": "Nimastra Neem Ferment",
                 "emoji": "🧪",
