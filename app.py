@@ -116,7 +116,7 @@ with st.container(key="card_scan"):
     crop_names = sorted(SUPPORTED_CROPS.values())
     crop_choice = st.selectbox(
         "Which crop is this? (optional)", crop_names, index=None,
-        placeholder="Not sure - let AgriSage detect it",
+        placeholder="Select your crop",
         help="Telling us the crop makes the diagnosis more accurate.",
     )
     selected_crop = next((key for key, name in SUPPORTED_CROPS.items() if name == crop_choice), None)
@@ -299,7 +299,7 @@ if analyze_requested:
             st.warning(f"🍃 '{name}' doesn't look like a plant. Please take a clear photo of a leaf.")
         elif raw_class == CROP_MISMATCH:
             st.warning(f"🌱 '{name}' doesn't look like {crop_name}. Check the crop you selected, or clear "
-                       f"the selection and let AgriSage detect it.")
+                       f"the selection to detect it automatically.")
         elif raw_class == OTHER_DISEASE:
             what = f" like **{result['name']}**" if result.get("name") else " like a problem"
             st.warning(f"🔎 '{name}' looks{what}, which is not in our database yet, so we have no verified "
