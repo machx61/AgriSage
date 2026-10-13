@@ -15,7 +15,7 @@ from google.genai import errors, types
 from agrisage.disease_map import NOT_A_LEAF, UNSUPPORTED
 
 # Tried in order; when one is overloaded the next one is used.
-MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.5-flash"]
+MODELS = ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
 MODEL = MODELS[0]
 
 STATUS_LABELS = ["improving", "stable", "worsening", "recovered"]
