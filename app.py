@@ -10,8 +10,9 @@ import requests
 import streamlit as st
 from streamlit_js_eval import get_geolocation
 
-from agrisage import db, ui
+from agrisage import db, ui, disease_map
 importlib.reload(ui)
+importlib.reload(disease_map)
 from agrisage.db import now_ist
 from agrisage.treatments_db import DEFAULT_TREATMENT, get_treatment_data, THEME_COLORS
 from agrisage.disease_map import DISEASE_DISPLAY_MAP, NOT_A_LEAF, SUPPORTED_CROPS, UNSUPPORTED, display_name
@@ -110,15 +111,10 @@ with st.container(key="card_scan"):
                 st.session_state.camera_active = False
                 st.rerun()
 
-    if hasattr(ui, "supported_crops"):
+    try:
         st.markdown(ui.supported_crops(SUPPORTED_CROPS), unsafe_allow_html=True)
-    else:
-        names = sorted(SUPPORTED_CROPS.items(), key=lambda crop: crop[1])
-        emoji_map = getattr(ui, "CROP_EMOJI", {})
-        esc_fn = getattr(ui, "esc", lambda s: str(s))
-        chips_fn = getattr(ui, "chips", lambda items, tone="": " ".join(items))
-        items = [f"{emoji_map.get(key, '🌿')} {esc_fn(name)}" for key, name in names]
-        st.markdown(f'<div class="crops"><div class="crops-label">Works with {len(items)} crops</div>{chips_fn(items, "soft")}</div>', unsafe_allow_html=True)
+    except Exception:
+        pass
 
 
 def elevation_zone_for(elevation):

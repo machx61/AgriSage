@@ -307,10 +307,23 @@ def chips(items: list[str], tone: str = "") -> str:
     return '<div class="chips">' + "".join(f'<span class="chip {tone}">{i}</span>' for i in items) + "</div>"
 
 
-def supported_crops(crops: dict[str, str]) -> str:
-    """Chip list of supported crops. `crops` maps a crop key to the name shown in results."""
-    names = sorted(crops.items(), key=lambda crop: crop[1])
-    items = [f"{CROP_EMOJI.get(key, '🌿')} {esc(name)}" for key, name in names]
+def supported_crops(crops) -> str:
+    """Chip list of supported crops. `crops` can be a dict (key -> name) or list/iterable of crop names."""
+    if isinstance(crops, dict):
+        names = sorted(crops.items(), key=lambda crop: crop[1])
+        items = [f"{CROP_EMOJI.get(key, '🌿')} {esc(name)}" for key, name in names]
+    elif isinstance(crops, (list, tuple, set)):
+        items = []
+        for c in sorted(crops, key=lambda x: str(x)):
+            if isinstance(c, tuple) and len(c) == 2:
+                key, name = c
+                items.append(f"{CROP_EMOJI.get(key, '🌿')} {esc(name)}")
+            else:
+                name = str(c)
+                key = name.lower().split()[0]
+                items.append(f"{CROP_EMOJI.get(key, '🌿')} {esc(name)}")
+    else:
+        items = [f"🌿 {esc(str(crops))}"]
     return f'<div class="crops"><div class="crops-label">Works with {len(items)} crops</div>{chips(items, "soft")}</div>'
 
 
