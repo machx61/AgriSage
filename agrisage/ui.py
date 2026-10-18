@@ -5,6 +5,8 @@ import html
 
 import streamlit as st
 
+from agrisage import auth
+
 CROP_EMOJI = {"apple": "🍎", "brinjal": "🍆", "cabbage": "🥬", "capsicum": "🫑", "carrot": "🥕", "cauliflower": "🥦",
               "corn": "🌽", "cucumber": "🥒", "garlic": "🧄", "mustard": "🌼", "okra": "🫛", "onion": "🧅",
               "pea": "🫛", "potato": "🥔", "rice": "🍚", "spinach": "🥬", "tomato": "🍅", "wheat": "🌾"}
@@ -76,6 +78,35 @@ footer, #viewerBadge, [data-testid="stHeaderActionElements"], [data-testid="stTo
 }
 .brand-name { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; color: var(--forest); line-height: 1.05; }
 .brand-tag { font-size: .8rem; color: var(--ink-soft); margin-top: 2px; }
+
+/* ---------- Account control (top right, in line with the brand) ---------- */
+[data-testid="stMainBlockContainer"] { position: relative; }
+.brand { padding-right: 112px; }
+[class*="st-key-account_"] { position: absolute; top: 1.55rem; right: 1.25rem; z-index: 60; width: auto !important; }
+[class*="st-key-account_"] [data-testid="stElementContainer"] { width: auto !important; }
+[class*="st-key-account_"] button {
+  border-radius: 999px; padding: 6px 14px; min-height: 0; font-weight: 700; font-size: .9rem;
+  background: var(--card); border: 1px solid var(--line); color: var(--ink); box-shadow: var(--shadow);
+}
+[class*="st-key-account_"] button:hover { border-color: var(--leaf); color: var(--forest); }
+[class*="st-key-account_"] button p { font-weight: 700; font-size: .9rem; margin: 0; }
+.st-key-account_guest button { background: var(--forest); border-color: var(--forest); color: #fff; }
+.st-key-account_guest button:hover { background: #255633; border-color: #255633; color: #fff; }
+.st-key-account_guest button p { color: #fff; }
+[data-testid="stPopoverBody"] { width: min(340px, calc(100vw - 32px)); border-radius: var(--radius); padding: 16px; }
+.acct-hello { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin: 0; }
+.acct-sub { font-size: .82rem; color: var(--ink-soft); margin: 2px 0 10px; }
+.acct-who { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.acct-avatar {
+  width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  background: var(--leaf-tint); color: var(--forest); font-weight: 700; font-size: 1.05rem;
+}
+.acct-name { font-weight: 700; color: var(--ink); line-height: 1.15; word-break: break-all; }
+.acct-note { font-size: .78rem; color: var(--ink-soft); }
+@media (max-width: 480px) {
+  .brand-tag { display: none; }
+  .brand { padding-right: 96px; }
+}
 
 /* ---------- Navigation (pill switcher; bottom tab bar on phones) ---------- */
 .st-key-nav [data-testid="stHorizontalBlock"] {
@@ -286,6 +317,29 @@ def header(active: str):
                     st.markdown(f'<div class="nav-active">{icon} {label}</div>', unsafe_allow_html=True)
                 else:
                     st.page_link(page, label=label, icon=icon, use_container_width=True)
+
+
+def account_bar(user: dict | None, active: str = ""):
+    """Top-right account control: a Log in pill for guests, a name menu with Log out for members."""
+    if user:
+        name = user["username"]
+        with st.container(key="account_user"):
+            with st.popover(f"👤 {name[:14]}"):
+                st.markdown(f"""
+                <div class="acct-who">
+                  <div class="acct-avatar">{html.escape(name[:1].upper())}</div>
+                  <div><div class="acct-name">{html.escape(name)}</div>
+                  <div class="acct-note">Your scans and plants are saved to this account</div></div>
+                </div>""", unsafe_allow_html=True)
+                if st.button("Log out", key="logout_btn", use_container_width=True):
+                    auth.logout()
+    else:
+        with st.container(key="account_guest"):
+            with st.popover("Log in"):
+                st.markdown('<div class="acct-hello">Welcome to AgriSage</div>'
+                            '<div class="acct-sub">Log in to save your scan history and track plants.</div>',
+                            unsafe_allow_html=True)
+                auth.render_login_form("account")
 
 
 def esc(text) -> str:

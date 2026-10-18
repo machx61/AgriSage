@@ -1,7 +1,6 @@
 # app.py
 import datetime
 import hashlib
-import sqlite3
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 
@@ -10,7 +9,7 @@ import requests
 import streamlit as st
 from streamlit_js_eval import get_geolocation
 
-from agrisage import db, ui, disease_map
+from agrisage import auth, db, ui, disease_map
 importlib.reload(ui)
 importlib.reload(disease_map)
 from agrisage.db import now_ist
@@ -21,7 +20,6 @@ from agrisage.disease_map import (
 from agrisage.diagnosis_utils import reminder_days_from_frequency, select_consensus_prediction
 from agrisage.gemini_tracker import analyze_progress, get_initial_assessment, get_initial_diagnosis
 from agrisage.images import make_jpeg
-from agrisage.session import get_device_id
 
 db.init_db()
 
@@ -58,7 +56,8 @@ except FileNotFoundError:
     gemini_api_key = ""
 
 ui.header("scan")
-device_id = get_device_id("device_id")
+user = auth.get_current_user()
+ui.account_bar(user, "scan")
 
 if not gemini_api_key:
     st.error("Diagnosis is unavailable right now. Please try again later.")
@@ -327,10 +326,11 @@ if analyze_requested:
             "photo": tracking_photo,
             "photo_count": len(predictions),
         }
-        try:
-            db.save_scan(device_id, final_raw_class, display_name(final_raw_class), final_confidence)
-        except sqlite3.Error as exc:
-            st.warning(f"The diagnosis was completed, but its history could not be saved: {exc}")
+        if user:
+            try:
+                db.save_scan(user["id"], final_raw_class, display_name(final_raw_class), final_confidence)
+            except Exception as exc:
+                st.warning(f"The diagnosis was completed, but its history could not be saved: {exc}")
     else:
         st.session_state.pop("last_analysis", None)
         st.error("No image could be diagnosed. Please try a clear, close photo of a single leaf.")
@@ -431,75 +431,82 @@ if analysis and (analysis.get("upload_signature") == upload_signature or analysi
     render_treatments(treatment_info, fertilizer_usage, watering_pattern)
 
     # --- Plant Tracking ---
-    existing_plants = db.get_tracked_plants(device_id)
+    existing_plants = db.get_tracked_plants(user["id"]) if user else []
 
     with st.container(key="card_track"):
         ui.section("Track this plant", "Get a health score, progress notes and check-in reminders.")
-        track_tab, link_tab = st.tabs(["🆕 New plant", "📎 Existing plant"])
+        if user is None:
+            auth.login_prompt("Log in to track this plant and get check-in reminders.", "track")
+        else:
+            track_tab, link_tab = st.tabs(["🆕 New plant", "📎 Existing plant"])
 
-        with track_tab:
-            if not gemini_api_key:
-                st.info("Plant tracking is unavailable right now.")
-            elif not photo:
-                st.info("📸 Scan a new photo of this plant to start tracking it.")
-            else:
-                plant_name = st.text_input("Give this plant a name", placeholder="e.g. Backyard Tomato", key="new_plant_name")
-                if st.button("🌱 Start tracking", type="primary", use_container_width=True):
-                    if not plant_name or not plant_name.strip():
-                        st.warning("Please enter a name for your plant.")
-                    else:
-                        with st.spinner("🔬 Assessing plant health…"):
-                            assessment = get_initial_assessment(gemini_api_key, photo, disease_label, final_confidence)
-                        next_date = db.add_plant(
-                            device_id, plant_name.strip(), final_raw_class, disease_label,
-                            final_confidence, assessment, photo,
-                        )
-                        st.success(f"✅ **{plant_name.strip()}** is being tracked! Health score {assessment['health_score']}/100 · next check-in {next_date}.")
+            with track_tab:
+                if not gemini_api_key:
+                    st.info("Plant tracking is unavailable right now.")
+                elif not photo:
+                    st.info("📸 Scan a new photo of this plant to start tracking it.")
+                else:
+                    plant_name = st.text_input("Give this plant a name", placeholder="e.g. Backyard Tomato", key="new_plant_name")
+                    if st.button("🌱 Start tracking", type="primary", use_container_width=True):
+                        if not plant_name or not plant_name.strip():
+                            st.warning("Please enter a name for your plant.")
+                        else:
+                            with st.spinner("🔬 Assessing plant health…"):
+                                assessment = get_initial_assessment(gemini_api_key, photo, disease_label, final_confidence)
+                            next_date = db.add_plant(
+                                user["id"], plant_name.strip(), final_raw_class, disease_label,
+                                final_confidence, assessment, photo,
+                            )
+                            st.success(f"✅ **{plant_name.strip()}** is being tracked! Health score {assessment['health_score']}/100 · next check-in {next_date}.")
 
-        with link_tab:
-            if not existing_plants:
-                st.caption("No tracked plants yet. Start one in the New plant tab.")
-            elif not gemini_api_key:
-                st.info("Plant tracking is unavailable right now.")
-            elif not photo:
-                st.info("📸 Scan a new photo of this plant to add a check-in.")
-            else:
-                plant_options = {f"{p[1]} (#{p[0]})": p[0] for p in existing_plants}
-                selected = st.selectbox("Add this scan as a check-in for:", list(plant_options.keys()), index=None, placeholder="Select a plant...", key="link_plant_select")
-                if selected and st.button("📎 Add check-in", type="primary", use_container_width=True):
-                    plant_id = plant_options[selected]
-                    prev = db.get_latest_entry(plant_id)
+            with link_tab:
+                if not existing_plants:
+                    st.caption("No tracked plants yet. Start one in the New plant tab.")
+                elif not gemini_api_key:
+                    st.info("Plant tracking is unavailable right now.")
+                elif not photo:
+                    st.info("📸 Scan a new photo of this plant to add a check-in.")
+                else:
+                    plant_options = {f"{p[1]} (#{p[0]})": p[0] for p in existing_plants}
+                    selected = st.selectbox("Add this scan as a check-in for:", list(plant_options.keys()), index=None, placeholder="Select a plant...", key="link_plant_select")
+                    if selected and st.button("📎 Add check-in", type="primary", use_container_width=True):
+                        plant_id = plant_options[selected]
+                        prev = db.get_latest_entry(plant_id, user["id"])
 
-                    with st.spinner("🔬 Comparing with the last photo…"):
-                        result = analyze_progress(
-                            gemini_api_key,
-                            prev["photo"] if prev else None,
-                            photo,
-                            disease_label,
-                            prev["health_score"] if prev else 50,
-                            prev["adjusted_treatment"] if prev else "",
-                        )
+                        with st.spinner("🔬 Comparing with the last photo…"):
+                            result = analyze_progress(
+                                gemini_api_key,
+                                prev["photo"] if prev else None,
+                                photo,
+                                disease_label,
+                                prev["health_score"] if prev else 50,
+                                prev["adjusted_treatment"] if prev else "",
+                            )
 
-                    next_date = db.add_checkin(plant_id, disease_label, final_confidence, result, photo)
-                    status_emoji = {"improving": "🟢", "stable": "🟡", "worsening": "🔴", "recovered": "✨"}.get(result["status_label"], "🟡")
-                    st.success(f"{status_emoji} Check-in saved! Health {result['health_score']}/100 · next check-in {next_date}.")
+                        next_date = db.add_checkin(plant_id, user["id"], disease_label, final_confidence, result, photo)
+                        status_emoji = {"improving": "🟢", "stable": "🟡", "worsening": "🔴", "recovered": "✨"}.get(result["status_label"], "🟡")
+                        st.success(f"{status_emoji} Check-in saved! Health {result['health_score']}/100 · next check-in {next_date}.")
 
 # --- Display Persistent History ---
 with st.expander("🕘 Recent scans"):
-    past_scans = db.get_past_scans(device_id)
-    if not past_scans:
-        st.caption("Your scans will appear here.")
+    if user is None:
+        st.caption("Log in to keep a history of your scans.")
     else:
-        # Older scans were saved without raw_class; recover it from the display name
-        reverse_map = {v: k for k, v in DISEASE_DISPLAY_MAP.items()}
-        with st.container(key="history"):
-            for idx, (date, disease, confidence, raw_class) in enumerate(past_scans):
-                if st.button(f"{disease}  ·  {date}  ·  {confidence:.0f}%", key=f"hist_{idx}", use_container_width=True):
-                    st.session_state.last_analysis = {
-                        "upload_signature": None,
-                        "raw_class": raw_class or reverse_map.get(disease, disease.lower().replace(" ", "_")),
-                        "confidence": confidence,
-                        "photo": None,
-                        "from_history": True,
-                    }
-                    st.rerun()
+        past_scans = db.get_past_scans(user["id"])
+        if not past_scans:
+            st.caption("Your scans will appear here.")
+        else:
+            # Older scans were saved without raw_class; recover it from the display name
+            reverse_map = {v: k for k, v in DISEASE_DISPLAY_MAP.items()}
+            with st.container(key="history"):
+                for idx, (date, disease, confidence, raw_class) in enumerate(past_scans):
+                    if st.button(f"{disease}  ·  {date}  ·  {confidence:.0f}%", key=f"hist_{idx}", use_container_width=True):
+                        st.session_state.last_analysis = {
+                            "upload_signature": None,
+                            "raw_class": raw_class or reverse_map.get(disease, disease.lower().replace(" ", "_")),
+                            "confidence": confidence,
+                            "photo": None,
+                            "from_history": True,
+                        }
+                        st.rerun()
+

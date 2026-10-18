@@ -5,3 +5,4 @@ Pillow==11.1.0
 requests==2.34.2
 fpdf2==2.8.8
 pandas==2.3.3
+psycopg[binary,pool]==3.3.6

@@ -5,17 +5,23 @@ import pandas as pd
 import requests
 import streamlit as st
 
-from agrisage import db, ui
+from agrisage import auth, db, ui
 from agrisage.disease_map import display_name
 from agrisage.gemini_tracker import analyze_progress
 from agrisage.images import make_jpeg
-from agrisage.session import get_device_id
 
 db.init_db()
 ui.setup_page("My Plants · AgriSage")
 ui.header("plants")
 
-device_id = get_device_id("device_id_dashboard")
+user = auth.get_current_user()
+ui.account_bar(user, "plants")
+if user is None:
+    with st.container(key="card_login"):
+        ui.section("Log in to track your plants", "Your scan history and tracked plants are saved to your account.")
+        auth.render_login_form("plants")
+    st.stop()
+user_id = user["id"]
 
 RISKY_DISEASE_WORDS = ["rust", "blight", "mildew", "rot", "scab", "smut", "spot"]
 
@@ -56,7 +62,7 @@ def due_info(next_date_str, today):
     return "", f"Next check-in in {days} day{'s' if days != 1 else ''}"
 
 
-plants = db.get_tracked_plants(device_id)
+plants = db.get_tracked_plants(user_id)
 today = db.now_ist().date()
 
 weather_alert = get_weather_alert(st.session_state.get("user_lat"), st.session_state.get("user_lon"))
@@ -85,7 +91,7 @@ st.markdown(f"""
 for p in plants:
     p_id, p_name, p_crop, p_init_disease, p_created, p_status, p_score, p_next_date = p
     disease_label = display_name(p_init_disease)
-    entries = db.get_progress_entries(p_id)
+    entries = db.get_progress_entries(p_id, user_id)
     latest_photo = next((e["photo"] for e in reversed(entries) if e["photo"]), None)
     due_tone, due_text = due_info(p_next_date, today)
     score = max(0, min(100, p_score or 0))
@@ -157,11 +163,11 @@ for p in plants:
                             prev["adjusted_treatment"] if prev else "",
                         )
                     # Follow-ups skip re-diagnosis since the baseline disease is already known
-                    db.add_checkin(p_id, disease_label, 100.0, result, current_photo)
+                    db.add_checkin(p_id, user_id, disease_label, 100.0, result, current_photo)
                     st.rerun()
 
             with st.popover("🗑️ Stop tracking", use_container_width=True):
                 st.write(f"Delete **{p_name}** and all its check-ins? This can't be undone.")
                 if st.button("Yes, delete", key=f"del_plant_{p_id}", use_container_width=True):
-                    db.delete_plant(p_id)
+                    db.delete_plant(p_id, user_id)
                     st.rerun()

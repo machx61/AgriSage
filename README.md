@@ -14,12 +14,12 @@ and wheat**. Photos of other crops are reported as unsupported.
 ├── app.py                 # Streamlit home page and diagnosis flow
 ├── pages/                 # Streamlit multipage views
 ├── agrisage/              # Reusable application code
-│   ├── db.py              # SQLite scan history & plant tracking
+│   ├── auth.py            # Username/password accounts and login sessions
+│   ├── db.py              # Accounts, scan history & plant tracking (Postgres or SQLite)
 │   ├── diagnosis_utils.py
 │   ├── disease_map.py     # Supported classes -> knowledge-base entries
 │   ├── gemini_tracker.py  # Gemini diagnosis & progress analysis
 │   ├── images.py
-│   ├── session.py         # Browser device ID
 │   └── treatments_db.py
 ├── data/diseases/         # Crop treatment knowledge base
 ├── models/                # Experimental local weights (not used by the app)
@@ -61,6 +61,27 @@ default; to point it elsewhere, set a repository variable named `APP_URL`
 ## Configuration
 
 Set `GEMINI_API_KEY` in `.streamlit/secrets.toml` to enable Gemini-powered
-diagnosis and plant progress analysis. The local SQLite history database is
-created automatically at runtime and is intentionally not part of the source
-layout.
+diagnosis and plant progress analysis.
+
+### Accounts and storage
+
+Visitors can scan without an account; logging in (username + password) saves
+scan history and tracked plants. Data lives in Postgres when `DATABASE_URL` is
+set, otherwise in a local SQLite file (`agrisage_history.db`, git-ignored)
+that is created automatically.
+
+Streamlit Community Cloud wipes local files on restart, so the hosted app
+needs Postgres. A free Supabase or Neon project works:
+
+1. Create the project and copy its **pooled** connection string
+   (Supabase: Project Settings > Database > Connection pooling;
+   Neon: the host with `-pooler`). It looks like
+   `postgresql://user:password@host:6543/postgres`.
+2. Add it to the app's secrets (Streamlit Cloud: App settings > Secrets), and
+   to `.streamlit/secrets.toml` only if you want local runs to use it too:
+
+   ```toml
+   DATABASE_URL = "postgresql://user:password@host:6543/postgres"
+   ```
+
+Tables are created on first run. The tests always use a temporary SQLite file.
