@@ -1,0 +1,425 @@
+{
+  "summary": {
+    "total": 26,
+    "exact_matches": 21,
+    "crop_matches": 22
+  },
+  "results": [
+    {
+      "idx": 1,
+      "title": "Tomato Early Blight (Sample 1)",
+      "expected_class": "tomato_early_blight",
+      "predicted_class": "tomato_early_blight",
+      "display_name": "Tomato - Early Blight",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 1,
+        "biological": 3,
+        "cultural": 1,
+        "total": 5
+      }
+    },
+    {
+      "idx": 2,
+      "title": "Tomato Early Blight (Sample 2)",
+      "expected_class": "tomato_early_blight",
+      "predicted_class": "potato_late_blight",
+      "display_name": "Potato - Late Blight",
+      "confidence": 95,
+      "exact_match": false,
+      "crop_match": false,
+      "treatments": {
+        "botanical": 0,
+        "biological": 3,
+        "cultural": 1,
+        "total": 4
+      }
+    },
+    {
+      "idx": 3,
+      "title": "Tomato Late Blight (Sample 1)",
+      "expected_class": "tomato_late_blight",
+      "predicted_class": "potato_late_blight",
+      "display_name": "Potato - Late Blight",
+      "confidence": 98,
+      "exact_match": false,
+      "crop_match": false,
+      "treatments": {
+        "botanical": 0,
+        "biological": 3,
+        "cultural": 1,
+        "total": 4
+      }
+    },
+    {
+      "idx": 4,
+      "title": "Tomato Late Blight (Sample 2)",
+      "expected_class": "tomato_late_blight",
+      "predicted_class": "tomato_late_blight",
+      "display_name": "Tomato - Late Blight",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 3,
+        "cultural": 1,
+        "total": 4
+      }
+    },
+    {
+      "idx": 5,
+      "title": "Tomato Yellow Leaf Curl (Sample 1)",
+      "expected_class": "tomato_leaf_curl_virus",
+      "predicted_class": "capsicum_leaf_curl_mosaic",
+      "display_name": "Capsicum - Leaf Curl & Mosaic",
+      "confidence": 95,
+      "exact_match": false,
+      "crop_match": false,
+      "treatments": {
+        "botanical": 3,
+        "biological": 2,
+        "cultural": 4,
+        "total": 9
+      }
+    },
+    {
+      "idx": 6,
+      "title": "Tomato Yellow Leaf Curl (Sample 2)",
+      "expected_class": "tomato_leaf_curl_virus",
+      "predicted_class": "tomato_leaf_curl_virus",
+      "display_name": "Tomato - Leaf Curl Virus",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 2,
+        "biological": 3,
+        "cultural": 3,
+        "total": 8
+      }
+    },
+    {
+      "idx": 7,
+      "title": "Tomato Healthy (Sample 1)",
+      "expected_class": "tomato_healthy",
+      "predicted_class": "tomato_healthy",
+      "display_name": "Tomato - Healthy",
+      "confidence": 95,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 8,
+      "title": "Tomato Healthy (Sample 2)",
+      "expected_class": "tomato_healthy",
+      "predicted_class": "tomato_healthy",
+      "display_name": "Tomato - Healthy",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 9,
+      "title": "Potato Early Blight (Sample 1)",
+      "expected_class": "potato_early_blight",
+      "predicted_class": "apple_scab",
+      "display_name": "Apple - Scab",
+      "confidence": 98,
+      "exact_match": false,
+      "crop_match": false,
+      "treatments": {
+        "botanical": 0,
+        "biological": 1,
+        "cultural": 4,
+        "total": 5
+      }
+    },
+    {
+      "idx": 10,
+      "title": "Potato Early Blight (Sample 2)",
+      "expected_class": "potato_early_blight",
+      "predicted_class": "potato_early_blight",
+      "display_name": "Potato - Early Blight",
+      "confidence": 95,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 3,
+        "cultural": 1,
+        "total": 4
+      }
+    },
+    {
+      "idx": 11,
+      "title": "Potato Late Blight (Sample 1)",
+      "expected_class": "potato_late_blight",
+      "predicted_class": "potato_late_blight",
+      "display_name": "Potato - Late Blight",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 3,
+        "cultural": 1,
+        "total": 4
+      }
+    },
+    {
+      "idx": 12,
+      "title": "Potato Late Blight (Sample 2)",
+      "expected_class": "potato_late_blight",
+      "predicted_class": "potato_late_blight",
+      "display_name": "Potato - Late Blight",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 3,
+        "cultural": 1,
+        "total": 4
+      }
+    },
+    {
+      "idx": 13,
+      "title": "Potato Healthy (Sample 1)",
+      "expected_class": "potato_healthy",
+      "predicted_class": "potato_healthy",
+      "display_name": "Potato - Healthy",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 14,
+      "title": "Potato Healthy (Sample 2)",
+      "expected_class": "potato_healthy",
+      "predicted_class": "potato_healthy",
+      "display_name": "Potato - Healthy",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 15,
+      "title": "Apple Scab (Sample 1)",
+      "expected_class": "apple_scab",
+      "predicted_class": "apple_scab",
+      "display_name": "Apple - Scab",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 1,
+        "cultural": 4,
+        "total": 5
+      }
+    },
+    {
+      "idx": 16,
+      "title": "Apple Scab (Sample 2)",
+      "expected_class": "apple_scab",
+      "predicted_class": "apple_scab",
+      "display_name": "Apple - Scab",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 1,
+        "cultural": 4,
+        "total": 5
+      }
+    },
+    {
+      "idx": 17,
+      "title": "Apple Healthy (Sample 1)",
+      "expected_class": "apple_healthy",
+      "predicted_class": "apple_healthy",
+      "display_name": "Apple - Healthy",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 18,
+      "title": "Apple Healthy (Sample 2)",
+      "expected_class": "apple_healthy",
+      "predicted_class": "apple_healthy",
+      "display_name": "Apple - Healthy",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 19,
+      "title": "Capsicum Bacterial Spot (Sample 1)",
+      "expected_class": "capsicum_bacterial_leaf_spot",
+      "predicted_class": "capsicum_bacterial_leaf_spot",
+      "display_name": "Capsicum - Bacterial Leaf Spot",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 20,
+      "title": "Capsicum Bacterial Spot (Sample 2)",
+      "expected_class": "capsicum_bacterial_leaf_spot",
+      "predicted_class": "capsicum_bacterial_leaf_spot",
+      "display_name": "Capsicum - Bacterial Leaf Spot",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 21,
+      "title": "Capsicum Healthy (Sample 1)",
+      "expected_class": "capsicum_healthy",
+      "predicted_class": "capsicum_healthy",
+      "display_name": "Capsicum - Healthy",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 22,
+      "title": "Capsicum Healthy (Sample 2)",
+      "expected_class": "capsicum_healthy",
+      "predicted_class": "capsicum_healthy",
+      "display_name": "Capsicum - Healthy",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 23,
+      "title": "Maize Northern Leaf Blight (Sample 1)",
+      "expected_class": "corn_turcicum_leaf_blight",
+      "predicted_class": "corn_banded_leaf_sheath_blight",
+      "display_name": "Maize - Banded Leaf & Sheath Blight",
+      "confidence": 98,
+      "exact_match": false,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 4,
+        "biological": 5,
+        "cultural": 6,
+        "total": 15
+      }
+    },
+    {
+      "idx": 24,
+      "title": "Maize Northern Leaf Blight (Sample 2)",
+      "expected_class": "corn_turcicum_leaf_blight",
+      "predicted_class": "corn_turcicum_leaf_blight",
+      "display_name": "Maize - Turcicum (Northern) Leaf Blight",
+      "confidence": 98,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 6,
+        "biological": 3,
+        "cultural": 2,
+        "total": 11
+      }
+    },
+    {
+      "idx": 25,
+      "title": "Maize Healthy (Sample 1)",
+      "expected_class": "corn_healthy",
+      "predicted_class": "corn_healthy",
+      "display_name": "Maize - Healthy",
+      "confidence": 99,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    },
+    {
+      "idx": 26,
+      "title": "Maize Healthy (Sample 2)",
+      "expected_class": "corn_healthy",
+      "predicted_class": "corn_healthy",
+      "display_name": "Maize - Healthy",
+      "confidence": 95,
+      "exact_match": true,
+      "crop_match": true,
+      "treatments": {
+        "botanical": 0,
+        "biological": 2,
+        "cultural": 2,
+        "total": 4
+      }
+    }
+  ]
+}

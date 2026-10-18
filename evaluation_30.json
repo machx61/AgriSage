@@ -1,0 +1,874 @@
+[
+  {
+    "expected": "tomato_early_blight",
+    "source": "pv",
+    "ref": "Tomato___Early_blight",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___Early_blight/06339fe1-154f-4bcb-be91-a29e86e25929___RS_Erly.B%207440.JPG",
+    "auto": {
+      "class": "tomato_late_blight",
+      "confidence": 92,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "wrong-disease",
+      "treatments": {
+        "name": "Late Blight",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Sweet Root Licorice Bath",
+            "Honey-Ghee Smoke Hug",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": []
+        }
+      }
+    },
+    "with_crop_hint": {
+      "class": "tomato_late_blight",
+      "confidence": 95,
+      "name": "",
+      "verdict": "wrong-disease",
+      "treatments": {
+        "name": "Late Blight",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Sweet Root Licorice Bath",
+            "Honey-Ghee Smoke Hug",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": []
+        }
+      }
+    }
+  },
+  {
+    "expected": "tomato_late_blight",
+    "source": "pv",
+    "ref": "Tomato___Late_blight",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___Late_blight/0220afd9-d40e-4b72-8405-78b417c7b8af___GHLB2%20Leaf%208987.JPG",
+    "auto": {
+      "class": "potato_late_blight",
+      "confidence": 92,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "wrong-crop",
+      "treatments": {
+        "name": "Late Blight",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Sweet Root Licorice Bath",
+            "Honey-Ghee Smoke Hug",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": []
+        }
+      }
+    },
+    "with_crop_hint": {
+      "class": "tomato_late_blight",
+      "confidence": 91,
+      "name": "",
+      "verdict": "exact",
+      "treatments": {
+        "name": "Late Blight",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Sweet Root Licorice Bath",
+            "Honey-Ghee Smoke Hug",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": []
+        }
+      }
+    }
+  },
+  {
+    "expected": "tomato_leaf_curl_virus",
+    "source": "pv",
+    "ref": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___Tomato_Yellow_Leaf_Curl_Virus/016bbee4-7b9d-40c8-a802-2bbf00f3bb27___YLCV_NREC%202290.JPG",
+    "auto": {
+      "class": "tomato_leaf_curl_virus",
+      "confidence": 94,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Tomato Leaf Curl Virus (Vata Imbalance)",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Neemastra Neem Spray",
+            "Brahmastra Leaf Brew"
+          ],
+          "biological": [
+            "Panchagavya Root Drench",
+            "Neem Leaf Smoke Bath",
+            "Gentle Neem Oil Spa"
+          ],
+          "cultural": [
+            "Quick Removal Action",
+            "Bright Yellow Fly Traps",
+            "Traditional Seed Soak"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "tomato_septoria_leaf_spot",
+    "source": "pv",
+    "ref": "Tomato___Septoria_leaf_spot",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___Septoria_leaf_spot/04840559-16ed-4f17-908b-2048ba83ab80___Keller.St_CG%201780.JPG",
+    "auto": {
+      "class": "tomato_septoria_leaf_spot",
+      "confidence": 95,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Septoria Leaf Spot",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Neemastra Neem Spray"
+          ],
+          "biological": [
+            "Trichoderma Leaf Spray",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Strip the Lowest Leaves & Stake",
+            "Give Plants Room",
+            "Mulch the Soil",
+            "Water the Roots, Not the Leaves",
+            "Rotate, Weed & Clean Up",
+            "Maize as a Neighbour"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "tomato_healthy",
+    "source": "pv",
+    "ref": "Tomato___healthy",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___healthy/04c78dad-c1eb-4a1b-bfeb-da4c7cc528e1___RS_HL%209688.JPG",
+    "auto": {
+      "class": "tomato_powdery_mildew",
+      "confidence": 62,
+      "name": "",
+      "disagreed": true,
+      "alternative": "other_disease",
+      "verdict": "wrong-disease",
+      "treatments": {
+        "name": "Powdery Mildew (Kapha Imbalance)",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Buttermilk Pest Traps"
+          ],
+          "biological": [
+            "Morning Milk Glow Spray",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Breezy Plant Spacing"
+          ]
+        }
+      }
+    },
+    "with_crop_hint": {
+      "class": "other_disease",
+      "confidence": 32,
+      "name": "Tomato spider mite",
+      "verdict": "abstained"
+    }
+  },
+  {
+    "expected": "tomato_bacterial_wilt",
+    "ref": "File:Tomato Bacterial wilt (Pathogen Ralstonia solanacearum) (12091835495).jpg",
+    "error": "download: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/commons/e/e1/Tomato_Bacterial_wilt_%28Pathogen_Ralstonia_solanacearum%29_%2812091835495%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  },
+  {
+    "expected": "potato_early_blight",
+    "source": "pv",
+    "ref": "Potato___Early_blight",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Potato___Early_blight/06d9fcc9-4eea-4736-8392-5e483e2e948d___RS_Early.B%207411.JPG",
+    "auto": {
+      "class": "potato_early_blight",
+      "confidence": 95,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Early Blight",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Cow Dung Guardian Mix",
+            "Sweet Root Licorice Bath",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Ash Dust Root Cuddle"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "potato_late_blight",
+    "source": "pv",
+    "ref": "Potato___Late_blight",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Potato___Late_blight/0450570b-44d1-4290-956d-5d970164a2e2___RS_LB%205160.JPG",
+    "auto": {
+      "class": "potato_late_blight",
+      "confidence": 95,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Late Blight",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Sweet Root Licorice Bath",
+            "Honey-Ghee Smoke Hug",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": []
+        }
+      }
+    }
+  },
+  {
+    "expected": "potato_healthy",
+    "source": "pv",
+    "ref": "Potato___healthy",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Potato___healthy/22322780-95b4-4b45-b626-26b22965d55e___RS_HL%201880.JPG",
+    "auto": {
+      "class": "potato_healthy",
+      "confidence": 98,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Healthy Plant",
+        "healthy": true,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic",
+            "Beejamrit Seed Coat"
+          ],
+          "cultural": [
+            "Weekly Leaf Check",
+            "Water at the Roots"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "apple_scab",
+    "source": "pv",
+    "ref": "Apple___Apple_scab",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Apple___Apple_scab/095c9131-a0cb-47de-898a-f9371f208c01___FREC_Scab%203109.JPG",
+    "auto": {
+      "class": "apple_scab",
+      "confidence": 95,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Apple Scab",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Leaf Litter Clean-Up",
+            "Open the Canopy",
+            "Scab-Resistant Varieties",
+            "Know the Limits"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "apple_healthy",
+    "source": "pv",
+    "ref": "Apple___healthy",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Apple___healthy/03109942-bfa2-4728-b375-4f02a95957de___RS_HL%208066.JPG",
+    "auto": {
+      "class": "apple_healthy",
+      "confidence": 96,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Healthy Plant",
+        "healthy": true,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic",
+            "Beejamrit Seed Coat"
+          ],
+          "cultural": [
+            "Weekly Leaf Check",
+            "Water at the Roots"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "corn_common_rust",
+    "source": "pv",
+    "ref": "Corn_(maize)___Common_rust_",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Corn_(maize)___Common_rust_/RS_Rust%201584.JPG",
+    "auto": {
+      "class": "corn_common_rust",
+      "confidence": 96,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Common Rust",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Choose Resistant Hybrids",
+            "Early-Maturing Varieties",
+            "Destroy Crop Debris",
+            "Rotate with Non-Host Crops"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "corn_gray_leaf_spot",
+    "source": "pv",
+    "ref": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Corn_(maize)___Cercospora_leaf_spot%20Gray_leaf_spot/0b5492ee-253d-4a13-ad5a-780cb954b09a___RS_GLSp%204615%20copy.jpg",
+    "auto": {
+      "class": "corn_fall_armyworm",
+      "confidence": 32,
+      "name": "",
+      "disagreed": true,
+      "alternative": "corn_banded_leaf_sheath_blight",
+      "verdict": "wrong-disease",
+      "treatments": {
+        "name": "Fall Armyworm (Currently Active Outbreak in HP, ~19,000 hectares affected as of July 2026)",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Neemastra Neem Spray",
+            "Agniastra Fire Spray",
+            "Brahmastra Leaf Brew"
+          ],
+          "biological": [],
+          "cultural": [
+            "Old-Seed Resistance Test",
+            "HPKV Resistant Line Watch",
+            "Smoky Kitchen Cob Hang"
+          ]
+        }
+      }
+    },
+    "with_crop_hint": {
+      "class": "corn_gray_leaf_spot",
+      "confidence": 95,
+      "name": "",
+      "verdict": "exact",
+      "treatments": {
+        "name": "Gray Leaf Spot",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Bury or Remove Residue",
+            "Rotate Away from Maize",
+            "Choose Resistant Hybrids",
+            "Give Plants Air",
+            "Intercrop with Beans"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "corn_turcicum_leaf_blight",
+    "source": "pv",
+    "ref": "Corn_(maize)___Northern_Leaf_Blight",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Corn_(maize)___Northern_Leaf_Blight/053eadf4-34ce-4bdb-8dd8-b75f5d572583___RS_NLB%203788.JPG",
+    "auto": {
+      "class": "corn_common_rust",
+      "confidence": 32,
+      "name": "",
+      "disagreed": true,
+      "alternative": "corn_gray_leaf_spot",
+      "verdict": "wrong-disease",
+      "treatments": {
+        "name": "Common Rust",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Choose Resistant Hybrids",
+            "Early-Maturing Varieties",
+            "Destroy Crop Debris",
+            "Rotate with Non-Host Crops"
+          ]
+        }
+      }
+    },
+    "with_crop_hint": {
+      "class": "corn_common_rust",
+      "confidence": 95,
+      "name": "",
+      "verdict": "wrong-disease",
+      "treatments": {
+        "name": "Common Rust",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Choose Resistant Hybrids",
+            "Early-Maturing Varieties",
+            "Destroy Crop Debris",
+            "Rotate with Non-Host Crops"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "corn_healthy",
+    "source": "pv",
+    "ref": "Corn_(maize)___healthy",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Corn_(maize)___healthy/06612347-fe75-4026-9ed0-8cb1587b60a6___R.S_HL%208130%20copy.jpg",
+    "auto": {
+      "class": "corn_healthy",
+      "confidence": 96,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Healthy Plant",
+        "healthy": true,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic",
+            "Beejamrit Seed Coat"
+          ],
+          "cultural": [
+            "Weekly Leaf Check",
+            "Water at the Roots"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "capsicum_bacterial_leaf_spot",
+    "source": "pv",
+    "ref": "Pepper,_bell___Bacterial_spot",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Pepper%2C_bell___Bacterial_spot/05c6ea65-cce4-43da-b57b-a45321b0e51b___NREC_B.Spot%209048.JPG",
+    "auto": {
+      "class": "capsicum_bacterial_leaf_spot",
+      "confidence": 60,
+      "name": "",
+      "disagreed": true,
+      "alternative": "capsicum_cercospora_leaf_spot",
+      "verdict": "exact",
+      "treatments": {
+        "name": "Bacterial Leaf Spot",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Trichoderma Seed & Root Dip",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Seed & Sanitation",
+            "Crop Rotation Break"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "capsicum_healthy",
+    "source": "pv",
+    "ref": "Pepper,_bell___healthy",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Pepper%2C_bell___healthy/035746b5-cbe6-4e5d-9c3a-4bfc5c6cf5a1___JR_HL%207728.JPG",
+    "auto": {
+      "class": "capsicum_healthy",
+      "confidence": 98,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Healthy Plant",
+        "healthy": true,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic",
+            "Beejamrit Seed Coat"
+          ],
+          "cultural": [
+            "Weekly Leaf Check",
+            "Water at the Roots"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "rice_sheath_blight",
+    "source": "cm",
+    "ref": "File:RiceSheathArk.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/RiceSheathArk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "auto": {
+      "class": "rice_sheath_blight",
+      "confidence": 95,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Sheath Blight",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Neem Cake Before Transplanting"
+          ],
+          "biological": [
+            "Pseudomonas Seed & Leaf Programme",
+            "Trichoderma with Neem Cake",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Wider Spacing, Less Nitrogen",
+            "Drain & Clear the Bunds",
+            "Remove Infected Tillers"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "wheat_brown_rust",
+    "ref": "File:Wheat leaf rust on wheat.jpg",
+    "error": "download: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/commons/d/d4/Wheat_leaf_rust_on_wheat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  },
+  {
+    "expected": "wheat_aphid",
+    "source": "cm",
+    "ref": "File:Russian wheat aphid.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Russian_wheat_aphid.jpg/1280px-Russian_wheat_aphid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "auto": {
+      "class": "wheat_aphid",
+      "confidence": 96,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Wheat Aphid",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Neem Seed Kernel Extract",
+            "Neemastra Neem Spray"
+          ],
+          "biological": [],
+          "cultural": [
+            "Save the Ladybirds",
+            "Yellow Sticky Traps",
+            "Check the Ears"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "cabbage_black_rot",
+    "ref": "File:Black rot of cabbage symptoms.jpg",
+    "error": "download: 429 Client Error: Too Many Requests (015d12c) for url: https://upload.wikimedia.org/wikipedia/commons/a/ad/Black_rot_of_cabbage_symptoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  },
+  {
+    "expected": "pea_powdery_mildew",
+    "source": "cm",
+    "ref": "File:Erbsen Echter Mehltau-4-JS.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Erbsen_Echter_Mehltau-4-JS.jpg/1280px-Erbsen_Echter_Mehltau-4-JS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "auto": {
+      "class": "other_disease",
+      "confidence": 32,
+      "name": "pea downy mildew",
+      "disagreed": true,
+      "alternative": "pea_rust",
+      "verdict": "abstained"
+    },
+    "with_crop_hint": {
+      "class": "pea_rust",
+      "confidence": 63,
+      "name": "",
+      "verdict": "wrong-disease",
+      "treatments": {
+        "name": "Pea Rust",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Know the Look-Alike",
+            "Clean Debris, Rotate",
+            "Know the Limits"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "mustard_white_rust",
+    "source": "cm",
+    "ref": "File:Mustard- White rust.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Mustard-_White_rust.jpg/1280px-Mustard-_White_rust.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "auto": {
+      "class": "mustard_white_rust",
+      "confidence": 98,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "White Rust",
+        "healthy": false,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Trichoderma Seed Treatment",
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Cream-White Blisters",
+            "Sow on Time",
+            "Destroy Stag Heads",
+            "Know the Limits"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "other_disease",
+    "source": "pv",
+    "ref": "Tomato___Tomato_mosaic_virus",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___Tomato_mosaic_virus/0d9accf3-1285-4356-b69b-2ae132c5f145___PSU_CG%202337.JPG",
+    "auto": {
+      "class": "tomato_leaf_curl_virus",
+      "confidence": 63,
+      "name": "",
+      "disagreed": true,
+      "alternative": "tomato_healthy",
+      "verdict": "WRONG",
+      "treatments": {
+        "name": "Tomato Leaf Curl Virus (Vata Imbalance)",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Neemastra Neem Spray",
+            "Brahmastra Leaf Brew"
+          ],
+          "biological": [
+            "Panchagavya Root Drench",
+            "Neem Leaf Smoke Bath",
+            "Gentle Neem Oil Spa"
+          ],
+          "cultural": [
+            "Quick Removal Action",
+            "Bright Yellow Fly Traps",
+            "Traditional Seed Soak"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "other_disease",
+    "source": "pv",
+    "ref": "Tomato___Leaf_Mold",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___Leaf_Mold/0741bcde-474a-4b81-b6d5-217ab4f7d0e9___Crnl_L.Mold%206660.JPG",
+    "auto": {
+      "class": "other_disease",
+      "confidence": 32,
+      "name": "tomato leaf mold",
+      "disagreed": true,
+      "alternative": "tomato_powdery_mildew",
+      "verdict": "exact"
+    }
+  },
+  {
+    "expected": "other_disease",
+    "source": "pv",
+    "ref": "Tomato___Target_Spot",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Tomato___Target_Spot/047144a4-3164-41d5-a4cd-6fba8b4bfdd5___Com.G_TgS_FL%200024.JPG",
+    "auto": {
+      "class": "tomato_healthy",
+      "confidence": 96,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "WRONG",
+      "treatments": {
+        "name": "Healthy Plant",
+        "healthy": true,
+        "cards": {
+          "botanical": [],
+          "biological": [
+            "Jeevamrit Soil Tonic",
+            "Beejamrit Seed Coat"
+          ],
+          "cultural": [
+            "Weekly Leaf Check",
+            "Water at the Roots"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "brinjal_little_leaf",
+    "source": "cm",
+    "ref": "File:Brinjal Little leaf phytoplasma.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Brinjal_Little_leaf_phytoplasma.jpg/1280px-Brinjal_Little_leaf_phytoplasma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "auto": {
+      "class": "brinjal_little_leaf",
+      "confidence": 98,
+      "name": "",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact",
+      "treatments": {
+        "name": "Little Leaf (Phytoplasma)",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Neem Seed Kernel Extract 5%",
+            "Neemastra Neem Spray",
+            "Brahmastra Leaf Brew"
+          ],
+          "biological": [],
+          "cultural": [
+            "Quick Goodbye Removal",
+            "Weed-Host Sweep"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "expected": "unsupported",
+    "source": "pv",
+    "ref": "Grape___Black_rot",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Grape___Black_rot/045e07eb-5005-4943-90f2-bd62525b1076___FAM_B.Rot%203524.JPG",
+    "auto": {
+      "class": "unsupported",
+      "confidence": 95,
+      "name": "grape black rot",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact"
+    }
+  },
+  {
+    "expected": "unsupported",
+    "source": "pv",
+    "ref": "Strawberry___Leaf_scorch",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Strawberry___Leaf_scorch/05227405-8c44-4ffd-a305-44a87d407013___RS_L.Scorch%201458.JPG",
+    "auto": {
+      "class": "unsupported",
+      "confidence": 95,
+      "name": "strawberry leaf scorch",
+      "disagreed": false,
+      "alternative": null,
+      "verdict": "exact"
+    }
+  },
+  {
+    "expected": "unsupported",
+    "source": "pv",
+    "ref": "Squash___Powdery_mildew",
+    "url": "https://raw.githubusercontent.com/spMohanty/PlantVillage-Dataset/master/raw/color/Squash___Powdery_mildew/042d4ff1-7d09-44cd-8fdf-88a768abbe76___UMD_Powd.M%200433.JPG",
+    "auto": {
+      "class": "cucumber_powdery_mildew",
+      "confidence": 63,
+      "name": "",
+      "disagreed": true,
+      "alternative": "unsupported",
+      "verdict": "WRONG",
+      "treatments": {
+        "name": "Powdery Mildew",
+        "healthy": false,
+        "cards": {
+          "botanical": [
+            "Milk Spray 10%"
+          ],
+          "biological": [
+            "Jeevamrit Soil Tonic"
+          ],
+          "cultural": [
+            "Airflow & Resistance"
+          ]
+        }
+      }
+    }
+  }
+]

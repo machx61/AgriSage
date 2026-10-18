@@ -127,6 +127,20 @@ footer, #viewerBadge, [data-testid="stHeaderActionElements"], [data-testid="stTo
 .st-key-nav [data-testid="stPageLink-NavLink"] p { font-weight: 600; color: var(--ink-soft); font-size: .95rem; }
 .st-key-nav [data-testid="stPageLink-NavLink"]:hover { background: var(--leaf-tint); }
 
+/* ---------- Touch-friendly inputs ---------- */
+/* "Press Enter to apply / submit form" hints mean nothing on a phone keyboard */
+[data-testid="InputInstructions"] { display: none !important; }
+/* 16px text stops iOS from zooming the page when a field is tapped */
+input, textarea, [data-baseweb="select"] input { font-size: 16px !important; }
+[data-testid="stTextInput"] input, [data-testid="stNumberInput"] input { min-height: 48px; }
+[data-baseweb="input"], [data-baseweb="base-input"], [data-baseweb="select"] > div, [data-baseweb="textarea"] {
+  border-radius: 14px !important;
+}
+[data-baseweb="select"] > div { min-height: 48px; }
+[data-testid="stWidgetLabel"] p { font-size: .92rem; font-weight: 600; }
+[data-testid="stExpander"] summary { min-height: 52px; }
+[data-testid="stForm"] { border: none; padding: 0; }
+
 /* ---------- Generic card containers: st.container(key="card_...") ---------- */
 [class*="st-key-card_"] {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
@@ -279,6 +293,17 @@ footer, #viewerBadge, [data-testid="stHeaderActionElements"], [data-testid="stTo
   .dx img, .dx .ph { width: 78px; height: 78px; }
   .dx-title { font-size: 1.25rem; }
   .tcard { padding: 14px; }
+  /* Bigger tap targets */
+  .stTabs [data-baseweb="tab"] { min-height: 44px; padding: 8px 16px; }
+  .stTabs [data-baseweb="tab"] p { font-size: .95rem; }
+  [class*="st-key-account_"] button { min-height: 42px; padding: 8px 16px; }
+  /* A phone has no drag and drop: show just the Browse button */
+  [data-testid="stFileUploaderDropzoneInstructions"] > div > span:first-child { display: none; }
+  [data-testid="stFileUploaderDropzone"] { flex-direction: column; align-items: stretch; gap: 8px; }
+  [data-testid="stFileUploaderDropzone"] button { width: 100%; min-height: 48px; }
+  [data-testid="stFileUploaderDropzoneInstructions"] { justify-content: center; text-align: center; }
+  /* Login panel uses the full phone width */
+  [data-testid="stPopoverBody"] { width: calc(100vw - 24px); max-width: 420px; }
 }
 </style>
 """
